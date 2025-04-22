@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="index.css" />
     <title>Portifolio Hicaro</title>
   </head>
@@ -50,7 +51,7 @@
               </a>
             </div>
             <div class="hero__arrow">
-              <a href="">
+              <a href="src/pages/contact.html">
                 <img
                   src="src/assets/hero_image/arrow-down-white.svg"
                   alt="Seta Pra Baico"
@@ -109,6 +110,7 @@
           <div class="skill__container">
             <div class="card__skills">
               <img src="src/assets/skills_image/html.svg" alt="html" />
+              <h3>HTML</h3>
               <p>
                 HTML é a espinha dorsal da web, estruturando o conteúdo de
                 páginas de forma semântica e acessível. Com ele, criamos sites
@@ -119,6 +121,7 @@
 
             <div class="card__skills">
               <img src="src/assets/skills_image/css.svg" alt="css" />
+              <h3>CSS</h3>
               <p>
                 CSS dá vida às páginas, transformando estruturas simples em
                 experiências visuais impressionantes. Com estilos modernos e
@@ -132,6 +135,7 @@
                 src="src/assets/skills_image/javascript.svg"
                 alt="javascript"
               />
+              <h3>JAVASCRIPT</h3>
               <p>
                 JavaScript é a alma interativa da web. Ele permite a criação de
                 interfaces dinâmicas, animações fluídas e funcionalidades
@@ -144,6 +148,7 @@
                 src="src/assets/skills_image/typescript.svg"
                 alt="typescript"
               />
+              <h3>TYPESCRIPT</h3>
               <p>
                 TypeScript potencializa o JavaScript com tipagem estática,
                 tornando o desenvolvimento mais seguro e escalável. Ideal para
@@ -154,6 +159,7 @@
 
             <div class="card__skills">
               <img src="src/assets/skills_image/node.svg" alt="node" />
+              <h3>NODE</h3>
               <p>
                 Node.js leva o JavaScript ao servidor, permitindo criar APIs e
                 sistemas completos com alta performance. Ideal para aplicações
@@ -163,6 +169,7 @@
 
             <div class="card__skills">
               <img src="src/assets/skills_image/react.svg" alt="react" />
+              <h3>REACT</h3>
               <p>
                 React revoluciona a construção de interfaces com sua abordagem
                 baseada em componentes. Rápido, modular e eficiente, é a escolha
@@ -172,6 +179,7 @@
 
             <div class="card__skills">
               <img src="src/assets/skills_image/git.svg" alt="git" />
+              <h3>GIT</h3>
               <p>
                 Git é a ferramenta essencial de versionamento, possibilitando
                 rastrear mudanças e colaborar em projetos de forma segura e
@@ -182,6 +190,7 @@
 
             <div class="card__skills">
               <img src="src/assets/skills_image/sass.svg" alt="sass" />
+              <h3>SASS</h3>
               <p>
                 Sass potencializa o CSS com recursos como variáveis, funções e
                 mixins. Ele organiza e simplifica o código de estilos, tornando
@@ -192,6 +201,7 @@
 
             <div class="card__skills">
               <img src="src/assets/skills_image/tailwind.svg" alt="tailwind" />
+              <h3>TAILWIND</h3>
               <p>
                 Tailwind CSS acelera o desenvolvimento com uma abordagem
                 utilitária de classes. Rápido, flexível e altamente
@@ -204,21 +214,68 @@
 
         <!--about-->
         <section class="about">
-          <p>
-            Muito prazer! Sou um programador full stack movido pela paixão por
-            tecnologia. Neste espaço, compartilho um pouco da minha trajetória,
-            do que construí e do que acredito poder transformar através do
-            código
-          </p>
+          <div class="about__content">
+            <div class="about__text">
+              <h2>Sobre Mim</h2>
+              <div class="about__description">
+                <p>
+                  Muito prazer! Sou um programador full stack movido pela paixão
+                  por tecnologia. Com experiência em diversas stacks, transformo
+                  ideias em soluções digitais robustas e elegantes.
+                </p>
+                <p>
+                  Neste espaço, compartilho não apenas projetos, mas a filosofia
+                  por trás de cada linha de código - onde criatividade e lógica
+                  se encontram para construir o futuro.
+                </p>
+              </div>
+            </div>
 
-          <button>Contate-me</button>
+            <div class="about__cta">
+              <button class="cta-button">
+                <span>Contate-me</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </section>
       </main>
 
       <!--rodapé-->
       <footer>
-        <button><a href="" download=""> Curriculo </a></button>
-        <p>&copy; 2025 Hicaro Andre. Todos os direitos reservados.</p>
+        <div class="footer-content">
+          <a href="curriculo.pdf" download class="download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 15V3M12 15L8 11M12 15L16 11M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            Currículo
+          </a>
+
+          <div class="footer-info">
+            <p class="copyright">
+              <span class="highlight">© 2025 Hicaro André</span> | Todos os
+              direitos reservados
+            </p>
+            <div class="footer-links">
+              <a href="/politica-de-privacidade">Privacidade</a>
+              <span class="divider">•</span>
+              <a href="/termos">Termos</a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
 

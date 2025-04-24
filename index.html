@@ -19,42 +19,48 @@
   </head>
 
   <body>
+    <!-- <video autoplay muted loop id="bg-video">
+      <source src="src/assets/images/videos/bg-video.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeos em HTML5.
+    </video> -->
+
     <div class="container">
       <!--hero-->
       <header>
         <section class="hero">
-          <div class="hero__content">
-            <h2>OPA! <span class="wave">👋</span> meu nome é</h2>
-
-            <h1>Hicaro André</h1>
+          <div class="hero__container">
+            <div class="hero__title">
+              <h2>OPA! <span class="wave">👋</span> meu nome é</h2>
+              <h1>Hicaro André</h1>
+            </div>
 
             <div class="hero__icons">
               <a href="https://www.linkedin.com/in/hicaroandre/">
                 <img
-                  src="src/assets/images/hero_image/linkedin-white.svg"
+                  src="src/assets/images/hero_image/linkedin.svg"
                   alt="Perfil no LinkedIn"
                 />
               </a>
 
               <a href="https://github.com/Hicaro-Andre">
                 <img
-                  src="src/assets/images/hero_image/github-white.svg"
+                  src="src/assets/images/hero_image/github.svg"
                   alt="Perfil no GitHub"
                 />
               </a>
 
               <a href="https://www.instagram.com/hicaroandre/">
                 <img
-                  src="src/assets/images/hero_image/instagram-white.svg"
+                  src="src/assets/images/hero_image/instagram.svg"
                   alt="Perfil no Instagram"
                 />
               </a>
             </div>
             <div class="hero__arrow">
-              <a href="src/pages/contact.html">
+              <a href="#port">
                 <img
                   src="src/assets/images/hero_image/arrow-down-white.svg"
-                  alt="Seta Pra Baico"
+                  alt="Seta"
                 />
               </a>
             </div>
@@ -63,11 +69,10 @@
       </header>
 
       <main>
-        <!--portifolio-->
-        <section class="port">
-          <h2>Boas - Vindas ao meu Portifolio</h2>
-
+        <!--port-->
+        <section class="port" id="port">
           <div class="port__container">
+            <h2>Boas - Vindas ao meu Portifolio</h2>
             <div class="card__port">
               <img src="" alt="foto do projeto" />
               <h3>Projeto Tal 1</h3>
@@ -103,11 +108,10 @@
           </div>
         </section>
 
-        <!--habilidades-->
+        <!--skills-->
         <section class="skills">
-          <h2>Habilidades</h2>
-
           <div class="skill__container">
+            <h2>Habilidades</h2>
             <div class="card__skills">
               <img src="src/assets/images/skills_image/html.svg" alt="html" />
               <h3>HTML</h3>
@@ -235,7 +239,7 @@
             </div>
 
             <div class="about__cta">
-              <button class="cta-button">
+              <a href="src/pages/contact.html" class="cta-button">
                 <span>Contate-me</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
@@ -246,7 +250,7 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -267,17 +271,10 @@
             Currículo
           </a>
 
-          <div class="footer-info">
-            <p class="copyright">
-              <span class="highlight">© 2025 Hicaro André</span> | Todos os
-              direitos reservados
-            </p>
-            <div class="footer-links">
-              <a href="/politica-de-privacidade">Privacidade</a>
-              <span class="divider">•</span>
-              <a href="/termos">Termos</a>
-            </div>
-          </div>
+          <p class="copyright">
+            <span class="highlight">© 2025 Hicaro André</span> | Todos os
+            direitos reservados
+          </p>
         </div>
       </footer>
     </div>

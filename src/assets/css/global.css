@@ -7,7 +7,7 @@
 
 html, body {
   color: aliceblue;
-  background-color: transparent;
+  background-color: #121212;
   scroll-behavior: smooth;
 }
 
@@ -35,7 +35,7 @@ h3 {
   text-align: center;
 }
 
-#bg-video {
+/* #bg-video {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -43,4 +43,4 @@ h3 {
   min-height: 100%;
   object-fit: cover;
   z-index: -1;
-}
+} */

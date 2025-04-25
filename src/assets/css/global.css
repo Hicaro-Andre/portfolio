@@ -7,7 +7,7 @@
 
 html, body {
   color: aliceblue;
-  /* background-color: #121212; */
+  background-color: transparent;
   scroll-behavior: smooth;
 }
 

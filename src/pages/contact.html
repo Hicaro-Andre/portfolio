@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--botao alterar tema-->
+    <script
+      src="https://kit.fontawesome.com/d6a8ce8d77.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../assets/css/global.css" />
     <link rel="stylesheet" href="../assets/css/contact.css" />
     <title>Pagina de contato</title>
@@ -33,8 +38,28 @@
               />
             </svg>
           </button>
+          <a href="../../index.html" class="home-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M3 12L12 3l9 9M5 10v10h5v-6h4v6h5V10"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Voltar para Home
+          </a>
         </form>
       </div>
     </section>
+    <!-- Botão de Tema Simples (sol/lua) -->
+    <input type="checkbox" id="switch-button" class="theme-switch" />
+    <label for="switch-button" class="theme-label">
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
+    </label>
+
+    <script src="../assets/js/home.js"></script>
   </body>
 </html>

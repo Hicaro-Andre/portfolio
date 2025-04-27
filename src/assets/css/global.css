@@ -1,16 +1,121 @@
 /* Estilos globais */
-:root {
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --card-bg: #1e1e1e;
-  --highlight-color: #00ffff;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/*--TEMA ESCURO--*/
+:root {
+  /*globals*/
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --highlight-color: #00ffff;
+  --bg-button-tema: #1e1e1e;
+  /*port*/
+  --bg-card-port:linear-gradient(135deg, #2b2b2b, #1e1e1e);
+  --box-shadow-card-port-hover:0 5px 10px #00ffff;
+  --bg-text-color-port: #ccc;
+  /*skills*/
+  --bg-card-skills: linear-gradient(135deg, #2b2b2b, #1e1e1e);
+  --box-shadow-card-skills-hover:0 5px 10px #00ffff;
+  /*about*/
+  --bg-description:linear-gradient(135deg, #2b2b2b, #1e1e1e);
+  --box-shadow-card-about-hover:0 5px 10px #00ffff;
+  --bg-button: #00ffff;
+  --color-button:#111;
+  --button-hover:#00cccc;
+  /*about - responsive*/
+  /*675px*/
+  --color-text-description:#ddd;
+  /*1024px*/
+  --box-shadow-description: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /*footer*/
+  --color-text-footer:#aaa;
+  --color-button:#111;
+  --button-hover:#00cccc;
+  --color-svg: #111;
+  --color-highlight: #00ffff;
+
+
+ /**PAGINA DE CONTATO**/
+ --bg-card-contact: linear-gradient(135deg, #2b2b2b, #1e1e1e);
+ --box-shadow-card-contact-hover:0 5px 10px #00ffff;
+ --bg-form: #1e1e1e;
+ --bg-input: #2a2a2a;
+}
+:root h1 {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--highlight-color);/* cor da borda*/
+}
+body:not(.light-mode) h1:hover, 
+html:not(.light-mode) h1:hover {
+  color: var(--highlight-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.05);
+}
+
+
+
+/*--TEMA CLARO--*/
+html,body.light-mode {
+  /*globals*/
+  --bg-color: #f2e8dc;
+  --text-color: #222222;
+  --highlight-color: #7b61ff;
+  --bg-button-tema: #ffffff; 
+  /*port*/
+  --bg-card-port:linear-gradient(135deg, #ffffff, #f1e6d9);
+  --box-shadow-card-port-hover:0 5px 10px #7b61ff;
+  --bg-text-color-port:#4a3b91;
+  /*skills*/
+  --bg-card-skills: linear-gradient(135deg, #ffffff, #f1e6d9);
+  --box-shadow-card-skills-hover:0 5px 10px #7b61ff;
+  /*about*/
+  --bg-description:rgba(0, 0, 0, 0.05);
+  --bg-button:  #7b61ff;
+  --color-button:#ffffff;
+  --button-hover:#6245e0;
+  --color-text-description: #333333; 
+  --box-shadow-description: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /*footer*/
+  --color-text-footer: #777777;
+  --color-svg: #ffffff;
+  --color-highlight: #6200ea; 
+
+  /**PAGINA DE CONTATO**/
+ --bg-card-contact: linear-gradient(135deg, #ffffff, #f1e6d9);
+ --box-shadow-card-contact-hover:0 5px 10px #7b61ff;
+ --bg-form: linear-gradient(135deg, #e6dbd0, #d0c1b3);
+ --bg-input:linear-gradient(135deg, #f8f2ec, #efe4da);
+}
+html.light-mode h1, body.light-mode h1 {
+  color: var(--highlight-color);
+  -webkit-text-stroke: 0; 
+}
+
+html.light-mode h1:hover,
+body.light-mode h1:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #6200ea;
+  transform: scale(1.05);
+}
+/* aqui é onde muda os ícones de cor para cada tema*/
+.icon-light {
+  display: none;
+}
+body.light-mode .icon-dark {
+  display: none;
+}
+body.light-mode .icon-light {
+  display: inline-block;
+}
+
+
 
 html, body {
   background-color: var(--bg-color);
@@ -18,52 +123,12 @@ html, body {
   transition: background-color 0.4s ease, color 0.4s ease;
   scroll-behavior: smooth;
 }
-
-/* Tema claro sofisticado */
-body.light-mode {
-  --bg-color: #f0f2f5; 
-  --text-color: #333333;
-  --card-bg: #ffffff; 
-  --highlight-color: #c7a17a;
-}
-
-/* Aplicar tema às seções */
-.card__port,
-.card__skills,
-.about__description {
-  background-color: var(--card-bg) !important;
-  color: var(--text-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para cartões */
-  border-radius: 12px; /* Cantos arredondados para sofisticação */
-}
-
-/* Botão de destaque */
-.cta-button,
-.download-btn {
-  background-color: var(--highlight-color);
-  color: #ffffff;
-  border: none;
-  padding: 12px 24px;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover,
-.download-btn:hover {
-  background-color: #b06868; /* Escurece levemente no hover */
-}
-
-
-
-
 h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 1px #00ffff; /* cor da borda */
   font-size: clamp(2.5rem, 10vw, 6.25rem);
   text-align: center;
+  transition: all 0.3s ease;
 }
 h2 {
   font-family: "Poppins", sans-serif;
@@ -71,7 +136,7 @@ h2 {
   font-size: clamp(20px, 2.5vw, 25px);
   margin: 0;  
   text-align: center;
-  color: #00ffff;
+  color: var(--highlight-color);;
   padding: 20px;
 }
 h3 {
@@ -80,24 +145,14 @@ h3 {
   font-size: clamp(18px, 2.5vw, 25px);
   margin: 0;  
   text-align: center;
+  color: var(--text-color);
 }
 
-/* #bg-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-} */
 
-
-/* botao de alterar tema*/
+/* botão de alterar tema*/
 .theme-switch {
   display: none;
 }
-
 .theme-label {
   position: fixed;
   top: 20px;
@@ -105,7 +160,7 @@ h3 {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--card-bg);
+  background: var(--bg-button-tema);
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   display: flex;
@@ -114,40 +169,33 @@ h3 {
   z-index: 1000;
   transition: all 0.3s ease;
 }
-
 .theme-label:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-
 .theme-label i {
   position: absolute;
   font-size: 20px;
   transition: all 0.3s ease;
 }
-
-/* Ícones específicos */
+/* ícones do botão de alterar tema */
 .theme-label .fa-sun {
-  color: orange;
+  color: #00ffff;
   opacity: 1;
 }
-
 .theme-label .fa-moon {
-  color: white;
+  color: #7b61ff;
   opacity: 0;
 }
-
-/* Quando o checkbox está marcado (tema light) */
+/* a sombra dos ícones de alterar tema */
 #switch-button:checked ~ .theme-label .fa-sun {
   opacity: 0;
 }
-
 #switch-button:checked ~ .theme-label .fa-moon {
   opacity: 1;
 }
 .theme-label {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px #00ffff;
 }
-
 #switch-button:checked ~ .theme-label {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px #7b61ff;
 }

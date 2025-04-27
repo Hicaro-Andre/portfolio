@@ -123,6 +123,7 @@ html, body {
   color: var(--text-color);
   transition: background-color 0.4s ease, color 0.4s ease;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 h1 {
   font-family: "Poppins", sans-serif;
@@ -218,7 +219,7 @@ h3 {
 
 /* Efeito de entrada para os cards */
 .card__port {
-  transform: translateX(-150px);
+  transform: translateX(-30px);
 }
 
 .card__port.visible {
@@ -272,7 +273,7 @@ h3 {
 
 /* Entrada do texto da esquerda para a direita */
 .about__text {
-  transform: translateX(-50px);
+  transform: translateX(-30px);
 }
 
 .about__text.visible {

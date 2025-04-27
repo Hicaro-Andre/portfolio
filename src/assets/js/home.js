@@ -23,3 +23,63 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+
+//efeito do portifolio 
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.2,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".animated").forEach(element => {
+    observer.observe(element);
+  });
+});
+
+//efeito no skill
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.2,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".card__skills").forEach(card => {
+    observer.observe(card);
+  });
+});
+
+
+
+//efeito no contato
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.2,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".about__text, .about__cta").forEach(element => {
+    observer.observe(element);
+  });
+});

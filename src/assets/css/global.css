@@ -90,6 +90,7 @@ html,body.light-mode {
  --box-shadow-card-contact-hover:0 5px 10px #7b61ff;
  --bg-form: linear-gradient(135deg, #e6dbd0, #d0c1b3);
  --bg-input:linear-gradient(135deg, #f8f2ec, #efe4da);
+ --color-button:#ffffff;
 }
 html.light-mode h1, body.light-mode h1 {
   color: var(--highlight-color);
@@ -198,4 +199,93 @@ h3 {
 }
 #switch-button:checked ~ .theme-label {
   box-shadow: 0 0 10px #7b61ff;
+}
+
+
+
+
+/*efeito no portifolio*/
+:root {
+  --animation-duration: 2s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animated {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: var(--animation-duration) var(--timing-function);
+}
+
+/* Efeito de entrada para os cards */
+.card__port {
+  transform: translateX(-150px);
+}
+
+.card__port.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+/*efeito no skill*/
+:root {
+  --animation-duration: 2s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animated {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: var(--animation-duration) var(--timing-function);
+}
+
+/* Efeito de entrada de baixo para cima */
+.card__skills {
+  transform: translateY(50px);
+}
+
+.card__skills.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card__skills:nth-child(1) { animation-delay: 0.2s; }
+.card__skills:nth-child(2) { animation-delay: 0.4s; }
+.card__skills:nth-child(3) { animation-delay: 0.6s; }
+.card__skills:nth-child(4) { animation-delay: 0.8s; }
+/* Continue para os próximos cards */
+
+
+/*efeito no about*/
+:root {
+  --animation-duration: 0.8s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animated {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: var(--animation-duration) var(--timing-function);
+}
+
+/* Entrada do texto da esquerda para a direita */
+.about__text {
+  transform: translateX(-50px);
+}
+
+.about__text.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Entrada do botão da direita para a esquerda */
+.about__cta {
+  transform: translateX(50px);
+}
+
+.about__cta.visible {
+  opacity: 1;
+  transform: translateX(0);
 }

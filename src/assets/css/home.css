@@ -141,7 +141,7 @@
     overflow: hidden;
     width: 300px;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     animation: fadeUp 1s ease forwards;
 }
@@ -151,8 +151,12 @@
 }
 .card__skills img {
   width: 100%;
-  height: 70px;
-  border-radius: 10px 10px 0 0 ;
+  height: 65px;
+  border-radius: 10px 10px 0 0;
+}
+.card__skills h3{
+  margin: 5px 0 5px;
+  font-size: 1.2rem;
 }
 .card__skills p{
   color: var(--bg-text-color-port);
@@ -350,5 +354,7 @@ footer{
 .whatsapp-button:hover {
   transform: scale(1.1);
 }
+
+
 
 

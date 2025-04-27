@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 .contact {
   display: flex;
   justify-content: center;
@@ -69,7 +80,7 @@ textarea {
   justify-content: center;
   gap: 10px;
   background-color: var(--highlight-color);
-  color: #111;
+  color: var(--color-button);
   border: none;
   padding: 12px 18px;
   border-radius: 30px;

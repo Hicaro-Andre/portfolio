@@ -1,12 +1,11 @@
-//FORMULARIO
+// TODO: FORMULÁRIO
 
-// Inicializa EmailJS
+// TODO: Inicializa EmailJS
 document.addEventListener("DOMContentLoaded", function() {
-  emailjs.init("C42PRG_XpaQf8mZAc"); // <-- Substituir pelo seu User ID do EmailJS
-  
+  emailjs.init("C42PRG_XpaQf8mZAc");   
   const form = document.getElementById("contact-form");
   
-  // Função para validar campos em tempo real
+  // TODO: Função para validar campos em tempo real
   function validateInput(input) {
     const value = input.value.trim();
     let isValid = false;
@@ -20,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
       isValid = value.length > 0;
     }
   
-    // Verifica se já existe um ícone de validação e remove apenas ele
+    // TODO: Verifica se já existe um ícone de validação e remove apenas ele
     const existingIcon = input.parentElement.querySelector(".validation-icon");
     if (existingIcon) existingIcon.remove();
   
     const icon = document.createElement("span");
-    icon.className = "validation-icon"; // adiciona classe para facilitar
+    icon.className = "validation-icon"; // TODO: adiciona classe para facilitar
     icon.style.marginLeft = "8px";
   
     if (isValid) {
@@ -36,17 +35,17 @@ document.addEventListener("DOMContentLoaded", function() {
       icon.style.color = "red";
     }
   
-    input.parentElement.appendChild(icon); // insere dentro do container pai
+    input.parentElement.appendChild(icon); // TODO: insere dentro do container pai
     return isValid;
   }
   
   
-  // Validar inputs em tempo real
+  // TODO: Validar inputs em tempo real
   document.querySelectorAll("#contact-form input, #contact-form textarea").forEach(input => {
     input.addEventListener("input", () => validateInput(input));
   });
   
-  // Modal Simples
+  // TODO: Modal Simples
   function showModal(message, success = true) {
     const modal = document.createElement("div");
     modal.style.position = "fixed";
@@ -65,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
   
     document.body.appendChild(modal);
   
-    setTimeout(() => modal.remove(), 3000); // Remove modal após 3 segundos
+    setTimeout(() => modal.remove(), 3000); // TODO: Remove modal após 3 segundos
   }
   
-  // Loading Spinner
+  // TODO:Loading Spinner
   function showLoading() {
     const spinner = document.createElement("div");
     spinner.id = "loading-spinner";
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("loading-spinner")?.remove();
   }
   
-  // Animação para o spinner
+  // TODO: Animação para o spinner
   const style = document.createElement('style');
   style.innerHTML = `
   @keyframes spin {
@@ -94,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }`;
   document.head.appendChild(style);
   
-  // Enviar Formulário
+  // TODO: Enviar Formulário
   form.addEventListener("submit", function(event) {
     event.preventDefault();
   
@@ -122,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(() => {
         hideLoading();
         showModal("Mensagem enviada com sucesso!");
-        form.reset(); // Limpa o formulário
+        form.reset(); // TODO: Limpa o formulário
         document.querySelectorAll("#contact-form span").forEach(span => span.remove()); // Remove ícones ✓ ✕
       }, (error) => {
         hideLoading();

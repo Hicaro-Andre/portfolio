@@ -1,8 +1,9 @@
+// TODO: Alteração do Tema Dark/Light
 document.addEventListener('DOMContentLoaded', function() {
   const themeSwitch = document.getElementById('switch-button');
   const body = document.body;
 
-  // Verifica tema salvo ou preferência do sistema
+  // TODO: Verifica tema salvo ou preferência do sistema
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     themeSwitch.checked = true;
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     body.classList.add('light-mode');
   }
 
-  // Alternância de tema
+  // TODO: Alternância de tema
   themeSwitch.addEventListener('change', function() {
     if (this.checked) {
       body.classList.add('light-mode');
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//efeito do portifolio 
+// TODO: Efeito do portifolio 
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     threshold: 0.2,
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//efeito no skill
+// TODO: Efeito no skill
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     threshold: 0.2,
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//efeito no contato
+// TODO: Efeito no contato
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     threshold: 0.2,

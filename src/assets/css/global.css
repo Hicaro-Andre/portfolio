@@ -1,36 +1,43 @@
-/* Estilos globais */
+/**? Estilos globais */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*--TEMA ESCURO--*/
+/**? -TEMA ESCURO--*/
 :root {
-  /*globals*/
+  /**? efeitos no portifolio */
+  --animation-duration: 3s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /**? efeitos no skill */
+  --animation-duration: 3s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /**? efeitos no about */
+  --animation-duration: 3s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /**? globals */
   --bg-color: #121212;
   --text-color: #f0f0f0;
   --highlight-color: #00ffff;
   --bg-button-tema: #1e1e1e;
-  /*port*/
+  /**? Port */
   --bg-card-port:linear-gradient(135deg, #2b2b2b, #1e1e1e);
   --box-shadow-card-port-hover:0 5px 10px #00ffff;
   --bg-text-color-port: #ccc;
-  /*skills*/
+  /**? skills */
   --bg-card-skills: linear-gradient(135deg, #2b2b2b, #1e1e1e);
   --box-shadow-card-skills-hover:0 5px 10px #00ffff;
-  /*about*/
+  /**? about */
   --bg-description:linear-gradient(135deg, #2b2b2b, #1e1e1e);
   --box-shadow-card-about-hover:0 5px 10px #00ffff;
   --bg-button: #00ffff;
   --color-button:#111;
   --button-hover:#00cccc;
-  /*about - responsive*/
-  /*675px*/
+  /**? about - responsive */
   --color-text-description:#ddd;
-  /*1024px*/
   --box-shadow-description: 0 4px 20px rgba(0, 0, 0, 0.1);
-  /*footer*/
+  /**? footer */
   --color-text-footer:#aaa;
   --color-button:#111;
   --button-hover:#00cccc;
@@ -47,7 +54,7 @@
 }
 :root h1 {
   color: transparent;
-  -webkit-text-stroke: 1px var(--highlight-color);/* cor da borda*/
+  -webkit-text-stroke: 1px var(--highlight-color);/**? cor da borda*/
 }
 body:not(.light-mode) h1:hover, 
 html:not(.light-mode) h1:hover {
@@ -60,33 +67,33 @@ html:not(.light-mode) h1:hover {
 
 
 
-/*--TEMA CLARO--*/
+/**? TEMA CLARO */
 html,body.light-mode {
-  /*globals*/
+  /**? globals */
   --bg-color: #f2e8dc;
   --text-color: #222222;
   --highlight-color: #7b61ff;
   --bg-button-tema: #ffffff; 
-  /*port*/
+  /**? port */
   --bg-card-port:linear-gradient(135deg, #ffffff, #f1e6d9);
   --box-shadow-card-port-hover:0 5px 10px #7b61ff;
   --bg-text-color-port:#4a3b91;
-  /*skills*/
+  /**? skills */
   --bg-card-skills: linear-gradient(135deg, #ffffff, #f1e6d9);
   --box-shadow-card-skills-hover:0 5px 10px #7b61ff;
-  /*about*/
+  /**? about */
   --bg-description:rgba(0, 0, 0, 0.05);
   --bg-button:  #7b61ff;
   --color-button:#ffffff;
   --button-hover:#6245e0;
   --color-text-description: #333333; 
   --box-shadow-description: 0 4px 20px rgba(0, 0, 0, 0.1);
-  /*footer*/
+  /**? footer */
   --color-text-footer: #777777;
   --color-svg: #ffffff;
   --color-highlight: #6200ea; 
 
-  /**PAGINA DE CONTATO**/
+  /**? PAGINA DE CONTATO **/
  --bg-card-contact: linear-gradient(135deg, #ffffff, #f1e6d9);
  --box-shadow-card-contact-hover:0 5px 10px #7b61ff;
  --bg-form: linear-gradient(135deg, #e6dbd0, #d0c1b3);
@@ -107,7 +114,7 @@ body.light-mode h1:hover {
   -webkit-text-fill-color: #6200ea;
   transform: scale(1.05);
 }
-/* aqui é onde muda os ícones de cor para cada tema*/
+/**? aqui é onde muda os ícones de cor para cada tema */
 .icon-light {
   display: none;
 }
@@ -117,7 +124,6 @@ body.light-mode .icon-dark {
 body.light-mode .icon-light {
   display: inline-block;
 }
-
 
 
 html, body {
@@ -153,7 +159,7 @@ h3 {
 }
 
 
-/* botão de alterar tema*/
+/**? botão de alterar tema */
 .theme-switch {
   display: none;
 }
@@ -181,7 +187,7 @@ h3 {
   font-size: 20px;
   transition: all 0.3s ease;
 }
-/* ícones do botão de alterar tema */
+/**? ícones do botão de alterar tema */
 .theme-label .fa-sun {
   color: #00ffff;
   opacity: 1;
@@ -190,7 +196,7 @@ h3 {
   color: #7b61ff;
   opacity: 0;
 }
-/* a sombra dos ícones de alterar tema */
+/**? a sombra dos ícones de alterar tema */
 #switch-button:checked ~ .theme-label .fa-sun {
   opacity: 0;
 }
@@ -205,21 +211,14 @@ h3 {
 }
 
 
-
-
-/*efeito no portifolio*/
-:root {
-  --animation-duration: 3s;
-  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
+/**? Efeito no portifolio */
 .animated {
   opacity: 0;
   will-change: transform, opacity;
   transition: var(--animation-duration) var(--timing-function);
 }
 
-/* Efeito de entrada para os cards */
+/**? Efeito de entrada para os cards */
 .card__port {
   transform: translateX(-30px);
 }
@@ -230,21 +229,14 @@ h3 {
 }
 
 
-
-
-/*efeito no skill*/
-:root {
-  --animation-duration: 3s;
-  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
+/**? Efeito no skill */
 .animated {
   opacity: 0;
   will-change: transform, opacity;
   transition: var(--animation-duration) var(--timing-function);
 }
 
-/* Efeito de entrada de baixo para cima */
+/**? Efeito de entrada de baixo para cima */
 .card__skills {
   transform: translateY(50px);
 }
@@ -258,14 +250,10 @@ h3 {
 .card__skills:nth-child(2) { animation-delay: 0.4s; }
 .card__skills:nth-child(3) { animation-delay: 0.6s; }
 .card__skills:nth-child(4) { animation-delay: 0.8s; }
-/* Continue para os próximos cards */
+/**? Continue para os próximos cards */
 
 
-/*efeito no about*/
-:root {
-  --animation-duration: 3s;
-  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-}
+/**? Efeito no about */
 
 .animated {
   opacity: 0;
@@ -273,7 +261,7 @@ h3 {
   transition: var(--animation-duration) var(--timing-function);
 }
 
-/* Entrada do texto da esquerda para a direita */
+/**? Entrada do texto da esquerda para a direita */
 .about__text {
   transform: translateX(-30px);
 }
@@ -283,7 +271,7 @@ h3 {
   transform: translateX(0);
 }
 
-/* Entrada do botão da direita para a esquerda */
+/**? Entrada do botão da direita para a esquerda */
 .about__cta {
   transform: translateX(50px);
 }

@@ -43,6 +43,7 @@
  --box-shadow-card-contact-hover:0 5px 10px #00ffff;
  --bg-form: #1e1e1e;
  --bg-input: #2a2a2a;
+ --text-color:#ffffff;
 }
 :root h1 {
   color: transparent;
@@ -91,6 +92,7 @@ html,body.light-mode {
  --bg-form: linear-gradient(135deg, #e6dbd0, #d0c1b3);
  --bg-input:linear-gradient(135deg, #f8f2ec, #efe4da);
  --color-button:#ffffff;
+ --text-color:#1e1e1e;
 }
 html.light-mode h1, body.light-mode h1 {
   color: var(--highlight-color);
@@ -207,7 +209,7 @@ h3 {
 
 /*efeito no portifolio*/
 :root {
-  --animation-duration: 2s;
+  --animation-duration: 3s;
   --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -232,7 +234,7 @@ h3 {
 
 /*efeito no skill*/
 :root {
-  --animation-duration: 2s;
+  --animation-duration: 3s;
   --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -261,7 +263,7 @@ h3 {
 
 /*efeito no about*/
 :root {
-  --animation-duration: 0.8s;
+  --animation-duration: 3s;
   --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 

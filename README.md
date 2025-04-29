@@ -1,6 +1,6 @@
 # Portfólio Hicaro André
 
-![Badge Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Badge Status](https://img.shields.io/badge/status-versão1.0%concluido-grenn)
 
 Este é o meu portfólio pessoal, criado para apresentar meus projetos, habilidades e experiência como desenvolvedor web.
 

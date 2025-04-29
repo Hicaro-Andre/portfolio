@@ -9,35 +9,45 @@ document.addEventListener("DOMContentLoaded", function() {
   function validateInput(input) {
     const value = input.value.trim();
     let isValid = false;
+    let errorMessage = "";
   
+    // Regras de validação
     if (input.type === "email") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       isValid = emailRegex.test(value);
+      if (!isValid) errorMessage = "Digite um e-mail válido.";
     } else if (input.id === "mensagem") {
       isValid = value.length >= 6;
+      if (!isValid) errorMessage = "A mensagem deve ter no mínimo 6 caracteres.";
     } else {
       isValid = value.length > 0;
+      if (!isValid) errorMessage = `O campo "${input.name}" é obrigatório.`;
     }
   
-    // TODO: Verifica se já existe um ícone de validação e remove apenas ele
-    const existingIcon = input.parentElement.querySelector(".validation-icon");
-    if (existingIcon) existingIcon.remove();
-  
-    const icon = document.createElement("span");
-    icon.className = "validation-icon"; // TODO: adiciona classe para facilitar
-    icon.style.marginLeft = "8px";
+    // Limpa estados anteriores
+    input.classList.remove("input-error", "input-valid");
+    const existingError = input.parentElement.querySelector(".error-message");
+    if (existingError) existingError.remove();
   
     if (isValid) {
-      icon.textContent = "✓";
-      icon.style.color = "green";
+      input.classList.add("input-valid");
     } else {
-      icon.textContent = "✕";
-      icon.style.color = "red";
+      input.classList.add("input-error");
+  
+      //TODO: Cria e exibe a mensagem de erro
+      const error = document.createElement("div");
+      error.className = "error-message";
+      error.textContent = errorMessage;
+      error.style.color = "#e74c3c";
+      error.style.fontSize = "0.9rem";
+      error.style.marginTop = "4px";
+      input.after(error);
+
     }
   
-    input.parentElement.appendChild(icon); // TODO: insere dentro do container pai
     return isValid;
   }
+  
   
   
   // TODO: Validar inputs em tempo real
@@ -121,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(() => {
         hideLoading();
         showModal("Mensagem enviada com sucesso!");
-        form.reset(); // TODO: Limpa o formulário
+        form.reset(); // Limpa o formulário
         document.querySelectorAll("#contact-form span").forEach(span => span.remove()); // Remove ícones ✓ ✕
       }, (error) => {
         hideLoading();
@@ -129,4 +139,8 @@ document.addEventListener("DOMContentLoaded", function() {
         showModal("Erro ao enviar. Tente novamente.", false);
       });
   });
+  
   });
+
+
+ 

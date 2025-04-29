@@ -21,6 +21,8 @@
   --text-color: #f0f0f0;
   --highlight-color: #00ffff;
   --bg-button-tema: #1e1e1e;
+  /**? Hero */
+  --dev: #ffffff;
   /**? Port */
   --bg-card-port:linear-gradient(135deg, #2b2b2b, #1e1e1e);
   --box-shadow-card-port-hover:0 5px 10px #00ffff;
@@ -45,12 +47,13 @@
   --color-highlight: #00ffff;
 
 
- /**PAGINA DE CONTATO**/
+ /**? PAGINA DE CONTATO **/
  --bg-card-contact: linear-gradient(135deg, #2b2b2b, #1e1e1e);
  --box-shadow-card-contact-hover:0 5px 10px #00ffff;
  --bg-form: #1e1e1e;
  --bg-input: #2a2a2a;
  --text-color:#ffffff;
+ --placeholder-color:#a9a9a9;
 }
 :root h1 {
   color: transparent;
@@ -74,6 +77,8 @@ html,body.light-mode {
   --text-color: #222222;
   --highlight-color: #7b61ff;
   --bg-button-tema: #ffffff; 
+   /**? Hero */
+   --dev: #4a3b91;
   /**? port */
   --bg-card-port:linear-gradient(135deg, #ffffff, #f1e6d9);
   --box-shadow-card-port-hover:0 5px 10px #7b61ff;
@@ -100,6 +105,7 @@ html,body.light-mode {
  --bg-input:linear-gradient(135deg, #f8f2ec, #efe4da);
  --color-button:#ffffff;
  --text-color:#1e1e1e;
+ --placeholder-color:#a9a9a9;
 }
 html.light-mode h1, body.light-mode h1 {
   color: var(--highlight-color);
@@ -139,6 +145,20 @@ h1 {
   font-size: clamp(2.5rem, 10vw, 6.25rem);
   text-align: center;
   transition: all 0.3s ease;
+  animation: fadeSlideIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 h2 {
   font-family: "Poppins", sans-serif;
@@ -148,6 +168,19 @@ h2 {
   text-align: center;
   color: var(--highlight-color);;
   padding: 20px;
+  opacity: 0; 
+  animation: fadeIn 1s ease-in-out forwards;
+}
+/**? Animação do h2 no hero*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 h3 {
   font-family: "Poppins", sans-serif;

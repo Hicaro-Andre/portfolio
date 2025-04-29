@@ -27,15 +27,22 @@
     <div class="container">
       <!--hero-->
       <header>
-        <section class="hero">
+        <section class="hero" id="hero">
           <div class="hero__container">
             <div class="hero__title">
-              <h2>OPA! <span class="wave">👋</span> meu nome é</h2>
+              <h2 class="fade-in">Olá! <span class="wave">🙋🏻‍♂️</span> meu nome é
               <h1>Hicaro André</h1>
+              <div class="role-wrapper">
+                <span class="dev-label">Desenvolvedor</span>
+                <span class="typing-wrapper">
+                  <span class="typing">Full Stack</span
+                  ><span class="cursor">|</span>
+                </span>
+              </div>
             </div>
 
             <div class="hero__icons">
-              <a href="https://www.linkedin.com/in/hicaroandre/">
+              <a href="https://www.linkedin.com/in/hicaroandre/" class="icon-fade">
                 <img
                   class="icon-dark"
                   src="src/assets/images/hero_image/linkedin.svg"
@@ -48,7 +55,7 @@
                 />
               </a>
 
-              <a href="https://github.com/Hicaro-Andre">
+              <a href="https://github.com/Hicaro-Andre" class="icon-fade">
                 <img
                   class="icon-dark"
                   src="src/assets/images/hero_image/github-dark.svg"
@@ -61,7 +68,7 @@
                 />
               </a>
 
-              <a href="https://www.instagram.com/hicaroandre/">
+              <a href="https://www.instagram.com/hicaroandre/" class="icon-fade">
                 <img
                   class="icon-dark"
                   src="src/assets/images/hero_image/instagram-dark.svg"
@@ -317,19 +324,25 @@
 
         <!--about-->
         <section class="about">
-          <h2 class="animated fade-in">Sobre Mim</h2>
+          <h2>Sobre Mim</h2>
           <div class="about__content">
             <div class="about__text animated slide-in-left">
               <div class="about__description">
                 <p>
-                  Muito prazer! Sou um programador full stack movido pela paixão
-                  por tecnologia. Com experiência em diversas stacks, transformo
-                  ideias em soluções digitais robustas e elegantes.
+                  Prazer, sou um desenvolvedor Full Stack apaixonado por
+                  tecnologia e inovação. Tenho experiência prática em diversas
+                  stacks e estou sempre em busca de criar soluções digitais
+                  robustas, eficientes e com design elegante.
                 </p>
                 <p>
-                  Neste espaço, compartilho não apenas projetos, mas a filosofia
-                  por trás de cada linha de código - onde criatividade e lógica
-                  se encontram para construir o futuro.
+                  Neste portfólio, compartilho não apenas projetos, mas a
+                  mentalidade por trás de cada desenvolvimento — onde
+                  criatividade, lógica e foco no usuário se unem para
+                  transformar ideias em experiências reais.
+                </p>
+                <p>
+                  Estou pronto para contribuir com equipes que valorizam
+                  qualidade, colaboração e resultados.
                 </p>
               </div>
             </div>
@@ -355,7 +368,7 @@
       <!--rodapé-->
       <footer>
         <div class="footer-content">
-          <a href="curriculo.pdf" download class="download-btn">
+          <a href="src/assets/cv-hicaro.pdf" download class="download-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path
                 d="M12 15V3M12 15L8 11M12 15L16 11M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15"
@@ -371,6 +384,25 @@
             <span class="highlight">© 2025 Hicaro André</span> | Todos os
             direitos reservados
           </p>
+        </div>
+        <div class="back_topo">
+          <a href="#hero">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-arrow-up"
+            >
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+            Voltar para o topo
+          </a>
         </div>
       </footer>
     </div>

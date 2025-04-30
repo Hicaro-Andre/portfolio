@@ -23,6 +23,7 @@
   --bg-button-tema: #1e1e1e;
   /**? Hero */
   --dev: #ffffff;
+  /* --shadow-h1: 4px 4px 6px #00ffff; */
   /**? Port */
   --bg-card-port:linear-gradient(135deg, #2b2b2b, #1e1e1e);
   --box-shadow-card-port-hover:0 5px 10px #00ffff;
@@ -79,6 +80,7 @@ html,body.light-mode {
   --bg-button-tema: #ffffff; 
    /**? Hero */
    --dev: #4a3b91;
+   --shadow-h1: 3px 3px 5px rgba(0, 0, 0, 0.7);
   /**? port */
   --bg-card-port:linear-gradient(135deg, #ffffff, #f1e6d9);
   --box-shadow-card-port-hover:0 5px 10px #7b61ff;
@@ -148,7 +150,9 @@ h1 {
   animation: fadeSlideIn 1s ease-out forwards;
   opacity: 0;
   animation-delay: 0.3s;
+  text-shadow:var(--shadow-h1) 
 }
+
 
 @keyframes fadeSlideIn {
   0% {

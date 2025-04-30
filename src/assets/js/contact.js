@@ -10,43 +10,59 @@ document.addEventListener("DOMContentLoaded", function() {
     const value = input.value.trim();
     let isValid = false;
     let errorMessage = "";
-  
-    // Regras de validação
+
+    // TODO:Lista de domínios válidos para e-mails
+    const validDomains = ["gmail.com", "hotmail.com", "outlook.com", "yahoo.com", "live.com", "icloud.com"];
+
     if (input.type === "email") {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      isValid = emailRegex.test(value);
-      if (!isValid) errorMessage = "Digite um e-mail válido.";
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        isValid = emailRegex.test(value);
+
+        if (isValid) {
+            const domain = value.split("@")[1]; // TODO: Obtém o domínio do e-mail
+            isValid = validDomains.includes(domain);
+
+            if (!isValid) errorMessage = "Digite um e-mail válido de um provedor reconhecido.";
+        } else {
+            errorMessage = "Digite um e-mail válido.";
+        }
     } else if (input.id === "mensagem") {
-      isValid = value.length >= 6;
-      if (!isValid) errorMessage = "A mensagem deve ter no mínimo 6 caracteres.";
+        isValid = value.length >= 6;
+        if (!isValid) errorMessage = "A mensagem deve ter no mínimo 6 caracteres.";
+    } else if (input.id === "nome") {
+        // TODO: Regra para validar nome
+        const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+        isValid = nameRegex.test(value) && value.length >= 3 && value.length <= 50;
+
+        if (!isValid) errorMessage = "Digite um nome válido: mínimo 3 caracteres, sem números ou símbolos).";
     } else {
-      isValid = value.length > 0;
-      if (!isValid) errorMessage = `O campo "${input.name}" é obrigatório.`;
+        isValid = value.length > 0;
+        if (!isValid) errorMessage = `O campo "${input.name}" é obrigatório.`;
     }
-  
-    // Limpa estados anteriores
+
+    // TODO: Limpa estados anteriores
     input.classList.remove("input-error", "input-valid");
     const existingError = input.parentElement.querySelector(".error-message");
     if (existingError) existingError.remove();
-  
-    if (isValid) {
-      input.classList.add("input-valid");
-    } else {
-      input.classList.add("input-error");
-  
-      //TODO: Cria e exibe a mensagem de erro
-      const error = document.createElement("div");
-      error.className = "error-message";
-      error.textContent = errorMessage;
-      error.style.color = "#e74c3c";
-      error.style.fontSize = "0.9rem";
-      error.style.marginTop = "4px";
-      input.after(error);
 
+    if (isValid) {
+        input.classList.add("input-valid");
+    } else {
+        input.classList.add("input-error");
+
+        // TODO: Cria e exibe a mensagem de erro
+        const error = document.createElement("div");
+        error.className = "error-message";
+        error.textContent = errorMessage;
+        error.style.color = "#e74c3c";
+        error.style.fontSize = "0.9rem";
+        error.style.marginTop = "4px";
+        input.after(error);
     }
-  
+
     return isValid;
-  }
+}
+
   
   
   

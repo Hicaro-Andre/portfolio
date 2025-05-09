@@ -2,22 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 2rem 1rem;
+  min-height: 100vh; /* Alterado de height para min-height */
+  padding: 1rem;/* Reduzi o padding para telas pequenas */
   min-height: 100dvh;
   box-sizing: border-box;
   margin-top: 0; 
-  overflow: hidden;
+  overflow-x: hidden; /* Garante que não haverá scroll horizontal */
 }
 .form-container {
   width: 100%;
-  max-width: 100%;  
+  max-width: 95%; /* Alterado para porcentagem para se adaptar melhor */ 
   background: var(--bg-form);
-  padding: 2rem;
+  padding: 1.5rem; /* Padding reduzido para telas pequenas */
   overflow: hidden;
   border-radius: 16px;
   box-shadow: var( --box-shadow-card-contact-hover);
   transition: all 0.3s ease;
+  box-sizing: border-box; /* Importante para cálculo correto de largura */
+  margin: 0 auto; /* Centraliza o container */
 }
 .form-container h2 {
   text-align: center;
@@ -102,71 +104,45 @@ textarea {
   font-size: 0.9rem; 
 }
 
-@media (min-width: 480px) {
-  .form-container {
-    max-width: 400px;
-    padding: 1.8rem;
-    border-radius: 14px;
-  }
 
-  .form-container h2 {
-    font-size: 1.5rem;
+@media (max-width: 359px) {
+  .form-container {
+    padding: 1rem;
   }
   input, textarea {
-    padding: 13px;
-    font-size: 1rem;
-  }
-
-  textarea {
-    height: 110px;
+    padding: 6px;
   }
 }
 
 
-@media (min-width: 768px) {
-  .contact {
-    align-items: center; 
-    padding: 2rem 1.5rem;
-  }
+@media (min-width: 360px) and (max-width: 479px) {
   .form-container {
-    max-width: 520px;
-    padding: 2.5rem;
+    max-width: 340px;
+  padding: 1.2rem;
   }
-  .form-container h2 {
-    font-size: 2rem;
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .form-container {
+    max-width: 420px;
+    padding: 1.5rem;
   }
-  .cta-button {
-    padding: 16px 28px;
-    font-size: 1.05rem;
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .form-container {
+    max-width: 500px;
+    padding: 2rem;
   }
 }
 
 
 @media (min-width: 1024px) {
-  .contact {
-    height: 100vh;
-    padding: 2rem;
-  }
   .form-container {
     max-width: 560px;
-    padding: 3rem;
-  }
-  .form-container h2 {
-    font-size: 2.2rem;
-  }
-  .form-container input,
-  .form-container textarea {
-    font-size: 1.1rem;
-    padding: 16px; 
-  }
-  .cta-button {
-    font-size: 1.1rem;
-    padding: 18px 32px;
-  }
-}
-@media (min-width: 1440px) {
-  .form-container {
-    max-width: 600px; 
+    padding: 2.5rem;
   }
 }
 
@@ -187,9 +163,6 @@ textarea {
 .home-link:hover {
   color: var(--button-hover)
 }
-
-
-
 
 .custom-modal {
   position: fixed;

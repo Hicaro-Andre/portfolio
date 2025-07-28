@@ -1,0 +1,319 @@
+/**? Estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**? -TEMA ESCURO--*/
+:root {
+  /**? efeitos no portifolio */
+  --animation-duration: 3s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /**? efeitos no skill */
+  --animation-duration: 3s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /**? efeitos no about */
+  --animation-duration: 3s;
+  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /**? globals */
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --highlight-color: #00ffff;
+  --bg-button-tema: #1e1e1e;
+  /**? Hero */
+  --dev: #ffffff;
+  /* --shadow-h1: 4px 4px 6px #00ffff; */
+  /**? Port */
+  --bg-card-port:linear-gradient(135deg, #2b2b2b, #1e1e1e);
+  --box-shadow-card-port-hover:0 5px 10px #00ffff;
+  --bg-text-color-port: #ccc;
+  /**? skills */
+  --bg-card-skills: linear-gradient(135deg, #2b2b2b, #1e1e1e);
+  --box-shadow-card-skills-hover:0 5px 10px #00ffff;
+  /**? about */
+  --bg-description:linear-gradient(135deg, #2b2b2b, #1e1e1e);
+  --box-shadow-card-about-hover:0 5px 10px #00ffff;
+  --bg-button: #00ffff;
+  --color-button:#111;
+  --button-hover:#00cccc;
+  /**? about - responsive */
+  --color-text-description:#ddd;
+  --box-shadow-description: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /**? footer */
+  --color-text-footer:#aaa;
+  --color-button:#111;
+  --button-hover:#00cccc;
+  --color-svg: #111;
+  --color-highlight: #00ffff;
+
+
+ /**? PAGINA DE CONTATO **/
+ --bg-card-contact: linear-gradient(135deg, #2b2b2b, #1e1e1e);
+ --box-shadow-card-contact-hover:0 5px 10px #00ffff;
+ --bg-form: #1e1e1e;
+ --bg-input: #2a2a2a;
+ --text-color:#ffffff;
+ --placeholder-color:#a9a9a9;
+}
+:root h1 {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--highlight-color);/**? cor da borda*/
+}
+body:not(.light-mode) h1:hover, 
+html:not(.light-mode) h1:hover {
+  color: var(--highlight-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.05);
+}
+
+
+
+/**? TEMA CLARO */
+html,body.light-mode {
+  /**? globals */
+  --bg-color: #f2e8dc;
+  --text-color: #222222;
+  --highlight-color: #7b61ff;
+  --bg-button-tema: #ffffff; 
+   /**? Hero */
+   --dev: #4a3b91;
+   --shadow-h1: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  /**? port */
+  --bg-card-port:linear-gradient(135deg, #ffffff, #f1e6d9);
+  --box-shadow-card-port-hover:0 5px 10px #7b61ff;
+  --bg-text-color-port:#4a3b91;
+  /**? skills */
+  --bg-card-skills: linear-gradient(135deg, #ffffff, #f1e6d9);
+  --box-shadow-card-skills-hover:0 5px 10px #7b61ff;
+  /**? about */
+  --bg-description:rgba(0, 0, 0, 0.05);
+  --bg-button:  #7b61ff;
+  --color-button:#ffffff;
+  --button-hover:#6245e0;
+  --color-text-description: #333333; 
+  --box-shadow-description: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /**? footer */
+  --color-text-footer: #777777;
+  --color-svg: #ffffff;
+  --color-highlight: #6200ea; 
+
+  /**? PAGINA DE CONTATO **/
+ --bg-card-contact: linear-gradient(135deg, #ffffff, #f1e6d9);
+ --box-shadow-card-contact-hover:0 5px 10px #7b61ff;
+ --bg-form: linear-gradient(135deg, #e6dbd0, #d0c1b3);
+ --bg-input:linear-gradient(135deg, #f8f2ec, #efe4da);
+ --color-button:#ffffff;
+ --text-color:#1e1e1e;
+ --placeholder-color:#a9a9a9;
+}
+html.light-mode h1, body.light-mode h1 {
+  color: var(--highlight-color);
+  -webkit-text-stroke: 0; 
+}
+
+html.light-mode h1:hover,
+body.light-mode h1:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #6200ea;
+  transform: scale(1.05);
+}
+/**? aqui é onde muda os ícones de cor para cada tema */
+.icon-light {
+  display: none;
+}
+body.light-mode .icon-dark {
+  display: none;
+}
+body.light-mode .icon-light {
+  display: inline-block;
+}
+
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 10vw, 6.25rem);
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: fadeSlideIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+  text-shadow:var(--shadow-h1) 
+}
+
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: clamp(20px, 2.5vw, 25px);
+  margin: 0;  
+  text-align: center;
+  color: var(--highlight-color);;
+  padding: 20px;
+  opacity: 0; 
+  animation: fadeIn 1s ease-in-out forwards;
+}
+/**? Animação do h2 no hero*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 2.5vw, 25px);
+  margin: 0;  
+  text-align: center;
+  color: var(--text-color);
+}
+
+
+/**? botão de alterar tema */
+.theme-switch {
+  display: none;
+}
+.theme-label {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-button-tema);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+.theme-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.theme-label i {
+  position: absolute;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+/**? ícones do botão de alterar tema */
+.theme-label .fa-sun {
+  color: #00ffff;
+  opacity: 1;
+}
+.theme-label .fa-moon {
+  color: #7b61ff;
+  opacity: 0;
+}
+/**? a sombra dos ícones de alterar tema */
+#switch-button:checked ~ .theme-label .fa-sun {
+  opacity: 0;
+}
+#switch-button:checked ~ .theme-label .fa-moon {
+  opacity: 1;
+}
+.theme-label {
+  box-shadow: 0 0 5px #00ffff;
+}
+#switch-button:checked ~ .theme-label {
+  box-shadow: 0 0 10px #7b61ff;
+}
+
+
+/**? Efeito no portifolio */
+.animated {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: var(--animation-duration) var(--timing-function);
+}
+
+/**? Efeito de entrada para os cards */
+.card__port {
+  transform: translateX(-30px);
+}
+
+.card__port.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/**? Efeito no skill */
+.animated {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: var(--animation-duration) var(--timing-function);
+}
+
+/**? Efeito de entrada de baixo para cima */
+.card__skills {
+  transform: translateY(50px);
+}
+
+.card__skills.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card__skills:nth-child(1) { animation-delay: 0.2s; }
+.card__skills:nth-child(2) { animation-delay: 0.4s; }
+.card__skills:nth-child(3) { animation-delay: 0.6s; }
+.card__skills:nth-child(4) { animation-delay: 0.8s; }
+/**? Continue para os próximos cards */
+
+
+/**? Efeito no about */
+
+.animated {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: var(--animation-duration) var(--timing-function);
+}
+
+/**? Entrada do texto da esquerda para a direita */
+.about__text {
+  transform: translateX(-30px);
+}
+
+.about__text.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/**? Entrada do botão da direita para a esquerda */
+.about__cta {
+  transform: translateX(50px);
+}
+
+.about__cta.visible {
+  opacity: 1;
+  transform: translateX(0);
+}

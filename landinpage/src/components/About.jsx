@@ -1,13 +1,14 @@
 import React from 'react';
 import '../styles/About.css';
-import { useNavigate } from 'react-router-dom'; // Se estiver usando React Router
 
 const About = () => {
-  const navigate = useNavigate(); // Para navegação programática
-
   const handleContactClick = () => {
-    navigate('/contact'); // Redireciona para a página de contato
-    // Ou use window.location.href = '/contact.html' se não estiver usando Router
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      alert("Seção de contato não encontrada!");
+    }
   };
 
   return (

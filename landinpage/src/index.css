@@ -317,3 +317,30 @@ h3 {
   opacity: 1;
   transform: translateX(0);
 }
+
+/**? - Botão Whatsapp -*/
+.whatsapp-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  animation: bounce 1.8s infinite;
+}
+.whatsapp-button img {
+  width: 40px;
+  height: 40px;
+}
+.whatsapp-button:hover {
+  transform: scale(1.2);
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

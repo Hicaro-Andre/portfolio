@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import Hero from './components/Hero.jsx';
 import Portfolio from './components/Portifolio.jsx';
 import Skills from './components/Skills.jsx';
+import About from './components/About.jsx';
+import Footer from './components/Footer.jsx';
 
 
 function App() {
@@ -51,6 +53,8 @@ function App() {
       <Hero />
       <Portfolio />
       <Skills />
+      <About />
+      <Footer />
 
 
       {/* Botão WhatsApp */}

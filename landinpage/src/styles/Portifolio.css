@@ -1,0 +1,41 @@
+/**? - Portifolio -*/
+.port__container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  padding: 20px;
+}
+.card__port{
+  background: var(--bg-card-port);
+  border-radius: 16px;
+  overflow: hidden;
+  width: 320px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 1s ease forwards;
+}
+.card__port:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--box-shadow-card-port-hover)
+}
+.card__port img{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.card__port h3 {
+  margin: 15px 0 10px;
+  font-size: 1.4rem;
+}
+.card__port p {
+  color: var(--bg-text-color-port);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+@media (min-width: 1024px) {
+  .port__container{
+    gap: 90px;
+  }
+}

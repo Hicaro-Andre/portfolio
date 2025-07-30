@@ -1,0 +1,171 @@
+/**? - Hero - */
+.hero {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;    
+  padding: 1rem;
+}
+.hero__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+.hero__title{
+  max-width: 100%;
+  width: auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.fade-in {
+  animation: fadeInUp 1s ease-out forwards;
+}
+/* Animação de entrada suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*? Desenvolvedor Full Stack */
+/*! Falta Organizar as classes com os nomes corretos */ 
+.role-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  gap: 5px; 
+  margin: 15px;
+  font-size: clamp(20px, 5vw, 30px);
+}
+.typing-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.dev-label {
+  color: var(--dev);
+}
+
+.typing {
+  display: inline-block;
+  animation: typing 2.5s steps(10) forwards;
+  color: var(--highlight-color)
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s steps(1) infinite;
+  color: var(--highlight-color)
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10ch;
+  }
+}
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.hero__icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 10px;
+  
+}
+.hero__icons img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+.hero__icons a img {
+  animation: floatWave 3s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/**? - Desfasar cada ícone com delay diferente -*/
+.hero__icons a:nth-child(1) img {
+  animation-delay: 0s;
+}
+.hero__icons a:nth-child(2) img {
+  animation-delay: 0.3s;
+}
+.hero__icons a:nth-child(3) img {
+  animation-delay: 0.6s;
+}
+
+/**? - Animação de flutuação tipo onda - */
+@keyframes floatWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/*? Animação de entrada dos ícones */
+.icon-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpIcons 0.8s ease forwards;
+}
+
+.icon-fade:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.icon-fade:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.icon-fade:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeInUpIcons {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__arrow {
+  display: flex;
+  justify-content: center;
+}
+.hero__arrow img {
+  width: 50px;
+  height: auto;
+  animation: bounce 2s ease-in-out infinite;
+  cursor: pointer;
+}
+/**? - Animação do arrow - */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(10px);
+  }
+
+  60% {
+    transform: translateY(6px);
+  }
+}

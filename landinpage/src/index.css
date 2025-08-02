@@ -17,9 +17,9 @@
   --animation-duration: 3s;
   --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   /**? globals */
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --highlight-color: #00ffff;
+  --bg-color: #0d1117;
+  --text-color: #aaaaaa;
+  --highlight-color: #58a6ff;
   --bg-button-tema: #1e1e1e;
   /**? Hero */
   --dev: #ffffff;
@@ -74,9 +74,9 @@ html:not(.light-mode) h1:hover {
 /**? TEMA CLARO */
 html,body.light-mode {
   /**? globals */
-  --bg-color: #f2e8dc;
+  --bg-color: #fafcfe;
   --text-color: #222222;
-  --highlight-color: #7b61ff;
+  --highlight-color:#2563eb;
   --bg-button-tema: #ffffff; 
    /**? Hero */
    --dev: #4a3b91;

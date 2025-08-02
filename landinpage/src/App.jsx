@@ -5,6 +5,7 @@ import Portfolio from './components/Portifolio.jsx';
 import Skills from './components/Skills.jsx';
 import About from './components/About.jsx';
 import Footer from './components/Footer.jsx';
+import MyJourney from './components/MyJourney.jsx';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
       <Hero />
       <Portfolio />
       <Skills />
+      <MyJourney/>
       <About />
       <Footer />
 

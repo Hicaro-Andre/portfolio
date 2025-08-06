@@ -26,7 +26,7 @@
   /* --shadow-h1: 4px 4px 6px #00ffff; */
   /**? Port */
   --bg-card-port:linear-gradient(135deg, #2b2b2b, #1e1e1e);
-  --box-shadow-card-port-hover:0 5px 10px #00ffff;
+  --box-shadow-card-port-hover:0 5px 10px #58a6ff;
   --bg-text-color-port: #ccc;
   /**? skills */
   --bg-card-skills: linear-gradient(135deg, #2b2b2b, #1e1e1e);

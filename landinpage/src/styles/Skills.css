@@ -1,41 +1,113 @@
-/**? - Skills - */
-.skill__container{
+.skills {
+  padding: 80px 20px;
+  background: var(--bg-main);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-color);
+}
+
+/* Container */
+.skill__container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
   justify-content: center;
-  padding: 20px;
+  align-items: stretch;
 }
-.card__skills{
-    background: var(--bg-card-skills);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 300px;
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    animation: fadeUp 1s ease forwards;
+
+/* Card */
+.card__skills {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  width: 300px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease forwards;
+  overflow: hidden;
 }
-.card__skills:hover{
+
+.card__skills:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: var(--box-shadow-card-skills-hover);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
-.card__skills img {
-  width: 100%;
+
+/* Ícones (modo escuro/claro) */
+.card__skills .icon-dark,
+.card__skills .icon-light {
+  width: 65px;
   height: 65px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  transition: opacity 0.3s ease;
 }
-.card__skills h3{
-  margin: 5px 0 5px;
-  font-size: 1.2rem;
+
+.card__skills .icon-dark {
+  display: var(--show-dark-icon, block);
 }
-.card__skills p{
-  color: var(--bg-text-color-port);
+
+.card__skills .icon-light {
+  display: var(--show-light-icon, none);
+}
+
+/* Título */
+.card__skills h3 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  color: #fff;
+}
+
+/* Descrição */
+.card__skills p {
   font-size: 0.95rem;
+  color: #ccc;
   line-height: 1.5;
+  text-align: justify;
+  margin-top: 10px;
 }
-@media (min-width: 1024px) {
-  .skill__container{
-    gap: 50px;
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .card__skills {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+/* Suporte a tema claro/dark com toggle */
+[data-theme='light'] .card__skills .icon-dark {
+  display: none;
+}
+[data-theme='light'] .card__skills .icon-light {
+  display: block;
+}
+
+[data-theme='dark'] .card__skills .icon-dark {
+  display: block;
+}
+[data-theme='dark'] .card__skills .icon-light {
+  display: none;
 }

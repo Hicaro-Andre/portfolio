@@ -4,6 +4,9 @@ import Skills from "./components/Skills.jsx";
 import About from "./components/About.jsx";
 import Footer from "./components/Footer.jsx";
 import MyJourney from "./components/MyJourney.jsx";
+{/* Imagem WhatsApp */}
+import wpp from "./assets/whatsapp-dark.svg"
+
 
 function App() {
   
@@ -26,7 +29,7 @@ function App() {
       >
         <img
           className="icon-dark"
-          src="src/assets/images/whatsapp-dark.svg"
+          src={wpp}
           alt="Fale comigo no WhatsApp"
         />
       </a>

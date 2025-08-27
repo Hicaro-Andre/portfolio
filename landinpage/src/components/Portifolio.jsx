@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Portifolio.css';
 import testeprogect from "../assets/images/portifolio_image/teste.jpg"
 
-const Portfolio = () => {
+const Portifolio = () => {
   const projects = [
     {
       id: 1,
@@ -64,4 +64,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Portifolio;

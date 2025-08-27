@@ -1,15 +1,11 @@
-import React from "react";
+
 import "../styles/Hero.css";
 
 // Importe as imagens
 import linkedinDark from "../assets/images/hero_image/linkedin.svg";
-import linkedinLight from "../assets/images/hero_image/linkedin-claro.svg";
 import githubDark from "../assets/images/hero_image/github-dark.svg";
-import githubLight from "../assets/images/hero_image/github-claro.svg";
 import instagramDark from "../assets/images/hero_image/instagram-dark.svg";
-import instagramLight from "../assets/images/hero_image/instagram-claro.svg";
 import arrowDownDark from "../assets/images/hero_image/arrow-down-dark.svg";
-import arrowDownLight from "../assets/images/hero_image/arrow-down-claro.svg";
 
 const Hero = () => {
   return (
@@ -31,9 +27,6 @@ const Hero = () => {
           </div>
         </div>
 
-
-       
-
         {/* Ícones sociais */}
         <nav className="hero__icons" aria-label="Redes sociais">
           <a
@@ -47,11 +40,7 @@ const Hero = () => {
               src={linkedinDark}
               alt="Perfil no LinkedIn de Hicaro André"
             />
-            <img
-              className="icon-light"
-              src={linkedinLight}
-              alt="Perfil no LinkedIn de Hicaro André"
-            />
+            
           </a>
 
           <a
@@ -65,11 +54,7 @@ const Hero = () => {
               src={githubDark}
               alt="Perfil no GitHub de Hicaro André"
             />
-            <img
-              className="icon-light"
-              src={githubLight}
-              alt="Perfil no GitHub de Hicaro André"
-            />
+            
           </a>
 
           <a
@@ -83,24 +68,16 @@ const Hero = () => {
               src={instagramDark}
               alt="Perfil no Instagram de Hicaro André"
             />
-            <img
-              className="icon-light"
-              src={instagramLight}
-              alt="Perfil no Instagram de Hicaro André"
-            />
+          
           </a>
         </nav>
 
- {/* Botões cv */}
-          <div className="cta-wrapper">
-            <a
-              href="/cv-hicaro-andre.pdf"
-              download
-              className="cta-btn secondary"
-            >
-              Baixar CV
-            </a>
-          </div>
+        {/* Botões cv */}
+        <div className="cta-wrapper">
+          <a href="../assets/cv hicaro-dev.pdf" download className="cta-btn secondary">
+            Baixar CV
+          </a>
+        </div>
         {/* Seta animada */}
         <div className="hero__arrow">
           <a href="#port" aria-label="Ir para seção de portfólio">
@@ -109,14 +86,9 @@ const Hero = () => {
               src={arrowDownDark}
               alt="Ir para seção de portfólio"
             />
-            <img
-              className="icon-light arrow-bounce"
-              src={arrowDownLight}
-              alt="Ir para seção de portfólio"
-            />
+            
           </a>
         </div>
-
       </div>
     </section>
   );

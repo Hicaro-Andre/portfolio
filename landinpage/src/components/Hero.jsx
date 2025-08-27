@@ -1,23 +1,27 @@
-import React from 'react';
-import '../styles/Hero.css'; 
+import React from "react";
+import "../styles/Hero.css";
 
 // Importe as imagens
-import linkedinDark from '../assets/images/hero_image/linkedin.svg';
-import linkedinLight from '../assets/images/hero_image/linkedin-claro.svg';
-import githubDark from '../assets/images/hero_image/github-dark.svg';
-import githubLight from '../assets/images/hero_image/github-claro.svg';
-import instagramDark from '../assets/images/hero_image/instagram-dark.svg';
-import instagramLight from '../assets/images/hero_image/instagram-claro.svg';
-import arrowDownDark from '../assets/images/hero_image/arrow-down-dark.svg';
-import arrowDownLight from '../assets/images/hero_image/arrow-down-claro.svg';
+import linkedinDark from "../assets/images/hero_image/linkedin.svg";
+import linkedinLight from "../assets/images/hero_image/linkedin-claro.svg";
+import githubDark from "../assets/images/hero_image/github-dark.svg";
+import githubLight from "../assets/images/hero_image/github-claro.svg";
+import instagramDark from "../assets/images/hero_image/instagram-dark.svg";
+import instagramLight from "../assets/images/hero_image/instagram-claro.svg";
+import arrowDownDark from "../assets/images/hero_image/arrow-down-dark.svg";
+import arrowDownLight from "../assets/images/hero_image/arrow-down-claro.svg";
 
 const Hero = () => {
   return (
     <section className="hero" id="hero">
       <div className="hero__container">
         <div className="hero__title">
-          <h2 className="fade-in">Olá! <span className="wave">👋</span> meu nome é</h2>
+          <h2 className="fade-in">
+            Hey! <span className="wave">👋</span> eu sou
+          </h2>
           <h1>Hicaro André</h1>
+
+          {/* Desenvolvedor Full Stack */}
           <div className="role-wrapper">
             <span className="dev-label">Desenvolvedor</span>
             <span className="typing-wrapper">
@@ -27,60 +31,92 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero__icons">
-          <a href="https://www.linkedin.com/in/hicaroandre/" className="icon-fade">
+
+       
+
+        {/* Ícones sociais */}
+        <nav className="hero__icons" aria-label="Redes sociais">
+          <a
+            href="https://www.linkedin.com/in/hicaroandre/"
+            className="icon-fade"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="icon-dark"
               src={linkedinDark}
-              alt="Perfil no LinkedIn"
+              alt="Perfil no LinkedIn de Hicaro André"
             />
             <img
               className="icon-light"
               src={linkedinLight}
-              alt="Perfil no LinkedIn"
+              alt="Perfil no LinkedIn de Hicaro André"
             />
           </a>
 
-          <a href="https://github.com/Hicaro-Andre" className="icon-fade">
+          <a
+            href="https://github.com/Hicaro-Andre"
+            className="icon-fade"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="icon-dark"
               src={githubDark}
-              alt="Perfil no GitHub"
+              alt="Perfil no GitHub de Hicaro André"
             />
             <img
               className="icon-light"
               src={githubLight}
-              alt="Perfil no GitHub"
+              alt="Perfil no GitHub de Hicaro André"
             />
           </a>
 
-          <a href="https://www.instagram.com/hicaroandre/" className="icon-fade">
+          <a
+            href="https://www.instagram.com/hicaroandre/"
+            className="icon-fade"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="icon-dark"
               src={instagramDark}
-              alt="Perfil no Instagram"
+              alt="Perfil no Instagram de Hicaro André"
             />
             <img
               className="icon-light"
               src={instagramLight}
-              alt="Perfil no Instagram"
+              alt="Perfil no Instagram de Hicaro André"
             />
           </a>
-        </div>
+        </nav>
+
+ {/* Botões cv */}
+          <div className="cta-wrapper">
+            <a
+              href="/cv-hicaro-andre.pdf"
+              download
+              className="cta-btn secondary"
+            >
+              Baixar CV
+            </a>
+          </div>
+        {/* Seta animada */}
         <div className="hero__arrow">
-          <a href="#port">
+          <a href="#port" aria-label="Ir para seção de portfólio">
             <img
-              className="icon-dark"
+              className="icon-dark arrow-bounce"
               src={arrowDownDark}
-              alt="Seta"
+              alt="Ir para seção de portfólio"
             />
             <img
-              className="icon-light"
+              className="icon-light arrow-bounce"
               src={arrowDownLight}
-              alt="Seta"
+              alt="Ir para seção de portfólio"
             />
           </a>
         </div>
+
       </div>
     </section>
   );

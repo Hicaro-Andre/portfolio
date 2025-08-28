@@ -72,13 +72,6 @@ const Hero = () => {
           </a>
         </nav>
 
-        {/* Botões cv */}
-        <div className="cta-wrapper">
-          <a href="/public/cv hicaro-dev.pdf" download className="cta-btn secondary">
-            Baixar CV
-          </a>
-        </div>
-
         
         {/* Seta animada */}
         <div className="hero__arrow">

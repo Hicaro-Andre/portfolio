@@ -132,6 +132,7 @@
 
 @keyframes fadeInUpIcons { to { opacity: 1; transform: translateY(0); } }
 
+
 /* Arrow */
 .hero__arrow {
   display: flex;

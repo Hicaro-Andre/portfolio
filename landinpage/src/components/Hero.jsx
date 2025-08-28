@@ -74,7 +74,7 @@ const Hero = () => {
 
         {/* Botões cv */}
         <div className="cta-wrapper">
-          <a href="../assets/cv hicaro-dev.pdf" download className="cta-btn secondary">
+          <a href="/public/cv hicaro-dev.pdf" download className="cta-btn secondary">
             Baixar CV
           </a>
         </div>

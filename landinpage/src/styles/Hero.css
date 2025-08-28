@@ -1,4 +1,6 @@
-/** Hero - Mobile First **/
+/*?-- Mobile First --*/
+
+/*! HERO */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -32,7 +34,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Desenvolvedor Full Stack */
+/*! Desenvolvedor Full Stack */
 .role-wrapper {
   display: flex;
   align-items: center;
@@ -66,7 +68,8 @@
 @keyframes typing { from { width: 0; } to { width: 10ch; } }
 @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
 
-/* CTA Buttons */
+
+/*! CTA Buttons */
 .cta-wrapper {
   display: flex;
   gap: 10px; 
@@ -76,7 +79,7 @@
 }
 
 .cta-btn {
-  padding: 9px 18px; 
+  padding: 9px 10px; 
   border-radius: 20px;
   font-weight: 600;
   text-decoration: none;
@@ -87,15 +90,43 @@
   background: transparent;
   border: 2px solid var(--highlight-color);
   color: var(--highlight-color);
+  opacity: 0; /* início invisível */
+  transform: translateY(20px); /* leve deslocamento */
+  animation: fadeInUp 0.8s ease forwards, pulse 2s infinite;
 }
 
 .cta-btn.secondary:hover {
   background: var(--highlight-color);
   color: #fff;
   transform: scale(1.05);
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+/* Transição de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Pulsar contínuo */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-/* Ícones sociais */
+
+/*! Ícones sociais */
 .hero__icons {
   display: flex;
   justify-content: center;
@@ -133,7 +164,7 @@
 @keyframes fadeInUpIcons { to { opacity: 1; transform: translateY(0); } }
 
 
-/* Arrow */
+/*! Arrow */
 .hero__arrow {
   display: flex;
   justify-content: center;
@@ -153,8 +184,12 @@
   60% { transform: translateY(6px); }
 }
 
-/* ===================== MEDIA QUERIES ===================== */
-/* Tablets */
+
+
+
+/*TODO: ===================== MEDIA QUERIES ===================== */
+
+/*! Tablets */
 @media (min-width: 600px) {
   .hero__container { padding: 50px 20px; }
   .hero__title { margin-top: 40px; padding: 20px; }
@@ -164,7 +199,7 @@
   .hero__arrow img { width: 45px; }
 }
 
-/* Laptops */
+/*! Laptops */
 @media (min-width: 1024px) {
   .hero__container { padding: 70px 35px; }
   .hero__title { margin-top: 50px; padding: 25px; }
@@ -174,11 +209,11 @@
   .hero__arrow img { width: 50px; }
 }
 
-/* Desktops grandes */
+/*! Desktops grandes */
 @media (min-width: 1440px) {
   .hero__container { padding: 90px 50px; }
   .role-wrapper { font-size: 1.5rem; gap: 12px; margin: 20px 0; }
   .hero__icons { gap: 2.2rem; }
-  .cta-btn { padding: 15px 32px; }
+  .cta-btn { padding: 10px 25px; }
   .hero__arrow img { width: 55px; }
 }

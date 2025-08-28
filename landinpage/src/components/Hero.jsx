@@ -78,6 +78,8 @@ const Hero = () => {
             Baixar CV
           </a>
         </div>
+
+        
         {/* Seta animada */}
         <div className="hero__arrow">
           <a href="#port" aria-label="Ir para seção de portfólio">

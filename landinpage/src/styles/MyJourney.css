@@ -1,123 +1,158 @@
-.journey-container {
-  padding: 2rem;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  font-family: 'Segoe UI', sans-serif;
-  border: solid 3px blue;
+/* ===============================
+   Base Mobile First
+   =============================== */
+.journey {
+  padding: 60px 20px;
+ 
+  color: #e6edf3;
+  min-height: 100vh;
 }
 
-.journey-heading {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.journey-header {
   text-align: center;
-  color: #58a6ff;
+  margin-bottom: 40px;
 }
 
+.journey-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.journey-header p {
+  color: #9fb3c8;
+  font-size: 1rem;
+}
+
+/* Timeline vertical mobile */
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 32px;
+  position: relative;
 }
 
-.timeline-item {
+.timeline-card {
   display: flex;
+  gap: 16px;
   align-items: flex-start;
-  gap: 1rem;
-  background-color: #161b22;
-  padding: 1rem;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  background: #0b1220;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-item:hover {
-  transform: translateY(-3px);
-  background-color: #21262d;
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(88,166,255,0.4);
 }
 
-.timeline-icon {
-  font-size: 1.8rem;
-  color: #58a6ff;
+.timeline-marker {
+  flex: 0 0 48px;
+  height: 48px;
+  background: #58a6ff;
+  color: #0b1220;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-top: 4px;
 }
 
-.timeline-content {
-  flex: 1;
+.timeline-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .timeline-year {
-  font-weight: bold;
-  color: #8b949e;
+  font-weight: 600;
+  color: #58a6ff;
+  font-size: 0.85rem;
 }
 
 .timeline-title {
   font-size: 1.2rem;
-  color: #c9d1d9;
-  margin: 0.3rem 0;
+  font-weight: 700;
 }
 
-.timeline-description {
-  color: #8b949e;
+.timeline-desc {
   font-size: 0.95rem;
+  color: #c9d7e6;
 }
 
-.toggle-button {
-  margin: 1rem auto;
-  display: block;
-  background-color: #238636;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-button:hover {
-  background-color: #2ea043;
-}
-
-.english-section {
-  margin-top: 3rem;
-  background-color: #161b22;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.english-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #58a6ff;
-}
-
-.progress-wrapper {
-  margin-bottom: 0.8rem;
-}
-
-.english-badge {
-  background-color: #238636;
-  color: white;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  display: inline-block;
-  margin-bottom: 0.5rem;
+/* English Progress */
+.english-progress {
+  max-width: 600px;
+  margin: 60px auto 0;
+  text-align: center;
 }
 
 .progress-bar {
-  background-color: #30363d;
-  height: 12px;
-  border-radius: 6px;
+  position: relative;
+  background: #58a6ff22;
+  height: 20px;
+  border-radius: 12px;
+  margin: 16px 0;
   overflow: hidden;
 }
 
 .progress-fill {
-  background-color: #58a6ff;
   height: 100%;
-  transition: width 0.4s ease-in-out;
+  background: linear-gradient(90deg, #58a6ff, #1f6feb);
+  width: 0%;
+  border-radius: 12px;
+  transition: width 1.2s ease-in-out;
 }
 
-.english-description {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #8b949e;
+.milestones {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9fb3c8;
+  margin-top: 4px;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+/* ===============================
+   Tablet >=768px
+   =============================== */
+@media (min-width: 768px) {
+  .timeline {
+    gap: 40px;
+  }
+}
+
+/* ===============================
+   Desktop >=1024px - Horizontal timeline
+   =============================== */
+@media (min-width: 1024px) {
+  .timeline {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .timeline-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 220px;
+  }
+
+  .timeline-marker {
+    margin-top: 0;
+  }
 }

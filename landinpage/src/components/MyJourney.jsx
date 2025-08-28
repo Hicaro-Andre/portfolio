@@ -1,69 +1,87 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/MyJourney.css";
-import { FaGraduationCap, FaBriefcase, FaTrophy } from "react-icons/fa";
 
-const milestones = [
+const timelineData = [
   {
-    year: "2020",
+    year: "2018",
     title: "Formação em Ciência da Computação",
-    description: "Graduação concluída na Universidade XYZ.",
-    icon: <FaGraduationCap />,
+    description:
+      "Concluí o curso de Ciência da Computação, adquirindo bases sólidas em programação e lógica.",
+    icon: "🎓",
   },
   {
-    year: "2022",
-    title: "Primeiro emprego como Desenvolvedor Web",
-    description: "Início da jornada profissional na empresa ABC.",
-    icon: <FaBriefcase />,
+    year: "2019",
+    title: "Estágio em Desenvolvimento Web",
+    description:
+      "Trabalhei com front-end e back-end, desenvolvendo projetos reais para clientes.",
+    icon: "💻",
   },
   {
-    year: "2024",
-    title: "Projeto de destaque entregue",
-    description: "Liderança no desenvolvimento de um sistema full-stack.",
-    icon: <FaTrophy />,
+    year: "2021",
+    title: "Primeiro projeto Full Stack",
+    description:
+      "Implementei um sistema completo com React e Node.js, integrando APIs e banco de dados.",
+    icon: "🚀",
+  },
+  {
+    year: "2023",
+    title: "Especialização em Back-End",
+    description:
+      "Aprimorei habilidades em Node.js, Express, MongoDB e escalabilidade de sistemas.",
+    icon: "⚙️",
   },
 ];
 
 const MyJourney = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [englishProgress, setEnglishProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEnglishProgress((prev) => {
+        if (prev >= 75) return 75; // Avançado
+        return prev + 1;
+      });
+    }, 20);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="journey-container">
-      <h2 className="journey-heading">Minha Jornada</h2>
+    <section className="journey" id="journey">
+      <div className="journey-header">
+        <h2>Minha Jornada</h2>
+        <p>Um resumo da minha trajetória profissional e evolução pessoal.</p>
+      </div>
 
+      {/* Timeline */}
       <div className="timeline">
-        {milestones.map((item, index) => (
-          <div key={index} className="timeline-item fadeIn">
-            <div className="timeline-icon">{item.icon}</div>
-            <div className="timeline-content">
+        {timelineData.map((item, index) => (
+          <div className="timeline-card fade-in" key={index}>
+            <div className="timeline-marker">{item.icon}</div>
+            <div className="timeline-body">
               <span className="timeline-year">{item.year}</span>
               <h3 className="timeline-title">{item.title}</h3>
-              {expanded && (
-                <p className="timeline-description">{item.description}</p>
-              )}
+              <p className="timeline-desc">{item.description}</p>
             </div>
           </div>
         ))}
-        <button
-          className="toggle-button"
-          onClick={() => setExpanded(!expanded)}
-        >
-          {expanded ? "Recolher descrições" : "Expandir descrições"}
-        </button>
       </div>
 
-      <div className="english-section">
-        <h3>Progresso em Inglês</h3>
-        <div className="progress-wrapper">
-          <span className="english-badge">
-            Intermediário-Avançado (B2)
-          </span>
-          <div className="progress-bar">
-            <div className="progress-fill" style={{ width: "70%" }}></div>
+      {/* English Progress */}
+      <div className="english-progress">
+        <h3>Nível de Inglês</h3>
+        <div className="progress-bar">
+          <div
+            className="progress-fill"
+            style={{ width: `${englishProgress}%` }}
+          ></div>
+          <div className="milestones">
+            <span>Básico</span>
+            <span>Intermediário</span>
+            <span>Avançado</span>
+            <span>Fluente</span>
           </div>
         </div>
-        <p className="english-description">
-          Estudo inglês desde 2020 através de plataformas online como Duolingo, vídeos no YouTube e leitura técnica.
-        </p>
+        <small>Progresso atual: {englishProgress}%</small>
       </div>
     </section>
   );

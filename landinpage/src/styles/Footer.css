@@ -1,91 +1,100 @@
-/**? - Footer -*/
-footer{
+/*?-- Mobile First --*/
+
+footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 40px 20px;
+  padding: 30px 20px;
   text-align: center;
-  color:var(--color-text-footer);
-  font-size: 0.95rem;
-  margin: 10px;
+  color: var(--color-text-footer);
+  font-size: 0.9rem;
+  margin: 10px auto;
+  max-width: 1200px;
 }
+
 .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
   max-width: 800px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
 }
-.back_topo a{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--highlight-color);
-  font-size: 1.125rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.back_topo a:hover{
-  color: var(--button-hover);
-  transform: translateY(-5px);
-}
-.download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--bg-button);
-  color: var(--color-button);
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.download-btn:hover {
-  background-color: var(--button-hover);
-  transform: translateY(-2px);
-}
-.download-btn svg {
-  stroke: var(--color-svg);
-}
+
 .highlight {
   color: var(--color-highlight);
   font-weight: 500;
 }
 
-@media (min-width: 675px){
-  footer{
-    display: flex;
+/*! CTA "Voltar ao topo" */
+.back_topo a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--highlight-color);
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back_topo a:hover {
+  color: var(--button-hover);
+  transform: translateY(-5px);
+}
+
+
+/*TODO: ===================== MEDIA QUERIES ===================== */
+
+/*! Tablet (mínimo 675px) */
+@media (min-width: 675px) {
+  footer {
     flex-direction: row;
     justify-content: space-between;
+    text-align: left;
   }
+
   .footer-content {
+    align-items: flex-start;
     margin: 0;
+    gap: 10px;
+  }
+
+  .back_topo {
+    align-self: center;
+  }
+
+  .back_topo a {
+    justify-content: flex-start;
+    font-size: 1.05rem;
   }
 }
 
+/*! Desktop (mínimo 1024px) */
 @media (min-width: 1024px) {
   footer {
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
     min-height: 200px;
-    position: relative;
     padding: 60px;
+    position: relative;
   }
+
   .footer-content {
     align-self: center;
     margin-top: auto;
+    text-align: center;
   }
+
   .back_topo {
     position: absolute;
     right: 60px;
     top: 40px;
   }
+
   .back_topo a {
     justify-content: flex-end;
-    margin-bottom: 0;
+    font-size: 1.125rem;
   }
 }

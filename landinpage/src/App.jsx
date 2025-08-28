@@ -1,11 +1,11 @@
 import Hero from "./components/Hero.jsx";
 import Portifolio from "./components/Portifolio.jsx";
-import Skills from "./components/Skills.jsx";
 import About from "./components/About.jsx";
 import Footer from "./components/Footer.jsx";
 import MyJourney from "./components/MyJourney.jsx";
 {/* Imagem WhatsApp */}
 import wpp from "./assets/whatsapp-dark.svg"
+import ContactForm from "./components/ContactForm.jsx";
 
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
       <main>
         <Hero />
         <Portifolio />
-        <Skills />
-        <MyJourney />
         <About />
+        {/* <MyJourney /> */}
+        <ContactForm /> 
         <Footer />
       </main>
 

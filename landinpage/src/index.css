@@ -25,7 +25,7 @@
   --dev: #ffffff;
   /* --shadow-h1: 4px 4px 6px #00ffff; */
   /**? Port */
-  --bg-card-port:linear-gradient(135deg, #2b2b2b, #1e1e1e);
+  --bg-card-port: rgba(88, 166, 255, 0.12);
   --box-shadow-card-port-hover:0 5px 10px #58a6ff;
   --bg-text-color-port: #ccc;
   /**? skills */
@@ -105,7 +105,7 @@ h1 {
 }
 h2 {
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: clamp(20px, 2.5vw, 25px);
   margin: 0;  
   text-align: center;

@@ -25,22 +25,31 @@ footer {
   color: var(--color-highlight);
   font-weight: 500;
 }
-
-/*! CTA "Voltar ao topo" */
-.back_topo a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-decoration: none;
-  color: var(--highlight-color);
-  font-size: 1rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+/*! CTA */
+.about-cta {
+  margin-top: 16px;
 }
 
-.back_topo a:hover {
-  color: var(--button-hover);
-  transform: translateY(-5px);
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #58a6ff, #1f6feb);
+  color: #0b1220;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.cta-icon {
+  font-size: 1.2rem;
 }
 
 
@@ -60,14 +69,6 @@ footer {
     gap: 10px;
   }
 
-  .back_topo {
-    align-self: center;
-  }
-
-  .back_topo a {
-    justify-content: flex-start;
-    font-size: 1.05rem;
-  }
 }
 
 /*! Desktop (mínimo 1024px) */
@@ -87,14 +88,5 @@ footer {
     text-align: center;
   }
 
-  .back_topo {
-    position: absolute;
-    right: 60px;
-    top: 40px;
-  }
 
-  .back_topo a {
-    justify-content: flex-end;
-    font-size: 1.125rem;
-  }
 }

@@ -1,10 +1,19 @@
 import React from "react";
 import "../styles/About.css";
-import myfoto from "../assets/images/about_image/me.jpg"
+import myfoto from "../assets/images/about_image/me.jpg";
+
+// Ícones das tecnologias
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+} from "react-icons/si";
+
 
 const About = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <section className="about" id="about">
       <div className="about-container">
@@ -14,30 +23,40 @@ const About = () => {
             <span className="highlight">Sobre</span> Mim
           </h2>
 
-          <p className="about-intro fade-in delay-1">
+          <p className="about-tagline fade-in delay-1">
+            Transformando ideias em código escalável, eficiente e elegante.
+          </p>
+
+          <p className="about-intro fade-in delay-2">
             Sou desenvolvedor Full Stack focado em construir interfaces rápidas,
             APIs escaláveis e soluções que resolvem problemas reais. Busco
             entregar código limpo e acessível, com foco em performance e UX.
           </p>
 
           {/* Badges de habilidades */}
-          <ul className="about-badges fade-in delay-2">
-            <li className="badge">JavaScript</li>
-            <li className="badge">TypeScript</li>
-            <li className="badge">React</li>
-            <li className="badge">Node.js</li>
-            <li className="badge">Express</li>
-            <li className="badge">MongoDB</li>
+          <ul className="about-badges fade-in delay-3">
+            <li className="badge">
+              <SiJavascript className="icon" /> JavaScript
+            </li>
+            <li className="badge">
+              <SiTypescript className="icon" /> TypeScript
+            </li>
+            <li className="badge">
+              <SiReact className="icon" /> React
+            </li>
+            <li className="badge">
+              <SiNodedotjs className="icon" /> Node.js
+            </li>
+            <li className="badge">
+              <SiExpress className="icon" /> Express
+            </li>
+            <li className="badge">
+              <SiMongodb className="icon" /> MongoDB
+            </li>
           </ul>
 
          
-
-          {/* Botão de download */}
-          <div className="about-cta fade-in delay-4">
-            <a href="/public/cv hicaro-dev.pdf" download className="cta-btn">
-              Baixar CV
-            </a>
-          </div>
+          
         </div>
 
         {/* Coluna de foto */}

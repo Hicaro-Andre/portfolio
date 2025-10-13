@@ -1,23 +1,25 @@
+import React from "react";
 import Hero from "./components/Hero.jsx";
 import Portifolio from "./components/Portifolio.jsx";
 import About from "./components/About.jsx";
+import CareerJourney from "./components/CareerJourney.jsx";
 import Footer from "./components/Footer.jsx";
-import MyJourney from "./components/MyJourney.jsx";
-{/* Imagem WhatsApp */}
-import wpp from "./assets/whatsapp-dark.svg"
+// Imagem WhatsApp
+import wpp from "./assets/whatsapp-dark.svg";
 import ContactForm from "./components/ContactForm.jsx";
-
+import ParticlesBg from "./components/ParticlesBg.jsx";
 
 function App() {
-  
   return (
     <>
+      <ParticlesBg />
+
       <main>
         <Hero />
         <Portifolio />
         <About />
-        {/* <MyJourney /> */}
-        <ContactForm /> 
+        <CareerJourney />
+        <ContactForm />
         <Footer />
       </main>
 
@@ -26,12 +28,9 @@ function App() {
         href="https://wa.me/98984245018"
         className="whatsapp-button"
         target="_blank"
+        rel="noopener noreferrer"
       >
-        <img
-          className="icon-dark"
-          src={wpp}
-          alt="Fale comigo no WhatsApp"
-        />
+        <img className="icon-dark" src={wpp} alt="Fale comigo no WhatsApp" />
       </a>
     </>
   );

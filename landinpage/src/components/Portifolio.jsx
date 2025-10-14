@@ -1,6 +1,9 @@
 import React from "react";
 import "../styles/Portifolio.css";
 import testeprogect from "../assets/images/portifolio_image/teste.jpg";
+import api from "../assets/images/portifolio_image/APIs.png";
+import softex from "../assets/images/portifolio_image/Softex.png";
+
 
 // Ícones locais
 import gitIcon from "../assets/images/hero_image/github-dark.svg";
@@ -23,7 +26,7 @@ const Portifolio = () => {
       title: "Ecommerce API",
       description:
         "Landing page responsiva para consultoria financeira com formulário integrado.",
-      image: testeprogect,
+      image: api,
       status: "concluído",
       github: "https://github.com/seuusuario/projeto2",
       live: "https://projeto1.vercel.app",
@@ -33,7 +36,7 @@ const Portifolio = () => {
       title: "Ecommerce API",
       description:
         "Landing page responsiva para consultoria financeira com formulário integrado.",
-      image: testeprogect,
+      image: softex,
       status: "paused",
       github: "https://github.com/seuusuario/projeto2",
       live: "https://projeto1.vercel.app",

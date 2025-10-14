@@ -5,7 +5,7 @@ import About from "./components/About.jsx";
 import CareerJourney from "./components/CareerJourney.jsx";
 import Footer from "./components/Footer.jsx";
 // Imagem WhatsApp
-import wpp from "./assets/whatsapp-dark.svg";
+import wpp from "./assets/whatsapp.svg";
 import ContactForm from "./components/ContactForm.jsx";
 import ParticlesBg from "./components/ParticlesBg.jsx";
 

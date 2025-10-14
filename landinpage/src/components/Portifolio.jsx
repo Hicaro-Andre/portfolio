@@ -6,7 +6,7 @@ import softex from "../assets/images/portifolio_image/Softex.png";
 
 
 // Ícones locais
-import gitIcon from "../assets/images/hero_image/github-dark.svg";
+import gitIcon from "../assets/images/portifolio_image/github-dark.svg";
 import eyeIcon from "../assets/images/portifolio_image/eye.svg";
 
 const Portifolio = () => {
@@ -33,7 +33,7 @@ const Portifolio = () => {
     },
     {
       id: 3,
-      title: "Ecommerce API",
+      title: "Projeto Integrador",
       description:
         "Landing page responsiva para consultoria financeira com formulário integrado.",
       image: softex,
@@ -95,7 +95,7 @@ const Portifolio = () => {
                   href={project.live}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn"
+                  className="btn-outline"
                 >
                   <img src={eyeIcon} alt="Ver Projeto" className="icon-btn" />
                   Ver Projeto

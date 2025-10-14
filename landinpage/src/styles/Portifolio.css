@@ -29,8 +29,13 @@
 
 .card__port img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.card__port:hover img {
+  transform: scale(1.03); 
 }
 
 .card__port h3 {
@@ -53,7 +58,7 @@
 .status-badge {
   display: inline-block;
   padding: 7px 14px;
-  border-radius: 30px;
+  border-radius: 10px;
   font-size: 0.85rem;
   font-weight: bold;
   margin: 10px 0;
@@ -88,41 +93,31 @@
   height: 30px;
   width: 30px;
 }
-.btn,
-.btn-outline {
-  display: inline-flex; /* alinhamento com ícone */
+
+.card__buttons .btn-outline {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 10px 14px;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  border: 1px solid var(--primary-color, #007bff);
+  color: #F5F5F5; 
+  background: rgba(10, 25, 47, 0.85);
+  width: 150px; 
+}
+/* Hover com fundo #112240 */
+.card__buttons .btn-outline:hover {
+  background:#1E90FF;
+  color: #F5F5F5;
+  border-color: #112240;
 }
 
-/* Botão preenchido */
-.btn {
-  background: var(--primary-color, #007bff);
-  color: #fff;
-}
-
-.btn:hover {
-  background: #0056b3;
-}
-
-/* Botão contorno */
-.btn-outline {
-  border: 2px solid var(--primary-color, #007bff);
-  color: var(--primary-color, #007bff);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--primary-color, #007bff);
-  color: #fff;
-}
 
 /* Ícones */
 .icon-btn {

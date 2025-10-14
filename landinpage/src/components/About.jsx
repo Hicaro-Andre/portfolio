@@ -12,17 +12,16 @@ import {
   SiMongodb,
 } from "react-icons/si";
 
-
 const About = () => {
   return (
     <section className="about" id="about">
+      <h2 className="about-title">
+        <span className="highlight">Sobre</span> Mim
+      </h2>
+      
       <div className="about-container">
         {/* Coluna de texto */}
         <div className="about-text fade-in delay-0">
-          <h2 className="about-title">
-            <span className="highlight">Sobre</span> Mim
-          </h2>
-
           <p className="about-tagline fade-in delay-1">
             Transformando ideias em código escalável, eficiente e elegante.
           </p>
@@ -54,9 +53,6 @@ const About = () => {
               <SiMongodb className="icon" /> MongoDB
             </li>
           </ul>
-
-         
-          
         </div>
 
         {/* Coluna de foto */}

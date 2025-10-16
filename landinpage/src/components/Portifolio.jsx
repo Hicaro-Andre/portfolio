@@ -4,7 +4,6 @@ import testeprogect from "../assets/images/portifolio_image/teste.jpg";
 import api from "../assets/images/portifolio_image/APIs.png";
 import softex from "../assets/images/portifolio_image/Softex.png";
 
-
 // Ícones locais
 import gitIcon from "../assets/images/portifolio_image/github-dark.svg";
 import eyeIcon from "../assets/images/portifolio_image/eye.svg";
@@ -65,8 +64,10 @@ const Portifolio = () => {
 
   return (
     <section className="port" id="port">
-      <h2>Boas-Vindas ao meu Portfólio</h2>
-
+      {/* <h2>Boas-Vindas ao meu Portfólio</h2> */}
+      <h2 className="title-section">
+        <span className="highlight">Boas-Vindas</span> ao meu Portfólio
+      </h2>
       <div className="port__container">
         {projects.map((project) => (
           <div key={project.id} className="card__port animated zoom-in">

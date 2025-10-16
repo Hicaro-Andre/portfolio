@@ -146,6 +146,18 @@ h3 {
   color: var(--text-color);
 }
 
+/* Titulos das secções */
+.title-section {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.2;
+}
+.highlight {
+  color: #58a6ff;
+}
+
 /* Animações gerais */
 .animated {
   opacity: 0;

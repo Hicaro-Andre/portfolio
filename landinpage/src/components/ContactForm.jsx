@@ -52,7 +52,10 @@ const ContactForm = () => {
 
   return (
     <section className="contact-form-section" id="contact">
-      <h2>Contato</h2>
+      {/* <h2>Contato</h2> */}
+        <h2 className="title-section">
+        <span className="highlight">Vamos</span> Conversar
+      </h2>
       <p>Entre em contato comigo preenchendo o formulário abaixo.</p>
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>

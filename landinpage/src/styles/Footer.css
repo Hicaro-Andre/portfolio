@@ -9,7 +9,6 @@ footer {
   align-items: center;
   gap: 30px;
   text-align: center;
-  border-top: 1px solid rgba(88, 166, 255, 0.15);
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -114,18 +113,26 @@ footer {
 /* Desktop */
 @media (min-width: 1024px) {
   footer {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 40px;
   }
 
-  .footer-bottom {
-    align-items: flex-end;
-    text-align: right;
+  .cert-section {
+    max-width: 800px;
   }
 
-  .cert-section {
-    max-width: 600px;
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Botão fica destacado acima do copy */
+  .cta-btn {
+    margin-bottom: 8px;
   }
 }
+

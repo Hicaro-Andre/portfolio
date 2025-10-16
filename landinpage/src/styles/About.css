@@ -12,19 +12,6 @@
   text-align: center;
 }
 
-/* título */
-.about-title {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 40px;
-  text-align: center;
-  line-height: 1.2;
-}
-
-.highlight {
-  color: #58a6ff;
-}
-
 /* Container principal */
 .about-container {
   width: min(1100px, 100%);

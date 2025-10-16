@@ -29,13 +29,15 @@ const Footer = () => {
 
       {/* Créditos e CTA */}
       <div className="footer-bottom">
+
+         <a href="/cv-hicaro-dev.pdf" download className="cta-btn">
+          <HiDownload className="cta-icon" /> Baixar CV
+        </a>
+
         <p className="copyright">
           <span className="highlight">© {currentYear} Hicaro André</span> | Todos os direitos reservados
         </p>
-
-        <a href="/cv-hicaro-dev.pdf" download className="cta-btn">
-          <HiDownload className="cta-icon" /> Baixar CV
-        </a>
+       
       </div>
     </footer>
   );

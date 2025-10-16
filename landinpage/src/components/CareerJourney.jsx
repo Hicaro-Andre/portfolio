@@ -44,7 +44,9 @@ const CareerJourney = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <span className="highlight">Minha</span> Jornada
+          <h2 className="title-section">
+            <span className="highlight">Minha</span> Jornada
+          </h2>
         </motion.h2>
 
         <div className="timeline">

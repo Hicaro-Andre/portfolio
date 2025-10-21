@@ -92,6 +92,7 @@ body {
   min-height: 1005;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 html {
   background-color: var(--dev);

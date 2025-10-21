@@ -90,6 +90,10 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+html {
+  background-color: var(--dev);
+}
+
 
 /* Tipografia */
 h1 {

@@ -96,12 +96,22 @@ body {
 h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: clamp(2rem, 10vw, 7rem);
+  font-size: clamp(3rem, 10vw, 7rem);
   text-align: center;
   transition: all 0.3s ease;
   animation: fadeSlideIn 1s ease-out forwards;
   opacity: 0;
   animation-delay: 0.3s;
+
+  /* Novas propriedades para evitar problemas com textos curtos */
+  letter-spacing: -0.02em; /* Controla o espaçamento entre letras */
+  word-spacing: normal; /* Mantém o espaçamento entre palavras normal */
+  line-height: 1.1; /* Define uma altura de linha adequada */
+  white-space: nowrap; /* Impede quebra de linha */
+  padding: 0 1rem; /* Adiciona padding lateral para não colar nas bordas */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  max-width: 95vw; /* Limita a largura máxima */
+  box-sizing: border-box; /* Inclui padding no cálculo total */
 }
 
 @keyframes fadeSlideIn {

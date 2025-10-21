@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../styles/ContactForm.css";
 
 const ContactForm = () => {
@@ -11,7 +12,12 @@ const ContactForm = () => {
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,14 +26,15 @@ const ContactForm = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Nome é obrigatório";
+    if (!formData.name.trim()) newErrors.name = "Ops! Esqueceu o nome 😉";
     if (!formData.email.trim()) {
-      newErrors.email = "Email é obrigatório";
+      newErrors.email = "Não esqueça seu e-mail, por favor!";
     } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
-      newErrors.email = "Email inválido";
+      newErrors.email = "Hmm... esse e-mail parece inválido.";
     }
-    if (!formData.subject.trim()) newErrors.subject = "Assunto é obrigatório";
-    if (!formData.message.trim()) newErrors.message = "Mensagem é obrigatória";
+    if (!formData.subject.trim()) newErrors.subject = "Qual o assunto?";
+    if (!formData.message.trim())
+      newErrors.message = "Escreva uma mensagem antes de enviar.";
     return newErrors;
   };
 
@@ -40,41 +47,56 @@ const ContactForm = () => {
     }
 
     setLoading(true);
-    setSuccess(false);
 
-    // Simulação de envio
-    setTimeout(() => {
-      setLoading(false);
-      setSuccess(true);
+    try {
+      await emailjs.send(
+        serviceId, 
+        templateId, 
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        publicKey 
+      );
+
+      setShowModal(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1500);
+    } catch (error) {
+      console.error("Erro ao enviar e-mail:", error);
+      alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const closeModal = () => setShowModal(false);
 
   return (
     <section className="contact-form-section" id="contact">
-      {/* <h2>Contato</h2> */}
-        <h2 className="title-section">
-        <span className="highlight">Vamos</span> Conversar
+      <h2 className="title-section">
+        <span className="highlight">Vamos</span> Conversar?
       </h2>
-      <p>Entre em contato comigo preenchendo o formulário abaixo.</p>
+      <p>
+        Quer trocar uma ideia sobre oportunidades, projetos ou colaborações?
+        É só preencher o formulário abaixo! 🚀
+      </p>
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
-        {/* Nome */}
         <div className={`form-group ${errors.name ? "error" : ""}`}>
-          <label htmlFor="name">Nome *</label>
+          <label htmlFor="name">Seu nome *</label>
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="Seu nome"
+            placeholder="Ex: Ana Silva"
             value={formData.name}
             onChange={handleChange}
-            aria-label="Nome"
           />
           {errors.name && <span className="error-msg">{errors.name}</span>}
         </div>
 
-        {/* Email */}
         <div className={`form-group ${errors.email ? "error" : ""}`}>
           <label htmlFor="email">Email *</label>
           <input
@@ -84,46 +106,36 @@ const ContactForm = () => {
             placeholder="seu@email.com"
             value={formData.email}
             onChange={handleChange}
-            aria-label="Email"
           />
           {errors.email && <span className="error-msg">{errors.email}</span>}
         </div>
 
-        {/* Assunto */}
         <div className={`form-group ${errors.subject ? "error" : ""}`}>
           <label htmlFor="subject">Assunto *</label>
           <input
             type="text"
             name="subject"
             id="subject"
-            placeholder="Assunto da mensagem"
+            placeholder="Ex: Oportunidade de trabalho"
             value={formData.subject}
             onChange={handleChange}
-            aria-label="Assunto"
           />
-          {errors.subject && (
-            <span className="error-msg">{errors.subject}</span>
-          )}
+          {errors.subject && <span className="error-msg">{errors.subject}</span>}
         </div>
 
-        {/* Mensagem */}
         <div className={`form-group ${errors.message ? "error" : ""}`}>
           <label htmlFor="message">Mensagem *</label>
           <textarea
             name="message"
             id="message"
-            placeholder="Escreva sua mensagem..."
+            placeholder="Conte um pouco sobre a vaga, projeto ou ideia!"
             rows="6"
             value={formData.message}
             onChange={handleChange}
-            aria-label="Mensagem"
           ></textarea>
-          {errors.message && (
-            <span className="error-msg">{errors.message}</span>
-          )}
+          {errors.message && <span className="error-msg">{errors.message}</span>}
         </div>
 
-        {/* Botão de envio */}
         <button
           type="submit"
           className={`submit-btn ${loading ? "loading" : ""}`}
@@ -131,10 +143,22 @@ const ContactForm = () => {
         >
           {loading ? "Enviando..." : "Enviar Mensagem"}
         </button>
-
-        {/* Feedback de sucesso */}
-        {success && <p className="success-msg">Mensagem enviada com sucesso!</p>}
       </form>
+
+      {showModal && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="checkmark-circle">
+              <div className="checkmark draw"></div>
+            </div>
+            <h3>Mensagem enviada!</h3>
+            <p>Valeu por entrar em contato! Assim que possível, te retorno 😉</p>
+            <button className="close-btn" onClick={closeModal}>
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

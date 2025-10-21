@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer>
-      {/* Seção de Certificações */}
+    
       <div className="cert-section fade-in">
         <h3 className="cert-title">
           <FaCertificate className="cert-icon" /> Certificações
@@ -27,9 +27,8 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Créditos e CTA */}
+     
       <div className="footer-bottom">
-
          <a href="/cv-hicaro-dev.pdf" download className="cta-btn">
           <HiDownload className="cta-icon" /> Baixar CV
         </a>

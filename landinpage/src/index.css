@@ -15,8 +15,6 @@
   z-index: -1;
   pointer-events: none;
   background-color: var(--bg-color);
-  transform: translateZ(0);
-  will-change: transform;
 }
 
 /* Main e conteúdo acima do fundo */
@@ -94,7 +92,6 @@ body {
   min-height: 1005;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  overscroll-behavior: none;
 }
 html {
   background-color: var(--dev);

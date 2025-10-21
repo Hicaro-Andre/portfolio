@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       <ParticlesBg />
-
       <main>
         <Hero />
         <Portifolio />

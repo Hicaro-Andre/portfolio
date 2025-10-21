@@ -12,9 +12,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;             /* Fica atrás de tudo */
-  pointer-events: none;    /* Não interfere nos cliques */
-  background-color: var(--bg-color); /* Garante fundo consistente */
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg-color);
 }
 
 /* Main e conteúdo acima do fundo */
@@ -89,7 +89,7 @@ html,
 body {
   color: var(--text-color);
   transition: background-color 0.4s ease, color 0.4s ease;
-  min-height: 100vh;
+  min-height: 1005;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }

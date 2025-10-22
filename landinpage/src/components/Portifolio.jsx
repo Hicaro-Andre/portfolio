@@ -1,12 +1,15 @@
 import React from "react";
 import "../styles/Portifolio.css";
-import testeprogect from "../assets/images/portifolio_image/teste.jpg";
+import edf from "../assets/images/portifolio_image/edf.png";
 import api from "../assets/images/portifolio_image/APIs.png";
-import softex from "../assets/images/portifolio_image/Softex.png";
+import redenave from "../assets/images/portifolio_image/REDE NAVE.png";
 
 // Ícones locais
 import gitIcon from "../assets/images/portifolio_image/github-dark.svg";
 import eyeIcon from "../assets/images/portifolio_image/eye.svg";
+
+
+
 
 const Portifolio = () => {
   const projects = [
@@ -15,7 +18,7 @@ const Portifolio = () => {
       title: "Educação Financeira",
       description:
         "Sistema completo de cadastro e gerenciamento de clientes com painel administrativo.",
-      image: testeprogect,
+      image: edf,
       status: "Em andamento",
       github: "https://github.com/Hicaro-Andre/educacao_financeira_web.git",
       live: "https://educacao-financeira-web.vercel.app/",
@@ -26,7 +29,7 @@ const Portifolio = () => {
       description:
         "Landing page responsiva para consultoria financeira com formulário integrado.",
       image: api,
-      status: "concluído",
+      status: "Em andamento",
       github: "https://github.com/seuusuario/projeto2",
       live: "https://projeto1.vercel.app",
     },
@@ -35,37 +38,16 @@ const Portifolio = () => {
       title: "Projeto Integrador",
       description:
         "Landing page responsiva para consultoria financeira com formulário integrado.",
-      image: softex,
-      status: "paused",
+      image: redenave,
+      status: "Em andamento",
       github: "https://github.com/seuusuario/projeto2",
       live: "https://projeto1.vercel.app",
     },
-    // {
-    //   id: 4,
-    //   title: "Ecommerce API",
-    //   description:
-    //     "Landing page responsiva para consultoria financeira com formulário integrado.",
-    //   image: testeprogect,
-    //   status: "paused",
-    //   github: "https://github.com/seuusuario/projeto2",
-    //   live: "https://projeto1.vercel.app",
-    // },
-    // {
-    //   id: 5,
-    //   title: "Ecommerce API",
-    //   description:
-    //     "Landing page responsiva para consultoria financeira com formulário integrado.",
-    //   image: testeprogect,
-    //   status: "paused",
-    //   github: "https://github.com/seuusuario/projeto2",
-    //   live: "https://projeto1.vercel.app",
-    // },
   ];
 
   return (
     <section className="port" id="port">
-      {/* <h2>Boas-Vindas ao meu Portfólio</h2> */}
-      <h2 className="title-section">
+      <h2>
         <span className="highlight">Boas-Vindas</span> ao meu Portfólio
       </h2>
       <div className="port__container">

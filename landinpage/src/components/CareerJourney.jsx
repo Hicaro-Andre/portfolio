@@ -27,13 +27,13 @@ const CareerJourney = () => {
       desc: "Responsável pelo desenvolvimento full stack de aplicações web, com foco na implementação de novas funcionalidades e na análise de sistemas em back-end e front-end. Utilizo tecnologias modernas como Node.js, React, Next.js, TypeScript, JavaScript, Tailwind CSS, Storyblok, entre outras. Destaques incluem a criação de componentes reutilizáveis, consumo de APIs REST/GraphQL, e estruturação de aplicações com foco em performance e escalabilidade.",
       icon: <FaUserTie />,
     },
-    {
-      year: "2025",
-      title: "Desenvolvimento Contínuo",
-      subtitle: "Especialização Front-End, Back End & Inglês ",
-      desc: "Em busca constante da excelência: atualmente imerso no programa Front-End da Softex, aprofundando React e TypeScript enquanto evoluo para inglês intermediário-avançado. Preparando-me para desafios globais e contribuições significativas em equipes de alta performance, com foco em criar experiências digitais excepcionais.",
-      icon: <FaBook />,
-    },
+    // {
+    //   year: "2025",
+    //   title: "Desenvolvimento Contínuo",
+    //   subtitle: "Especialização Front-End, Back End & Inglês ",
+    //   desc: "Em busca constante da excelência: atualmente imerso no programa Front-End da Softex, aprofundando React e TypeScript enquanto evoluo para inglês intermediário-avançado. Preparando-me para desafios globais e contribuições significativas em equipes de alta performance, com foco em criar experiências digitais excepcionais.",
+    //   icon: <FaBook />,
+    // },
   ];
 
   return (
@@ -44,7 +44,7 @@ const CareerJourney = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h2 className="title-section">
+          <h2>
             <span className="highlight">Minha</span> Jornada
           </h2>
         </motion.h2>
@@ -68,25 +68,6 @@ const CareerJourney = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        <div className="english-section fade-in">
-          <h3 className="english-title">Estudando Inglês </h3>
-          <p className="english-text">
-            Atualmente estou no módulo <strong>MAR</strong> do curso Mairo
-            Vergara 5.0 — um passo importante no aprendizado real do inglês,
-            focado em compreensão oral (áudio e vídeo) em nível autêntico.
-          </p>
-          <p className="english-text">
-            Meu objetivo é alcançar fluência — entender, falar, ler e escrever
-            com naturalidade no idioma.
-          </p>
-
-          <div className="level-bar">
-            <div className="level-progress" style={{ width: "45%" }}>
-              <span className="level-text">Intermediário (entre B1 e B2)</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

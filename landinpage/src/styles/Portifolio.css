@@ -107,21 +107,19 @@
   transition: all 0.3s ease;
   text-decoration: none;
   border: 1px solid var(--primary-color, #007bff);
-  color: #F5F5F5; 
-  background: rgba(10, 25, 47, 0.85);
+  color: #0b1220; 
+  background: #58a6ff;
   width: 150px; 
 }
-/* Hover com fundo #112240 */
 .card__buttons .btn-outline:hover {
-  background:#1E90FF;
-  color: #F5F5F5;
+  background:#1f6feb;
   border-color: #112240;
 }
 
 
 /* Ícones */
 .icon-btn {
-  width: 16px;   /* tamanho mais equilibrado */
+  width: 16px;  
   height: 16px;
   object-fit: contain;
   transition: transform 0.2s ease;

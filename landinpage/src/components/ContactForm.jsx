@@ -75,7 +75,7 @@ const ContactForm = () => {
 
   return (
     <section className="contact-form-section" id="contact">
-      <h2 className="title-section">
+      <h2>
         <span className="highlight">Vamos</span> Conversar?
       </h2>
       <p>

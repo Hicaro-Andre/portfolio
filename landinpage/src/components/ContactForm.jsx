@@ -14,27 +14,64 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  
+  // Limites de caracteres
+  const CHAR_LIMITS = {
+    name: 70,
+    email: 80,
+    subject: 50,
+    message: 2000
+  };
+
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" });
+    const { name, value } = e.target;
+    let limitedValue = value;
+    
+    // Aplicar limites de caracteres
+    if (value.length > CHAR_LIMITS[name]) {
+      limitedValue = value.slice(0, CHAR_LIMITS[name]);
+    }
+    
+    setFormData({ ...formData, [name]: limitedValue });
+    setErrors({ ...errors, [name]: "" });
   };
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Ops! Esqueceu o nome 😉";
+    
+    // Validação do nome
+    if (!formData.name.trim()) {
+      newErrors.name = "Ops! Esqueceu o nome 😉";
+    } else if (formData.name.length > CHAR_LIMITS.name) {
+      newErrors.name = `O nome deve ter no máximo ${CHAR_LIMITS.name} caracteres.`;
+    }
+    
+    // Validação do email
     if (!formData.email.trim()) {
       newErrors.email = "Não esqueça seu e-mail, por favor!";
     } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
       newErrors.email = "Hmm... esse e-mail parece inválido.";
+    } else if (formData.email.length > CHAR_LIMITS.email) {
+      newErrors.email = `O e-mail deve ter no máximo ${CHAR_LIMITS.email} caracteres.`;
     }
-    if (!formData.subject.trim()) newErrors.subject = "Qual o assunto?";
-    if (!formData.message.trim())
+    
+    // Validação do assunto
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Qual o assunto?";
+    } else if (formData.subject.length > CHAR_LIMITS.subject) {
+      newErrors.subject = `O assunto deve ter no máximo ${CHAR_LIMITS.subject} caracteres.`;
+    }
+    
+    // Validação da mensagem
+    if (!formData.message.trim()) {
       newErrors.message = "Escreva uma mensagem antes de enviar.";
+    } else if (formData.message.length > CHAR_LIMITS.message) {
+      newErrors.message = `A mensagem deve ter no máximo ${CHAR_LIMITS.message} caracteres.`;
+    }
+    
     return newErrors;
   };
 
@@ -73,8 +110,14 @@ const ContactForm = () => {
 
   const closeModal = () => setShowModal(false);
 
+  // Função para mostrar contador de caracteres
+  const getCharCount = (fieldName) => {
+    return `${formData[fieldName].length}/${CHAR_LIMITS[fieldName]}`;
+  };
+
   return (
     <section className="contact-form-section" id="contact">
+      
       <h2>
         <span className="highlight">Vamos</span> Conversar?
       </h2>
@@ -85,54 +128,59 @@ const ContactForm = () => {
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <div className={`form-group ${errors.name ? "error" : ""}`}>
-          <label htmlFor="name">Seu nome *</label>
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="Ex: Ana Silva"
+            placeholder="Seu Nome"
             value={formData.name}
             onChange={handleChange}
+            maxLength={CHAR_LIMITS.name}
           />
           {errors.name && <span className="error-msg">{errors.name}</span>}
         </div>
 
         <div className={`form-group ${errors.email ? "error" : ""}`}>
-          <label htmlFor="email">Email *</label>
           <input
             type="email"
             name="email"
             id="email"
-            placeholder="seu@email.com"
+            placeholder="Seu Email"
             value={formData.email}
             onChange={handleChange}
+            maxLength={CHAR_LIMITS.email}
           />
+          
           {errors.email && <span className="error-msg">{errors.email}</span>}
         </div>
 
         <div className={`form-group ${errors.subject ? "error" : ""}`}>
-          <label htmlFor="subject">Assunto *</label>
           <input
             type="text"
             name="subject"
             id="subject"
-            placeholder="Ex: Oportunidade de trabalho"
+            placeholder="Adicione um assunto"
             value={formData.subject}
             onChange={handleChange}
+            maxLength={CHAR_LIMITS.subject}
           />
+          
           {errors.subject && <span className="error-msg">{errors.subject}</span>}
         </div>
 
         <div className={`form-group ${errors.message ? "error" : ""}`}>
-          <label htmlFor="message">Mensagem *</label>
           <textarea
             name="message"
             id="message"
-            placeholder="Conte um pouco sobre a vaga, projeto ou ideia!"
+            placeholder="Conte-nos como podemos ajudá-lo..."
             rows="6"
             value={formData.message}
             onChange={handleChange}
+            maxLength={CHAR_LIMITS.message}
           ></textarea>
+          {/* <div className="char-counter">
+            {getCharCount('message')}
+          </div> */}
           {errors.message && <span className="error-msg">{errors.message}</span>}
         </div>
 

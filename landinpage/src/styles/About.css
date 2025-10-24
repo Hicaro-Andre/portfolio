@@ -40,29 +40,39 @@
   gap: 24px;
 }
 
-
-
-/* Nível de Inglês */
+/* Nível de Inglês - Versão Expandível */
 .english-level {
-  padding: 20px;
+  padding: 16px;
   border-radius: 16px;
   border: 1px solid rgba(88, 166, 255, 0.25);
   box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
   background: rgba(88, 166, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.english-level:hover {
+  border-color: rgba(88, 166, 255, 0.4);
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.2);
+}
+
+.english-level.expanded {
+  padding-bottom: 20px;
+}
+
+.english-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .english-title {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #58a6ff;
-  margin-bottom: 8px;
-}
-
-.english-text {
-  color: #c0cad1;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .level-bar {
@@ -71,6 +81,8 @@
   height: 16px;
   overflow: hidden;
   position: relative;
+  flex: 1;
+  max-width: 200px;
 }
 
 .level-progress {
@@ -81,21 +93,37 @@
   position: relative;
 }
 
-.level-text {
-  position: absolute;
-  right: 12px;
-  top: -24px;
-  font-size: 0.9rem;
-  color: #c0cad1;
-  font-weight: 600;
+
+.expand-icon {
+  color: #58a6ff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
 }
+
+.english-content {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+.english-text {
+  color: #c0cad1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+
 
 /* Badges */
 .about-badges {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   gap: 10px;
   margin-top: 0;
   padding: 0;
@@ -180,6 +208,31 @@
   }
   .about-container { grid-template-columns: 1.3fr 1fr; gap: 50px; }
   .photo { width: 45vw; max-width: 360px; }
+
+  .english-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .level-bar {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .english-title {
+    align-self: flex-start;
+  }
+  
+  .expand-icon {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+  
+  .english-level {
+    position: relative;
+  }
 }
 
 @media (min-width: 1024px) {

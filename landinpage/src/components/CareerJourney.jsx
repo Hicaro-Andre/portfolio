@@ -10,7 +10,7 @@ const CareerJourney = () => {
       title: "Formação Acadêmica",
       subtitle:
         " Bacharel em Ciências da Computação -  Faculdade Pitágoras - FAMA",
-      desc: "Comecei estudando lógica de programação e fundamentos de HTML, CSS e JavaScript.",
+      desc: "A graduação me proporcionou os conhecimentos fundamentais em ciência da computação, com ênfase em lógica de programação, desenvolvimento de software e arquitetura de sistemas. Foi durante este período que solidifiquei minha base teórica e prática, preparando-me para os desafios profissionais na área de tecnologia.",
       icon: <FaGraduationCap />,
     },
     {

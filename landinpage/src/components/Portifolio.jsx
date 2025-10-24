@@ -17,7 +17,7 @@ const Portifolio = () => {
       id: 1,
       title: "Educação Financeira",
       description:
-        "Sistema completo de cadastro e gerenciamento de clientes com painel administrativo.",
+        "description",
       image: edf,
       status: "Em andamento",
       github: "https://github.com/Hicaro-Andre/educacao_financeira_web.git",
@@ -27,17 +27,18 @@ const Portifolio = () => {
       id: 2,
       title: "Ecommerce API",
       description:
-        "Landing page responsiva para consultoria financeira com formulário integrado.",
+        "description",
       image: api,
+      // tags: ["Node.js", "Express", "React", "API REST", "MongoDB",],
       status: "Em andamento",
-      github: "https://github.com/seuusuario/projeto2",
+      github: "https://github.com/Hicaro-Andre/ecommerce-project.git",
       live: "https://projeto1.vercel.app",
     },
     {
       id: 3,
       title: "Projeto Integrador",
       description:
-        "Landing page responsiva para consultoria financeira com formulário integrado.",
+        "description",
       image: redenave,
       status: "Em andamento",
       github: "https://github.com/seuusuario/projeto2",
@@ -70,6 +71,7 @@ const Portifolio = () => {
             </div>
 
             <p>{project.description}</p>
+        
 
             {/* Botões */}
             <div className="card__buttons">

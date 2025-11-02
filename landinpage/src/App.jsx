@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./components/NavBar.jsx";
 import Hero from "./components/Hero.jsx";
 import Portifolio from "./components/Portifolio.jsx";
 import About from "./components/About.jsx";
@@ -14,6 +15,7 @@ function App() {
     <>
       <ParticlesBg />
       <main>
+        <Navbar/>
         <Hero />
         <Portifolio />
         <About />

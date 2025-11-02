@@ -16,7 +16,7 @@ footer {
   background: rgba(88, 166, 255, 0.05);
   border: 1px solid rgba(88, 166, 255, 0.15);
   border-radius: 16px;
-  padding: 25px 20px;
+  padding: 20px;
   max-width: 500px;
   width: 100%;
   transition: transform 0.3s ease;
@@ -78,7 +78,7 @@ footer {
   gap: 8px;
   background: #58a6ff;
   color: #0b1220;
-  padding: 12px 28px;
+  padding: 8px 12px;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;

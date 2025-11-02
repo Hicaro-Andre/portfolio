@@ -209,30 +209,6 @@
   .about-container { grid-template-columns: 1.3fr 1fr; gap: 50px; }
   .photo { width: 45vw; max-width: 360px; }
 
-  .english-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  
-  .level-bar {
-    max-width: 100%;
-    width: 100%;
-  }
-  
-  .english-title {
-    align-self: flex-start;
-  }
-  
-  .expand-icon {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-  }
-  
-  .english-level {
-    position: relative;
-  }
 }
 
 @media (min-width: 1024px) {

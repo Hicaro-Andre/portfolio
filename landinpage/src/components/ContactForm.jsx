@@ -128,11 +128,12 @@ const ContactForm = () => {
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <div className={`form-group ${errors.name ? "error" : ""}`}>
+          <label htmlFor="name">Nome *</label>
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="Seu Nome"
+            placeholder="Seu nome completo"
             value={formData.name}
             onChange={handleChange}
             maxLength={CHAR_LIMITS.name}
@@ -141,11 +142,12 @@ const ContactForm = () => {
         </div>
 
         <div className={`form-group ${errors.email ? "error" : ""}`}>
+          <label htmlFor="name">Email *</label>
           <input
             type="email"
             name="email"
             id="email"
-            placeholder="Seu Email"
+            placeholder="Seu@email.com"
             value={formData.email}
             onChange={handleChange}
             maxLength={CHAR_LIMITS.email}
@@ -155,11 +157,12 @@ const ContactForm = () => {
         </div>
 
         <div className={`form-group ${errors.subject ? "error" : ""}`}>
+          <label htmlFor="name">Assunto *</label>
           <input
             type="text"
             name="subject"
             id="subject"
-            placeholder="Adicione um assunto"
+            placeholder="Sobre o que você quer falar?"
             value={formData.subject}
             onChange={handleChange}
             maxLength={CHAR_LIMITS.subject}
@@ -169,6 +172,7 @@ const ContactForm = () => {
         </div>
 
         <div className={`form-group ${errors.message ? "error" : ""}`}>
+          <label htmlFor="name">Mensagem *</label>
           <textarea
             name="message"
             id="message"

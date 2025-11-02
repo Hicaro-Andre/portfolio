@@ -124,7 +124,7 @@ h1 {
 h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: clamp(20px, 3.5vw, 25px);
+  font-size: clamp(30px, 3.5vw, 25px);
   margin: 0;
   text-align: center;
   color: var(--highlight-color);
@@ -132,9 +132,9 @@ h2 {
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
-.highlight {
+/* .highlight {
   color: #e64409;
-}
+} */
 
 
 

@@ -1,20 +1,14 @@
-
+/* globals */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fundo de partículas fixo (tsParticles) */
-#tsparticles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  background-color: var(--bg-color);
+:root {
+  --bg-color: #0d1117;
+  --bg-color-phone:#58a6ff;
+  --txt-color: #f5f5f5;
 }
 
 /* Main e conteúdo acima do fundo */
@@ -23,78 +17,16 @@ main {
   z-index: 1;
 }
 
-/*TODO: -TEMA ESCURO--*/
-:root {
-  /**? efeitos no portifolio */
-  --animation-duration: 3s;
-  --timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  /**? globals */
-  --bg-color: #0d1117;
-  --text-color: #aaaaaa;
-  --highlight-color: #F5F5F5;
-  --bg-button-tema: #1e1e1e;
-  /**? Hero */
-  --dev: #58a6ff;
-  /**? Port */
-  --bg-card-port: rgba(10, 25, 47, 0.85);
-  --box-shadow-card-port-hover: 0 5px 10px #112240;
-  --bg-text-color-port: #ccc;
-  /**? skills */
-  --bg-card-skills: linear-gradient(135deg, #2b2b2b, #1e1e1e);
-  --box-shadow-card-skills-hover: 0 5px 10px #00ffff;
-  /**? about */
-  --bg-description: linear-gradient(135deg, #2b2b2b, #1e1e1e);
-  --box-shadow-card-about-hover: 0 5px 10px #00ffff;
-  --bg-button: #00ffff;
-  --color-button: #111;
-  --button-hover: #00cccc;
-  /**? about - responsive */
-  --color-text-description: #ddd;
-  --box-shadow-description: 0 4px 20px rgba(0, 0, 0, 0.1);
-  /**? footer */
-  --color-text-footer: #aaa;
-  --color-button: #111;
-  --button-hover: #1f6feb;
-  --color-svg: #111;
-  --color-highlight: #58a6ff;
-  /**? contato */
-  --bg-card-contact: linear-gradient(135deg, #2b2b2b, #1e1e1e);
-  --box-shadow-card-contact-hover: 0 5px 10px #00ffff;
-  --bg-form: #1e1e1e;
-  --bg-input: #2a2a2a;
-  --text-color: #ffffff;
-  --placeholder-color: #a9a9a9;
-}
-
-/* Estilo de h1 com borda */
-:root h1 {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--highlight-color);
-  transition: all 0.3s ease;
-}
-
-body:not(.light-mode) h1:hover,
-html:not(.light-mode) h1:hover {
-  color: var(--highlight-color);
-  background-clip: text;
-  -webkit-background-clip: text;
-  transform: scale(1.08);
-  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.5);
-  -webkit-text-stroke: 1px var(--highlight-color);
-  transition: all 0.3s ease;
-}
-
 /* Fundo geral e cor do texto */
 html,
 body {
-  color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  color: var(--txt-color);
   min-height: 1005;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 html {
-  background-color: var(--dev);
+  background-color: var(--bg-color-phone);
 }
 
 
@@ -121,23 +53,6 @@ h1 {
   }
 }
 
-h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: clamp(30px, 3.5vw, 25px);
-  margin: 0;
-  text-align: center;
-  color: var(--highlight-color);
-  padding: 20px;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-/* .highlight {
-  color: #e64409;
-} */
-
-
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -149,74 +64,16 @@ h2 {
   }
 }
 
-h3 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: clamp(18px, 2.5vw, 25px);
-  margin: 0;
-  text-align: center;
-  color: var(--text-color);
-}
-
-
-
-/* Animações gerais */
-.animated {
-  opacity: 0;
-  will-change: transform, opacity;
-  transition: var(--animation-duration) var(--timing-function);
-}
-
-/* Efeito de entrada dos cards */
-.card__port {
-  transform: translateX(-30px);
-}
-
-.card__port.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Skills */
-.card__skills {
-  transform: translateY(50px);
-}
-
-.card__skills.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card__skills:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.card__skills:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.card__skills:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.card__skills:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-/* About */
-.about__text {
-  transform: translateX(-30px);
-}
-
-.about__text.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.about__cta {
-  transform: translateX(50px);
-}
-
-.about__cta.visible {
-  opacity: 1;
-  transform: translateX(0);
+/* Fundo de partículas fixo (tsParticles) */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg-color);
 }
 
 /* Botão do WhatsApp */
@@ -238,13 +95,4 @@ h3 {
 
 .whatsapp-button:hover {
   transform: scale(1.2);
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
 }

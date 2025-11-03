@@ -1,5 +1,10 @@
 /**? - Portifolio -*/
 
+:root {
+  --bg-card-port: rgba(10, 25, 47, 0.85);
+  --box-shadow-card-port-hover: 0 5px 10px #112240;
+  --bg-text-color-port: #ccc;
+}
 .port__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -35,7 +40,7 @@
   transition: transform 0.3s ease;
 }
 .card__port:hover img {
-  transform: scale(1.03); 
+  transform: scale(1.03);
 }
 
 .card__port h3 {
@@ -65,7 +70,6 @@
   color: #333;
 }
 
-
 .status-badge.in-progress {
   background: #ffeb3b;
   color: #222;
@@ -89,7 +93,7 @@
   gap: 12px;
   flex-wrap: wrap;
 }
-.card__buttons img{
+.card__buttons img {
   height: 30px;
   width: 30px;
 }
@@ -107,19 +111,18 @@
   transition: all 0.3s ease;
   text-decoration: none;
   border: 1px solid var(--primary-color, #007bff);
-  color: #0b1220; 
+  color: #0b1220;
   background: #58a6ff;
-  width: 150px; 
+  width: 150px;
 }
 .card__buttons .btn-outline:hover {
-  background:#1f6feb;
+  background: #1f6feb;
   border-color: #112240;
 }
 
-
 /* Ícones */
 .icon-btn {
-  width: 16px;  
+  width: 16px;
   height: 16px;
   object-fit: contain;
   transition: transform 0.2s ease;

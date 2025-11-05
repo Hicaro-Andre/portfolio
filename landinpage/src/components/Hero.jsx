@@ -1,88 +1,89 @@
-
 import "../styles/Hero.css";
 
-// Importe as imagens
+// Imagens
 import linkedinDark from "../assets/images/hero_image/linkedin.svg";
 import githubDark from "../assets/images/hero_image/github-dark.svg";
 import instagramDark from "../assets/images/hero_image/instagram-dark.svg";
-import arrowDownDark from "../assets/images/hero_image/arrow-down-dark.svg";
+import myfoto from "../assets/images/about_image/me.jpg";
 
 const Hero = () => {
   return (
     <section className="hero" id="hero">
       <div className="hero__container">
-        <div className="hero__title">
-          <h2 className="fade-in">
-            Hey! <span className="wave">👋</span> eu sou
-          </h2>
-          <h1>Hicaro André</h1>
-
-          {/* Desenvolvedor Full Stack */}
-          <div className="role-wrapper">
-            <span className="dev-label">Desenvolvedor</span>
-            <span className="typing-wrapper">
-              <span className="typing">Full Stack</span>
-              <span className="cursor">|</span>
-            </span>
+        <div className="about-photo-mobile">
+          <div className="photo-wrapper">
+            <img
+              src={myfoto}
+              alt="Hicaro André - Desenvolvedor Full Stack"
+              className="photo"
+            />
+            <div className="photo-glow"></div>
           </div>
         </div>
 
-        {/* Ícones sociais */}
-        <nav className="hero__icons" aria-label="Redes sociais">
-          <a
-            href="https://www.linkedin.com/in/hicaroandre/"
-            className="icon-fade"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="icon-dark"
-              src={linkedinDark}
-              alt="Perfil no LinkedIn de Hicaro André"
-            />
-            
-          </a>
+        <div className="hero__title">
+          <h3>Opa, eu sou</h3>
+          <h1>Hicaro André</h1>
 
-          <a
-            href="https://github.com/Hicaro-Andre"
-            className="icon-fade"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="icon-dark"
-              src={githubDark}
-              alt="Perfil no GitHub de Hicaro André"
-            />
-            
-          </a>
+          <p class="cargo">Desenvolvedor Full Stack</p>
 
-          <a
-            href="https://www.instagram.com/hicaroandre/"
-            className="icon-fade"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="icon-dark"
-              src={instagramDark}
-              alt="Perfil no Instagram de Hicaro André"
-            />
-          
-          </a>
-        </nav>
+          <nav className="hero__icons" aria-label="Redes sociais">
+            <a
+              href="https://www.linkedin.com/in/hicaroandre/"
+              className="icon-fade"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={linkedinDark}
+                alt="Perfil no LinkedIn de Hicaro André"
+              />
+            </a>
 
-        
-        {/* Seta animada */}
-        <div className="hero__arrow">
-          <a href="#port" aria-label="Ir para seção de portfólio">
+            <a
+              href="https://github.com/Hicaro-Andre"
+              className="icon-fade"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={githubDark} alt="Perfil no GitHub de Hicaro André" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/hicaroandre/"
+              className="icon-fade"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={instagramDark}
+                alt="Perfil no Instagram de Hicaro André"
+              />
+            </a>
+          </nav>
+
+          {/* Botões */}
+          <div className="hero__buttons">
+            <a href="#projetos" className="btn btn-primary">
+              Ver Projetos
+            </a>
+            <a href="#contato" className="btn btn-outline">
+              Entrar em Contato
+            </a>
+          </div>
+        </div>
+
+        <div className="about-photo-desk">
+          <div class="photo-border">
+          <div className="photo-wrapper">
             <img
-              className="icon-dark arrow-bounce"
-              src={arrowDownDark}
-              alt="Ir para seção de portfólio"
+              src={myfoto}
+              alt="Hicaro André - Desenvolvedor Full Stack"
+              className="photo"
             />
-            
-          </a>
+            <div className="photo-glow"></div>
+          </div>
+          </div>
         </div>
       </div>
     </section>

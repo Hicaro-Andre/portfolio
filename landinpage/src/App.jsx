@@ -17,8 +17,8 @@ function App() {
       <main>
         <Navbar/>
         <Hero />
-        <Portifolio />
         <About />
+        <Portifolio />
         <CareerJourney />
         <ContactForm />
         <Footer />

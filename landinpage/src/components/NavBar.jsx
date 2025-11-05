@@ -20,13 +20,13 @@ export default function Navbar() {
         </button>
 
         <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <a href="#home">Início</a>
-          <a href="#">Sobre</a>
+          <a href="#hero">Início</a>
+          <a href="#about">Sobre</a>
           <a href="#">Habilidades</a>
-          <a href="#">Projetos</a>
+          <a href="#port">Projetos</a>
           <a href="#">Experiência</a>
           <a href="#">Formação</a>
-          <a href="#home">Contato</a>
+          <a href="#contact">Contato</a>
         </nav>
       </div>
     </header>

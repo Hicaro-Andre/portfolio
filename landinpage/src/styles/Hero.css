@@ -1,11 +1,9 @@
-/* ================================================
-   HERO SECTION — MOBILE FIRST
-================================================ */
+/* == HERO SECTION — MOBILE FIRST == */
 
-:root{
-   --dev: #58a6ff;
+:root {
+  --dev: #58a6ff;
+  --highlight-color: #58a6ff;
 }
-
 
 .hero {
   min-height: 100vh;
@@ -25,77 +23,113 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  gap: 30px;
 }
 
+/* ===== PHOTO - MOBILE ===== */
+.about-photo-mobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  
+}
+
+.photo-border {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 5px; /* espessura da borda */
+  background: linear-gradient(120deg, #ff00cc, #3333ff, #00ffff, #ff00cc);
+  background-size: 300% 300%;
+  animation: rotateGradient 5s linear infinite;
+  box-sizing: border-box;
+}
+
+/* === CONTÊINER INTERNO: foto + glow === */
+.photo-wrapper {
+  position: relative;
+  overflow: hidden; 
+  border-radius: 50%;
+  border: 3px solid #58a6ff;
+}
+
+/* foto */
+.photo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* brilho fixo sobre a foto */
+.photo-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(88, 166, 255, 0.4); /* brilho inicial suave */
+  filter: blur(30px);
+  transition: opacity 0.4s ease, filter 0.4s ease, background 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1; /* sempre visível */
+}
+
+/* Efeito ao passar o mouse */
+.photo-wrapper:hover .photo {
+  transform: scale(1.08);
+}
+
+
+
+
+/* ===== Título ===== */
 .hero__title {
   width: 100%;
   padding: 1rem 0.75rem;
   margin-top: 2rem;
+
+  border: solid;
+}
+.hero__title h1{
+  text-align: start;
 }
 
-.fade-in {
-  animation: fadeInUp 1s ease-out forwards;
+.hero__title h3{
+  text-align: start;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ================================================
-   ROLE / TYPING EFFECT
-================================================ */
-.role-wrapper {
+.cargo{
+  text-align: start;
+  color: #c084f5; /* cor do texto */
+  font-weight: bold;
+  font-size: 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: monospace;
-  gap: 0.4rem;
-  margin: 0.75rem 0;
-  font-size: 1.1rem;
-  flex-wrap: wrap;
+  gap: 10px; /* espaço entre a barrinha e o texto */
 }
 
-.typing-wrapper {
+/* cria a barrinha antes do texto */
+.cargo::before {
+  content: "";
+  width: 40px;        /* comprimento da barra */
+  height: 3px;        /* espessura da barra */
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff); /* gradiente rosa -> roxo */
   display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 100%;
 }
 
-.dev-label {
-  color: var(--dev);
-  font-weight: 700;
-}
-
-.typing {
-  display: inline-block;
-  animation: typing 2.5s steps(10) forwards;
-  color: var(--highlight-color);
-}
-
-.cursor {
-  display: inline-block;
-  animation: blink 0.7s steps(1) infinite;
-  color: var(--highlight-color);
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 10ch; }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
-/* ================================================
-   SOCIAL ICONS
-================================================ */
+/* == Ícones sociais == */
 .hero__icons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 0.75rem 0;
   flex-wrap: wrap;
@@ -106,19 +140,27 @@
   height: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
-}
-
-.hero__icons a img {
   animation: floatWave 3s ease-in-out infinite;
 }
 
-.hero__icons a:nth-child(1) img { animation-delay: 0s; }
-.hero__icons a:nth-child(2) img { animation-delay: 0.3s; }
-.hero__icons a:nth-child(3) img { animation-delay: 0.6s; }
+.hero__icons a:nth-child(1) img {
+  animation-delay: 0s;
+}
+.hero__icons a:nth-child(2) img {
+  animation-delay: 0.3s;
+}
+.hero__icons a:nth-child(3) img {
+  animation-delay: 0.6s;
+}
 
 @keyframes floatWave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .icon-fade {
@@ -127,35 +169,141 @@
   animation: fadeInUpIcons 0.8s ease forwards;
 }
 
-.icon-fade:nth-child(1) { animation-delay: 0.3s; }
-.icon-fade:nth-child(2) { animation-delay: 0.5s; }
-.icon-fade:nth-child(3) { animation-delay: 0.7s; }
+.icon-fade:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.icon-fade:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.icon-fade:nth-child(3) {
+  animation-delay: 0.7s;
+}
 
 @keyframes fadeInUpIcons {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ================================================
-   DOWN ARROW
-================================================ */
-.hero__arrow {
+.hero__buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+/* estilo base */
+.btn {
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* botão principal */
+.btn-primary {
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: #fff;
+  border: none;
+}
+
+/* botão contorno */
+.btn-outline {
+  border: 2px solid #c084f5;
+  color: #c084f5;
+}
+
+/* hover effects */
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.5);
+}
+
+.btn-outline:hover {
+  background: #c084f5;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+/* ===== PHOTO - DESK ===== */
+.about-photo-desk {
   display: flex;
   justify-content: center;
-  margin-top: 1.2rem;
+  margin-top: 1rem;
+  display: none;
 }
 
-.hero__arrow img {
-  width: 36px;
-  height: auto;
-  animation: bounce 2s ease-in-out infinite;
-  cursor: pointer;
+.photo-border {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 5px; /* espessura da borda */
+  background: linear-gradient(120deg, #ff00cc, #3333ff, #00ffff, #ff00cc);
+  background-size: 300% 300%;
+  animation: rotateGradient 5s linear infinite;
+  box-sizing: border-box;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(10px); }
-  60% { transform: translateY(6px); }
+/* === CONTÊINER INTERNO: foto + glow === */
+.photo-wrapper {
+  position: relative;
+  overflow: hidden; 
+  border-radius: 50%;
+  border: 3px solid #58a6ff;
 }
+
+/* foto */
+.photo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* brilho fixo sobre a foto */
+.photo-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(88, 166, 255, 0.4); /* brilho inicial suave */
+  filter: blur(30px);
+  transition: opacity 0.4s ease, filter 0.4s ease, background 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1; /* sempre visível */
+}
+
+/* Efeito ao passar o mouse */
+.photo-wrapper:hover .photo {
+  transform: scale(1.08);
+}
+
+
+
+/* === ANIMAÇÃO DA BORDA === */
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 /* ================================================
    MEDIA QUERIES — MOBILE FIRST PROGRESSION
@@ -165,20 +313,19 @@
 @media (min-width: 600px) {
   .hero__container {
     padding: 3rem 1.5rem;
+    flex-direction: column;
   }
-  .hero__title {
-    margin-top: 2.5rem;
-    padding: 1.25rem;
-  }
+
   .role-wrapper {
     font-size: 1.4rem;
-    gap: 0.5rem;
   }
+
   .hero__icons {
     gap: 1.5rem;
   }
-  .hero__arrow img {
-    width: 44px;
+
+  .photo {
+    max-width: 320px;
   }
 }
 
@@ -186,20 +333,22 @@
 @media (min-width: 1024px) {
   .hero__container {
     padding: 4rem 2rem;
+    flex-direction: row;
   }
-  .hero__title {
-    margin-top: 3rem;
-    padding: 1.5rem;
-  }
+
   .role-wrapper {
     font-size: 1.8rem;
-    gap: 0.6rem;
   }
-  .hero__icons {
-    gap: 1.8rem;
+
+  .about-photo-mobile {
+    display: none;
   }
-  .hero__arrow img {
-    width: 50px;
+  .about-photo-desk {
+    display: block;
+  }
+
+  .photo {
+    max-width: 340px;
   }
 }
 
@@ -210,14 +359,20 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+
   .role-wrapper {
     font-size: 2rem;
-    gap: 0.75rem;
   }
+
   .hero__icons {
     gap: 2rem;
   }
+
   .hero__arrow img {
     width: 56px;
+  }
+
+  .photo {
+    max-width: 360px;
   }
 }

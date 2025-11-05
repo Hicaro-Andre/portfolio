@@ -26,6 +26,7 @@ body {
 }
 html {
   background-color: var(--bg-color-phone);
+  scroll-behavior: smooth;
 }
 
 
@@ -33,7 +34,7 @@ html {
 h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: clamp(3rem, 10vw, 7rem);
+  font-size: 45px;
   text-align: center;
   transition: all 0.3s ease;
   animation: fadeSlideIn 1s ease-out forwards;

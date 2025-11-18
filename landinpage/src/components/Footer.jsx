@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Footer.css";
+import "/src/index.css";
 import { HiDownload } from "react-icons/hi";
 import { FaCertificate } from "react-icons/fa";
 
@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer>
     
-      <div className="cert-section fade-in">
+      {/* <div className="cert-section fade-in">
         <h3 className="cert-title">
           <FaCertificate className="cert-icon" /> Certificações
         </h3>
@@ -25,7 +25,7 @@ const Footer = () => {
             <p>Curso em Vídeo • 2019</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
      
       <div className="footer-bottom">

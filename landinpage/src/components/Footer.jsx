@@ -1,42 +1,39 @@
 import React from "react";
 import "/src/index.css";
 import { HiDownload } from "react-icons/hi";
-import { FaCertificate } from "react-icons/fa";
 
-const Footer = () => {
+import insta from "../assets/images/footer/instagram-dark.svg";
+import linkedin from "../assets/images/footer/linkedin.svg";
+import github from "../assets/images/footer/github-dark.svg";
+
+const Footer = ({ language }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer>
-    
-      {/* <div className="cert-section fade-in">
-        <h3 className="cert-title">
-          <FaCertificate className="cert-icon" /> Certificações
-        </h3>
-
-        <div className="cert-list">
-          <div className="cert-item">
-            <h4>Web Design</h4>
-            <p>Udemy • 2019</p>
-          </div>
-
-          <div className="cert-item">
-            <h4>MySQL</h4>
-            <p>Curso em Vídeo • 2019</p>
-          </div>
-        </div>
-      </div> */}
-
-     
+    <footer className="border-purple-500/50">
       <div className="footer-bottom">
-         <a href="/cv-hicaro-dev.pdf" download className="cta-btn">
-          <HiDownload className="cta-icon" /> Baixar CV
-        </a>
 
-        <p className="copyright">
-          <span className="highlight">© {currentYear} Hicaro André</span> | Todos os direitos reservados
-        </p>
+        
+        <div className="social-icons">
+          <a href="#" className="social-link">
+            <img src={insta} alt="Instagram" />
+          </a>
+          <a href="#" className="social-link">
+            <img src={linkedin} alt="LinkedIn" />
+          </a>
+          <a href="#" className="social-link">
+            <img src={github} alt="GitHub" />
+          </a>
+        </div>
+
        
+        <p className="copyright">
+          <span className="highlight">© {currentYear} Hicaro André</span> |{" "}
+          {language === "pt"
+            ? "Todos os direitos reservados"
+            : "All rights reserved"}
+        </p>
+
       </div>
     </footer>
   );

@@ -12,7 +12,7 @@
 
   /* NavBar */
   --bg-color-navbar: rgba(0, 0, 0, 0.9); /* cor do fundo do menu */
-  --bg-color-hover-links: #4f46e5; /* cor do hover do menu */
+  --bg-color-hover-links:#58a6ff; /* cor do hover do menu */
   --bg-text-color-links: #f5f5f5; /* cor dos textos do menu */
 
   /* Footer */
@@ -109,7 +109,7 @@ html {
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   position: absolute;
   top: 60px;
   left: 0;
@@ -122,31 +122,56 @@ html {
 
 .nav-links.active {
   display: flex;
+  color: #58a6ff;
 }
 
 .nav-links a {
   text-decoration: none;
+  position: relative;
   color: var(--bg-text-color-links);
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #58a6ff, #1f6feb);
+  transition: width .3s ease;
+}
+
 .nav-links a:hover {
   color: var(--bg-color-hover-links);
 }
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #58a6ff;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
 .nav-btn-lang {
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
-  background: #58a6ff;
-  color: #054cb7;
+  background: transparent;
+  color: var(--bg-text-color-links);
   font-weight: 600;
-  border: none;
+  border: 1px solid #58a6ff80;
   cursor: pointer;
   transition: 0.25s ease;
 }
 
 .nav-btn-lang:hover {
-  background: #1f6fc1;
   transform: translateY(-2px);
 }
 
@@ -191,17 +216,17 @@ footer {
   gap: 1rem;
 }
 
-.social-link img {
-  width: 30px;
-  height: 30px;
-  opacity: 0.8;
-  transition: 0.5s ease;
+.social-link svg {
+  color: #fff;  
+  font-size: 35px;
+  transition: color .3s ease, transform .3s ease;
 }
 
-.social-link img:hover {
+.social-link:hover svg {
   color: #58a6ff;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
+
 
 .footer-bottom {
   display: flex;

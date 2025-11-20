@@ -1,10 +1,7 @@
 import React from "react";
 import "/src/index.css";
-import { HiDownload } from "react-icons/hi";
 
-import insta from "../assets/images/footer/instagram-dark.svg";
-import linkedin from "../assets/images/footer/linkedin.svg";
-import github from "../assets/images/footer/github-dark.svg";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = ({ language }) => {
   const currentYear = new Date().getFullYear();
@@ -12,28 +9,24 @@ const Footer = ({ language }) => {
   return (
     <footer className="border-purple-500/50">
       <div className="footer-bottom">
-
-        
         <div className="social-icons">
-          <a href="#" className="social-link">
-            <img src={insta} alt="Instagram" />
+          <a href="https://github.com/Hicaro-Andre" className="social-link">
+            <FaGithub />
           </a>
-          <a href="#" className="social-link">
-            <img src={linkedin} alt="LinkedIn" />
+          <a href="https://www.linkedin.com/in/hicaroandre/" className="social-link">
+            <FaLinkedin />
           </a>
-          <a href="#" className="social-link">
-            <img src={github} alt="GitHub" />
+          <a href="https://www.instagram.com/hicaroandre/" className="social-link">
+            <FaInstagram />
           </a>
         </div>
 
-       
         <p className="copyright">
           <span className="highlight">© {currentYear} Hicaro André</span> |{" "}
           {language === "pt"
             ? "Todos os direitos reservados"
             : "All rights reserved"}
         </p>
-
       </div>
     </footer>
   );

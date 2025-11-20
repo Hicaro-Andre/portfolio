@@ -1,10 +1,3 @@
-/* == HERO SECTION — MOBILE FIRST == */
-
-:root {
-  --dev: #58a6ff;
-  --highlight-color: #58a6ff;
-}
-
 .hero {
   min-height: 100vh;
   display: flex;
@@ -26,272 +19,92 @@
   gap: 30px;
 }
 
-/* ===== PHOTO - MOBILE ===== */
-.about-photo-mobile {
+.photo-content-mobile {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .photo-border {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  padding: 6px;
   border-radius: 50%;
-  padding: 5px; /* espessura da borda */
-  background: linear-gradient(120deg, #ff00cc, #3333ff, #00ffff, #ff00cc);
-  background-size: 300% 300%;
-  animation: rotateGradient 5s linear infinite;
-  box-sizing: border-box;
+  position: relative;
+  background: linear-gradient(135deg, #58a6ff, #1f6feb, #154cbd, #58a6ff);
+  animation: borderPulse 6s ease infinite;
 }
 
-/* === CONTÊINER INTERNO: foto + glow === */
+@keyframes borderPulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .photo-wrapper {
   position: relative;
-  overflow: hidden; 
   border-radius: 50%;
-  border: 3px solid #58a6ff;
+  overflow: hidden;
 }
 
-/* foto */
 .photo {
   display: flex;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   border-radius: 50%;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  z-index: 1;
 }
-
-/* brilho fixo sobre a foto */
 .photo-glow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   border-radius: 50%;
-  background: rgba(88, 166, 255, 0.4); /* brilho inicial suave */
-  filter: blur(30px);
-  transition: opacity 0.4s ease, filter 0.4s ease, background 0.4s ease;
-  z-index: 2;
+  box-shadow: 0 0 25px 8px rgba(88, 166, 255, 0.55);
+  animation: glowPulse 4s ease-in-out infinite;
   pointer-events: none;
-  opacity: 1; /* sempre visível */
 }
 
-/* Efeito ao passar o mouse */
-.photo-wrapper:hover .photo {
-  transform: scale(1.08);
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 18px 6px rgba(88, 166, 255, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 32px 12px rgba(31, 111, 235, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 18px 6px rgba(88, 166, 255, 0.45);
+  }
+}
+.photo-content-desk {
+  display: none;
 }
 
-
-
-
-/* ===== Título ===== */
 .hero__title {
   width: 100%;
   padding: 1rem 0.75rem;
   margin-top: 2rem;
-
-  border: solid;
-}
-.hero__title h1{
-  text-align: start;
 }
 
-.hero__title h3{
-  text-align: start;
-}
-
-.cargo{
-  text-align: start;
-  color: #c084f5; /* cor do texto */
+.anim-gradient {
+  background: linear-gradient(
+    135deg,
+    #87c4ff,
+    /* azul claro */ #58a6ff,
+    /* azul padrão */ #1f6feb,
+    /* azul forte */ #0a3e83 
+  );
+  background-size: 300%;
   font-weight: bold;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* espaço entre a barrinha e o texto */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s ease infinite;
 }
 
-/* cria a barrinha antes do texto */
-.cargo::before {
-  content: "";
-  width: 40px;        /* comprimento da barra */
-  height: 3px;        /* espessura da barra */
-  border-radius: 10px;
-  background: linear-gradient(90deg, #ff00cc, #3333ff); /* gradiente rosa -> roxo */
-  display: inline-block;
-}
-
-/* == Ícones sociais == */
-.hero__icons {
-  display: flex;
-  justify-content: flex-start;
-  gap: 1rem;
-  padding: 0.75rem 0;
-  flex-wrap: wrap;
-}
-
-.hero__icons img {
-  width: 32px;
-  height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
-  animation: floatWave 3s ease-in-out infinite;
-}
-
-.hero__icons a:nth-child(1) img {
-  animation-delay: 0s;
-}
-.hero__icons a:nth-child(2) img {
-  animation-delay: 0.3s;
-}
-.hero__icons a:nth-child(3) img {
-  animation-delay: 0.6s;
-}
-
-@keyframes floatWave {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.icon-fade {
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeInUpIcons 0.8s ease forwards;
-}
-
-.icon-fade:nth-child(1) {
-  animation-delay: 0.3s;
-}
-.icon-fade:nth-child(2) {
-  animation-delay: 0.5s;
-}
-.icon-fade:nth-child(3) {
-  animation-delay: 0.7s;
-}
-
-@keyframes fadeInUpIcons {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero__buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-}
-
-/* estilo base */
-.btn {
-  padding: 10px 25px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* botão principal */
-.btn-primary {
-  background: linear-gradient(90deg, #ff00cc, #3333ff);
-  color: #fff;
-  border: none;
-}
-
-/* botão contorno */
-.btn-outline {
-  border: 2px solid #c084f5;
-  color: #c084f5;
-}
-
-/* hover effects */
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 0, 204, 0.5);
-}
-
-.btn-outline:hover {
-  background: #c084f5;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-
-/* ===== PHOTO - DESK ===== */
-.about-photo-desk {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  display: none;
-}
-
-.photo-border {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  padding: 5px; /* espessura da borda */
-  background: linear-gradient(120deg, #ff00cc, #3333ff, #00ffff, #ff00cc);
-  background-size: 300% 300%;
-  animation: rotateGradient 5s linear infinite;
-  box-sizing: border-box;
-}
-
-/* === CONTÊINER INTERNO: foto + glow === */
-.photo-wrapper {
-  position: relative;
-  overflow: hidden; 
-  border-radius: 50%;
-  border: 3px solid #58a6ff;
-}
-
-/* foto */
-.photo {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  z-index: 1;
-}
-
-/* brilho fixo sobre a foto */
-.photo-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: rgba(88, 166, 255, 0.4); 
-  filter: blur(30px);
-  transition: opacity 0.4s ease, filter 0.4s ease, background 0.4s ease;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 1; 
-}
-
-/* Efeito ao passar o mouse */
-.photo-wrapper:hover .photo {
-  transform: scale(1.08);
-}
-
-
-
-/* === ANIMAÇÃO DA BORDA === */
-@keyframes rotateGradient {
+/* Animação do gradiente */
+@keyframes gradientMove {
   0% {
     background-position: 0% 50%;
   }
@@ -304,75 +117,71 @@
 }
 
 
+.cargo {
+  text-align: start;
+  font-weight: bold;
+  font-size: clamp(18px, 3vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cargo span {
+  background: linear-gradient(135deg, #58a6ff, #1f6feb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* para navegadores modernos */
+}
 
-/* ================================================
-   MEDIA QUERIES — MOBILE FIRST PROGRESSION
-================================================ */
+/* cria a barrinha antes do texto */
+.cargo::before {
+  content: "";
+  width: 70px; /* comprimento da barra */
+  height: 4px; /* espessura da barra */
+  border-radius: 10px;
+  background: linear-gradient(135deg, #58a6ff, #1f6feb);
+  display: inline-block;
+}
+.description{
+  text-align: start;
+ font-size: clamp(16px, 2.5vw, 20px);
+}
+.description span{
+color: #0a3e83;
 
-/* Tablets (≥600px) */
+}
+.hero__buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+
+/* Responsividade */
 @media (min-width: 600px) {
   .hero__container {
     padding: 3rem 1.5rem;
     flex-direction: column;
   }
-
-  .role-wrapper {
-    font-size: 1.4rem;
-  }
-
-  .hero__icons {
-    gap: 1.5rem;
-  }
-
-  .photo {
-    max-width: 320px;
-  }
 }
 
-/* Laptops (≥1024px) */
+
 @media (min-width: 1024px) {
   .hero__container {
     padding: 4rem 2rem;
     flex-direction: row;
   }
-
-  .role-wrapper {
-    font-size: 1.8rem;
-  }
-
-  .about-photo-mobile {
+  .photo-content-mobile {
     display: none;
   }
-  .about-photo-desk {
+  .photo-content-desk {
     display: block;
-  }
-
-  .photo {
-    max-width: 340px;
   }
 }
 
-/* Large Desktops (≥1440px) */
 @media (min-width: 1440px) {
   .hero__container {
     padding: 5rem 3rem;
     max-width: 1200px;
     margin: 0 auto;
-  }
-
-  .role-wrapper {
-    font-size: 2rem;
-  }
-
-  .hero__icons {
-    gap: 2rem;
-  }
-
-  .hero__arrow img {
-    width: 56px;
-  }
-
-  .photo {
-    max-width: 360px;
   }
 }

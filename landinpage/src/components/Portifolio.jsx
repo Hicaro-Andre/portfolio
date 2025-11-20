@@ -8,16 +8,12 @@ import redenave from "../assets/images/portifolio_image/REDE NAVE.png";
 import gitIcon from "../assets/images/portifolio_image/github-dark.svg";
 import eyeIcon from "../assets/images/portifolio_image/eye.svg";
 
-
-
-
 const Portifolio = () => {
   const projects = [
     {
       id: 1,
       title: "Educação Financeira",
-      description:
-        "description",
+      description: "description",
       image: edf,
       status: "Em andamento",
       github: "https://github.com/Hicaro-Andre/educacao_financeira_web.git",
@@ -26,8 +22,7 @@ const Portifolio = () => {
     {
       id: 2,
       title: "Ecommerce API",
-      description:
-        "description",
+      description: "description",
       image: api,
       // tags: ["Node.js", "Express", "React", "API REST", "MongoDB",],
       status: "Em andamento",
@@ -37,8 +32,7 @@ const Portifolio = () => {
     {
       id: 3,
       title: "Projeto Integrador",
-      description:
-        "description",
+      description: "description",
       image: redenave,
       status: "Em andamento",
       github: "https://github.com/seuusuario/projeto2",
@@ -48,9 +42,8 @@ const Portifolio = () => {
 
   return (
     <section className="port" id="port">
-      <h2>
-        <span className="highlight">Boas-Vindas</span> ao meu Portfólio
-      </h2>
+      <h2>Boas-Vindas ao meu Portfólio</h2>
+      
       <div className="port__container">
         {projects.map((project) => (
           <div key={project.id} className="card__port animated zoom-in">
@@ -71,7 +64,6 @@ const Portifolio = () => {
             </div>
 
             <p>{project.description}</p>
-        
 
             {/* Botões */}
             <div className="card__buttons">

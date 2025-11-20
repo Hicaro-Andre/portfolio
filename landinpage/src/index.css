@@ -38,6 +38,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Fontes */
+
+h1 {
+  text-align: start;
+  font-size: clamp(40px, 8vw, 90px);
+}
+h2{
+
+}
+h3 {
+  text-align: start;
+  font-size: clamp(35px, 7vw, 80px);
+}
+p{
+
+}
+
+
+
+
 /* NavBar */
 .navbar {
   background: var(--bg-color-navbar);
@@ -267,6 +287,43 @@ footer {
     margin-bottom: 8px;
   }
 }
+
+
+/*Botões primários e secundários*/
+.btn {
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* botão principal */
+.btn-primary {
+  background: linear-gradient(135deg, #58a6ff, #1f6feb);
+  color: #fff;
+  border: none;
+}
+
+/* botão secundário */
+.btn-secondary {
+  border: 2px solid #58a6ff;
+  color: #fff;
+}
+
+/* hover effects */
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #58a6ff, #1f6feb);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+  transform: scale(1.05);
+}
+
 
 /* Fundo de partículas fixo (tsParticles) */
 #tsparticles {

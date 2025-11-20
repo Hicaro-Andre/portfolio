@@ -38,16 +38,14 @@ const CareerJourney = () => {
 
   return (
     <section className="career" id="career">
+      <h2>Minha Jornada</h2>
+      
       <div className="career-container">
         <motion.h2
           className="career-title"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-        >
-          <h2>
-            <span className="highlight">Minha</span> Jornada
-          </h2>
-        </motion.h2>
+        ></motion.h2>
 
         <div className="timeline">
           {timeline.map((item, index) => (

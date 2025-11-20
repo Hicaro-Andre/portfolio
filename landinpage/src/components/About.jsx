@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/About.css";
-import myfoto from "../assets/images/about_image/me.jpg";
 
 // Ícones
 import {
@@ -34,10 +33,8 @@ const About = () => {
 
   return (
     <section className="about" id="about">
+      <h2>Sobre Mim</h2>
       <div className="about-header fade-in delay-0">
-        <h2>
-          <span className="highlight">Sobre</span> Mim
-        </h2>
         <p className="subtitle fade-in delay-1">
           Sou <span className="text-strong">Hicaro André</span>, desenvolvedor
           Full Stack formado em Ciência da Computação, apaixonado por tecnologia
@@ -139,7 +136,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-photo">
+        {/* <div className="about-photo">
           <div className="photo-wrapper">
             <img
               src={myfoto}
@@ -148,7 +145,7 @@ const About = () => {
             />
             <div className="photo-glow"></div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

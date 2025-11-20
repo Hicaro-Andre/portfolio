@@ -19,7 +19,7 @@ const ContactForm = () => {
     name: 70,
     email: 80,
     subject: 50,
-    message: 2000
+    message: 2000,
   };
 
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -29,26 +29,26 @@ const ContactForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     let limitedValue = value;
-    
+
     // Aplicar limites de caracteres
     if (value.length > CHAR_LIMITS[name]) {
       limitedValue = value.slice(0, CHAR_LIMITS[name]);
     }
-    
+
     setFormData({ ...formData, [name]: limitedValue });
     setErrors({ ...errors, [name]: "" });
   };
 
   const validate = () => {
     const newErrors = {};
-    
+
     // Validação do nome
     if (!formData.name.trim()) {
       newErrors.name = "Ops! Esqueceu o nome 😉";
     } else if (formData.name.length > CHAR_LIMITS.name) {
       newErrors.name = `O nome deve ter no máximo ${CHAR_LIMITS.name} caracteres.`;
     }
-    
+
     // Validação do email
     if (!formData.email.trim()) {
       newErrors.email = "Não esqueça seu e-mail, por favor!";
@@ -57,21 +57,21 @@ const ContactForm = () => {
     } else if (formData.email.length > CHAR_LIMITS.email) {
       newErrors.email = `O e-mail deve ter no máximo ${CHAR_LIMITS.email} caracteres.`;
     }
-    
+
     // Validação do assunto
     if (!formData.subject.trim()) {
       newErrors.subject = "Qual o assunto?";
     } else if (formData.subject.length > CHAR_LIMITS.subject) {
       newErrors.subject = `O assunto deve ter no máximo ${CHAR_LIMITS.subject} caracteres.`;
     }
-    
+
     // Validação da mensagem
     if (!formData.message.trim()) {
       newErrors.message = "Escreva uma mensagem antes de enviar.";
     } else if (formData.message.length > CHAR_LIMITS.message) {
       newErrors.message = `A mensagem deve ter no máximo ${CHAR_LIMITS.message} caracteres.`;
     }
-    
+
     return newErrors;
   };
 
@@ -87,15 +87,15 @@ const ContactForm = () => {
 
     try {
       await emailjs.send(
-        serviceId, 
-        templateId, 
+        serviceId,
+        templateId,
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        publicKey 
+        publicKey
       );
 
       setShowModal(true);
@@ -117,13 +117,10 @@ const ContactForm = () => {
 
   return (
     <section className="contact-form-section" id="contact">
-      
-      <h2>
-        <span className="highlight">Vamos</span> Conversar?
-      </h2>
+      <h2>Vamos Conversar?</h2>
       <p>
-        Quer trocar uma ideia sobre oportunidades, projetos ou colaborações?
-        É só preencher o formulário abaixo! 🚀
+        Quer trocar uma ideia sobre oportunidades, projetos ou colaborações? É
+        só preencher o formulário abaixo! 🚀
       </p>
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -152,7 +149,7 @@ const ContactForm = () => {
             onChange={handleChange}
             maxLength={CHAR_LIMITS.email}
           />
-          
+
           {errors.email && <span className="error-msg">{errors.email}</span>}
         </div>
 
@@ -167,8 +164,10 @@ const ContactForm = () => {
             onChange={handleChange}
             maxLength={CHAR_LIMITS.subject}
           />
-          
-          {errors.subject && <span className="error-msg">{errors.subject}</span>}
+
+          {errors.subject && (
+            <span className="error-msg">{errors.subject}</span>
+          )}
         </div>
 
         <div className={`form-group ${errors.message ? "error" : ""}`}>
@@ -185,7 +184,9 @@ const ContactForm = () => {
           {/* <div className="char-counter">
             {getCharCount('message')}
           </div> */}
-          {errors.message && <span className="error-msg">{errors.message}</span>}
+          {errors.message && (
+            <span className="error-msg">{errors.message}</span>
+          )}
         </div>
 
         <button
@@ -204,7 +205,9 @@ const ContactForm = () => {
               <div className="checkmark draw"></div>
             </div>
             <h3>Mensagem enviada!</h3>
-            <p>Valeu por entrar em contato! Assim que possível, te retorno 😉</p>
+            <p>
+              Valeu por entrar em contato! Assim que possível, te retorno 😉
+            </p>
             <button className="close-btn" onClick={closeModal}>
               Fechar
             </button>

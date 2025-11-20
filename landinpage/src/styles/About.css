@@ -1,8 +1,6 @@
 /* Mobile First */
 
-:root{
-  
-}
+
 .about {
   min-height: 100vh;
   padding: 80px 20px;
@@ -159,50 +157,8 @@
   font-size: 1rem;
 }
 
-/* Foto */
-.about-photo {
-  display: flex;
-  justify-content: center;
-}
 
-.photo-wrapper {
-  position: relative;
-  display: inline-block;
-}
 
-.photo {
-  width: 75vw;
-  max-width: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  animation: floatY 6s ease-in-out infinite;
-  box-shadow: 0 0 16px rgba(88, 166, 255, 0.25);
-}
-
-.photo-glow {
-  position: absolute;
-  inset: -10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(88, 166, 255, 0.2), transparent 60%);
-  filter: blur(20px);
-}
-
-/* ANIMAÇÕES */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in { opacity: 0; animation: fadeUp 0.7s ease forwards; }
-.delay-0 { animation-delay: 0s; }
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.3s; }
-.delay-3 { animation-delay: 0.45s; }
-
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
 
 /* RESPONSIVIDADE */
 @media (min-width: 768px) {

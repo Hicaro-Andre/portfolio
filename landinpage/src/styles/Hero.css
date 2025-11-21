@@ -4,19 +4,19 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .hero__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.5rem 1rem;
+  margin-top: 3.1rem;
   text-align: center;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  gap: 30px;
+  gap: 25px;
 }
 
 .photo-content-mobile {
@@ -32,23 +32,61 @@
   position: relative;
   background: linear-gradient(135deg, #58a6ff, #1f6feb, #154cbd, #58a6ff);
   animation: borderPulse 6s ease infinite;
+  z-index: 2;
+  overflow: visible; 
 }
 
-@keyframes borderPulse {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Efeito do fundo da foto */
+.photo-border::before {
+  content: "";
+  position: absolute;
+  inset: -10px; 
+  border-radius: 50%;
+  z-index: -1;
+
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(88, 166, 255, 0.8) 0%, 
+    rgba(31, 111, 235, 0.5) 40%, 
+    rgba(21, 76, 189, 0.3) 70%, 
+    transparent 100%);
+  filter: blur(15px); 
+  animation: haloPulse 5s ease-in-out infinite alternate;
 }
+/* Efeito do fundo da foto secundários */
+.photo-border::after {
+  content: "";
+  position: absolute;
+  inset: -20px; 
+  border-radius: 50%;
+  z-index: -2;
+
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 0, 255, 0.5) 0%, 
+    rgba(88, 166, 255, 0.2) 50%, 
+    transparent 80%);
+  filter: blur(25px); 
+  animation: haloPulseSecondary 6s ease-in-out infinite alternate-reverse;
+}
+
+/* Animação do fundo da foto */
+@keyframes haloPulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* Animação do fundo da foto secundário */
+@keyframes haloPulseSecondary {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
 .photo-wrapper {
   position: relative;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: hidden
+  
 }
 
 .photo {
@@ -57,14 +95,11 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transition:transform 0.4s ease;
+  
 }
-.photo-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  box-shadow: 0 0 25px 8px rgba(88, 166, 255, 0.55);
-  animation: glowPulse 4s ease-in-out infinite;
-  pointer-events: none;
+.photo:hover {
+  transform: scale(1.05); 
 }
 
 @keyframes glowPulse {
@@ -83,8 +118,9 @@
 }
 
 .hero__title {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 1rem 0.75rem;
   margin-top: 2rem;
 }
 
@@ -120,7 +156,7 @@
 .cargo {
   text-align: start;
   font-weight: bold;
-  font-size: clamp(18px, 3vw, 28px);
+  font-size: clamp(20px, 3vw, 28px);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -142,17 +178,20 @@
   display: inline-block;
 }
 .description{
-  text-align: start;
- font-size: clamp(16px, 2.5vw, 20px);
+ text-align: start;
+ font-size: clamp(20px, 2.5vw, 20px);
 }
 .description span{
 color: #0a3e83;
 
 }
 .hero__buttons {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   display: flex;
-  gap: 15px;
+  gap: 25px;
+  padding: 10px;
 }
 
 
@@ -161,6 +200,9 @@ color: #0a3e83;
   .hero__container {
     padding: 3rem 1.5rem;
     flex-direction: column;
+  }
+  .hero__buttons{
+    flex-direction: row;
   }
 }
 

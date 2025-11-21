@@ -18,7 +18,6 @@ export default function Hero({ language }) {
                 }
                 className="photo"
               />
-              <div className="photo-glow"></div>
             </div>
           </div>
         </div>

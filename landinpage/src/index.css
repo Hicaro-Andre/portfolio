@@ -42,14 +42,17 @@ html {
 
 h1 {
   text-align: start;
-  font-size: clamp(40px, 8vw, 90px);
+  font-size: clamp(42px, 8vw, 90px);
+  
 }
+
 h2{
 
 }
 h3 {
   text-align: start;
-  font-size: clamp(35px, 7vw, 80px);
+  font-size: clamp(38px, 7vw, 80px);
+ 
 }
 p{
 

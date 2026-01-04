@@ -1,0 +1,116 @@
+.skills-section {
+  padding: 120px 5%;
+  color: #e5e5e5;
+}
+
+/* TÍTULO */
+.skills-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #e48cff;
+  margin-bottom: 90px;
+}
+
+.skills-title span {
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #d946ef, #8b5cf6);
+  margin: 18px auto 0;
+  border-radius: 999px;
+}
+
+/* GRID */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.skills-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 36px 32px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.35);
+}
+
+/* HEADER */
+.skills-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.skills-header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+/* CORES DOS TÍTULOS */
+.skills-header.pink h3 {
+  color: #f472b6;
+}
+
+.skills-header.purple h3 {
+  color: #a78bfa;
+}
+
+.skills-header.gradient h3 {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-header.languages h3 {
+  color: #67e8f9;
+}
+
+/* LISTA */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 22px;
+  color: #d4d4d8;
+  font-size: 0.95rem;
+}
+
+.skills-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #d946ef;
+}
+
+/* NOTA (IDIOMAS) */
+.skill-note {
+  display: block;
+  font-size: 0.8rem;
+  color: #a5b4fc;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .skills-title {
+    font-size: 2.3rem;
+  }
+}

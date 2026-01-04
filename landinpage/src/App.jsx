@@ -2,15 +2,16 @@ import React, { useState } from "react";
 
 import Navbar from "./components/NavBar.jsx";
 import Hero from "./components/Hero.jsx";
-import Portifolio from "./components/Portifolio.jsx";
 import About from "./components/About.jsx";
-import CareerJourney from "./components/CareerJourney.jsx";
 import Footer from "./components/Footer.jsx";
 import ContactForm from "./components/ContactForm.jsx";
 import ParticlesBg from "./components/ParticlesBg.jsx";
 
 // Imagem WhatsApp
 import wpp from "./assets/whatsapp.svg";
+import Skills from "./components/Skills.jsx";
+import Experience from "./components/Experience.jsx";
+import Projects from "./components/Projects.jsx";
 
 function App() {
   const [language, setLanguage] = useState("pt");
@@ -24,8 +25,9 @@ function App() {
         <Navbar language={language} setLanguage={setLanguage} />
         <Hero language={language} />
         <About language={language} />
-        <Portifolio language={language} />
-        <CareerJourney language={language} />
+        <Skills />
+        {/* <Projects /> */}
+        <Experience />
         <ContactForm language={language} />
         <Footer language={language} />
       </main>

@@ -26,7 +26,7 @@ function App() {
         <Hero language={language} />
         <About language={language} />
         <Skills />
-        {/* <Projects /> */}
+        <Projects />
         <Experience />
         <ContactForm language={language} />
         <Footer language={language} />

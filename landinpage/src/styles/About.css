@@ -1,17 +1,20 @@
 .about-section {
   min-height: 100vh;
   padding: 100px 5%;
-  
-  color: #e5e5e5;
+  /* background: var(--bg-color); */
+  color: var(--txt-color);
   position: relative;
   overflow: hidden;
 }
 
-/* TÍTULO */
+/* ==============================
+   TÍTULO
+============================== */
+
 .about-title {
   text-align: center;
   font-size: 3rem;
-  color: #e48cff;
+  color: var(--bg-color-phone);
   margin-bottom: 80px;
   position: relative;
 }
@@ -20,12 +23,19 @@
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #d946ef, #8b5cf6);
+  background: linear-gradient(
+    90deg,
+    var(--bg-color-phone),
+    #1f6feb
+  );
   margin: 16px auto 0;
   border-radius: 999px;
 }
 
-/* CARDS */
+/* ==============================
+   CARDS
+============================== */
+
 .about-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -35,19 +45,23 @@
 }
 
 .about-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(88, 166, 255, 0.15);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 32px;
-  box-shadow: 0 0 40px rgba(168, 85, 247, 0.12);
+  box-shadow: 0 0 40px rgba(88, 166, 255, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 60px rgba(168, 85, 247, 0.25);
+  box-shadow: 0 0 60px rgba(88, 166, 255, 0.25);
 }
+
+/* ==============================
+   HEADER DOS CARDS
+============================== */
 
 .card-header {
   display: flex;
@@ -58,10 +72,13 @@
 
 .card-header h3 {
   font-size: 1.25rem;
-  color: #f472b6;
+  color: var(--bg-color-phone);
 }
 
-/* ÍCONES */
+/* ==============================
+   ÍCONES
+============================== */
+
 .icon {
   width: 44px;
   height: 44px;
@@ -72,20 +89,34 @@
 }
 
 .icon.pink {
-  background: linear-gradient(135deg, #ec4899, #a855f7);
+  background: linear-gradient(
+    135deg,
+    var(--bg-color-phone),
+    #1f6feb
+  );
 }
 
 .icon.purple {
-  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  background: linear-gradient(
+    135deg,
+    #1f6feb,
+    var(--bg-color-phone)
+  );
 }
 
-/* TEXTO */
+/* ==============================
+   TEXTO
+============================== */
+
 .about-card p {
   line-height: 1.7;
-  color: #d4d4d8;
+  color: #c9d1d9;
 }
 
-/* STATS */
+/* ==============================
+   STATS
+============================== */
+
 .about-stats {
   margin-top: 80px;
   display: flex;
@@ -98,23 +129,28 @@
   min-width: 220px;
   padding: 30px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(88, 166, 255, 0.15);
   text-align: center;
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+  box-shadow: 0 0 30px rgba(88, 166, 255, 0.15);
 }
 
 .stat-card strong {
   display: block;
   font-size: 2.2rem;
-  color: #d946ef;
+  color: var(--bg-color-phone);
 }
 
 .stat-card span {
   font-size: 0.95rem;
-  color: #c4b5fd;
+  color: #9da5b4;
 }
 
 .stat-card.highlight {
-  box-shadow: 0 0 45px rgba(236, 72, 153, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(88, 166, 255, 0.15),
+    rgba(31, 111, 235, 0.15)
+  );
+  box-shadow: 0 0 45px rgba(88, 166, 255, 0.35);
 }

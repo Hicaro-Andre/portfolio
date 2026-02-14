@@ -1,120 +1,131 @@
-/* reset global */
-* {
+/* ======================================================
+   /*! RESET GLOBAL E CONFIGURAÇÕES BASE
+
+   - TIPOGRAFIA
+   - NAVBAR
+   - FOOTER
+   - BUTTONS
+   - (tsParticles)
+   - BTN WHATSAPP 
+====================================================== */
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Variáveis globais */
 :root {
   --bg-color: #0d1117;
   --bg-color-phone: #58a6ff;
   --txt-color: #f5f5f5;
 
-  /* NavBar */
-  --bg-color-navbar: rgba(0, 0, 0, 0.9); /* cor do fundo do menu */
-  --bg-color-hover-links:#58a6ff; /* cor do hover do menu */
-  --bg-text-color-links: #f5f5f5; /* cor dos textos do menu */
+  /* Navbar */
+  --bg-color-navbar: rgba(0, 0, 0, 0.9);
+  --bg-color-hover-links: #58a6ff;
+  --bg-text-color-links: #f5f5f5;
 
   /* Footer */
-  --bg-color-footer: rgba(0, 0, 0, 0.9); /* cor do fundo do footer */
+  --bg-color-footer: rgba(0, 0, 0, 0.9);
 }
 
-/* Main e conteúdo acima do fundo */
-main {
-  position: relative;
-  z-index: 1;
-}
 
-body {
-  color: var(--txt-color);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
-  min-height: 1005;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
+/* ======================================================
+   /*! HTML & BODY
+====================================================== **/
 html {
   background-color: var(--bg-color-phone);
   scroll-behavior: smooth;
 }
 
-/* Fontes */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--txt-color);
+  min-height: 100vh; 
+  overflow-x: hidden; 
+}
 
+/* Conteúdo principal acima de fundos decorativos */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ======================================================
+   /*! TIPOGRAFIA BASE
+====================================================== **/
 h1 {
-  text-align: start;
   font-size: clamp(42px, 8vw, 90px);
-  
 }
 
-h2{
-
-}
 h3 {
-  text-align: start;
   font-size: clamp(38px, 7vw, 80px);
- 
-}
-p{
-
 }
 
 
-
-
-/* NavBar */
+/* ======================================================
+   /*! NAVBAR (MOBILE FIRST) 
+====================================================== **/
 .navbar {
-  background: var(--bg-color-navbar);
   position: fixed;
   top: 0;
   width: 100%;
+  height: 64px;
+
   z-index: 1000;
-}
-.border-purple-nav-500\/50 {
-  border-bottom: 1px solid #58a6ff80;
+
+  background: var(--bg-color-navbar);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid #58a6ff50;
+  transition: background 0.3s ease;
 }
 
+/* Container centralizado */
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1.5rem;
   max-width: 1200px;
+  height: 100%;
+
   margin: 0 auto;
-}
-.logo {
+  padding: 0 1.2rem;
+
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo-link {
-  display: inline-block;
-  text-decoration: none;
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
 .logo-link:hover {
   transform: scale(1.05);
 }
 
-.logo-img {
-  width: 50px;
-  height: auto;
-  max-width: 100%;
-  transition: transform 0.3s ease;
-}
-
 .logo-link:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
 }
 
-/* Botão do menu (mobile) */
+.logo-img {
+  width: 48px;
+  height: auto;
+  display: block;
+}
+
 .menu-toggle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
+
+  width: 26px;
   height: 20px;
+
   background: none;
   border: none;
   cursor: pointer;
@@ -123,50 +134,76 @@ p{
 .menu-toggle .bar {
   height: 3px;
   width: 100%;
+  border-radius: 6px;
+
   background-color: var(--bg-text-color-links);
-  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
+/* Animação para virar X */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Menu mobile */
 .nav-links {
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+
   position: absolute;
-  top: 60px;
+  top: 64px;
   left: 0;
-  right: 0;
-  background-color: var(--bg-color-navbar);
-  padding: 1rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 1.5rem 1rem;
+  background: var(--bg-color-navbar);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Menu ativo */
 .nav-links.active {
   display: flex;
-  color: #58a6ff;
 }
 
+/* Links */
 .nav-links a {
-  text-decoration: none;
   position: relative;
-  color: var(--bg-text-color-links);
+  text-decoration: none;
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+
+  color: var(--bg-text-color-links);
+  transition: 0.25s ease;
 }
 
+/* Linha animada */
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: -4px;
+
   width: 0%;
   height: 2px;
+
   background: linear-gradient(135deg, #58a6ff, #1f6feb);
-  transition: width .3s ease;
+  transition: width 0.3s ease;
 }
 
+/* Hover */
 .nav-links a:hover {
   color: var(--bg-color-hover-links);
 }
@@ -175,6 +212,7 @@ p{
   width: 100%;
 }
 
+/* Link ativo */
 .nav-links a.active {
   color: #58a6ff;
 }
@@ -183,23 +221,42 @@ p{
   width: 100%;
 }
 
+/*Botão idioma */
 .nav-btn-lang {
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  margin-top: 0.5rem;
+
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+
   background: transparent;
-  color: var(--bg-text-color-links);
+  border: 1px solid #58a6ff60;
+
   font-weight: 600;
-  border: 1px solid #58a6ff80;
+  color: var(--bg-text-color-links);
+
   cursor: pointer;
   transition: 0.25s ease;
 }
 
 .nav-btn-lang:hover {
+  background: #58a6ff15;
   transform: translateY(-2px);
 }
 
-/* Layout Desktop */
+/* acessibilidade */
+.nav-links a:focus-visible,
+.nav-btn-lang:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
 @media (min-width: 768px) {
+
   .menu-toggle {
     display: none;
   }
@@ -207,128 +264,197 @@ p{
   .nav-links {
     display: flex;
     flex-direction: row;
+    align-items: center;
+
     position: static;
+    width: auto;
+
     background: none;
-    border: none;
-    gap: 2rem;
+    box-shadow: none;
+    padding: 0;
+
+    gap: 1.8rem;
+  }
+
+  .nav-btn-lang {
+    margin-top: 0;
+  }
+}
+
+
+@media (min-width: 1024px) {
+
+  .nav-links {
+    gap: 2.2rem;
   }
 
   .nav-links a {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
 
-/* Footer */
-footer {
+/* ======================================================
+   /*! CORREÇÃO PARA SEÇÕES (evita esconder atrás da navbar fixa)
+====================================================== */
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ======================================================
+   /*! FOOTER (MOBILE FIRST) 
+====================================================== **/
+.footer {
   background: var(--bg-color-footer);
-  padding: 40px 20px;
-  color: #cdd9e5;
+  border-top: 1px solid #58a6ff50;
+
+  padding: clamp(2rem, 6vw, 3.5rem) 1.5rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 1.8rem;
+
   text-align: center;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-}
-.border-purple-500\/50 {
-  border-top: 1px solid #58a6ff80;
 }
 
+/*Social Icons*/
 .social-icons {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  transition: all 0.25s ease;
 }
 
 .social-link svg {
-  color: #fff;  
-  font-size: 35px;
-  transition: color .3s ease, transform .3s ease;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+/* Hover */
+.social-link:hover {
+  transform: translateY(-4px);
+  background: rgba(88, 166, 255, 0.15);
 }
 
 .social-link:hover svg {
   color: #58a6ff;
-  transform: scale(1.15);
 }
 
-
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+/* Foco acessível */
+.social-link:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 4px;
 }
 
+/* Copyright */
 .highlight {
   color: #58a6ff;
   font-weight: 600;
 }
 
-/* Layout Desktop */
-@media (min-width: 680px) {
-  footer {
-    padding: 50px 60px;
+copyright {
+  font-size: 0.9rem;
+  color: #cdd9e5;
+}
+
+
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
+@media (min-width: 768px) {
+
+  .footer-container {
+    gap: 2rem;
+  }
+
+  .social-link {
+    width: 52px;
+    height: 52px;
+  }
+
+  .social-link svg {
+    font-size: 24px;
   }
 }
 
 @media (min-width: 1024px) {
-  footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
+
+  .footer-container {
+    gap: 2.5rem;
   }
 
-  .footer-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  /* Botão fica destacado acima do copy */
-  .cta-btn {
-    margin-bottom: 8px;
+  .copyright {
+    font-size: 1rem;
   }
 }
 
+/* ======================================================
+   /*! BUTTONS  
+====================================================== **/
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
 
-/*Botões primários e secundários*/
 .btn {
-  padding: 15px 25px;
-  border-radius: 15px;
-  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* botão principal */
-.btn-primary {
-  background: linear-gradient(135deg, #58a6ff, #1f6feb);
-  color: #fff;
-  border: none;
+.btn.primary {
+  background: var(--accent);
+  color: #000;
 }
 
-/* botão secundário */
-.btn-secondary {
-  border: 2px solid #58a6ff;
-  color: #fff;
+.btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(88,166,255,0.4);
 }
 
-/* hover effects */
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+.btn.secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--text-main);
 }
 
-.btn-secondary:hover {
-  background: linear-gradient(135deg, #58a6ff, #1f6feb);
-  color: #fff;
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
-  transform: scale(1.05);
+.btn.secondary:hover {
+  background: rgba(255,255,255,0.05);
 }
 
 
-/* Fundo de partículas fixo (tsParticles) */
+
+
+/* ======================================================
+   /*! FUNDO DE PARTÍCULAS FIXO (tsParticles)  
+====================================================== **/
 #tsparticles {
   position: fixed;
   top: 0;
@@ -340,7 +466,9 @@ footer {
   background-color: var(--bg-color);
 }
 
-/* Botão do WhatsApp */
+/* ======================================================
+   /*! BOTÃO DO WHATSAPP   
+====================================================== **/
 .whatsapp-button {
   position: fixed;
   right: 20px;

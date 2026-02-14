@@ -20,11 +20,12 @@ export default function Contact() {
       <div className="contact-container">
         {/* INFORMAÇÕES */}
         <div className="contact-info">
-          <h3>Vamos conversar 👋</h3>
+          <h3>Vamos construir algo incrível 👋</h3>
+
           <p>
-            Estou aberta a oportunidades, projetos freelance ou apenas uma boa
-            conversa sobre tecnologia. Sinta-se à vontade para entrar em
-            contato.
+            Estou disponível para oportunidades, projetos freelance e parcerias
+            estratégicas. Se você busca alguém comprometida com qualidade,
+            performance e boas práticas, será um prazer conversar.
           </p>
 
           <ul>
@@ -35,7 +36,7 @@ export default function Contact() {
 
             <li>
               <MapPin size={18} />
-              <span>Brasil</span>
+              <span>Brasil • Remoto</span>
             </li>
           </ul>
 

@@ -1,16 +1,19 @@
+/* ======================================================
+   /*! PROJECTS
+====================================================== **/
 .projects {
-  padding: 100px 40px;
+  padding: var(--padding-sections);
   color: #fff;
 }
 
-
-/* ===== CAROUSEL ===== */
-
+/* ======================================================
+   /*! CAROUSEL
+====================================================== **/
 .carousel-wrapper {
   display: flex;
   align-items: center;
-  gap: 24px;
-  max-width: 1200px;
+  gap: 16px;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -21,25 +24,28 @@
 
 .carousel-track {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   transition: transform 0.6s ease;
 }
 
-/* ===== CARD ===== */
-
+/* ======================================================
+   /*! CARD
+====================================================== **/
 .project-card {
-  width: 336px;
+  width: 100%;
+  max-width: 320px;
   background: #111;
   border-radius: 20px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-/* ===== IMAGE ===== */
-
+/* ======================================================
+   /*! IMAGE
+====================================================== **/
 .project-image {
   position: relative;
-  height: 200px; /* ALTURA FIXA */
+  height: 200px; 
   background: linear-gradient(135deg, #1a1a1f, #0f0f14);
   overflow: hidden;
 }
@@ -58,8 +64,9 @@
   filter: blur(3px);
 }
 
-/* ===== OVERLAY ===== */
-
+/* ======================================================
+   /*! OVERLAY
+====================================================== **/
 .image-overlay {
   position: absolute;
   inset: 0;
@@ -92,8 +99,9 @@
   color: #000;
 }
 
-/* ===== CONTENT ===== */
-
+/* ======================================================
+   /*! CONTENT
+====================================================== **/
 .project-content {
   padding: 20px;
 }
@@ -124,8 +132,7 @@
   background: #1f1f26;
 }
 
-/* ===== LINKS ===== */
-
+/* links */
 .project-links {
   display: flex;
   gap: 16px;
@@ -141,8 +148,7 @@
   color: #fff;
 }
 
-/* ===== NAV ===== */
-
+/* nav */
 .carousel-btn {
   background: none;
   border: none;
@@ -156,16 +162,30 @@
   cursor: not-allowed;
 }
 
-/* ===== RESPONSIVO ===== */
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
+
   .carousel-wrapper {
-    max-width: 760px;
+    max-width: 720px;
   }
+
+  .project-card {
+    max-width: 336px;
+  }
+
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
+
   .carousel-wrapper {
-    max-width: 360px;
+    max-width: 1100px;
   }
+
+  .carousel-track {
+    gap: 24px;
+  }
+
 }

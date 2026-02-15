@@ -1,42 +1,27 @@
+/* ======================================================
+   /*! ABOUT
+====================================================== **/
 .about-section {
   min-height: 100vh;
-  padding: 100px 5%;
-  /* background: var(--bg-color); */
+  padding: 80px 20px;
   color: var(--txt-color);
   position: relative;
   overflow: hidden;
 }
 
-
 /* ==============================
-   CARDS
+   /*! CARDS
 ============================== */
-
 .about-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* .about-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(88, 166, 255, 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: 0 0 40px rgba(88, 166, 255, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
-
-.about-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 60px rgba(88, 166, 255, 0.25);
-}
-
 /* ==============================
-   HEADER DOS CARDS
+   /*! HEADER DOS CARDS
 ============================== */
 
 .card-header {
@@ -46,15 +31,9 @@
   margin-bottom: 20px;
 }
 
-.card-header h3 {
-  font-size: 1.25rem;
-  color: var(--bg-color-phone);
-}
-
 /* ==============================
-   ÍCONES
+   /*! ÍCONES
 ============================== */
-
 .icon {
   width: 44px;
   height: 44px;
@@ -80,25 +59,16 @@
   );
 }
 
-/* ==============================
-   TEXTO
-============================== */
-
-.about-card p {
-  line-height: 1.7;
-  color: #c9d1d9;
-}
 
 /* ==============================
-   STATS
+  /*! STATS
 ============================== */
-
 .about-stats {
-  margin-top: 80px;
+  margin-top: 60px;
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
 }
 
 .stat-card {
@@ -122,11 +92,51 @@
   color: #9da5b4;
 }
 
-.stat-card.highlight {
-  background: linear-gradient(
-    135deg,
-    rgba(88, 166, 255, 0.15),
-    rgba(31, 111, 235, 0.15)
-  );
-  box-shadow: 0 0 45px rgba(88, 166, 255, 0.35);
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
+
+@media (min-width: 768px) {
+
+  .about-section {
+    padding: 100px 40px;
+  }
+
+  .about-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .about-stats {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .about-section {
+    padding: 120px 80px;
+  }
+
+  .stat-card {
+    min-width: 240px;
+    padding: 40px;
+  }
+
+}
+
+@media (min-width: 1440px) {
+
+  .about-section {
+    padding: 140px 120px;
+  }
+
+  .about-cards {
+    max-width: 1400px;
+  }
+
 }

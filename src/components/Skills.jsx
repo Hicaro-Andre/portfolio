@@ -17,7 +17,7 @@ export default function Skills() {
       <div className="skills-grid">
         {/* FRONT-END */}
         <div className="card">
-          <div className="skills-header pink">
+          <div className="skills-header">
             <Layout size={22} />
             <h3>Front-end</h3>
           </div>

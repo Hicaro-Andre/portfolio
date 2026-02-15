@@ -8,6 +8,7 @@
    /*?- CARDS
    /*?- (tsParticles)
    /*?- BTN WHATSAPP 
+   /*?- RESPONSIVIDADE
 ====================================================== */
 
 *,
@@ -18,25 +19,31 @@
   box-sizing: border-box;
 }
 
-/* Variáveis globais */
+
 :root {
   --bg-color: #0d1117;
   --bg-color-phone: #58a6ff;
   --txt-color: #f5f5f5;
 
+  /*****************? CONFIG ******************/
+  /* altura navbar */
+  --navbar-height: 64px;
+  /* padding sections */
+  --padding-sections: 70px;
+
+
   /*****************? NAVBAR ******************/
   --bg-color-navbar: rgba(0, 0, 0, 0.9);
   --bg-color-hover-links: #58a6ff;
   --bg-text-color-links: #f5f5f5;
-  /* altura navbar */
-  --navbar-height: 64px;
-
+  
   /*****************? FOOTER ******************/
   --bg-color-footer: rgba(0, 0, 0, 0.9);
 
   /*****************? BUTTONS ******************/
   --bg-color-btn-primary: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
 }
+
 
 /* ======================================================
    /*! HTML & BODY
@@ -65,6 +72,12 @@ main {
   z-index: 1;
 }
 
+/* CORREÇÃO PARA SEÇÕES (evita esconder atrás da navbar fixa) */
+section {
+  scroll-margin-top: 80px;
+}
+
+
 /* ======================================================
    /*! TIPOGRAFIA BASE
 ====================================================== **/
@@ -72,6 +85,7 @@ h1 {
   font-size: clamp(42px, 8vw, 90px);
 }
 
+/* titulo das sections */
 h2 {
   text-align: center;
   font-size: 3rem;
@@ -88,8 +102,24 @@ h2 {
   border-radius: 999px;
 }
 
+/* titulo dos cards */
 h3 {
-  font-size: clamp(38px, 7vw, 80px);
+  font-size: 1.25rem;
+  color: var(--bg-color-phone);
+}
+
+/* titulo dos cards da timelines */
+h4{
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #f5f5f5;
+}
+
+/* textos */
+p{
+  line-height: 1.7;
+  color: #c9d1d9;
 }
 
 /* ======================================================
@@ -101,10 +131,8 @@ h3 {
   width: 100%;
   height: var(--navbar-height);
   z-index: 1000;
-
   background: var(--bg-color-navbar);
   backdrop-filter: blur(12px);
-
   border-bottom: 1px solid #58a6ff50;
   transition: background 0.3s ease;
 }
@@ -113,10 +141,8 @@ h3 {
 .navbar-container {
   max-width: 1200px;
   height: 100%;
-
   margin: 0 auto;
   padding: 0 1.2rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,10 +173,8 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   width: 26px;
   height: 20px;
-
   background: none;
   border: none;
   cursor: pointer;
@@ -184,17 +208,13 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-
   position: absolute;
   top: 64px;
   left: 0;
-
   width: 100%;
   max-width: 100%;
-
   padding: 1.5rem 1rem;
   background: var(--bg-color-navbar);
-
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -209,7 +229,6 @@ h3 {
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-
   color: var(--bg-text-color-links);
   transition: 0.25s ease;
 }
@@ -220,10 +239,8 @@ h3 {
   position: absolute;
   left: 0;
   bottom: -4px;
-
   width: 0%;
   height: 2px;
-
   background: linear-gradient(135deg, #58a6ff, #1f6feb);
   transition: width 0.3s ease;
 }
@@ -249,16 +266,12 @@ h3 {
 /*Botão idioma */
 .nav-btn-lang {
   margin-top: 0.5rem;
-
   padding: 0.4rem 0.9rem;
   border-radius: 8px;
-
   background: transparent;
   border: 1px solid #58a6ff60;
-
   font-weight: 600;
   color: var(--bg-text-color-links);
-
   cursor: pointer;
   transition: 0.25s ease;
 }
@@ -277,51 +290,6 @@ h3 {
   border-radius: 6px;
 }
 
-/* ======================================================
-   /*! RESPONSIVIDADE 
-====================================================== **/
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    position: static;
-    width: auto;
-
-    background: none;
-    box-shadow: none;
-    padding: 0;
-
-    gap: 1.8rem;
-  }
-
-  .nav-btn-lang {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .nav-links {
-    gap: 2.2rem;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-  }
-}
-
-/* ======================================================
-   /*! CORREÇÃO PARA SEÇÕES (evita esconder atrás da navbar fixa)
-====================================================== */
-
-section {
-  scroll-margin-top: 80px;
-}
 
 /* ======================================================
    /*! FOOTER (MOBILE FIRST) 
@@ -329,9 +297,7 @@ section {
 .footer {
   background: var(--bg-color-footer);
   border-top: 1px solid #58a6ff50;
-
   padding: clamp(2rem, 6vw, 3.5rem) 1.5rem;
-
   display: flex;
   justify-content: center;
 }
@@ -339,12 +305,10 @@ section {
 .footer-container {
   width: 100%;
   max-width: 1200px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.8rem;
-
   text-align: center;
 }
 
@@ -357,15 +321,11 @@ section {
 .social-link {
   width: 48px;
   height: 48px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 12px;
-
   background: rgba(255, 255, 255, 0.03);
-
   transition: all 0.25s ease;
 }
 
@@ -402,34 +362,6 @@ copyright {
 }
 
 /* ======================================================
-   /*! RESPONSIVIDADE 
-====================================================== **/
-@media (min-width: 768px) {
-  .footer-container {
-    gap: 2rem;
-  }
-
-  .social-link {
-    width: 52px;
-    height: 52px;
-  }
-
-  .social-link svg {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer-container {
-    gap: 2.5rem;
-  }
-
-  .copyright {
-    font-size: 1rem;
-  }
-}
-
-/* ======================================================
    /*! BUTTONS  
 ====================================================== **/
 
@@ -441,6 +373,7 @@ copyright {
   transition: 0.3s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* botão principal */
@@ -468,6 +401,7 @@ copyright {
    /*! CARDS  
 ====================================================== **/
 
+/* card principal */
 .card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(88, 166, 255, 0.15);
@@ -477,9 +411,36 @@ copyright {
   box-shadow: 0 0 40px rgba(88, 166, 255, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(88, 166, 255, 0.4);
+}
 
+/* card da timeline */
+.card-timeline {
+  width: 460px;
+  padding: 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  transition: all 0.35s ease;
+}
+.card-timeline:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(88, 166, 255, 0.4);
+}
+.timeline-item.left .card-timeline {
+  margin-left: 0;
+  margin-right: auto;
+}
 
-
+.timeline-item.right .card-timeline {
+  margin-left: auto;
+  margin-right: 0;
+}
 
 
 /* ======================================================
@@ -517,4 +478,71 @@ copyright {
 
 .whatsapp-button:hover {
   transform: scale(1.2);
+}
+
+
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
+
+/*? ==== NAVBAR ==== **/
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: static;
+    width: auto;
+
+    background: none;
+    box-shadow: none;
+    padding: 0;
+
+    gap: 1.8rem;
+  }
+
+  .nav-btn-lang {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    gap: 2.2rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}
+
+/*? ==== FOOTER ==== **/
+@media (min-width: 768px) {
+  .footer-container {
+    gap: 2rem;
+  }
+
+  .social-link {
+    width: 52px;
+    height: 52px;
+  }
+
+  .social-link svg {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-container {
+    gap: 2.5rem;
+  }
+
+  .copyright {
+    font-size: 1rem;
+  }
 }

@@ -28,7 +28,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="about-card">
+        <div className="card">
           <div className="card-header">
             <div className="icon purple">
               <FileText size={20} />
@@ -51,7 +51,7 @@ export default function About() {
           <span>Anos de Experiência</span>
         </div>
 
-        <div className="stat-card highlight">
+        <div className="stat-card">
           <strong>5+</strong>
           <span>Projetos Concluídos</span>
         </div>

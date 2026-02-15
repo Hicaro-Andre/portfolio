@@ -1,17 +1,23 @@
-/* SECTION */
+/* ======================================================
+   /*! FORMATION
+====================================================== **/
 .training-section {
-  padding: 120px 6%;
+  padding: var(--padding-sections);
   color: var(--txt-color);
   position: relative;
 }
 
-/* CONTAINER */
+/* ======================================================
+   /*! CONTAINER
+====================================================== **/
 .training-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* TIMELINE */
+/* ======================================================
+   /*! TIMELINE
+====================================================== **/
 .training-section .timeline {
   position: relative;
   display: flex;
@@ -36,7 +42,7 @@
   opacity: 0.5;
 }
 
-/* ITEM */
+/* item */
 .training-section .timeline-item {
   position: relative;
   display: flex;
@@ -44,7 +50,7 @@
   justify-content: flex-start;
 }
 
-/* DOT */
+/* dot */
 .training-section .timeline-dot {
   position: absolute;
   top: 30px;
@@ -55,30 +61,6 @@
   background: var(--bg-color-phone);
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(88, 166, 255, 0.7);
-}
-
-/* CARD */
-.training-section .timeline-card {
-  width: 460px;
-  padding: 32px;
-  border-radius: 20px;
-  background: var(--bg-color);
-  border: 1px solid rgba(88, 166, 255, 0.15);
-  transition: all 0.35s ease;
-}
-
-.training-section .timeline-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--bg-color-phone);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
-}
-
-/* TEXT */
-.training-section .timeline-card h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--txt-color);
 }
 
 .training-section .company {
@@ -99,7 +81,7 @@
   margin-bottom: 16px;
 }
 
-/* TAGS */
+/* Tags */
 .training-section .timeline-card ul {
   display: flex;
   flex-wrap: wrap;
@@ -122,7 +104,9 @@
   border-color: var(--bg-color-phone);
 }
 
-/* MOBILE */
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
 @media (max-width: 900px) {
   .training-section .timeline::before {
     left: 20px;

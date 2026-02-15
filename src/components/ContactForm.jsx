@@ -72,7 +72,7 @@ export default function Contact() {
             <textarea placeholder="Sua mensagem" required />
           </div>
 
-          <button className="btn ">
+          <button className="btn primary">
             Enviar mensagem
             <Send size={18} />
           </button>

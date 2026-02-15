@@ -17,8 +17,8 @@ export default function Experience() {
           {/* ITEM 1 */}
           <div className="timeline-item left">
             <span className="timeline-dot" />
-            <div className="timeline-card">
-              <h3>Desenvolvedora Full Stack Júnior</h3>
+            <div className="card-timeline">
+              <h4>Desenvolvedora Full Stack Júnior</h4>
               <p className="company">SES / MA</p>
               <span className="date">Jan 2024 — Presente</span>
               <p className="description">
@@ -37,8 +37,8 @@ export default function Experience() {
           {/* ITEM 2 */}
           <div className="timeline-item right">
             <span className="timeline-dot" />
-            <div className="timeline-card">
-              <h3>Estagiária em Engenharia de Software</h3>
+            <div className="card-timeline">
+              <h4>Estagiária em Engenharia de Software</h4>
               <p className="company">DartiLab — UFMA</p>
               <span className="date">Jun 2025 — Presente</span>
               <p className="description">
@@ -56,8 +56,8 @@ export default function Experience() {
           {/* ITEM 3 */}
           <div className="timeline-item left">
             <span className="timeline-dot" />
-            <div className="timeline-card">
-              <h3>Monitora de Engenharia de Software</h3>
+            <div className="card-timeline">
+              <h4>Monitora de Engenharia de Software</h4>
               <p className="company">UFMA</p>
               <span className="date">Mar 2024 — Jul 2024</span>
               <p className="description">

@@ -4,13 +4,13 @@ import { Code, FileText } from "lucide-react";
 export default function About() {
   return (
     <section className="about-section" id="about">
-      <h2 className="about-title">
+      <h2 className="row-title">
         Sobre Mim
         <span />
       </h2>
 
       <div className="about-cards">
-        <div className="about-card">
+        <div className="card">
           <div className="card-header">
             <div className="icon pink">
               <Code size={20} />

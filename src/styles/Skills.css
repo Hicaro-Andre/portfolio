@@ -10,25 +10,7 @@
    TÍTULO
 ===================================== */
 
-.skills-title {
-  text-align: center;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--txt-color);
-  margin-bottom: 100px;
-  letter-spacing: -1px;
-  position: relative;
-}
 
-.skills-title span {
-  display: block;
-  width: 70px;
-  height: 3px;
-  background: var(--bg-color-phone);
-  margin: 18px auto 0;
-  border-radius: 999px;
-  box-shadow: 0 0 12px rgba(88, 166, 255, 0.6);
-}
 
 /* =====================================
    GRID
@@ -46,45 +28,7 @@
    CARD
 ===================================== */
 
-.skills-card {
-  background: linear-gradient(
-    145deg,
-    #11161d,
-    #0d1117
-  );
-  border: 1px solid rgba(88, 166, 255, 0.08);
-  border-radius: 22px;
-  padding: 42px 34px;
-  transition: all 0.35s ease;
-  position: relative;
-}
 
-.skills-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 22px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(88, 166, 255, 0.3),
-    transparent 60%
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.skills-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(88, 166, 255, 0.4);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(88, 166, 255, 0.15);
-}
 
 /* =====================================
    HEADER

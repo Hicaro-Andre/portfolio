@@ -10,24 +10,7 @@
    TÍTULO
 ===================================== */
 
-.contact-title {
-  text-align: center;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--txt-color);
-  margin-bottom: 100px;
-  letter-spacing: -1px;
-}
 
-.contact-title span {
-  display: block;
-  width: 70px;
-  height: 3px;
-  background: var(--bg-color-phone);
-  margin: 18px auto 0;
-  border-radius: 999px;
-  box-shadow: 0 0 12px rgba(88, 166, 255, 0.6);
-}
 
 /* =====================================
    CONTAINER

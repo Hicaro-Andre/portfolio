@@ -9,14 +9,14 @@ import {
 export default function Skills() {
   return (
     <section className="skills-section" id="skills">
-      <h2 className="skills-title">
+      <h2 className="row-title">
         Habilidades
         <span />
       </h2>
 
       <div className="skills-grid">
         {/* FRONT-END */}
-        <div className="skills-card">
+        <div className="card">
           <div className="skills-header pink">
             <Layout size={22} />
             <h3>Front-end</h3>
@@ -33,7 +33,7 @@ export default function Skills() {
         </div>
 
         {/* BACK-END */}
-        <div className="skills-card">
+        <div className="card">
           <div className="skills-header purple">
             <Server size={22} />
             <h3>Back-end</h3>
@@ -49,7 +49,7 @@ export default function Skills() {
         </div>
 
         {/* OUTRAS FERRAMENTAS */}
-        <div className="skills-card">
+        <div className="card">
           <div className="skills-header gradient">
             <Wrench size={22} />
             <h3>Outras Ferramentas</h3>
@@ -65,7 +65,7 @@ export default function Skills() {
         </div>
 
         {/* IDIOMAS */}
-        <div className="skills-card">
+        <div className="card">
           <div className="skills-header languages">
             <Languages size={22} />
             <h3>Idiomas</h3>

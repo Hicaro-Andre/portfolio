@@ -5,9 +5,11 @@ export default function Experience() {
     <section className="experience-section" id="experience">
       <div className="experience-container">
 
-        <header className="experience-header">
-          <h2>Experiência</h2>
-          <span className="experience-line" />
+        <header className="row-title">
+          <h2>Experiência
+            <span />
+          </h2>
+         
         </header>
 
         <div className="timeline">

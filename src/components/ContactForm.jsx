@@ -12,7 +12,7 @@ import {
 export default function Contact() {
   return (
     <section className="contact-section" id="contact">
-      <h2 className="contact-title">
+      <h2 className="row-title">
         Contato
         <span />
       </h2>
@@ -72,7 +72,7 @@ export default function Contact() {
             <textarea placeholder="Sua mensagem" required />
           </div>
 
-          <button type="submit">
+          <button className="btn ">
             Enviar mensagem
             <Send size={18} />
           </button>

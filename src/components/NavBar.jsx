@@ -77,7 +77,7 @@ export default function Navbar({ language, setLanguage }) {
             { id: "about", pt: "Sobre", en: "About" },
             { id: "skills", pt: "Habilidades", en: "Skills" },
             { id: "port", pt: "Projetos", en: "Projects" },
-            { id: "exp", pt: "Experiência", en: "Experience" },
+            { id: "experience", pt: "Experiência", en: "Experience" },
             { id: "formation", pt: "Formação", en: "Formation" },
             { id: "contact", pt: "Contato", en: "Contact" },
           ].map((item) => (

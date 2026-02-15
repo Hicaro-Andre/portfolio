@@ -15,7 +15,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 6%;
+  padding: var(--navbar-height) 6% 0;
   /* background: var(--bg-color); */
   overflow: hidden;
 }
@@ -87,6 +87,13 @@
   line-height: 1.8;
   color: var(--text-soft);
 }
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
 
 /* photo */
 .hero-photo {

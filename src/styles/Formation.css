@@ -1,0 +1,139 @@
+/* SECTION */
+.training-section {
+  padding: 120px 6%;
+  color: var(--txt-color);
+  position: relative;
+}
+
+/* CONTAINER */
+.training-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TIMELINE */
+.training-section .timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.training-section .timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    var(--bg-color-phone),
+    #1f6feb,
+    var(--bg-color-phone)
+  );
+  opacity: 0.5;
+}
+
+/* ITEM */
+.training-section .timeline-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* DOT */
+.training-section .timeline-dot {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--bg-color-phone);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.7);
+}
+
+/* CARD */
+.training-section .timeline-card {
+  width: 460px;
+  padding: 32px;
+  border-radius: 20px;
+  background: var(--bg-color);
+  border: 1px solid rgba(88, 166, 255, 0.15);
+  transition: all 0.35s ease;
+}
+
+.training-section .timeline-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--bg-color-phone);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* TEXT */
+.training-section .timeline-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--txt-color);
+}
+
+.training-section .company {
+  color: var(--bg-color-phone);
+  font-weight: 500;
+}
+
+.training-section .date {
+  display: block;
+  margin: 8px 0 16px;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+.training-section .description {
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* TAGS */
+.training-section .timeline-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.training-section .timeline-card li {
+  list-style: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  color: var(--txt-color);
+  transition: all 0.3s ease;
+}
+
+.training-section .timeline-card li:hover {
+  background: rgba(88, 166, 255, 0.18);
+  border-color: var(--bg-color-phone);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .training-section .timeline::before {
+    left: 20px;
+  }
+
+  .training-section .timeline-dot {
+    left: 20px;
+  }
+
+  .training-section .timeline-card {
+    width: 100%;
+    margin-left: 60px;
+  }
+}

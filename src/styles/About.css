@@ -7,30 +7,6 @@
   overflow: hidden;
 }
 
-/* ==============================
-   TÍTULO
-============================== */
-
-.about-title {
-  text-align: center;
-  font-size: 3rem;
-  color: var(--bg-color-phone);
-  margin-bottom: 80px;
-  position: relative;
-}
-
-.about-title span {
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--bg-color-phone),
-    #1f6feb
-  );
-  margin: 16px auto 0;
-  border-radius: 999px;
-}
 
 /* ==============================
    CARDS
@@ -44,7 +20,7 @@
   margin: 0 auto;
 }
 
-.about-card {
+/* .about-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(88, 166, 255, 0.15);
   backdrop-filter: blur(12px);
@@ -52,7 +28,7 @@
   padding: 32px;
   box-shadow: 0 0 40px rgba(88, 166, 255, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} */
 
 .about-card:hover {
   transform: translateY(-6px);

@@ -6,12 +6,15 @@ import About from "./components/About.jsx";
 import Footer from "./components/Footer.jsx";
 import ContactForm from "./components/ContactForm.jsx";
 import ParticlesBg from "./components/ParticlesBg.jsx";
-
-// Imagem WhatsApp
-import wpp from "./assets/whatsapp.svg";
 import Skills from "./components/Skills.jsx";
 import Experience from "./components/Experience.jsx";
 import Projects from "./components/Projects.jsx";
+import Formation from "./components/Formation.jsx";
+
+// Imagem WhatsApp
+import wpp from "./assets/whatsapp.svg";
+
+
 
 function App() {
   const [language, setLanguage] = useState("pt");
@@ -28,6 +31,7 @@ function App() {
         <Skills />
         <Projects />
         <Experience />
+        <Formation />
         <ContactForm language={language} />
         <Footer language={language} />
       </main>

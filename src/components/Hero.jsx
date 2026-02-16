@@ -17,7 +17,7 @@ export default function Hero({ language }) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (heroRef.current) {
@@ -36,6 +36,17 @@ export default function Hero({ language }) {
       <div className="hero-bg-glow" />
 
       <div className="hero-container">
+       
+       <div className="hero-photo-mobile">
+          <div className="photo-wrapper">
+            <img
+              src={myfoto}
+              alt="Hicaro André - Full Stack Developer"
+              className={`photo ${reduceMotion ? "" : "float"}`}
+            />
+          </div>
+        </div>
+       
         <div className="hero-content">
           <span className="hero-eyebrow">
             {language === "pt" ? "Olá, eu sou" : "Hey, I’m"}
@@ -45,16 +56,32 @@ export default function Hero({ language }) {
             Hicaro <span>André</span>
           </h1>
 
-          <p className="hero-role">
-            {language === "pt"
-              ? "Desenvolvedor Full Stack"
-              : "Full Stack Developer"}
-          </p>
+          <div className="hero-role-container">
+            <div className="barra-gradiente"></div>
+
+            <p className="hero-role">
+              {language === "pt"
+                ? "DESENVOLVEDOR FULL STACK"
+                : "FULL STACK DEVELOPER"}
+            </p>
+          </div>
 
           <p className="hero-description">
-            {language === "pt"
-              ? "Construindo experiências digitais escaláveis com foco em performance, clareza e impacto real."
-              : "Building scalable digital experiences focused on performance, clarity and real impact."}
+            {language === "pt" ? (
+              <>
+                Transformando ideias em{" "}
+                <span className="highlight">produtos digitais</span> com foco em{" "}
+                <span className="highlight">escala</span>, performance e
+                experiências bem construídas que geram impacto real.
+              </>
+            ) : (
+              <>
+                Turning ideas into{" "}
+                <span className="highlight">digital products</span> focused on{" "}
+                <span className="highlight">scale</span>, performance and
+                well-crafted experiences that drive real impact.
+              </>
+            )}
           </p>
 
           <div className="hero-actions">

@@ -31,7 +31,7 @@ export default function Navbar({ language, setLanguage }) {
       {
         rootMargin: "-80px 0px -30% 0px",
         threshold: 0.3,
-      }
+      },
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -76,7 +76,7 @@ export default function Navbar({ language, setLanguage }) {
             { id: "hero", pt: "Início", en: "Home" },
             { id: "about", pt: "Sobre", en: "About" },
             { id: "skills", pt: "Habilidades", en: "Skills" },
-            { id: "port", pt: "Projetos", en: "Projects" },
+            { id: "projects", pt: "Projetos", en: "Projects" },
             { id: "experience", pt: "Experiência", en: "Experience" },
             { id: "formation", pt: "Formação", en: "Formation" },
             { id: "contact", pt: "Contato", en: "Contact" },
@@ -91,8 +91,20 @@ export default function Navbar({ language, setLanguage }) {
             </a>
           ))}
 
-          <button className="nav-btn-lang" onClick={toggleLanguage}>
-            {language === "pt" ? "US EN" : "BR PT"}
+          <button className="lang-toggle" onClick={toggleLanguage}>
+            <span
+              className={`lang-option ${language === "pt" ? "active" : ""}`}
+            >
+              🇧🇷 PT
+            </span>
+
+            <span
+              className={`lang-option ${language === "en" ? "active" : ""}`}
+            >
+              🇺🇸 EN
+            </span>
+
+            <div className={`toggle-indicator ${language}`} />
           </button>
         </nav>
       </div>

@@ -61,7 +61,7 @@ export default function ProjectsCarousel() {
   const maxIndex = projects.length - VISIBLE_CARDS;
 
   return (
-    <section className="projects" id="port">
+    <section className="projects" id="projects">
       <h2 className="row-title">
         Projetos
         <span />

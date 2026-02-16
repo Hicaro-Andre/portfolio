@@ -89,9 +89,19 @@ h1 {
 h2 {
   text-align: center;
   font-size: 3rem;
-  color: var(--bg-color-phone);
   margin-bottom: 80px;
   position: relative;
+
+  background: linear-gradient(
+    90deg,
+    var(--bg-color-phone),
+    #1f6feb
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 .row-title span {
   display: block;
@@ -119,7 +129,7 @@ h4{
 /* textos */
 p{
   line-height: 1.7;
-  color: #c9d1d9;
+  color: rgba(195, 199, 205, 1);
 }
 
 /* ======================================================
@@ -263,24 +273,6 @@ p{
   width: 100%;
 }
 
-/*Botão idioma */
-.nav-btn-lang {
-  margin-top: 0.5rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 8px;
-  background: transparent;
-  border: 1px solid #58a6ff60;
-  font-weight: 600;
-  color: var(--bg-text-color-links);
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.nav-btn-lang:hover {
-  background: #58a6ff15;
-  transform: translateY(-2px);
-}
-
 /* acessibilidade */
 .nav-links a:focus-visible,
 .nav-btn-lang:focus-visible,
@@ -290,6 +282,56 @@ p{
   border-radius: 6px;
 }
 
+.lang-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 110px;
+  height: 38px;
+
+  padding: 4px;
+  border-radius: 999px;
+
+  border: 1px solid #58a6ff60;
+  background: rgba(255,255,255,0.05);
+
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.lang-option {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.lang-option.active {
+  opacity: 1;
+}
+
+.toggle-indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+
+  background: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
+  border-radius: 999px;
+
+  transition: 0.3s ease;
+}
+
+.toggle-indicator.en {
+  transform: translateX(100%);
+}
 
 /* ======================================================
    /*! FOOTER (MOBILE FIRST) 
@@ -390,11 +432,25 @@ copyright {
 /* botão secundário */
 .btn.secondary {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-main);
+  
+  background: linear-gradient(
+    90deg,
+    var(--bg-color-phone),
+    #1f6feb
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
+  -webkit-text-fill-color: #ffffff; /* ESSENCIAL */
+  color: #ffffff;
+  background: var(--bg-color-btn-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
 }
 
 /* ======================================================
@@ -546,3 +602,6 @@ copyright {
     font-size: 1rem;
   }
 }
+
+
+

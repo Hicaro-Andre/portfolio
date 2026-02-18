@@ -1,7 +1,8 @@
 import React from "react";
 import "/src/index.css";
 
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { Linkedin, Github, Instagram } from "lucide-react";
+
 
 const Footer = ({ language }) => {
   const currentYear = new Date().getFullYear();
@@ -9,8 +10,7 @@ const Footer = ({ language }) => {
   return (
     <footer className="footer border-purple-500/50">
       <div className="footer-container">
-
-        <div className="social-icons">
+        {/* <div className="social-icons">
           <a
             href="https://github.com/Hicaro-Andre"
             target="_blank"
@@ -40,6 +40,35 @@ const Footer = ({ language }) => {
           >
             <FaInstagram aria-hidden="true" />
           </a>
+        </div> */}
+
+        <div className="social-icons">
+          <a
+            href="https://www.linkedin.com/in/hicaroandre/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={20} />
+          </a>
+
+          <a
+            href="https://github.com/Hicaro-Andre"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <Github size={20} />
+          </a>
+
+          <a
+            href="https://www.instagram.com/hicaroandre/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <Instagram size={20} />
+          </a>
         </div>
 
         <p className="copyright">
@@ -48,7 +77,6 @@ const Footer = ({ language }) => {
             ? "• Todos os direitos reservados"
             : "• All rights reserved"}
         </p>
-
       </div>
     </footer>
   );

@@ -12,12 +12,139 @@
 /* ==============================
    /*! CARDS
 ============================== */
-.about-cards {
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main-card {
+  padding: 50px;
+  border-radius: 28px;
+  /* background: linear-gradient(
+    135deg,
+    rgba(31, 111, 235, 0.15),
+    rgba(0, 0, 0, 0.6)
+  ); */
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  margin-bottom: 60px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Lado Esquerdo */
+.main-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  background: rgba(88, 166, 255, 0.15);
+  color: #58a6ff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Lado Direito */
+.main-highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight-panel {
+  width: 100%;
+  max-width: 320px;
+  padding: 35px;
+  border-radius: 24px;
+  background: linear-gradient(
+    145deg,
+    rgba(88, 166, 255, 0.12),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(88, 166, 255, 0.15);
+  transition: 0.4s ease;
+}
+
+.highlight-panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(88, 166, 255, 0.25);
+}
+.code-visual {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(88, 166, 255, 0.12),
+    rgba(20, 20, 20, 0.8)
+  );
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  box-shadow: 0 0 40px rgba(88, 166, 255, 0.15);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: 0.4s ease;
+}
+
+.code-visual:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(88, 166, 255, 0.25);
+}
+
+/* HEADER ESTILO TERMINAL */
+.code-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.file-name {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #9da5b4;
+}
+
+/* Dots */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+.dot.yellow {
+  background: #ffbd2e;
+}
+.dot.green {
+  background: #27c93f;
+}
+
+/* Código */
+.code-block {
+  padding: 20px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  font-family: "Fira Code", monospace;
+  white-space: pre-wrap;
+}
+
+.about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 20px;
 }
 
 /* ==============================
@@ -44,21 +171,8 @@
 }
 
 .icon.pink {
-  background: linear-gradient(
-    135deg,
-    var(--bg-color-phone),
-    #1f6feb
-  );
+  background: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
 }
-
-.icon.purple {
-  background: linear-gradient(
-    135deg,
-    #1f6feb,
-    var(--bg-color-phone)
-  );
-}
-
 
 /* ==============================
   /*! STATS
@@ -97,14 +211,23 @@
 ====================================================== **/
 
 @media (min-width: 768px) {
-
   .about-section {
     padding: 100px 40px;
   }
 
-  .about-cards {
+  /* GRID DOS CARDS SECUNDÁRIOS */
+  .about-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px;
+  }
+
+  .main-card {
+    padding: 40px;
+  }
+
+  .card {
+    padding: 28px;
   }
 
   .about-stats {
@@ -113,30 +236,66 @@
     flex-wrap: wrap;
     gap: 30px;
   }
-
 }
 
 @media (min-width: 1024px) {
-
   .about-section {
     padding: 120px 80px;
+  }
+
+  .about-container {
+    max-width: 1200px;
+  }
+
+  .about-grid {
+    gap: 40px;
+  }
+
+  .main-card {
+    padding: 50px;
+  }
+
+  .card {
+    padding: 32px;
+  }
+  .main-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-text {
+    flex: 1.2;
+  }
+
+  .main-highlight {
+    flex: 1;
   }
 
   .stat-card {
     min-width: 240px;
     padding: 40px;
   }
-
 }
 
 @media (min-width: 1440px) {
-
   .about-section {
     padding: 140px 120px;
   }
 
-  .about-cards {
-    max-width: 1400px;
+  .about-container {
+    max-width: 1300px;
   }
 
+  .about-grid {
+    gap: 50px;
+  }
+
+  .main-card {
+    padding: 60px;
+  }
+
+  .card {
+    padding: 36px;
+  }
 }

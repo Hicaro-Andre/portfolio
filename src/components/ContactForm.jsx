@@ -17,21 +17,25 @@ export default function Contact() {
         <span />
       </h2>
 
-      <div className="contact-container">
-        {/* INFORMAÇÕES */}
-        <div className="contact-info">
-          <h3>Vamos construir algo incrível 👋</h3>
+      <div className="contact-wrapper">
+        {/* LADO ESQUERDO */}
+        <div className="contact-left">
+          
+
+          <h2>Vamos construir algo incrível?</h2>
 
           <p>
-            Estou disponível para oportunidades, projetos freelance e parcerias
-            estratégicas. Se você busca alguém comprometida com qualidade,
-            performance e boas práticas, será um prazer conversar.
+            Estou disponível para oportunidades, projetos freelance e
+            parcerias estratégicas. Se você busca alguém comprometido
+            com performance, qualidade e boas práticas, será um prazer conversar.
           </p>
 
-          <ul>
+          <ul className="contact-list">
             <li>
               <Mail size={18} />
-              <span>seuemail@email.com</span>
+              <a href="mailto:seuemail@email.com">
+                seuemail@email.com
+              </a>
             </li>
 
             <li>
@@ -50,33 +54,50 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* FORMULÁRIO */}
-        <form className="contact-form">
-          <div className="input-group">
-            <User size={18} />
-            <input type="text" placeholder="Seu nome" required />
+        {/* LADO DIREITO */}
+        <form className="contact-right">
+          <div className="field">
+            <label htmlFor="name">Nome</label>
+            <div className="input-wrapper">
+              <User size={18} />
+              <input id="name" type="text" required />
+            </div>
           </div>
 
-          <div className="input-group">
-            <Mail size={18} />
-            <input type="email" placeholder="Seu e-mail" required />
+          <div className="field">
+            <label htmlFor="email">E-mail</label>
+            <div className="input-wrapper">
+              <Mail size={18} />
+              <input id="email" type="email" required />
+            </div>
           </div>
 
-          <div className="input-group">
-            <MessageSquare size={18} />
-            <input type="text" placeholder="Assunto" required />
+          <div className="field">
+            <label htmlFor="subject">Assunto</label>
+            <div className="input-wrapper">
+              <MessageSquare size={18} />
+              <input id="subject" type="text" required />
+            </div>
           </div>
 
-          <div className="input-group textarea">
-            <MessageSquare size={18} />
-            <textarea placeholder="Sua mensagem" required />
+          <div className="field">
+            <label htmlFor="message">Mensagem</label>
+            <div className="input-wrapper textarea">
+              <MessageSquare size={18} />
+              <textarea id="message" required />
+            </div>
           </div>
 
-          <button className="btn primary">
+          <button type="submit" className="btn-send">
             Enviar mensagem
             <Send size={18} />
           </button>
+
+          <p className="form-status success">
+            ✔ Mensagem enviada com sucesso!
+          </p>
         </form>
+
       </div>
     </section>
   );

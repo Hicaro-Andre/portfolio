@@ -36,17 +36,24 @@ export default function Hero({ language }) {
       <div className="hero-bg-glow" />
 
       <div className="hero-container">
-       
-       <div className="hero-photo-mobile">
-          <div className="photo-wrapper">
-            <img
-              src={myfoto}
-              alt="Hicaro André - Full Stack Developer"
-              className={`photo ${reduceMotion ? "" : "float"}`}
-            />
+        <div className="hero-photo-mobile">
+          <div className="orbit-ring">
+            <span className="planet planet-1"></span>
+            <span className="planet planet-2"></span>
+            <span className="planet planet-3"></span>
+          </div>
+
+          <div className="photo-border">
+            <div className="photo-wrapper">
+              <img
+                src={myfoto}
+                alt="Hicaro André - Full Stack Developer"
+                className="photo"
+              />
+            </div>
           </div>
         </div>
-       
+
         <div className="hero-content">
           <span className="hero-eyebrow">
             {language === "pt" ? "Olá, eu sou" : "Hey, I’m"}
@@ -96,12 +103,20 @@ export default function Hero({ language }) {
         </div>
 
         <div className="hero-photo">
-          <div className="photo-wrapper">
-            <img
-              src={myfoto}
-              alt="Hicaro André - Full Stack Developer"
-              className={`photo ${reduceMotion ? "" : "float"}`}
-            />
+          <div className="orbit-ring">
+            <span className="planet planet-1"></span>
+            <span className="planet planet-2"></span>
+            <span className="planet planet-3"></span>
+          </div>
+
+          <div className="photo-border">
+            <div className="photo-wrapper">
+              <img
+                src={myfoto}
+                alt="Hicaro André - Full Stack Developer"
+                className="photo"
+              />
+            </div>
           </div>
         </div>
       </div>

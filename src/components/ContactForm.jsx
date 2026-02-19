@@ -1,13 +1,5 @@
 import "/src/styles/ContactForm.css";
-import {
-  Mail,
-  User,
-  MessageSquare,
-  Send,
-  MapPin,
-  Linkedin,
-  Github,
-} from "lucide-react";
+import { Mail, User, MessageSquare, Send, Phone, Github } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -20,36 +12,52 @@ export default function Contact() {
       <div className="contact-wrapper">
         {/* LADO ESQUERDO */}
         <div className="contact-left">
-          
+          <h5>
+            Vamos tirar sua <span>ideia</span> do papel.
+          </h5>
 
-          <h2>Vamos construir algo incrível?</h2>
-
-          <p>
-            Estou disponível para oportunidades, projetos freelance e
-            parcerias estratégicas. Se você busca alguém comprometido
-            com performance, qualidade e boas práticas, será um prazer conversar.
-          </p>
-
-          <ul className="contact-list">
-            <li>
-              <Mail size={18} />
-              <a href="mailto:seuemail@email.com">
-                seuemail@email.com
-              </a>
-            </li>
-
-            <li>
-              <MapPin size={18} />
-              <span>Brasil • Remoto</span>
-            </li>
-          </ul>
-
-          <div className="contact-socials">
-            <a href="#" aria-label="LinkedIn">
-              <Linkedin size={20} />
+          <div className="contact-cards">
+            {/* EMAIL */}
+            <a href="mailto:seuemail@email.com" className="contact-card">
+              <div className="card-icon-1">
+                <Mail size={20} />
+              </div>
+              <div className="card-content">
+                <span className="card-label">E-mail</span>
+                <span className="card-value">hicaroandre@hotmail.com</span>
+              </div>
             </a>
-            <a href="#" aria-label="GitHub">
-              <Github size={20} />
+
+            {/* WHATSAPP */}
+            <a
+              href="https://wa.me/5599999999999"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+            >
+              <div className="card-icon-2">
+                <Phone size={20} />
+              </div>
+              <div className="card-content">
+                <span className="card-label">WhatsApp</span>
+                <span className="card-value">+55 (98) 98424-5018</span>
+              </div>
+            </a>
+
+            {/* GITHUB */}
+            <a
+              href="https://github.com/seuusuario"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+            >
+              <div className="card-icon-3">
+                <Github size={20} />
+              </div>
+              <div className="card-content">
+                <span className="card-label">GitHub</span>
+                <span className="card-value">github.com/Hicaro-Andre</span>
+              </div>
             </a>
           </div>
         </div>
@@ -59,7 +67,7 @@ export default function Contact() {
           <div className="field">
             <label htmlFor="name">Nome</label>
             <div className="input-wrapper">
-              <User size={18} />
+              <User size={18} color="#58a6ff" />
               <input id="name" type="text" required />
             </div>
           </div>
@@ -67,7 +75,7 @@ export default function Contact() {
           <div className="field">
             <label htmlFor="email">E-mail</label>
             <div className="input-wrapper">
-              <Mail size={18} />
+              <Mail size={18} color="#58a6ff" />
               <input id="email" type="email" required />
             </div>
           </div>
@@ -75,7 +83,7 @@ export default function Contact() {
           <div className="field">
             <label htmlFor="subject">Assunto</label>
             <div className="input-wrapper">
-              <MessageSquare size={18} />
+              <MessageSquare size={18} color="#58a6ff" />
               <input id="subject" type="text" required />
             </div>
           </div>
@@ -83,21 +91,15 @@ export default function Contact() {
           <div className="field">
             <label htmlFor="message">Mensagem</label>
             <div className="input-wrapper textarea">
-              <MessageSquare size={18} />
+              <MessageSquare size={18} color="#58a6ff" />
               <textarea id="message" required />
             </div>
           </div>
 
-          <button type="submit" className="btn-send">
-            Enviar mensagem
-            <Send size={18} />
+          <button type="submit" className="btn primary">
+            Enviar mensagem <Send size={18} />
           </button>
-
-          <p className="form-status success">
-            ✔ Mensagem enviada com sucesso!
-          </p>
         </form>
-
       </div>
     </section>
   );

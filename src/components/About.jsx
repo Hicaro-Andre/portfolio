@@ -18,14 +18,14 @@ export default function About() {
               <span className="main-badge">Full Stack Developer</span>
 
               <p>
-                Desenvolvedor com formação em Ciência da Computação, focado em
-                arquitetura bem estruturada, APIs eficientes e interfaces
-                responsivas.
-              </p>
-
-              <p>
-                Busco evolução contínua em performance, segurança e qualidade de
-                código, aplicando boas práticas e organização em cada projeto.
+                Formado em Ciência da Computação, foco em arquitetura bem
+                estruturada, APIs eficientes e interfaces responsivas.
+                Comprometido com boas práticas, performance e qualidade de
+                código. Atualmente aprofundando conhecimentos em estrutura de
+                dados, arquitetura de aplicações e otimização. Busco
+                oportunidade como Desenvolvedor Full Stack Júnior para
+                contribuir com soluções de qualidade e crescer profissionalmente
+                em um ambiente desafiador.
               </p>
             </div>
 
@@ -49,40 +49,6 @@ export default function About() {
                 </pre>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* CARDS SECUNDÁRIOS */}
-        <div className="about-grid">
-          <div className="card">
-            <div className="card-header">
-              <div className="icon pink">
-                <RefreshCw size={20} />
-              </div>
-              <h3>Evolução Contínua</h3>
-            </div>
-
-            <p>
-              Atualmente focado em consolidar fundamentos de estrutura de dados,
-              arquitetura de aplicações e desenvolvimento orientado a
-              performance.
-            </p>
-          </div>
-
-          <div className="card">
-            <div className="card-header">
-              <div className="icon pink">
-                <Crosshair size={20} />
-              </div>
-              <h3>Objetivo</h3>
-            </div>
-
-            <p>
-              Busco oportunidade como Desenvolvedor Full Stack Júnior para
-              aplicar meus conhecimentos em projetos reais, contribuir com
-              soluções de qualidade e crescer profissionalmente em um ambiente
-              desafiador.
-            </p>
           </div>
         </div>
       </div>

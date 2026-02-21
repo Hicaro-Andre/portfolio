@@ -1,68 +1,76 @@
 /* ======================================================
-   /*! FORMATION
-====================================================== **/
+   FORMATION - MOBILE FIRST
+====================================================== */
+
 .training-section {
   padding: var(--padding-sections);
   color: var(--txt-color);
   position: relative;
 }
 
-/* ======================================================
-   /*! CONTAINER
-====================================================== **/
 .training-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* ======================================================
-   /*! TIMELINE
-====================================================== **/
+   TIMELINE (MOBILE FIRST)
+====================================================== */
+
 .training-section .timeline {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 60px;
+  padding-left: 24px; /* espaço para linha */
 }
 
+/* Linha vertical (mobile) */
 .training-section .timeline::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 0px;
   width: 3px;
   height: 100%;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    to bottom,
-    var(--bg-color-phone),
-    #1f6feb,
-    var(--bg-color-phone)
-  );
-  opacity: 0.5;
+  background: #58a6ff; 
 }
 
-/* item */
+/* Item */
 .training-section .timeline-item {
   position: relative;
-  display: flex;
   width: 100%;
-  justify-content: flex-start;
 }
 
-/* dot */
+/* Dot */
 .training-section .timeline-dot {
   position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: var(--bg-color-phone);
+  top: 50%;
+  transform: translateY(-50%);
+  left: -30px;
+  width: 15px;
+  height: 15px;
+  background: #58a6ff; 
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.7);
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.7);
 }
 
+/* Card */
+.training-section .card-timeline {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(88, 166, 255, 0.15);
+  padding: 24px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.training-section .card-timeline:hover {
+  border-color: var(--bg-color-phone);
+  transform: translateY(-4px);
+}
+
+/* Textos */
 .training-section .company {
   color: var(--bg-color-phone);
   font-weight: 500;
@@ -82,42 +90,68 @@
 }
 
 /* Tags */
-.training-section .timeline-card ul {
+.training-section .card-timeline ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
 }
 
-.training-section .timeline-card li {
+.training-section .card-timeline li {
   list-style: none;
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.75rem;
   background: rgba(88, 166, 255, 0.08);
   border: 1px solid rgba(88, 166, 255, 0.25);
-  color: var(--txt-color);
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.training-section .timeline-card li:hover {
+.training-section .card-timeline li:hover {
   background: rgba(88, 166, 255, 0.18);
   border-color: var(--bg-color-phone);
 }
 
 /* ======================================================
-   /*! RESPONSIVIDADE 
-====================================================== **/
-@media (max-width: 900px) {
+   DESKTOP
+====================================================== */
+
+@media (min-width: 900px) {
+
+  .training-section .timeline {
+    padding-left: 0;
+    gap: 120px;
+  }
+
+  /* Linha central */
   .training-section .timeline::before {
-    left: 20px;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
+  }
+
+  .training-section .timeline-item {
+    display: flex;
+    width: 100%;
+  }
+
+  .training-section .timeline-item.left {
+    justify-content: flex-start;
+  }
+
+  .training-section .timeline-item.right {
+    justify-content: flex-end;
+  }
+
+  .training-section .card-timeline {
+    width: 45%;
   }
 
   .training-section .timeline-dot {
-    left: 20px;
-  }
-
-  .training-section .timeline-card {
-    width: 100%;
-    margin-left: 60px;
+    width: 25px;
+    height: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

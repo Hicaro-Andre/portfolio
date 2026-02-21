@@ -2,9 +2,8 @@
    /*! ABOUT
 ====================================================== **/
 .about-section {
-  min-height: 100vh;
-  padding: 80px 20px;
   color: var(--txt-color);
+  padding: var(--navbar-height) 6% 0;
   position: relative;
   overflow: hidden;
 }

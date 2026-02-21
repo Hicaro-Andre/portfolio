@@ -15,7 +15,7 @@ export default function Formation() {
           {/* ITEM 1 */}
           <div className="timeline-item left">
             <span className="timeline-dot" />
-            <div className="card-timeline">
+            {/* <div className="card-timeline">
               <h4>Bacharel em Ciências da Computação</h4>
               <p className="company">Faculdade Pitágoras - FAMA</p>
               <span className="date">Concluído em 28 jun 2019</span>
@@ -32,7 +32,7 @@ export default function Formation() {
                 <li>Banco de Dados</li>
                 <li>Engenharia de Software</li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

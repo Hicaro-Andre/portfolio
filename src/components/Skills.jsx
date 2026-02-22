@@ -1,5 +1,12 @@
+import { useState } from "react";
 import "/src/styles/Skills.css";
-import { Layout, Server, Wrench, Languages } from "lucide-react";
+import {
+  Layout,
+  Server,
+  Wrench,
+  Languages,
+  ChevronDown,
+} from "lucide-react";
 
 import {
   FaHtml5,
@@ -17,6 +24,12 @@ import {
 import { SiTypescript, SiMysql, SiPostgresql } from "react-icons/si";
 
 export default function Skills() {
+  const [openLanguage, setOpenLanguage] = useState(null);
+
+  const toggleLanguage = (lang) => {
+    setOpenLanguage(openLanguage === lang ? null : lang);
+  };
+
   return (
     <section className="skills-section" id="skills">
       <h2 className="row-title">
@@ -29,11 +42,10 @@ export default function Skills() {
         <div className="skills-card">
           <div className="skills-header">
             <Layout size={22} />
-            <h3>Front-end</h3>
+            <h3>Desenvolvimento Frontend</h3>
           </div>
 
           <ul className="skills-list enhanced">
-            {/* HTML */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -42,28 +54,24 @@ export default function Skills() {
                 </span>
                 <span className="skill-percent">90%</span>
               </div>
-
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "90%" }}></div>
+                <div className="progress-fill" style={{ width: "90%" }} />
               </div>
             </li>
 
-            {/* CSS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaCss3Alt color="#0033FF " />
+                  <FaCss3Alt color="#0033FF" />
                   CSS3
                 </span>
                 <span className="skill-percent">85%</span>
               </div>
-
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "85%" }}></div>
+                <div className="progress-fill" style={{ width: "85%" }} />
               </div>
             </li>
 
-            {/* JS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -72,9 +80,8 @@ export default function Skills() {
                 </span>
                 <span className="skill-percent">55%</span>
               </div>
-
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "55%" }}></div>
+                <div className="progress-fill" style={{ width: "55%" }} />
               </div>
             </li>
           </ul>
@@ -84,7 +91,7 @@ export default function Skills() {
         <div className="skills-card">
           <div className="skills-header purple">
             <Server size={22} />
-            <h3>Back-end</h3>
+            <h3>Desenvolvimento Backend</h3>
           </div>
 
           <ul className="skills-list enhanced">
@@ -96,9 +103,8 @@ export default function Skills() {
                 </span>
                 <span className="skill-percent">90%</span>
               </div>
-
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "90%" }}></div>
+                <div className="progress-fill" style={{ width: "90%" }} />
               </div>
             </li>
           </ul>
@@ -120,9 +126,8 @@ export default function Skills() {
                 </span>
                 <span className="skill-percent">90%</span>
               </div>
-
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "90%" }}></div>
+                <div className="progress-fill" style={{ width: "90%" }} />
               </div>
             </li>
           </ul>
@@ -130,33 +135,50 @@ export default function Skills() {
       </div>
 
       {/* IDIOMAS */}
+      <div className="languages-content">
+        <div className="skills-header languages">
+          <Languages size={22} />
+          <h3>Idiomas</h3>
+        </div>
 
-      <div className="skills-header languages">
-        <Languages size={22} />
-        <h3>Idiomas</h3>
+        <ul className="languages-list">
+          {/* Português */}
+          <li className="language-item">
+            <div className="language-top">
+              <span className="flag">🇧🇷</span>
+              <span className="language-name">Português</span>
+              <span className="language-level native">Nativo</span>
+            </div>
+          </li>
+
+          {/* Inglês com Accordion */}
+          <li className="language-item">
+            <div
+              className="language-top clickable"
+              onClick={() => toggleLanguage("english")}
+            >
+              <span className="flag">🇺🇸</span>
+              <span className="language-name">Inglês</span>
+              <span className="language-level intermediate">
+                Intermediário
+              </span>
+
+              <ChevronDown
+                size={18}
+                className={`arrow ${
+                  openLanguage === "english" ? "rotate" : ""
+                }`}
+              />
+            </div>
+
+            {openLanguage === "english" && (
+              <span className="language-note">
+                Leitura de documentação, artigos técnicos e comunicação básica
+              </span>
+            )}
+          </li>
+        </ul>
       </div>
-
-      <ul className="languages-list">
-        <li className="language-item">
-          <div className="language-top">
-            <span className="flag">🇧🇷</span>
-            <span className="language-name">Português</span>
-            <span className="language-level native">Nativo</span>
-          </div>
-        </li>
-
-        <li className="language-item">
-          <div className="language-top">
-            <span className="flag">🇺🇸</span>
-            <span className="language-name">Inglês</span>
-            <span className="language-level intermediate">Intermediário</span>
-          </div>
-
-          <span className="language-note">
-            Leitura de documentação, artigos técnicos e comunicação básica
-          </span>
-        </li>
-      </ul>
     </section>
   );
 }

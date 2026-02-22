@@ -96,7 +96,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <button type="submit" className="btn primary">
+          <button type="submit" className="btn primary submit-btn">
             Enviar mensagem <Send size={18} />
           </button>
         </form>

@@ -1,5 +1,5 @@
 import "/src/styles/About.css";
-import { Code, RefreshCw, Crosshair } from "lucide-react";
+import { Code } from "lucide-react";
 
 export default function About() {
   return (
@@ -14,9 +14,11 @@ export default function About() {
         <div className="main-card">
           <div className="main-content">
             {/* LADO ESQUERDO */}
-            <div className="main-text">
-              <span className="main-badge">Full Stack Developer</span>
-
+            <div className="card main-text">
+              <div className="about-header">
+                <Code size={22} />
+                <span>Full Stack Developer</span>
+              </div>
               <p>
                 Formado em Ciência da Computação, foco em arquitetura bem
                 estruturada, APIs eficientes e interfaces responsivas.

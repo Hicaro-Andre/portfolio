@@ -10,7 +10,7 @@
 }
 
 /* ======================================================
-   /*! GRID 
+   /*! GRID
 ====================================================== */
 
 .skills-grid {
@@ -23,7 +23,7 @@
 }
 
 /* ======================================================
-   /*! CARD BASE
+   /*! CARD 
 ====================================================== */
 
 .skills-card {
@@ -33,33 +33,29 @@
 
   padding: 28px 26px;
   border-radius: 18px;
-
   min-height: 260px;
 
   background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.015)
+    135deg,
+    rgba(31, 111, 235, 0.15),
+    rgba(0, 0, 0, 0.6)
   );
 
   border: 1px solid rgba(88, 166, 255, 0.15);
-
   backdrop-filter: blur(12px);
-
   transition: all 0.35s ease;
 }
 
 .skills-card:hover {
   transform: translateY(-6px);
   border-color: rgba(88, 166, 255, 0.4);
-
   box-shadow:
     0 12px 35px rgba(0, 0, 0, 0.35),
     0 0 25px rgba(88, 166, 255, 0.15);
 }
 
 /* ======================================================
-    /*! HEADER
+   /*! HEADER
 ====================================================== */
 
 .skills-header {
@@ -69,7 +65,6 @@
   margin-bottom: 24px;
 }
 
-/* Ícone principal */
 .skills-header svg {
   width: 40px;
   height: 40px;
@@ -96,7 +91,7 @@
 }
 
 /* ======================================================
-   /*! LISTA DE TECNOLOGIAS
+  /*! LISTA SKILLS
 ====================================================== */
 
 .skills-list {
@@ -123,6 +118,7 @@
   display: flex;
   gap: 8px;
 }
+
 .skill-name svg {
   font-size: 18px;
 }
@@ -133,16 +129,14 @@
   color: #58a6ff;
 }
 
-/* Barra base */
 .progress-bar {
   width: 100%;
   height: 8px;
-  background: #1f2937; /* cinza escuro igual imagem */
+  background: #1f2937;
   border-radius: 20px;
   overflow: hidden;
 }
 
-/* Barra preenchida */
 .progress-fill {
   height: 100%;
   border-radius: 20px;
@@ -151,83 +145,47 @@
     var(--bg-color-phone),
     #1f6feb
   );
-  background-size: 200% 100%;
   transition: width 0.8s ease;
 }
 
-
-.skills-list.enhanced li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  font-size: 0.9rem;
-  color: #b8c1cc;
-
-  transition: 0.3s ease;
+/* IDIOMAS */
+.languages-content {
+  margin-top: 40px;
+  padding: 28px 26px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
-
-.skills-list.enhanced li svg {
-  font-size: 1.40rem;
-  color: var(--bg-color-phone);
-}
-
-.skills-card:hover .skills-list li {
-  color: #e6edf3;
-}
-
-
-/* ======================================================
-   /*! RESPONSIVIDADE 
-====================================================== **/
-
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-}
-
-@media (min-width: 1100px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .languages-list {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
-  margin: 0;
-  margin-top: 20px;
+  margin: 20px 0 0 0;
+  gap: 16px;
 }
 
 .language-item {
-  margin-bottom: 18px;
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(88, 166, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.language-item:hover {
+  border-color: rgba(88, 166, 255, 0.3);
+  transform: translateY(-3px);
 }
 
 .language-top {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.language-top.clickable {
+  cursor: pointer;
 }
 
 .flag {
@@ -244,74 +202,67 @@
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 20px;
+  white-space: nowrap;
 }
 
+/* Verde Neon */
 .language-level.native {
   background: rgba(34, 197, 94, 0.15);
-  color: #22c55e;
+  color: #39ff14;
 }
 
+/* Amarelo Neon */
 .language-level.intermediate {
-  background: rgba(88, 166, 255, 0.15);
-  color: #58a6ff;
+  background: rgba(250, 204, 21, 0.15);
+  color: #FACC15;
 }
 
+/* Seta */
+.arrow {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* Accordion suave */
 .language-note {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.8rem;
-  opacity: 0.75;
-  line-height: 1.4;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.5;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
 }
 
+.language-item.open .language-note {
+  max-height: 120px;
+  opacity: 1;
+}
 
 /* ======================================================
-   RESPONSIVIDADE - IDIOMAS
-====================================================== */
+   /*! RESPONSIVIDADE 
+====================================================== **/
 
-/* Tablet */
 @media (min-width: 768px) {
-  .languages-list {
-    display: grid;
-    gap: 20px;
-  }
-
-  .language-item {
-    padding: 12px 16px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.02);
-    transition: 0.3s ease;
-  }
-
-  .language-item:hover {
-    background: rgba(88, 166, 255, 0.05);
-  }
-
-  .language-note {
-    max-width: 80%;
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 }
 
-/* Desktop */
 @media (min-width: 1100px) {
-  .languages-list {
+  .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .language-item {
-    margin-bottom: 0;
+ .languages-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

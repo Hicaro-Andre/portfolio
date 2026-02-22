@@ -29,17 +29,29 @@
   gap: 40px;
 }
 
-/* Badge */
-.main-badge {
-  display: inline-block;
-  padding: 10px 18px;
-  font-size: 0.75rem;
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 14px;
+  width: fit-content;
+  margin: 0 auto 16px auto;
   border-radius: 50px;
-  background: rgba(88, 166, 255, 0.15);
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+}
+.about-header span {
+  padding: 5px 8px;
+  font-size: 0.75rem;
   color: #58a6ff;
-  margin-bottom: 20px;
+
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+.about-header svg {
+  color: #58a6ff;
+  flex-shrink: 0;
 }
 
 /* Highlight */
@@ -47,6 +59,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  min-width: 300px;
+  max-width: 900px;
+  align-self: center;
 }
 
 .highlight-panel {
@@ -129,14 +145,25 @@
 }
 
 @keyframes terminalPulse {
-  0%, 100% { opacity: 0.35; }
-  50% { opacity: 0.9; }
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
 }
 
 @keyframes screenReflection {
-  0% { transform: translateX(-120%); }
-  50% { transform: translateX(120%); }
-  100% { transform: translateX(120%); }
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
 }
 
 /* HEADER TERMINAL */
@@ -163,9 +190,15 @@
   border-radius: 50%;
 }
 
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
+.dot.red {
+  background: #ff5f56;
+}
+.dot.yellow {
+  background: #ffbd2e;
+}
+.dot.green {
+  background: #27c93f;
+}
 
 /* Código */
 .code-block {
@@ -202,6 +235,7 @@
   flex-direction: column;
   gap: 25px;
   align-items: center;
+  background: var(--bg-color-footer);
 }
 
 .stat-card {
@@ -216,7 +250,7 @@
 
 .stat-card strong {
   display: block;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   color: var(--bg-color-phone);
 }
 
@@ -253,6 +287,10 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+  }
+  .about-header {
+    justify-content: flex-start;
+    margin: 0 0 20px 0;
   }
 }
 
@@ -294,6 +332,10 @@
   .stat-card {
     min-width: 240px;
     padding: 20px;
+  }
+
+  .stat-card strong {
+    font-size: 1.7rem;
   }
 }
 

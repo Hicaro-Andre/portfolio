@@ -4,6 +4,7 @@ import { Code } from "lucide-react";
 export default function About() {
   return (
     <section className="about-section" id="about">
+      
       <h2 className="row-title">
         Sobre Mim
         <span />

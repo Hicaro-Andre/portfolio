@@ -2,8 +2,8 @@
    /*! ABOUT
 ====================================================== **/
 .about-section {
-  color: var(--txt-color);
   padding: var(--navbar-height) 6% 0;
+  color: var(--txt-color);
   position: relative;
   overflow: hidden;
 }

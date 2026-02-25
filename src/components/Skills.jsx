@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "/src/styles/Skills.css";
 import {
-  Layout,
+  Code2,
   Server,
   Wrench,
   Languages,
   ChevronDown,
+  Smartphone,
 } from "lucide-react";
 
 import {
@@ -15,13 +16,16 @@ import {
   FaReact,
   FaNodeJs,
   FaGitAlt,
-  FaFigma,
-  FaPhp,
-  FaLaravel,
-  FaDocker,
+  FaGithub,
 } from "react-icons/fa";
 
-import { SiTypescript, SiMysql, SiPostgresql } from "react-icons/si";
+import {
+  SiTypescript,
+  SiStoryblok,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+} from "react-icons/si";
 
 export default function Skills() {
   const [openLanguage, setOpenLanguage] = useState(null);
@@ -41,11 +45,12 @@ export default function Skills() {
         {/* FRONT-END */}
         <div className="skills-card">
           <div className="skills-header">
-            <Layout size={22} />
+            <Code2 size={22} />
             <h3>Desenvolvimento Frontend</h3>
           </div>
 
           <ul className="skills-list enhanced">
+            {/* html */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -59,6 +64,7 @@ export default function Skills() {
               </div>
             </li>
 
+            {/* css */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -72,6 +78,7 @@ export default function Skills() {
               </div>
             </li>
 
+            {/* js */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -84,6 +91,34 @@ export default function Skills() {
                 <div className="progress-fill" style={{ width: "55%" }} />
               </div>
             </li>
+
+            {/* ts */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <SiTypescript color="#4C9AFF" />
+                  TypeScript
+                </span>
+                <span className="skill-percent">50%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "50%" }} />
+              </div>
+            </li>
+
+            {/* React */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <FaReact color="#7DF9FF" />
+                  React
+                </span>
+                <span className="skill-percent">65%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "65%" }} />
+              </div>
+            </li>
           </ul>
         </div>
 
@@ -91,10 +126,11 @@ export default function Skills() {
         <div className="skills-card">
           <div className="skills-header purple">
             <Server size={22} />
-            <h3>Desenvolvimento Backend</h3>
+            <h3>Backend e Database</h3>
           </div>
 
           <ul className="skills-list enhanced">
+            {/* node */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -107,8 +143,74 @@ export default function Skills() {
                 <div className="progress-fill" style={{ width: "90%" }} />
               </div>
             </li>
+
+            {/* Express */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <SiExpress color="#F0F8FF" />
+                  Express
+                </span>
+                <span className="skill-percent">80%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "80%" }} />
+              </div>
+            </li>
+
+            {/* MongoDB */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <SiMongodb color="#6FCF97" />
+                  MongoDB
+                </span>
+                <span className="skill-percent">75%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "75%" }} />
+              </div>
+            </li>
+
+            {/* Firebase */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <SiFirebase color="#FFCA28" />
+                  Firebase
+                </span>
+                <span className="skill-percent">70%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "70%" }} />
+              </div>
+            </li>
           </ul>
         </div>
+
+        {/* MOBILE */}
+        {/* <div className="skills-card">
+          <div className="skills-header green">
+            <Smartphone size={22} />
+            <h3>Desenvolvimento Mobile</h3>
+          </div>
+
+          <ul className="skills-list enhanced">
+            
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <FaReact color="#61DAFB" />
+                  React Native
+                </span>
+                <span className="skill-percent">40%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "40%" }} />
+              </div>
+            </li>
+          </ul>
+        </div> */}
 
         {/* OUTRAS FERRAMENTAS */}
         <div className="skills-card">
@@ -118,16 +220,45 @@ export default function Skills() {
           </div>
 
           <ul className="skills-list enhanced">
+            {/* git */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
                   <FaGitAlt color="#FF5E00" />
-                  Git & GitHub
+                  Git
                 </span>
                 <span className="skill-percent">90%</span>
               </div>
               <div className="progress-bar">
                 <div className="progress-fill" style={{ width: "90%" }} />
+              </div>
+            </li>
+
+            {/* GitHub */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <FaGithub color="#F0F8FF" />
+                  GitHub
+                </span>
+                <span className="skill-percent">85%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "85%" }} />
+              </div>
+            </li>
+
+            {/* Storyblok */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <SiStoryblok color="#0CE8E0" />
+                  Storyblok
+                </span>
+                <span className="skill-percent">70%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "70%" }} />
               </div>
             </li>
           </ul>
@@ -153,29 +284,17 @@ export default function Skills() {
 
           {/* Inglês com Accordion */}
           <li className="language-item">
-            <div
-              className="language-top clickable"
-              onClick={() => toggleLanguage("english")}
-            >
+            <div className="language-top">
               <span className="flag">🇺🇸</span>
               <span className="language-name">Inglês</span>
-              <span className="language-level intermediate">
-                Intermediário
-              </span>
-
-              <ChevronDown
-                size={18}
-                className={`arrow ${
-                  openLanguage === "english" ? "rotate" : ""
-                }`}
-              />
+              <span className="language-level intermediate">Intermediário</span>
             </div>
 
-            {openLanguage === "english" && (
+            <div className="note-content">
               <span className="language-note">
                 Leitura de documentação, artigos técnicos e comunicação básica
               </span>
-            )}
+            </div>
           </li>
         </ul>
       </div>

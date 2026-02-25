@@ -126,6 +126,7 @@
 .skill-percent {
   font-size: 0.9rem;
   font-weight: 600;
+  padding: 6px;
   color: #58a6ff;
 }
 
@@ -146,8 +147,34 @@
     #1f6feb
   );
   transition: width 0.8s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 120%;
+  }
+}
 /* IDIOMAS */
 .languages-content {
   margin-top: 40px;
@@ -211,37 +238,36 @@
   color: #39ff14;
 }
 
-/* Amarelo Neon */
+/* Azul Neon */
 .language-level.intermediate {
-  background: rgba(250, 204, 21, 0.15);
-  color: #FACC15;
+  background: rgba(92, 92, 255, 0.15);
+  color: #5C5CFF;
 }
 
-/* Seta */
-.arrow {
-  margin-left: 8px;
-  transition: transform 0.3s ease;
-}
-
-.arrow.rotate {
-  transform: rotate(180deg);
+.note-content{
+   padding: 10px 0 0 15px;
 }
 
 /* Accordion suave */
 .language-note {
-  margin-top: 10px;
+  display: block;
   font-size: 0.85rem;
-  opacity: 0.8;
-  line-height: 1.5;
-
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.35s ease;
+  opacity: 0.85;
+  line-height: 1.6;
+  position: relative;
+  color: rgba(195, 199, 205, 1);
 }
 
-.language-item.open .language-note {
-  max-height: 120px;
-  opacity: 1;
+/* Bullet moderno */
+.language-note::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--bg-color-phone);
+  border-radius: 50%;
 }
 
 /* ======================================================
@@ -264,5 +290,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
+  .note-content{
+   padding: 10px 0 0 28px;
+}
 }
 

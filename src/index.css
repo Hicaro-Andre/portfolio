@@ -98,6 +98,8 @@ h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+
+  border: solid;
 }
 .row-title span {
   display: block;

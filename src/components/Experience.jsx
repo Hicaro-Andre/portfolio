@@ -14,62 +14,106 @@ export default function Experience() {
 
         <div className="timeline">
 
-          {/* ITEM 1 */}
+          {/* card 1  */}
           <div className="timeline-item left">
             <span className="timeline-dot" />
-            {/* <div className="card-timeline">
-              <h4>Desenvolvedora Full Stack Júnior</h4>
-              <p className="company">SES / MA</p>
-              <span className="date">Jan 2024 — Presente</span>
-              <p className="description">
-                Desenvolvimento de sistemas web para saúde pública,
-                APIs REST e interfaces acessíveis.
-              </p>
+            <div className="card-timeline">
 
-              <ul>
-                <li>Laravel e PHP</li>
-                <li>APIs REST</li>
-                <li>MySQL e PostgreSQL</li>
-              </ul>
-            </div> */}
+               {/* header */}
+              <div className="card-timeline-header">
+                <h4 className="title">Desenvolvedor Full Stack</h4>
+                <p className="company">TecTeca</p>
+
+                <div className="period">
+                  <p className="date">Concluído em 28 jun 2019</p>
+
+                  <div className="badge-group">
+                    <span className="local-badge">São Luís</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* body */}
+              <div className="card-timeline-body">
+                <p className="description">
+                  Formação focada em fundamentos de computação, engenharia de
+                  software, estruturas de dados, banco de dados e
+                  desenvolvimento de sistemas.
+                </p>
+
+                {/* Atividades e Responsabilidades */}
+                <div className="timeline-section">
+                  <h5>Atividades e Responsabilidades</h5>
+                  <ul>
+                    <li>Desenvolvimento de projetos acadêmicos completos</li>
+                    <li>Aplicação prática de modelagem de banco de dados</li>
+                    <li>Implementação de algoritmos eficientes</li>
+                  </ul>
+                </div>
+
+                {/* Principais Disciplinas */}
+                <div className="timeline-section">
+                  <h5>Tecnologias Usadas</h5>
+                  <ul>
+                    <li>Algoritmos</li>
+                    <li>Estruturas de Dados</li>
+                    <li>Banco de Dados</li>
+                    <li>Engenharia de Software</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* ITEM 2 */}
+           {/* card 2  */}
           <div className="timeline-item right">
             <span className="timeline-dot" />
-            {/* <div className="card-timeline">
-              <h4>Estagiária em Engenharia de Software</h4>
-              <p className="company">DartiLab — UFMA</p>
-              <span className="date">Jun 2025 — Presente</span>
-              <p className="description">
-                Modernização de sistemas e desenvolvimento mobile.
-              </p>
+            <div className="card-timeline">
 
-              <ul>
-                <li>React Native</li>
-                <li>FastAPI</li>
-                <li>Docker</li>
-              </ul>
-            </div> */}
-          </div>
+               {/* header */}
+              <div className="card-timeline-header">
+                <h4 className="title"> Co-Fundador e Web Designer</h4>
+                <p className="company">Upaon Solutions</p>
 
-          {/* ITEM 3 */}
-          <div className="timeline-item left">
-            <span className="timeline-dot" />
-            {/* <div className="card-timeline">
-              <h4>Monitora de Engenharia de Software</h4>
-              <p className="company">UFMA</p>
-              <span className="date">Mar 2024 — Jul 2024</span>
-              <p className="description">
-                Apoio acadêmico e orientação em projetos.
-              </p>
+                <div className="period">
+                  <p className="date">Concluído em 28 jun 2019</p>
 
-              <ul>
-                <li>UML</li>
-                <li>Scrum</li>
-                <li>Git</li>
-              </ul>
-            </div> */}
+                  <div className="badge-group">
+                    <span className="local-badge">São Luís</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* body */}
+              <div className="card-timeline-body">
+                <p className="description">
+                  Formação focada em fundamentos de computação, engenharia de
+                  software, estruturas de dados, banco de dados e
+                  desenvolvimento de sistemas.
+                </p>
+
+                {/* Atividades e Responsabilidades */}
+                <div className="timeline-section">
+                  <h5>Atividades e Responsabilidades</h5>
+                  <ul>
+                    <li>Desenvolvimento de projetos acadêmicos completos</li>
+                    <li>Aplicação prática de modelagem de banco de dados</li>
+                    <li>Implementação de algoritmos eficientes</li>
+                  </ul>
+                </div>
+
+                {/* Principais Disciplinas */}
+                <div className="timeline-section">
+                  <h5>Tecnologias Usadas</h5>
+                  <ul>
+                    <li>Algoritmos</li>
+                    <li>Estruturas de Dados</li>
+                    <li>Banco de Dados</li>
+                    <li>Engenharia de Software</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>

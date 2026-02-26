@@ -3,7 +3,7 @@
 ====================================================== */
 
 .skills-section {
-  padding: var(--navbar-height) 6% 0;
+  padding: var(--padding-sections);
   color: var(--txt-color);
   position: relative;
   overflow: hidden;

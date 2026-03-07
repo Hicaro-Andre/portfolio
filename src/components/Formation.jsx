@@ -22,7 +22,7 @@ export default function Formation() {
                 {/* Badge de Status */}
                 <span className="status-badge">Concluído</span>
 
-                <h4 className="title">Bacharel em Ciências da Computação</h4>
+                <h4 className="title"> y Bacharel em Ciências da Computação</h4>
                 <p className="company">Faculdade Pitágoras - FAMA</p>
 
                 <div className="period">
@@ -76,14 +76,14 @@ export default function Formation() {
                 {/* Badge de Status */}
                 <span className="status-badge">Concluído</span>
 
-                <h4 className="title">Bacharel em Ciências da Computação</h4>
+                <h4 className="title">Bacharelado em Ciências da Computação</h4>
                 <p className="company">Faculdade Pitágoras - FAMA</p>
 
                 <div className="period">
-                  <p className="date">Concluído em 28 jun 2019</p>
+                  <p className="date">2019 - Presencial</p>
 
                   <div className="badge-group">
-                    <span className="local-badge">São Luís</span>
+                    <span className="local-badge">São Luís - MA</span>
                     <span className="cr-badge">CR: 8.6/10.0</span>
                   </div>
                 </div>

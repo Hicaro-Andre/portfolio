@@ -1,34 +1,42 @@
 import "/src/styles/Experience.css";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaCheckCircle,
+  FaTools,
+} from "react-icons/fa";
 
 export default function Experience() {
   return (
     <section className="experience-section" id="experience">
       <div className="experience-container">
-
         <header className="row-title">
-          <h2>Experiência
+          <h2>
+            Experiência
             <span />
           </h2>
-         
         </header>
 
         <div className="timeline">
-
-          {/* card 1  */}
+          {/* card 2  */}
           <div className="timeline-item left">
             <span className="timeline-dot" />
             <div className="card-timeline">
-
-               {/* header */}
+              {/* header */}
               <div className="card-timeline-header">
                 <h4 className="title">Desenvolvedor Full Stack</h4>
                 <p className="company">TecTeca</p>
 
                 <div className="period">
-                  <p className="date">Concluído em 28 jun 2019</p>
+                  <p className="date">Jan 2024 - Remoto</p>
 
                   <div className="badge-group">
-                    <span className="local-badge">São Luís</span>
+                    <span className="local-badge">São Luís - MA</span>
                   </div>
                 </div>
               </div>
@@ -36,50 +44,64 @@ export default function Experience() {
               {/* body */}
               <div className="card-timeline-body">
                 <p className="description">
-                  Formação focada em fundamentos de computação, engenharia de
-                  software, estruturas de dados, banco de dados e
-                  desenvolvimento de sistemas.
+                  Atuei no desenvolvimento e manutenção de aplicações web full
+                  stack, trabalhando tanto no front-end quanto no back-end.
+                  Desenvolvi interfaces modernas com React, Next.js, TypeScript
+                  e Tailwind, além de APIs em Node.js e integrações com serviços
+                  externos. Também implementei novas funcionalidades, correções
+                  e melhorias em sistemas existentes, com foco em organização de
+                  código, performance e escalabilidade.
                 </p>
 
                 {/* Atividades e Responsabilidades */}
                 <div className="timeline-section">
-                  <h5>Atividades e Responsabilidades</h5>
+                   <h5 className="timeline-title">
+                    <FaCheckCircle className="timeline-icon" />
+                    Atividades e Responsabilidades
+                  </h5>
                   <ul>
                     <li>Desenvolvimento de projetos acadêmicos completos</li>
                     <li>Aplicação prática de modelagem de banco de dados</li>
                     <li>Implementação de algoritmos eficientes</li>
                   </ul>
+
+                  <div className="separator"></div>
                 </div>
 
-                {/* Principais Disciplinas */}
+                {/* Tecnologias Usadas */}
                 <div className="timeline-section">
-                  <h5>Tecnologias Usadas</h5>
-                  <ul>
-                    <li>Algoritmos</li>
-                    <li>Estruturas de Dados</li>
-                    <li>Banco de Dados</li>
-                    <li>Engenharia de Software</li>
-                  </ul>
+                 <h5 className="timeline-title">
+                    <FaTools className="timeline-icon" />
+                    Tecnologias Usadas
+                  </h5>
+                  <div className="tech-icons">
+                    <FaHtml5 color="#0033FF" />
+                    <FaCss3Alt color="#0033FF" />
+                    <FaJs color="#0033FF" />
+                    <FaReact color="#0033FF" />
+                    <FaNodeJs color="#0033FF" />
+                    <FaGitAlt color="#0033FF" />
+                    <FaGithub color="#0033FF" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-           {/* card 2  */}
+          {/* card 1  */}
           <div className="timeline-item right">
             <span className="timeline-dot" />
             <div className="card-timeline">
-
-               {/* header */}
+              {/* header */}
               <div className="card-timeline-header">
                 <h4 className="title"> Co-Fundador e Web Designer</h4>
                 <p className="company">Upaon Solutions</p>
 
                 <div className="period">
-                  <p className="date">Concluído em 28 jun 2019</p>
+                  <p className="date">Abr 2020 - Remoto</p>
 
                   <div className="badge-group">
-                    <span className="local-badge">São Luís</span>
+                    <span className="local-badge">São Luís - MA</span>
                   </div>
                 </div>
               </div>
@@ -87,14 +109,16 @@ export default function Experience() {
               {/* body */}
               <div className="card-timeline-body">
                 <p className="description">
-                  Formação focada em fundamentos de computação, engenharia de
-                  software, estruturas de dados, banco de dados e
-                  desenvolvimento de sistemas.
+                  Startup voltada à prestação de serviços em Tecnologia da
+                  Informação e desenvolvimento de software.
                 </p>
 
                 {/* Atividades e Responsabilidades */}
                 <div className="timeline-section">
-                  <h5>Atividades e Responsabilidades</h5>
+                  <h5 className="timeline-title">
+                    <FaCheckCircle className="timeline-icon" />
+                    Atividades e Responsabilidades
+                  </h5>
                   <ul>
                     <li>Desenvolvimento de projetos acadêmicos completos</li>
                     <li>Aplicação prática de modelagem de banco de dados</li>
@@ -102,20 +126,25 @@ export default function Experience() {
                   </ul>
                 </div>
 
-                {/* Principais Disciplinas */}
+                {/* Tecnologias Usadas */}
                 <div className="timeline-section">
-                  <h5>Tecnologias Usadas</h5>
-                  <ul>
-                    <li>Algoritmos</li>
-                    <li>Estruturas de Dados</li>
-                    <li>Banco de Dados</li>
-                    <li>Engenharia de Software</li>
-                  </ul>
+                  <h5 className="timeline-title">
+                    <FaTools className="timeline-icon" />
+                    Tecnologias Usadas
+                  </h5>
+                  <div className="tech-icons">
+                    <FaHtml5 color="#0033FF" />
+                    <FaCss3Alt color="#0033FF" />
+                    <FaJs color="#0033FF" />
+                    <FaReact color="#0033FF" />
+                    <FaNodeJs color="#0033FF" />
+                    <FaGitAlt color="#0033FF" />
+                    <FaGithub color="#0033FF" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

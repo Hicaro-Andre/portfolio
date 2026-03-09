@@ -14,7 +14,7 @@ export default function Contact() {
           <h5>
             Vamos tirar sua <span>ideia</span> do papel.
           </h5>
-          
+
           <div className="field">
             <label htmlFor="name">Nome</label>
             <div className="input-wrapper">

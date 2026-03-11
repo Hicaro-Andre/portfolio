@@ -235,17 +235,15 @@
   flex-direction: column;
   gap: 25px;
   align-items: center;
-  background: var(--bg-color-footer);
 }
 
 .stat-card {
   min-width: 220px;
   padding: 15px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(88, 166, 255, 0.15);
   text-align: center;
-  box-shadow: 0 0 30px rgba(31, 111, 235, 0.18);
 }
 
 .stat-card strong {

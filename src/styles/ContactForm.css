@@ -36,12 +36,8 @@
   padding: 18px;
   border-radius: 18px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(31, 111, 235, 0.15),
-    rgba(0, 0, 0, 0.6)
-  );
-
+  background: linear-gradient(180deg,#0a0f1f 0%,#030712 40%,#000 100%);
+  
   border: 1px solid rgba(88, 166, 255, 0.15);
   backdrop-filter: blur(10px);
 

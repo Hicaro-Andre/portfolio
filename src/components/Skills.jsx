@@ -289,12 +289,6 @@ export default function Skills() {
               <span className="language-name">Inglês</span>
               <span className="language-level intermediate">Intermediário</span>
             </div>
-
-            <div className="note-content">
-              <span className="language-note">
-                Leitura de documentação, artigos técnicos e comunicação básica
-              </span>
-            </div>
           </li>
         </ul>
       </div>

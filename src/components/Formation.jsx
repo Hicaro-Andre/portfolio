@@ -3,11 +3,10 @@ import "/src/styles/Formation.css";
 import certificado from "../assets/images/portifolio_image/APIs.png";
 
 import { FaBolt, FaGraduationCap, FaTimes } from "react-icons/fa";
-
 import { GiAchievement } from "react-icons/gi";
 
 export default function Formation() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [openModalId, setOpenModalId] = useState(null);
 
   return (
     <section className="training-section" id="formation">
@@ -20,24 +19,23 @@ export default function Formation() {
         </header>
 
         <div className="timeline">
-          {/* card 1 */}
+
+          {/* CARD 2 */}
           <div className="timeline-item left">
             <span className="timeline-dot" />
+
             <div className="card-timeline">
-              {/* header */}
+
               <span className="status-badge">Concluído</span>
+
               <div className="card-timeline-header">
                 <div className="header-top">
-                  <h4 className="title">
-                    Bacharelado em Ciências da Computação
-                  </h4>
+                  <h4>Bacharelado em Ciências da Computação</h4>
                   <p className="company">Faculdade Pitágoras - FAMA</p>
                 </div>
 
                 <div className="header-bottom">
-                  <div className="date">
-                    <p>2019 - Presencial</p>
-                  </div>
+                  <p>2019 - Presencial</p>
 
                   <div className="badge-group">
                     <span className="local-badge">São Luís - MA</span>
@@ -46,7 +44,6 @@ export default function Formation() {
                 </div>
               </div>
 
-              {/* body */}
               <div className="card-timeline-body">
                 <p className="description">
                   Formação focada em fundamentos de computação, engenharia de
@@ -54,12 +51,12 @@ export default function Formation() {
                   desenvolvimento de sistemas.
                 </p>
 
-                {/* Destaques */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaBolt className="timeline-icon" />
                     Destaques
                   </h5>
+
                   <ul>
                     <li>Desenvolvimento de projetos acadêmicos completos</li>
                     <li>Aplicação prática de modelagem de banco de dados</li>
@@ -67,51 +64,49 @@ export default function Formation() {
                   </ul>
                 </div>
 
-                {/* Principais Disciplinas */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaGraduationCap className="timeline-icon" />
                     Principais Disciplinas
                   </h5>
+
                   <div className="discipline-badges">
                     <span className="discipline-badge">Algoritmos</span>
-                    <span className="discipline-badge">
-                      Estruturas de Dados
-                    </span>
+                    <span className="discipline-badge">Estruturas de Dados</span>
                     <span className="discipline-badge">Banco de Dados</span>
-                    <span className="discipline-badge">
-                      Engenharia de Software
-                    </span>
+                    <span className="discipline-badge">Engenharia de Software</span>
                   </div>
                 </div>
+
                 <div className="separator"></div>
               </div>
 
-              {/* Certificado */}
               <div className="card-timeline-footer certificate-container">
                 <div
                   className="certificate-trigger"
-                  onClick={() => setModalOpen(true)}
+                  onClick={() => setOpenModalId(2)}
                   title="Clique para ver o certificado"
                 >
                   <GiAchievement className="certificate-icon" />
                 </div>
               </div>
 
-              {modalOpen && (
+              {openModalId === 2 && (
                 <div
                   className="certificate-modal"
-                  onClick={() => setModalOpen(false)} // fecha ao clicar no fundo
+                  onClick={() => setOpenModalId(null)}
                 >
                   <div
                     className="certificate-content"
-                    onClick={(e) => e.stopPropagation()} // evita fechar ao clicar no conteúdo
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <FaTimes
                       className="close-modal"
-                      onClick={() => setModalOpen(false)}
+                      onClick={() => setOpenModalId(null)}
                     />
+
                     <h3 className="certificate-title">Certificado Acadêmico</h3>
+
                     <img
                       src={certificado}
                       alt="Certificado"
@@ -123,24 +118,23 @@ export default function Formation() {
             </div>
           </div>
 
-          {/* card 2 */}
+
+          {/* CARD 1 */}
           <div className="timeline-item right">
             <span className="timeline-dot" />
+
             <div className="card-timeline">
-              {/* header */}
+
               <span className="status-badge">Concluído</span>
+
               <div className="card-timeline-header">
                 <div className="header-top">
-                  <h4 className="title">
-                    Bacharelado em Ciências da Computação
-                  </h4>
+                  <h4>Bacharelado em Ciências da Computação</h4>
                   <p className="company">Faculdade Pitágoras - FAMA</p>
                 </div>
 
                 <div className="header-bottom">
-                  <div className="date">
-                    <p>2019 - Presencial</p>
-                  </div>
+                  <p>2019 - Presencial</p>
 
                   <div className="badge-group">
                     <span className="local-badge">São Luís - MA</span>
@@ -149,7 +143,6 @@ export default function Formation() {
                 </div>
               </div>
 
-              {/* body */}
               <div className="card-timeline-body">
                 <p className="description">
                   Formação focada em fundamentos de computação, engenharia de
@@ -157,12 +150,12 @@ export default function Formation() {
                   desenvolvimento de sistemas.
                 </p>
 
-                {/* Destaques */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaBolt className="timeline-icon" />
                     Destaques
                   </h5>
+
                   <ul>
                     <li>Desenvolvimento de projetos acadêmicos completos</li>
                     <li>Aplicação prática de modelagem de banco de dados</li>
@@ -170,51 +163,49 @@ export default function Formation() {
                   </ul>
                 </div>
 
-                {/* Principais Disciplinas */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaGraduationCap className="timeline-icon" />
                     Principais Disciplinas
                   </h5>
+
                   <div className="discipline-badges">
                     <span className="discipline-badge">Algoritmos</span>
-                    <span className="discipline-badge">
-                      Estruturas de Dados
-                    </span>
+                    <span className="discipline-badge">Estruturas de Dados</span>
                     <span className="discipline-badge">Banco de Dados</span>
-                    <span className="discipline-badge">
-                      Engenharia de Software
-                    </span>
+                    <span className="discipline-badge">Engenharia de Software</span>
                   </div>
                 </div>
+
                 <div className="separator"></div>
               </div>
 
-              {/* Certificado */}
               <div className="card-timeline-footer certificate-container">
                 <div
                   className="certificate-trigger"
-                  onClick={() => setModalOpen(true)}
+                  onClick={() => setOpenModalId(1)}
                   title="Clique para ver o certificado"
                 >
                   <GiAchievement className="certificate-icon" />
                 </div>
               </div>
 
-              {modalOpen && (
+              {openModalId === 1 && (
                 <div
                   className="certificate-modal"
-                  onClick={() => setModalOpen(false)} // fecha ao clicar no fundo
+                  onClick={() => setOpenModalId(null)}
                 >
                   <div
                     className="certificate-content"
-                    onClick={(e) => e.stopPropagation()} // evita fechar ao clicar no conteúdo
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <FaTimes
                       className="close-modal"
-                      onClick={() => setModalOpen(false)}
+                      onClick={() => setOpenModalId(null)}
                     />
+
                     <h3 className="certificate-title">Certificado Acadêmico</h3>
+
                     <img
                       src={certificado}
                       alt="Certificado"
@@ -225,6 +216,7 @@ export default function Formation() {
               )}
             </div>
           </div>
+
         </div>
       </div>
     </section>

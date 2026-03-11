@@ -23,6 +23,7 @@ export default function Experience() {
         </header>
 
         <div className="timeline">
+         
           {/* card 2  */}
           <div className="timeline-item left">
             <span className="timeline-dot" />

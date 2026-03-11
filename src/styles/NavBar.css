@@ -1,0 +1,236 @@
+/* ======================================================
+   /*! NAVBAR (MOBILE FIRST) 
+====================================================== **/
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  z-index: 1000;
+  background: var(--bg-color-navbar);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #58a6ff50;
+  transition: background 0.3s ease;
+}
+
+/* Container centralizado */
+.navbar-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+.logo-link:active {
+  transform: scale(0.96);
+}
+
+.logo-img {
+  width: 48px;
+  height: auto;
+  display: block;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  border-radius: 6px;
+
+  background-color: var(--bg-text-color-links);
+  transition: all 0.3s ease;
+}
+
+/* Animação para virar X */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Menu mobile */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 1.5rem 1rem;
+  background: var(--bg-color-navbar);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Menu ativo */
+.nav-links.active {
+  display: flex;
+}
+
+/* Links */
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--bg-text-color-links);
+  transition: 0.25s ease;
+}
+
+/* Linha animada */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #58a6ff, #1f6feb);
+  transition: width 0.3s ease;
+}
+
+/* Hover */
+.nav-links a:hover {
+  color: var(--bg-color-hover-links);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Link ativo */
+.nav-links a.active {
+  color: #58a6ff;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* acessibilidade */
+.nav-links a:focus-visible,
+.nav-btn-lang:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.lang-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 110px;
+  height: 38px;
+
+  padding: 4px;
+  border-radius: 999px;
+
+  border: 1px solid #58a6ff60;
+  background: rgba(255, 255, 255, 0.05);
+
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.lang-option {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.lang-option.active {
+  opacity: 1;
+}
+
+.toggle-indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+
+  background: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
+  border-radius: 999px;
+
+  transition: 0.3s ease;
+}
+
+.toggle-indicator.en {
+  transform: translateX(100%);
+}
+
+/*? ==== NAVBAR ==== **/
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: static;
+    width: auto;
+
+    background: none;
+    box-shadow: none;
+    padding: 0;
+
+    gap: 1.8rem;
+  }
+
+  .nav-btn-lang {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    gap: 2.2rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}

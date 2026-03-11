@@ -1,0 +1,45 @@
+/* ======================================================
+   /*! BUTTONS  
+====================================================== **/
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* botão principal */
+.btn.primary {
+  background: var(--bg-color-btn-primary);
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
+}
+
+/* botão secundário */
+.btn.secondary {
+  border: 1px solid #58a6ff;
+
+  background: linear-gradient(90deg, var(--bg-color-phone), #1f6feb);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn.secondary:hover {
+  -webkit-text-fill-color: #ffffff; /* ESSENCIAL */
+  color: #ffffff;
+  background: var(--bg-color-btn-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
+}

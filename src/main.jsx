@@ -1,6 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
+import "/src/Globals.css";
+import "./styles/Global/Buttons.css"
+import "./styles/Global/Typography.css"
+import "./styles/Global/Cards.css"
 import App from "./App";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 

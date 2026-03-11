@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "/public/hico-logo.png";
-import "/src/index.css";
+import "/src/styles/NavBar.css"
 
 export default function Navbar({ language, setLanguage }) {
   const [menuOpen, setMenuOpen] = useState(false);

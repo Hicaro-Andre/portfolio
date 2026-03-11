@@ -180,6 +180,7 @@ export default function Formation() {
                 <div className="separator"></div>
               </div>
 
+              {/* certificado */}
               <div className="card-timeline-footer certificate-container">
                 <div
                   className="certificate-trigger"

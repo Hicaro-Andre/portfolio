@@ -1,6 +1,11 @@
 /* ======================================================
    /*! FOOTER (MOBILE FIRST) 
 ====================================================== **/
+
+:root{
+  --bg-color-footer: rgba(0, 0, 0, 0.9);
+}
+
 .footer {
   background: var(--bg-color-footer);
   border-top: 1px solid #58a6ff50;

@@ -1,6 +1,14 @@
 /* ======================================================
    /*! NAVBAR (MOBILE FIRST) 
 ====================================================== **/
+:root{
+
+  --bg-color-navbar: rgba(0, 0, 0, 0.9);
+  --bg-color-hover-links: #58a6ff;
+  --bg-text-color-links: #f5f5f5;
+}
+
+
 .navbar {
   position: fixed;
   top: 0;

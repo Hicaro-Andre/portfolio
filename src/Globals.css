@@ -24,20 +24,6 @@
   /* padding sections */
   --padding-sections: 70px;
 
-  /*****************? NAVBAR ******************/
-  --bg-color-navbar: rgba(0, 0, 0, 0.9);
-  --bg-color-hover-links: #58a6ff;
-  --bg-text-color-links: #f5f5f5;
-
-  /*****************? FOOTER ******************/
-  --bg-color-footer: rgba(0, 0, 0, 0.9);
-
-  /*****************? BUTTONS ******************/
-  --bg-color-btn-primary: linear-gradient(
-    135deg,
-    var(--bg-color-phone),
-    #1f6feb
-  );
 }
 
 /* ======================================================

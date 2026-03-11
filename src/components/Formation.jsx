@@ -150,6 +150,7 @@ export default function Formation() {
                   desenvolvimento de sistemas.
                 </p>
 
+               {/* Destaques */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaBolt className="timeline-icon" />
@@ -163,6 +164,7 @@ export default function Formation() {
                   </ul>
                 </div>
 
+               {/* Principais Disciplinas */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaGraduationCap className="timeline-icon" />

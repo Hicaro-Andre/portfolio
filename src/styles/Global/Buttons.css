@@ -1,6 +1,13 @@
 /* ======================================================
    /*! BUTTONS  
 ====================================================== **/
+:root{
+   --bg-color-btn-primary: linear-gradient(
+    135deg,
+    var(--bg-color-phone),
+    #1f6feb
+  );
+}
 
 .btn {
   padding: 14px 30px;

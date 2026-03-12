@@ -25,12 +25,8 @@
   position: relative;
   padding: 50px;
   border-radius: 28px;
-  background: linear-gradient(
-    145deg,
-    rgba(88, 166, 255, 0.08),
-    rgba(255, 255, 255, 0.02)
-  );
-
+   background: linear-gradient(180deg,#0a0f1f 0%,#030712 40%,#000 100%);
+  
   border: 1px solid rgba(88, 166, 255, 0.25);
   backdrop-filter: blur(12px);
   box-shadow:

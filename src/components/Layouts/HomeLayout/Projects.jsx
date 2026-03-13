@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "/src/styles/Projects.css";
 
 const projects = [
@@ -40,7 +41,7 @@ const projects = [
   {
     title: "CadServ",
     description: "Sistema de cadastro e gestão de servidores.",
-   techs: [
+    techs: [
       { name: "Laravel", color: "#ff0000", textColor: "#fff" },
       { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
       { name: "JavaScript", color: "#ffff00", textColor: "#000" },
@@ -62,7 +63,7 @@ const projects = [
   {
     title: "Portal ReACT",
     description: "Plataforma para gestão de projetos e notícias da rede ReACT.",
-     techs: [
+    techs: [
       { name: "Laravel", color: "#ff0000", textColor: "#fff" },
       { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
       { name: "JavaScript", color: "#ffff00", textColor: "#000" },
@@ -128,19 +129,19 @@ export default function ProjectsCarousel() {
                 <div className="card-inner">
                   <div className="project-image">
                     <div className="image-overlay">
-                      <a
-                        href={project.projectUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        to={`/project/${project.id}`}
                         className="details-btn"
                       >
                         Ver detalhes
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
                   <div className="project-content">
-                    <h3>{project.title}</h3>
+                    <h3>
+                      <Link to={`/project/${project.id}`}>{project.title}</Link>
+                    </h3>
 
                     <p className="project-description">{project.description}</p>
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/Hero.css";
-import myfoto from "../assets/images/hero_image/me.jpg";
+import myfoto from "/src/assets/images/hero_image/me.jpg";
 
 export default function Hero({ language }) {
   const heroRef = useRef(null);

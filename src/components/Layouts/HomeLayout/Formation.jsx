@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "/src/styles/Formation.css";
-import certificado from "../assets/images/portifolio_image/APIs.png";
+import certificado from "/src/assets/images/portifolio_image/APIs.png";
 
 import { FaBolt, FaGraduationCap, FaTimes } from "react-icons/fa";
 import { GiAchievement } from "react-icons/gi";

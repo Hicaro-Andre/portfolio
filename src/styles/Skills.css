@@ -108,10 +108,12 @@
   align-items: center;
   width: 100%;
   font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .skill-name {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
@@ -171,52 +173,16 @@
     left: 120%;
   }
 }
+
 /* IDIOMAS */
-.languages-content {
-  margin-top: 40px;
-  padding: 28px 26px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-}
-
-.languages-list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 0 0;
-  gap: 16px;
-}
-
-.language-item {
-  border-radius: 14px;
-  padding: 16px 18px;
-  background: rgba(0, 0, 0, 0.9);;
-  border: 1px solid rgba(88, 166, 255, 0.15);
-  transition: all 0.3s ease;
-}
-
-.language-item:hover {
-  border-color: rgba(88, 166, 255, 0.3);
-  transform: translateY(-3px);
-}
-
-.language-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.language-top.clickable {
-  cursor: pointer;
-}
 
 .flag {
-  font-size: 1.3rem;
-}
-
-.language-name {
-  font-weight: 500;
+  width: 20px;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
 }
 
 .language-level {
@@ -227,18 +193,12 @@
   border-radius: 20px;
   white-space: nowrap;
 }
-
 /* Verde Neon */
 .language-level.native {
   background: rgba(34, 197, 94, 0.15);
   color: #39ff14;
 }
 
-/* Azul Neon */
-.language-level.intermediate {
-  background: rgba(92, 92, 255, 0.15);
-  color: #5C5CFF;
-}
 
 
 /* ======================================================

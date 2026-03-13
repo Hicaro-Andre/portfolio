@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "/public/hico-logo.png";
-import "/src/styles/NavBar.css"
+import "/src/styles/NavBar.css";
 
 export default function Navbar({ language, setLanguage }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -95,13 +95,21 @@ export default function Navbar({ language, setLanguage }) {
             <span
               className={`lang-option ${language === "pt" ? "active" : ""}`}
             >
-              🇧🇷 PT
+              <img
+                src="https://flagcdn.com/br.svg"
+                alt="Português"
+                className="flag"
+              />
             </span>
 
             <span
               className={`lang-option ${language === "en" ? "active" : ""}`}
             >
-              🇺🇸 EN
+              <img
+                src="https://flagcdn.com/us.svg"
+                alt="English"
+                className="flag"
+              />
             </span>
 
             <div className={`toggle-indicator ${language}`} />

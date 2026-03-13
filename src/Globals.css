@@ -41,7 +41,11 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     Roboto,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Noto Color Emoji",
     sans-serif;
+
   color: var(--txt-color);
   min-height: 100vh;
   overflow-x: hidden;

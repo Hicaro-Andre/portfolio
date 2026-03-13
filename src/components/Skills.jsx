@@ -263,34 +263,52 @@ export default function Skills() {
             </li>
           </ul>
         </div>
-      </div>
 
-      {/* IDIOMAS */}
-      <div className="languages-content">
-        <div className="skills-header languages">
-          <Languages size={22} />
-          <h3>Idiomas</h3>
+        {/* IDIOMAS */}
+        <div className="skills-card">
+          <div className="skills-header gradient">
+            <Languages size={22} />
+            <h3>Idiomas</h3>
+          </div>
+
+          <ul className="skills-list enhanced">
+            {/* português */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <img
+                    src="https://flagcdn.com/br.svg"
+                    alt="Brasil"
+                    className="flag"
+                  />
+                  Português
+                </span>
+                <span className="language-level native">Nativo</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "100%" }} />
+              </div>
+            </li>
+
+            {/* inglês */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <img
+                    src="https://flagcdn.com/us.svg"
+                    alt="Estados Unidos"
+                    className="flag"
+                  />
+                  Inglês
+                </span>
+                <span className="skill-percent">50%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "50%" }} />
+              </div>
+            </li>
+          </ul>
         </div>
-
-        <ul className="languages-list">
-          {/* Português */}
-          <li className="language-item">
-            <div className="language-top">
-              <span className="flag">🇧🇷</span>
-              <span className="language-name">Português</span>
-              <span className="language-level native">Nativo</span>
-            </div>
-          </li>
-
-          {/* Inglês com Accordion */}
-          <li className="language-item">
-            <div className="language-top">
-              <span className="flag">🇺🇸</span>
-              <span className="language-name">Inglês</span>
-              <span className="language-level intermediate">Intermediário</span>
-            </div>
-          </li>
-        </ul>
       </div>
     </section>
   );

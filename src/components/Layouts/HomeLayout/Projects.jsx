@@ -2,76 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "/src/styles/Projects.css";
 
-const projects = [
-  {
-    title: "Monitora Saúde",
-    description:
-      "Sistema Web para monitoramento e avaliação de indicadores de saúde e processos.",
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
 
-    projectUrl: "https://monitora.saude.ma.gov.br/",
-    githubUrl: "#",
-  },
-  {
-    title: "App Hans+",
-    description:
-      "Plataforma com versão web e app Android que apoia o tratamento da hanseníase.",
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-    ],
-    projectUrl: "https://hansmais.netlify.app/",
-    githubUrl: "#",
-  },
-  {
-    title: "RENAVEH",
-    description:
-      "Sistema web para cadastro de pacientes e gestão de notificações hospitalares.",
-    techs: [
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "https://renaveh.saude.ma.gov.br/",
-    githubUrl: "#",
-  },
-  {
-    title: "CadServ",
-    description: "Sistema de cadastro e gestão de servidores.",
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "PlanDox 2.0",
-    description:
-      "Software para planejamento experimental e análise de biodiesel.",
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Portal ReACT",
-    description: "Plataforma para gestão de projetos e notícias da rede ReACT.",
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "#",
-    githubUrl: "#",
-  },
-];
+import { projects } from "/src/data/projects.js";
 
 export default function ProjectsCarousel() {
   const [index, setIndex] = useState(0);
@@ -124,9 +56,13 @@ export default function ProjectsCarousel() {
               transform: `translateX(calc(-${index} * (100% / ${visibleCards})))`,
             }}
           >
-            {projects.map((project, i) => (
-              <div className="project-card" key={i}>
+            {/* ALTERAÇÃO 2: removi o index do map */}
+            {projects.map((project) => (
+              
+              /* ALTERAÇÃO 3: key correta */
+              <div className="project-card" key={project.id}>
                 <div className="card-inner">
+
                   <div className="project-image">
                     <div className="image-overlay">
                       <Link
@@ -140,10 +76,14 @@ export default function ProjectsCarousel() {
 
                   <div className="project-content">
                     <h3>
-                      <Link to={`/project/${project.id}`}>{project.title}</Link>
+                      <Link to={`/project/${project.id}`}>
+                        {project.title}
+                      </Link>
                     </h3>
 
-                    <p className="project-description">{project.description}</p>
+                    <p className="project-description">
+                      {project.description}
+                    </p>
 
                     <div className="project-techs">
                       {project.techs.map((tech, idx) => (
@@ -177,6 +117,7 @@ export default function ProjectsCarousel() {
                         GitHub
                       </a>
                     </div>
+
                   </div>
                 </div>
               </div>

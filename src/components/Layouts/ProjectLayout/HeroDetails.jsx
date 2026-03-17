@@ -2,7 +2,7 @@ import "/src/styles/HeroDetails.css";
 import { useParams } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { projects } from "/src/data/projects.js";
-// import renaveh from "/src/assets/images/portifolio_image/APIs.png";
+
 
 export default function HeroDetails() {
   const { id } = useParams();

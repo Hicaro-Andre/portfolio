@@ -1,181 +1,268 @@
-.about-details{
-  padding:80px 6%;
+/* ======================================================
+   /*! ABOUT DETAILS
+====================================================== */
+
+.about-details {
+  padding: 80px 10%;
 }
 
 /* GRID */
-
-.about-grid{
-  display:grid;
-  gap:30px;
+.about-grid {
+  display: grid;
+  gap: 30px;
 }
 
 /* COLUNAS */
-
-.left-column{
-  display:flex;
-  flex-direction:column;
-  gap:25px;
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.right-column{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-
-/* CARD */
-
-.card{
-
-  background:rgba(20,0,40,0.6);
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(180,120,255,0.25);
-  border-radius:18px;
-
-  padding:28px;
-
-  transition:0.3s;
-}
-
-.card:hover{
-  border-color:#c084fc;
-  transform:translateY(-4px);
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* TITULOS */
-
-.card-title{
-  color:#c084fc;
-  margin-bottom:15px;
+.card h4 {
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.card h4{
-  margin-bottom:12px;
+
+/* ======================================================
+  /*! FEATURES
+====================================================== */
+.features {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* FEATURES */
-
-.features{
-  margin-top:10px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+.features li {
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
 }
 
-.features li{
-  list-style:none;
-  position:relative;
-  padding-left:18px;
+.features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #58a6ff;
 }
 
-.features li::before{
-  content:"✔";
-  position:absolute;
-  left:0;
-  color:#c084fc;
+/* ======================================================
+  /*! STATUS
+====================================================== */
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* TIMELINE */
-
-.timeline{
-  margin-top:20px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
-.timeline-item{
-  display:flex;
-  gap:14px;
+.dot.done {
+  background: #39ff14;
 }
 
-.step{
-
-  width:30px;
-  height:30px;
-
-  background:linear-gradient(135deg,#a855f7,#ec4899);
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:14px;
-  font-weight:bold;
+.dot.progress {
+  background: #ffca28;
 }
 
-/* STATUS */
+/* ======================================================
+   /*! TECH
+====================================================== */
 
-.status{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.dot{
-  width:10px;
-  height:10px;
-  background:#22c55e;
-  border-radius:50%;
+.tech {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
 }
 
-/* TECH */
-
-.tech-list{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+.tech-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
-.tech{
-  display:flex;
-  align-items:center;
-  gap:6px;
+
+/* ======================================================
+   /*! INFO
+====================================================== */
+
+.info p {
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 
-.tech::before{
-  content:"";
-  width:10px;
-  height:10px;
-  border-radius:3px;
+.info strong{
+  color: #58a6ff;
 }
 
-.laravel::before{
-  background:#ef4444;
+/* ======================================================
+   /*! GALERIA
+====================================================== */
+
+.gallery-container {
+  margin-top: 10px;
 }
 
-.postgres::before{
-  background:#3b82f6;
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px;
 }
 
-/* INFO */
-
-.info p{
-  margin-bottom:10px;
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-/* IMPACTO */
-
-.impact-grid{
-  display:flex;
-  justify-content:space-between;
+.gallery-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: 0.3s;
 }
 
-.impact strong{
-  font-size:26px;
-  color:#c084fc;
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
-/* RESPONSIVO */
+/* BADGE */
+.gallery-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+}
 
-@media(min-width:900px){
+/* ======================================================
+   /*! MODAL
+====================================================== */
 
-  .about-grid{
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    grid-template-columns:2fr 1fr;
+  z-index: 9999;
+}
+
+/* IMAGEM */
+.gallery-full-image {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  z-index: 1;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  z-index: 10000;
+
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(236, 72, 153, 0.8);
+  transform: scale(1.1);
+}
+
+/* CONTADOR */
+.gallery-counter {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+/* NAVEGAÇÃO */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  z-index: 1000;
+}
+
+.nav.left {
+  left: 20px;
+}
+
+.nav.right {
+  right: 20px;
+}
+
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: 2fr 1fr;
+  }
 }

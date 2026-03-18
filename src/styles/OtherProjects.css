@@ -3,7 +3,7 @@
 =================================== */
 
 .other-projects {
-  padding: 80px 6%;
+  padding: 80px 10%;
   position: relative;
   background: var(--bg-color-footer);
   border-top: 1px solid #58a6ff50;
@@ -46,6 +46,8 @@
   backdrop-filter: blur(6px);
 
   transition: all 0.25s ease;
+
+    
 }
 
 .other-project-card:hover {

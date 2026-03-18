@@ -63,7 +63,9 @@ copyright {
   color: #cdd9e5;
 }
 
-/*? ==== FOOTER ==== **/
+/* ======================================================
+   /*! RESPONSIVIDADE 
+====================================================== **/
 @media (min-width: 768px) {
   .footer-container {
     gap: 2rem;

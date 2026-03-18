@@ -1,145 +1,173 @@
 import "/src/styles/AboutDetails.css";
 import { aboutProjects } from "/src/data/aboutProject.js";
+import { projects } from "/src/data/projects.js";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 export default function AboutDetails() {
   const { id } = useParams();
-
   const about = aboutProjects.find((p) => p.id === Number(id));
+  const project = projects.find((p) => p.id === Number(id));
+
+  const [openGallery, setOpenGallery] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (!about) return <p>Projeto não encontrado</p>;
 
   return (
     <section className="about-details">
       <div className="about-grid">
         {/* COLUNA ESQUERDA */}
         <div className="left-column">
-          {/* SOBRE O PROJETO */}
+          {/* sobre o projeto */}
           <div className="card">
-            <h3 className="card-title">Sobre o Projeto</h3>
+            <h3>Sobre o Projeto</h3>
 
-            <p>
-              O Monitora Saúde é uma plataforma web desenvolvida para a
-              Secretaria de Estado da Saúde do Maranhão, com o objetivo de
-              modernizar e centralizar o monitoramento de indicadores de saúde
-              pública.
-            </p>
+            <p>{about.description}</p>
 
             <h4>Principais Funcionalidades</h4>
-
             <ul className="features">
-              <li>Dashboards interativos com indicadores em tempo real</li>
-              <li>Gestão de usuários com diferentes níveis de acesso</li>
-              <li>Interface responsiva para dispositivos móveis</li>
+              {about.features?.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
             </ul>
           </div>
 
-          {/* PROCESSO */}
+          {/* GALERIA FORA DO CARD */}
           <div className="card">
-            <h3 className="card-title">Processo de Desenvolvimento</h3>
+            <div className="gallery-container">
+              <h3>Galeria</h3>
 
-            <div className="timeline">
-              <div className="timeline-item">
-                <span className="step">1</span>
-                <div>
-                  <strong>Análise de Requisitos</strong>
-                  <p>Levantamento das necessidades do sistema.</p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <span className="step">2</span>
-                <div>
-                  <strong>Arquitetura do Sistema</strong>
-                  <p>Estrutura MVC utilizando Laravel.</p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <span className="step">3</span>
-                <div>
-                  <strong>Desenvolvimento Backend</strong>
-                  <p>Criação de APIs e integração com PostgreSQL.</p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <span className="step">4</span>
-                <div>
-                  <strong>Interface do Usuário</strong>
-                  <p>Dashboards e visualização de dados.</p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <span className="step">5</span>
-                <div>
-                  <strong>Testes e Deploy</strong>
-                  <p>Testes finais e implantação em produção.</p>
-                </div>
+              <div className="gallery-grid">
+                {about.images?.slice(0, 6).map((img, index) => (
+                  <div
+                    key={index}
+                    className="gallery-item"
+                    onClick={() => {
+                      setOpenGallery(true);
+                      setCurrentIndex(index);
+                    }}
+                  >
+                    <img src={img} alt={`Imagem ${index}`} />
+                    <span className="gallery-badge">
+                      {index + 1}/{about.images.length}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
+            <button
+              className="btn primary"
+              onClick={() => {
+                setOpenGallery(true);
+                setCurrentIndex(0);
+              }}
+            >
+              Ver todas as fotos
+            </button>
           </div>
         </div>
 
         {/* COLUNA DIREITA */}
         <div className="right-column">
-          {/* STATUS */}
-          <div className="card small">
+          <div className="card">
             <h4>Status</h4>
             <div className="status">
-              <span className="dot"></span>
+              <span
+                className={`dot ${about.status === "Concluído" ? "done" : "progress"}`}
+              ></span>
               {about.status}
             </div>
           </div>
 
-          {/* TECNOLOGIAS */}
-          <div className="card small">
+          <div className="card">
             <h4>Tecnologias</h4>
-
             <div className="tech-list">
-              <span className="tech laravel">Laravel</span>
-              <span className="tech postgres">PostgreSQL</span>
+              {project.techs?.map((tech, i) => (
+                <span key={i} className="tech">
+                  <span
+                    className="tech-dot"
+                    style={{ background: tech.color }}
+                  ></span>
+
+                  {tech.name}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* INFO */}
-          <div className="card small">
+          <div className="card ">
             <h4>Informações</h4>
-
             <div className="info">
               <p>
                 <strong>Duração</strong>
-                <br />4 meses
+                <br />
+                {about.duration}
               </p>
               <p>
                 <strong>Equipe</strong>
-                <br />4 desenvolvedores
+                <br />
+                {about.team}
               </p>
               <p>
                 <strong>Cliente</strong>
                 <br />
-                Secretaria de Saúde
+                {about.client}
               </p>
-            </div>
-          </div>
-
-          {/* IMPACTO */}
-          <div className="card small impact">
-            <h4>Impacto</h4>
-
-            <div className="impact-grid">
-              <div>
-                <strong>50+</strong>
-                <p>Indicadores</p>
-              </div>
-
-              <div>
-                <strong>200+</strong>
-                <p>Usuários</p>
-              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* MODAL */}
+      {openGallery && (
+        <div
+          className="gallery-modal"
+          onClick={() => setOpenGallery(false)} // 🔥 FECHAR CLICANDO FORA
+        >
+          {/* BOTÃO FECHAR */}
+          <button className="close-btn" onClick={() => setOpenGallery(false)}>
+            ✕
+          </button>
+
+          <div className="gallery-counter">
+            {currentIndex + 1} / {about.images.length}
+          </div>
+
+          {/* IMAGEM */}
+          <img
+            src={about.images[currentIndex]}
+            className="gallery-full-image"
+            onClick={(e) => e.stopPropagation()} // 🔥 NÃO FECHA AO CLICAR NA IMAGEM
+          />
+
+          {/* BOTÃO ESQUERDA */}
+          <button
+            className="nav left"
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex((prev) =>
+                prev === 0 ? about.images.length - 1 : prev - 1,
+              );
+            }}
+          >
+            ‹
+          </button>
+
+          {/* BOTÃO DIREITA */}
+          <button
+            className="nav right"
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex((prev) =>
+                prev === about.images.length - 1 ? 0 : prev + 1,
+              );
+            }}
+          >
+            ›
+          </button>
+        </div>
+      )}
     </section>
   );
 }

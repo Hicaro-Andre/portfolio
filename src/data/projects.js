@@ -1,5 +1,8 @@
-import monitora from "../assets/images/portifolio_image/APIs.png"
-import hans from "../assets/images/portifolio_image/REDE NAVE.png"
+import p1 from "../assets/images_project/profile_project/APIs.png"
+import p2 from "../assets/images_project/profile_project/edf.png"
+import p3 from "../assets/images_project/profile_project/java.webp"
+import p4 from "../assets/images_project/profile_project/javascript.png"
+import p5 from "../assets/images_project/profile_project/REDE NAVE.png"
 
 export const projects = [
   {
@@ -16,7 +19,7 @@ export const projects = [
     projectUrl: "https://monitora.saude.ma.gov.br/",
     githubUrl: "#",
 
-    image: monitora,
+    image: p1,
   },
   {
     id: 2,
@@ -30,7 +33,7 @@ export const projects = [
     projectUrl: "https://hansmais.netlify.app/",
     githubUrl: "#",
 
-     image: hans,
+     image: p2,
   },
   {
     id: 3,
@@ -43,6 +46,8 @@ export const projects = [
     ],
     projectUrl: "https://renaveh.saude.ma.gov.br/",
     githubUrl: "#",
+
+    image: p3,
   },
   {
     id: 4,
@@ -55,6 +60,8 @@ export const projects = [
     ],
     projectUrl: "#",
     githubUrl: "#",
+
+    image: p4,
   },
   {
     id: 5,
@@ -67,5 +74,7 @@ export const projects = [
     ],
     projectUrl: "#",
     githubUrl: "#",
+
+    image: p5,
   },
 ];

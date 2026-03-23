@@ -96,7 +96,7 @@ export default function Hero({ language }) {
               {language === "pt" ? "Ver Projetos" : "View Projects"}
             </a>
 
-            <a href="/cv-hicaro-dev.pdf" download className="btn secondary">
+            <a href="/public/hicaro-cv.pdf" download className="btn secondary">
               {language === "pt" ? "Baixar CV" : "Download CV"}
             </a>
           </div>

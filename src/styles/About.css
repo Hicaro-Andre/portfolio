@@ -22,17 +22,11 @@
 ============================== */
 
 .main-card {
-  position: relative;
-  padding: 50px;
-  border-radius: 28px;
-   background: linear-gradient(180deg,#0a0f1f 0%,#030712 40%,#000 100%);
-  
+  background: linear-gradient(180deg, #0a0f1f 0%, #030712 40%, #000 100%);
   border: 1px solid rgba(88, 166, 255, 0.25);
+  border-radius: 28px;
+  padding: 20px;
   backdrop-filter: blur(12px);
-  box-shadow:
-    0 0 30px rgba(31, 111, 235, 0.08),
-    inset 0 0 40px rgba(88, 166, 255, 0.04);
-
   transition: all 0.35s ease;
 }
 
@@ -67,48 +61,32 @@
     inset 0 0 40px rgba(88, 166, 255, 0.08);
 }
 
-/* ==============================
-   /*! HEADER
-============================== */
-
-.about-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  margin-bottom: 20px;
-  padding: 8px 16px;
-  border-radius: 50px;
-  background: rgba(88, 166, 255, 0.1);
-  border: 1px solid rgba(88, 166, 255, 0.3);
+.about-top {
+  margin-bottom: 16px;
 }
 
-.about-header span {
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+.about-role {
+  font-size: 14px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: #58a6ff;
-}
-
-.about-header svg {
-  color: #58a6ff;
+  color: #1f6feb;
+  font-weight: 600;
 }
 
 /* ==============================
    /*! TEXTO
 ============================== */
 
-.about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.about-text p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
-.about-content p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #c9d1d9;
-  max-width: 700px;
+.about-highlight {
+  color: #00ff7f;
+  font-weight: 500;
 }
 
 /* ==============================
@@ -158,10 +136,12 @@
     padding: 60px;
   }
 
-  .about-content p {
-    font-size: 1.05rem;
+  .about-text p {
+    font-size: 15px;
   }
-
+  .about-role {
+    font-size: 15px;
+  }
   .about-stats {
     flex-direction: row;
     justify-content: center;
@@ -177,10 +157,6 @@
 
   .main-card {
     padding: 70px;
-  }
-
-  .about-content p {
-    font-size: 1.08rem;
   }
 
   .stat-card {

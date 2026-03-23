@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "/src/styles/Projects.css";
-
-
 import { projects } from "/src/data/projects.js";
 
 export default function ProjectsCarousel() {
   const [index, setIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
+  const canSlide = projects.length > visibleCards;
+  const isStaticDesktop = projects.length < 3 && visibleCards === 3;
 
   useEffect(() => {
     function handleResize() {
@@ -44,10 +44,18 @@ export default function ProjectsCarousel() {
         <span />
       </h2>
 
-      <div className="carousel-wrapper">
-        <button className="carousel-btn" onClick={prev} disabled={index === 0}>
-          ‹
-        </button>
+      <div
+        className={`carousel-wrapper ${isStaticDesktop ? "static-mode" : ""}`}
+      >
+        {canSlide && (
+          <button
+            className="carousel-btn"
+            onClick={prev}
+            disabled={index === 0}
+          >
+            ‹
+          </button>
+        )}
 
         <div className="carousel-viewport">
           <div
@@ -58,12 +66,14 @@ export default function ProjectsCarousel() {
           >
             {/* ALTERAÇÃO 2: removi o index do map */}
             {projects.map((project) => (
-              
-              /* ALTERAÇÃO 3: key correta */
               <div className="project-card" key={project.id}>
                 <div className="card-inner">
-
                   <div className="project-image">
+                    {/* 🔥 Badge */}
+                    {project.status === "Em desenvolvimento" && (
+                      <span className="dev-badge">Em Desenvolvimento</span>
+                    )}
+
                     <div className="image-overlay">
                       <Link
                         to={`/project/${project.id}`}
@@ -76,14 +86,10 @@ export default function ProjectsCarousel() {
 
                   <div className="project-content">
                     <h3>
-                      <Link to={`/project/${project.id}`}>
-                        {project.title}
-                      </Link>
+                      <Link to={`/project/${project.id}`}>{project.title}</Link>
                     </h3>
 
-                    <p className="project-description">
-                      {project.description}
-                    </p>
+                    <p className="project-description">{project.description}</p>
 
                     <div className="project-techs">
                       {project.techs.map((tech, idx) => (
@@ -117,7 +123,6 @@ export default function ProjectsCarousel() {
                         GitHub
                       </a>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -125,13 +130,15 @@ export default function ProjectsCarousel() {
           </div>
         </div>
 
-        <button
-          className="carousel-btn"
-          onClick={next}
-          disabled={index === maxIndex}
-        >
-          ›
-        </button>
+        {canSlide && (
+          <button
+            className="carousel-btn"
+            onClick={next}
+            disabled={index === maxIndex}
+          >
+            ›
+          </button>
+        )}
       </div>
     </section>
   );

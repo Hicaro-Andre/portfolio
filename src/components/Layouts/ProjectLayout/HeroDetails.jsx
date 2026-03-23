@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { projects } from "/src/data/projects.js";
 
-
 export default function HeroDetails() {
   const { id } = useParams();
 
@@ -27,6 +26,14 @@ export default function HeroDetails() {
 
         {/* CONTENT */}
         <div className="project-content">
+      
+          {project.status?.toLowerCase() === "em desenvolvimento" && (
+            <div className="project-status-badge">
+              <span className="dot"></span>
+              Em desenvolvimento
+            </div>
+          )}
+
           <h1 className="project-title">{project.title}</h1>
 
           <p className="project-description">{project.description}</p>

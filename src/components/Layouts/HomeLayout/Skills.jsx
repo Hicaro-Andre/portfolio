@@ -1,13 +1,6 @@
 import { useState } from "react";
 import "/src/styles/Skills.css";
-import {
-  Code2,
-  Server,
-  Wrench,
-  Languages,
-  ChevronDown,
-  Smartphone,
-} from "lucide-react";
+import { Code2, Server, Wrench, Languages } from "lucide-react";
 
 import {
   FaHtml5,
@@ -17,6 +10,7 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaGithub,
+  FaJava,
 } from "react-icons/fa";
 
 import {
@@ -25,6 +19,8 @@ import {
   SiExpress,
   SiMongodb,
   SiFirebase,
+  SiSpringboot,
+  SiPostgresql,
 } from "react-icons/si";
 
 export default function Skills() {
@@ -71,10 +67,10 @@ export default function Skills() {
                   <FaCss3Alt color="#0033FF" />
                   CSS3
                 </span>
-                <span className="skill-percent">85%</span>
+                <span className="skill-percent">90%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "85%" }} />
+                <div className="progress-fill" style={{ width: "90%" }} />
               </div>
             </li>
 
@@ -85,10 +81,10 @@ export default function Skills() {
                   <FaJs color="#ffff00" />
                   JavaScript
                 </span>
-                <span className="skill-percent">55%</span>
+                <span className="skill-percent">72%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "55%" }} />
+                <div className="progress-fill" style={{ width: "72%" }} />
               </div>
             </li>
 
@@ -96,13 +92,13 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiTypescript color="#4C9AFF" />
+                  <SiTypescript color="#00E5FF" />
                   TypeScript
                 </span>
-                <span className="skill-percent">50%</span>
+                <span className="skill-percent">66%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "50%" }} />
+                <div className="progress-fill" style={{ width: "66%" }} />
               </div>
             </li>
 
@@ -110,13 +106,13 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaReact color="#7DF9FF" />
+                  <FaReact color="#00E5FF" />
                   React
                 </span>
-                <span className="skill-percent">65%</span>
+                <span className="skill-percent">75%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "65%" }} />
+                <div className="progress-fill" style={{ width: "75%" }} />
               </div>
             </li>
           </ul>
@@ -130,6 +126,34 @@ export default function Skills() {
           </div>
 
           <ul className="skills-list enhanced">
+            {/* java */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <FaJava color="#ff0000" />
+                  Java
+                </span>
+                <span className="skill-percent">40%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "40%" }} />
+              </div>
+            </li>
+
+            {/* sprint boot */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <SiSpringboot color="#39FF14" />
+                  Spring Boot
+                </span>
+                <span className="skill-percent">40%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "40%" }} />
+              </div>
+            </li>
+
             {/* node */}
             <li className="skill-item">
               <div className="skill-top">
@@ -151,10 +175,24 @@ export default function Skills() {
                   <SiExpress color="#F0F8FF" />
                   Express
                 </span>
-                <span className="skill-percent">80%</span>
+                <span className="skill-percent">90%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "80%" }} />
+                <div className="progress-fill" style={{ width: "90%" }} />
+              </div>
+            </li>
+
+            {/* PostgreSQL */}
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  <SiPostgresql color="#00E5FF" />
+                  PostgreSQL
+                </span>
+                <span className="skill-percent">60%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "60%" }} />
               </div>
             </li>
 
@@ -162,7 +200,7 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiMongodb color="#6FCF97" />
+                  <SiMongodb color="#39FF14" />
                   MongoDB
                 </span>
                 <span className="skill-percent">75%</span>
@@ -179,10 +217,10 @@ export default function Skills() {
                   <SiFirebase color="#FFCA28" />
                   Firebase
                 </span>
-                <span className="skill-percent">70%</span>
+                <span className="skill-percent">80%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "70%" }} />
+                <div className="progress-fill" style={{ width: "80%" }} />
               </div>
             </li>
           </ul>
@@ -227,10 +265,10 @@ export default function Skills() {
                   <FaGitAlt color="#FF5E00" />
                   Git
                 </span>
-                <span className="skill-percent">90%</span>
+                <span className="skill-percent">92%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "90%" }} />
+                <div className="progress-fill" style={{ width: "92%" }} />
               </div>
             </li>
 
@@ -241,10 +279,10 @@ export default function Skills() {
                   <FaGithub color="#F0F8FF" />
                   GitHub
                 </span>
-                <span className="skill-percent">85%</span>
+                <span className="skill-percent">95%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "85%" }} />
+                <div className="progress-fill" style={{ width: "95%" }} />
               </div>
             </li>
 
@@ -255,10 +293,10 @@ export default function Skills() {
                   <SiStoryblok color="#0CE8E0" />
                   Storyblok
                 </span>
-                <span className="skill-percent">70%</span>
+                <span className="skill-percent">88%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "70%" }} />
+                <div className="progress-fill" style={{ width: "88%" }} />
               </div>
             </li>
           </ul>
@@ -301,10 +339,10 @@ export default function Skills() {
                   />
                   Inglês
                 </span>
-                <span className="skill-percent">50%</span>
+                <span className="skill-percent">42%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "50%" }} />
+                <div className="progress-fill" style={{ width: "42%" }} />
               </div>
             </li>
           </ul>

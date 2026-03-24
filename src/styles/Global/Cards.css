@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
-  padding-left: 24px;
+  padding-left: 2px;
 }
 
 /* Linha vertical - mobile */
@@ -54,7 +54,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 0px;
+  left: -25px;
   width: 3px;
   height: 100%;
   background: #58a6ff;
@@ -71,7 +71,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: -30px;
+  left: -33px;
   width: 15px;
   height: 15px;
 
@@ -92,6 +92,7 @@
   flex-direction: column;
   gap: 10px;
 
+
   background: linear-gradient(
     145deg,
     rgba(31, 111, 235, 0.22) 0%,
@@ -111,7 +112,7 @@
     0 0 120px rgba(31, 111, 235, 0.12);
 
   box-sizing: border-box;
-  min-width: 260px;
+  min-width: 280px;
   width: 100%;
   max-width: 100%;
 }

@@ -3,6 +3,7 @@
   --bg-h2: linear-gradient(90deg, var(--bg-color-phone), #1f6feb 60%, #58a6ff);
 
   --bg-h3: #60a5fa;
+  --bg-h5: #60a5fa;
 
   /* cores dos textos */
   --txt-color: #f5f5f5;
@@ -19,7 +20,7 @@ h1 {
 /* titulo das sections */
 h2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 5vw, 3rem);
   margin-bottom: 80px;
   position: relative;
 
@@ -29,8 +30,6 @@ h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-
-  border: solid;
 }
 
 .row-title span {
@@ -45,6 +44,8 @@ h2 {
   );
   margin: 16px auto 0;
   border-radius: 999px;
+
+
 }
 
 /* titulo dos cards */
@@ -55,10 +56,16 @@ h3 {
 
 /* titulo dos cards da timelines */
 h4 {
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 3.5vw, 1.8rem);
   font-weight: 700;
   margin-bottom: 6px;
-  color: #f5f5f5;
+  color: var(--txt-color)
+}
+
+h5{
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 200;
+
 }
 
 /* textos */

@@ -135,8 +135,9 @@
 }
 
 .company {
-  color: #58a6ff;
-  font-weight: 500;
+  color: #60a5fa;
+  font-weight: 600;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
 
 .badge-group {
@@ -186,9 +187,8 @@
 }
 
 .description {
-  color: #c9d1d9;
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin: 20px 0;
 }
 
 .timeline-title {
@@ -196,10 +196,11 @@
   align-items: center;
   gap: 8px;
   font-weight: 600;
+
 }
 
 .timeline-icon {
-  color: #0033ff;
+  color: #60a5fa;
   font-size: 1rem;
 }
 
@@ -229,7 +230,6 @@
   position: relative;
   padding: 8px 0 8px 18px;
   font-size: 0.9rem;
-  color: #c9d1d9;
   line-height: 1.5;
   transition: 0.2s ease;
 }
@@ -239,7 +239,7 @@
   content: "▸";
   position: absolute;
   left: 0;
-  color: #58a6ff;
+  color: #60a5fa;
   font-size: 0.8rem;
 }
 
@@ -273,6 +273,7 @@
 .header-top {
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
 }
 
 .header-bottom {
@@ -296,10 +297,10 @@
   font-size: 0.8rem;
   border-radius: 999px;
 
-  border: 1px solid rgba(88, 166, 255, 0.4);
-  color: #58a6ff;
-  background: rgba(88, 166, 255, 0.08);
-  box-shadow: 0 0 8px rgba(88, 166, 255, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.08);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.15);
 }
 
 /* certificados */
@@ -423,15 +424,14 @@
 ====================================================== */
 
 .tech-icons {
-  margin: 10px;
-  padding: 5px;
+  padding: 15px;
 
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 
   align-items: center;
-  justify-content: center; 
+  justify-content: flex-start; 
 }
 
 .tech-icons svg {

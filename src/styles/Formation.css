@@ -10,6 +10,18 @@
 
 .training-container {
   max-width: 1200px;
+  min-width: 270px;
   margin: 0 auto;
 }
 
+/* ======================================================
+   /*! RESPONSIVIDADE  
+====================================================== **/
+
+@media (min-width: 400px) and (max-width: 500px) {
+  .training-container {
+    min-width: 315px;
+  }
+
+  
+}

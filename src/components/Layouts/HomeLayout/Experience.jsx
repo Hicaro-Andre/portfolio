@@ -14,14 +14,12 @@ import {
 export default function Experience() {
   return (
     <section className="experience-section" id="experience">
-      <div className="experience-container">
-        <header className="row-title">
-          <h2>
-            Experiência
-            <span />
-          </h2>
-        </header>
+      <h2 className="row-title">
+        Experiência
+        <span />
+      </h2>
 
+      <div className="experience-container">
         <div className="timeline">
           {/* card 2  */}
           <div className="timeline-item left">
@@ -63,7 +61,6 @@ export default function Experience() {
                   </ul>
                   <div className="separator"></div>
                 </div>
-                
 
                 {/* Tecnologias Usadas */}
                 <div className="timeline-section">
@@ -71,7 +68,7 @@ export default function Experience() {
                     <FaTools className="timeline-icon" />
                     Tecnologias Usadas
                   </h5>
-                  
+
                   <div className="tech-icons">
                     <FaHtml5 color="#ff0000" />
                     <FaCss3Alt color="#0033FF" />
@@ -126,7 +123,6 @@ export default function Experience() {
                   </ul>
                   <div className="separator"></div>
                 </div>
-                
 
                 {/* Tecnologias Usadas */}
                 <div className="timeline-section">
@@ -134,7 +130,7 @@ export default function Experience() {
                     <FaTools className="timeline-icon" />
                     Tecnologias Usadas
                   </h5>
-                  
+
                   <div className="tech-icons">
                     <FaHtml5 color="#ff0000" />
                     <FaCss3Alt color="#0033FF" />

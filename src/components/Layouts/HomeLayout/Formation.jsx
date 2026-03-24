@@ -10,22 +10,18 @@ export default function Formation() {
 
   return (
     <section className="training-section" id="formation">
+      <h2 className="row-title">
+        Formação
+        <span />
+      </h2>
+
       <div className="training-container">
-        <header className="row-title">
-          <h2>
-            Formação
-            <span />
-          </h2>
-        </header>
-
         <div className="timeline">
-
           {/* CARD 2 */}
           <div className="timeline-item left">
             <span className="timeline-dot" />
 
             <div className="card-timeline">
-
               <span className="status-badge">Concluído</span>
 
               <div className="card-timeline-header">
@@ -72,9 +68,13 @@ export default function Formation() {
 
                   <div className="discipline-badges">
                     <span className="discipline-badge">Algoritmos</span>
-                    <span className="discipline-badge">Estruturas de Dados</span>
+                    <span className="discipline-badge">
+                      Estruturas de Dados
+                    </span>
                     <span className="discipline-badge">Banco de Dados</span>
-                    <span className="discipline-badge">Engenharia de Software</span>
+                    <span className="discipline-badge">
+                      Engenharia de Software
+                    </span>
                   </div>
                 </div>
 
@@ -118,13 +118,11 @@ export default function Formation() {
             </div>
           </div>
 
-
           {/* CARD 1 */}
           <div className="timeline-item right">
             <span className="timeline-dot" />
 
             <div className="card-timeline">
-
               <span className="status-badge">Concluído</span>
 
               <div className="card-timeline-header">
@@ -150,7 +148,7 @@ export default function Formation() {
                   desenvolvimento de sistemas.
                 </p>
 
-               {/* Destaques */}
+                {/* Destaques */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaBolt className="timeline-icon" />
@@ -164,7 +162,7 @@ export default function Formation() {
                   </ul>
                 </div>
 
-               {/* Principais Disciplinas */}
+                {/* Principais Disciplinas */}
                 <div className="timeline-section">
                   <h5 className="timeline-title">
                     <FaGraduationCap className="timeline-icon" />
@@ -173,9 +171,13 @@ export default function Formation() {
 
                   <div className="discipline-badges">
                     <span className="discipline-badge">Algoritmos</span>
-                    <span className="discipline-badge">Estruturas de Dados</span>
+                    <span className="discipline-badge">
+                      Estruturas de Dados
+                    </span>
                     <span className="discipline-badge">Banco de Dados</span>
-                    <span className="discipline-badge">Engenharia de Software</span>
+                    <span className="discipline-badge">
+                      Engenharia de Software
+                    </span>
                   </div>
                 </div>
 
@@ -219,7 +221,6 @@ export default function Formation() {
               )}
             </div>
           </div>
-
         </div>
       </div>
     </section>

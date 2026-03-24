@@ -69,7 +69,7 @@
   font-size: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #1f6feb;
+  color: #60a5fa;
   font-weight: 600;
 }
 
@@ -79,14 +79,13 @@
 
 .about-text p {
   font-size: 14px;
-  color: #ccc;
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
 .about-highlight {
-  color: #00ff7f;
-  font-weight: 500;
+  /* color: #00ff7f; */
+  /* font-weight: 500; */
 }
 
 /* ==============================
@@ -119,12 +118,11 @@
 .stat-card strong {
   display: block;
   font-size: 1.6rem;
-  color: var(--bg-color-phone);
+  color: #60a5fa;
 }
 
 .stat-card span {
   font-size: 0.95rem;
-  color: #9da5b4;
 }
 
 /* ======================================================

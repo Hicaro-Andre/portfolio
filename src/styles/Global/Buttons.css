@@ -50,3 +50,58 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
 }
+
+/* botão overlay */
+.details-btn {
+  padding: 13px 24px;
+  border-radius: 999px;
+  border: 1px solid #fff;
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+
+  transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* botão carrossel */
+.carousel-btn {
+  display: flex;
+  position: absolute;
+  font-size: 1.20rem;
+
+  justify-content: center;
+  align-items: center;
+
+  top: 45%;
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.carousel-btn:first-of-type {
+  left: -25px;
+}
+
+.carousel-btn:last-of-type {
+  right: -25px;
+}

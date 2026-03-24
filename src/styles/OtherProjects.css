@@ -95,41 +95,7 @@
   padding: 10px;
 }
 
-/* BOTÃO */
-.carousel-btn {
-  display: flex;
-  position: absolute;
 
-  justify-content: center;
-  align-items: center;
-
-  top: 45%;
-  transform: translateY(-50%);
-
-  width: 38px;
-  height: 38px;
-
-  border-radius: 50%;
-  border: none;
-
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-
-  cursor: pointer;
-  z-index: 2;
-}
-
-.carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.carousel-btn:first-of-type {
-  left: -10px;
-}
-
-.carousel-btn:last-of-type {
-  right: -10px;
-}
 
 /* ======================================================
    /*! RESPONSIVIDADE

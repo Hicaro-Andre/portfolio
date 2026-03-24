@@ -18,6 +18,7 @@ export default function About() {
       <div className="about-container">
         <div className="main-card">
           <div className="about-top">
+            
             <span className="about-role">Full Stack Developer</span>
           </div>
 

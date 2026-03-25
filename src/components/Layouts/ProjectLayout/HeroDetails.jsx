@@ -19,16 +19,26 @@ export default function HeroDetails() {
   return (
     <section className="hero-details">
       <div className="hero-details-container">
+
+        {/* status mobile */}
+        {project.status?.toLowerCase() === "em desenvolvimento" && (
+            <div className="project-status-badge-mob">
+              <span className="dot"></span>
+              Em desenvolvimento
+            </div>
+          )}
+
         {/* image mobile */}
         <div className="project-image-mobile">
           <img src={project.image} alt={project.title} />
         </div>
 
-        {/* CONTENT */}
+    
         <div className="project-content">
       
+         {/* status desk */}
           {project.status?.toLowerCase() === "em desenvolvimento" && (
-            <div className="project-status-badge">
+            <div className="project-status-badge-desk">
               <span className="dot"></span>
               Em desenvolvimento
             </div>
@@ -38,7 +48,7 @@ export default function HeroDetails() {
 
           <p className="project-description">{project.description}</p>
 
-          {/* TECHS */}
+          {/* techs */}
           <div className="project-techs">
             {project.techs.map((tech, index) => (
               <span
@@ -54,7 +64,7 @@ export default function HeroDetails() {
             ))}
           </div>
 
-          {/* BUTTON */}
+          {/* btn */}
           <a
             href={project.projectUrl}
             className="btn primary project-btn"

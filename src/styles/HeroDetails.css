@@ -104,7 +104,7 @@
 }
 
 /* bolinha */
-.project-status-badge-mob , .project-status-badge-desk .dot {
+.project-status-badge-mob .dot , .project-status-badge-desk .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -137,12 +137,12 @@
   font-size: clamp(2.4rem, 3vw, 3rem);
   font-weight: 600;
   line-height: 1.2;
+  color: #60a5fa;
 }
 
 .project-description {
   font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   line-height: 1.6;
-  color: #cfcfcf;
 }
 
 /* TECH BADGES */

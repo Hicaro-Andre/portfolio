@@ -1,142 +1,65 @@
-import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useMemo } from "react";
 import { projects } from "/src/data/projects.js";
 import "/src/styles/OtherProjects.css";
 
 export default function OtherProjects() {
   const { id } = useParams();
 
-  const otherProjects = projects.filter((project) => project.id !== Number(id));
+  const randomProjects = useMemo(() => {
+    const filteredProjects = projects.filter(
+      (project) => project.id !== Number(id)
+    );
 
-  const [index, setIndex] = useState(0);
-  const [isCarousel, setIsCarousel] = useState(false);
-  const [visibleCards, setVisibleCards] = useState(1);
+    function shuffleArray(array) {
+      const shuffled = [...array];
 
-  useEffect(() => {
-    function handleResize() {
-      const width = window.innerWidth;
-
-      if (width < 768) {
-        setVisibleCards(1);
-        setIsCarousel(otherProjects.length >= 5);
-      } else {
-        setVisibleCards(3);
-        setIsCarousel(otherProjects.length >= 4);
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
       }
+
+      return shuffled;
     }
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [otherProjects.length]);
-
-  const maxIndex = otherProjects.length - visibleCards;
-
-  const next = () => {
-    if (index < maxIndex) setIndex(index + 1);
-  };
-
-  const prev = () => {
-    if (index > 0) setIndex(index - 1);
-  };
+    return shuffleArray(filteredProjects).slice(0, 3);
+  }, [id]);
 
   return (
     <section className="other-projects">
-      <h3 className="row-title">
+      <h3 className="other-projects-title">
         Outros Projetos
         <span />
       </h3>
 
-      {/* GRID NORMAL */}
-      {!isCarousel && (
-        <div className="other-projects-grid">
-          {otherProjects.map((project) => (
-            <Link
-              key={project.id}
-              to={`/project/${project.id}`}
-              className="other-project-card"
-            >
-              <h3>{project.title}</h3>
-
-              <p>{project.description}</p>
-
-              <div className="project-techs">
-                {project.techs.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="tech-badge"
-                    style={{
-                      background: tech.color,
-                      color: tech.textColor,
-                    }}
-                  >
-                    {tech.name}
-                  </span>
-                ))}
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
-
-      {/* CAROUSEL */}
-      {isCarousel && (
-        <div className="carousel-wrapper">
-          <button
-            className="carousel-btn"
-            onClick={prev}
-            disabled={index === 0}
+      <div className="other-projects-grid">
+        {randomProjects.map((project) => (
+          <Link
+            key={project.id}
+            to={`/project/${project.id}`}
+            className="other-project-card"
           >
-            ‹
-          </button>
+            <h3>{project.title}</h3>
 
-          <div className="carousel-viewport">
-            <div
-              className="carousel-track"
-              style={{
-                transform: `translateX(calc(-${index} * (100% / ${visibleCards})))`,
-              }}
-            >
-              {otherProjects.map((project) => (
-                <div className="carousel-card" key={project.id}>
-                  <Link
-                    to={`/project/${project.id}`}
-                    className="other-project-card"
-                  >
-                    <h3>{project.title}</h3>
+            <p>{project.description}</p>
 
-                    <p>{project.description}</p>
-
-                    <div className="project-techs">
-                      {project.techs.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="tech-badge"
-                          style={{
-                            background: tech.color,
-                            color: tech.textColor,
-                          }}
-                        >
-                          {tech.name}
-                        </span>
-                      ))}
-                    </div>
-                  </Link>
-                </div>
+            <div className="other-projects-techs">
+              {project.techs.map((tech, i) => (
+                <span
+                  key={i}
+                  className="tech-badge"
+                  style={{
+                    background: tech.color,
+                    color: tech.textColor,
+                  }}
+                >
+                  {tech.name}
+                </span>
               ))}
             </div>
-          </div>
-
-          <button
-            className="carousel-btn"
-            onClick={next}
-            disabled={index === maxIndex}
-          >
-            ›
-          </button>
-        </div>
-      )}
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }

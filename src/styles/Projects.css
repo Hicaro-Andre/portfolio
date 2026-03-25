@@ -13,10 +13,7 @@
 ====================================================== */
 
 .carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  position: relative;
   max-width: 1350px;
   margin: auto;
   width: 100%;
@@ -25,6 +22,7 @@
 .carousel-viewport {
   overflow: hidden;
   width: 100%;
+  min-width: 0;
 }
 
 /* TRACK */
@@ -32,6 +30,7 @@
 .carousel-track {
   display: flex;
   transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 /* ======================================================
@@ -54,21 +53,19 @@
 
   display: flex;
   flex-direction: column;
-
   height: 100%;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card-inner:hover {
   transform: translateY(-6px);
-
   border-color: #58a6ff;
   box-shadow:
-  0 4px 10px rgba(0, 0, 0, 0.15),
-  0 0 10px rgba(31, 111, 235, 0.08);;
+    0 4px 10px rgba(0, 0, 0, 0.15),
+    0 0 10px rgba(31, 111, 235, 0.08);
 }
 
 /* ======================================================
@@ -78,11 +75,7 @@
 .project-image {
   position: relative;
   height: 230px;
-  background: linear-gradient(
-    135deg,
-    var(--bg-color-phone),
-    #1f6feb
-  );
+  background: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
   overflow: hidden;
 }
 
@@ -96,7 +89,7 @@
   align-items: center;
   gap: 6px;
 
-  background: rgba(0, 0, 0, 0.4); 
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 0, 0.5);
   color: #ffff00;
 
@@ -105,11 +98,10 @@
   padding: 5px 10px;
   border-radius: 20px;
 
-  backdrop-filter: blur(8px); 
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
   letter-spacing: 0.5px;
-
   z-index: 2;
 }
 
@@ -122,7 +114,6 @@
   border-radius: 50%;
 
   display: inline-block;
-
   animation: pulseDot 1.5s infinite;
 }
 
@@ -176,7 +167,7 @@
 }
 
 .project-content h3 a {
-  font-size: 1.60rem;
+  font-size: 1.6rem;
   margin-bottom: 12px;
   text-decoration: none;
   color: inherit;
@@ -212,12 +203,10 @@
 }
 
 .project-links a {
-  position: relative; 
-
+  position: relative;
   font-size: 1.05rem;
   color: var(--bg-text-color-links);
   text-decoration: none;
-
   transition: 0.25s ease;
 }
 
@@ -232,7 +221,6 @@
   height: 2px;
 
   background: linear-gradient(135deg, #58a6ff, #1f6feb);
-
   transition: width 0.3s ease;
 }
 
@@ -245,12 +233,10 @@
   color: var(--bg-color-hover-links);
 }
 
-
 /* ======================================================
    /*! RESPONSIVIDADE
 ====================================================== */
 
-/* 🔥 AJUSTE MOBILE (SEM QUEBRAR NADA) */
 @media (max-width: 767px) {
   .projects {
     padding-left: 0;
@@ -265,22 +251,41 @@
     padding-left: 6px;
     padding-right: 6px;
   }
-}
 
-/* TABLET */
-@media (min-width:768px) {
-  .project-card {
-    flex: 0 0 50%;
+  .projects .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  .projects .carousel-btn:first-of-type {
+    left: -14px;
+  }
+
+  .projects .carousel-btn:last-of-type {
+    right: -14px;
   }
 }
 
-/* DESKTOP */
-@media (min-width:1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .project-card {
+    flex: 0 0 50%;
+  }
+
+  .projects .carousel-btn:first-of-type {
+    left: -18px;
+  }
+
+  .projects .carousel-btn:last-of-type {
+    right: -18px;
+  }
+}
+
+@media (min-width: 1024px) {
   .project-card {
     flex: 0 0 33.3333%;
   }
 
-  /* modo estático */
   .static-mode {
     display: flex;
     justify-content: center;

@@ -44,8 +44,8 @@ export default function ProjectsCarousel() {
         <span />
       </h2>
 
-      <div
-        className={`carousel-wrapper ${isStaticDesktop ? "static-mode" : ""}`}
+      <div id="pro-section"
+        className={`carousel-wrapper ${isStaticDesktop ? "static-mode" : ""}` }
       >
         {canSlide && (
           <button

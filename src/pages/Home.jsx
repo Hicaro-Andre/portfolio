@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Navbar from "../components/NavBar.jsx";
 import Footer from "../components/Footer.jsx";
@@ -15,17 +16,32 @@ import Formation from "../components/Layouts/HomeLayout/Formation.jsx";
 // Imagem WhatsApp
 import wpp from "../assets/whatsapp.svg";
 
-
-
 function App() {
   const [language, setLanguage] = useState("pt");
+  const location = useLocation();
+
+  useEffect(() => {
+  if (location.state?.scrollTo === "projects") {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      setTimeout(() => {
+        const elementPosition = projectsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 20; // 80px de offset do topo
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 100);
+    }
+  }
+}, [location]);
 
   return (
     <>
       <ParticlesBg />
 
       <main>
-      
         <Navbar language={language} setLanguage={setLanguage} />
         <Hero language={language} />
         <About language={language} />

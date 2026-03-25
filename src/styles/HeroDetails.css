@@ -193,7 +193,7 @@
   /* CONTEÚDO */
   .project-content {
     flex: 1;
-    max-width: 550px; /* 🔥 evita esticar demais */
+    max-width: 550px; 
   }
 
   /* ESCONDE MOBILE */
@@ -206,7 +206,7 @@
     display: block;
     flex: 1;
 
-    max-width: 500px; /* 🔥 controla largura */
+    max-width: 500px; 
   }
 
   .project-image-desk img {

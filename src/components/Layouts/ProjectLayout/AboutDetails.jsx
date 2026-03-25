@@ -44,9 +44,8 @@ export default function AboutDetails() {
 
           {/* GALERIA FORA DO CARD */}
           <div className="card">
+            <h3>Galeria</h3>
             <div className="gallery-container">
-              <h3>Galeria</h3>
-
               <div className="gallery-grid">
                 {about.images?.slice(0, 6).map((img, index) => (
                   <div
@@ -65,15 +64,17 @@ export default function AboutDetails() {
                 ))}
               </div>
             </div>
-            <button
-              className="btn primary"
-              onClick={() => {
-                setOpenGallery(true);
-                setCurrentIndex(0);
-              }}
-            >
-              Ver todas as fotos
-            </button>
+            <div className="gallery">
+              <button
+                className="btn primary"
+                onClick={() => {
+                  setOpenGallery(true);
+                  setCurrentIndex(0);
+                }}
+              >
+                Ver todas as fotos
+              </button>
+            </div>
           </div>
         </div>
 

@@ -131,25 +131,48 @@ export default function AboutDetails() {
 
       {/* MODAL */}
       {openGallery && (
-        <div
-          className="gallery-modal"
-          onClick={() => setOpenGallery(false)} // 🔥 FECHAR CLICANDO FORA
-        >
+        <div className="gallery-modal" onClick={() => setOpenGallery(false)}>
           {/* BOTÃO FECHAR */}
           <button className="close-btn" onClick={() => setOpenGallery(false)}>
             ✕
           </button>
 
-          <div className="gallery-counter">
-            {currentIndex + 1} / {about.images.length}
-          </div>
+          <div className="gallery-container">
+            {/* CONTADOR/ÍNDICE */}
+            <div className="gallery-counter">
+              {currentIndex + 1} / {about.images.length}
+            </div>
 
-          {/* IMAGEM */}
-          <img
-            src={about.images[currentIndex]}
-            className="gallery-full-image"
-            onClick={(e) => e.stopPropagation()} // 🔥 NÃO FECHA AO CLICAR NA IMAGEM
-          />
+            {/* IMAGEM */}
+            <img
+              src={about.images[currentIndex]}
+              className="gallery-full-image"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* DESCRIÇÃO DA IMAGEM */}
+            <div
+              className="gallery-description"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <p>
+                {about.imagesDescription?.[currentIndex] ||
+                  about.description ||
+                  "Imagem do projeto"}
+              </p>
+            </div>
+
+            {/* BOLINHAS INDICADORAS */}
+            <div className="gallery-dots" onClick={(e) => e.stopPropagation()}>
+              {about.images.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`gallery-dot ${idx === currentIndex ? "active" : ""}`}
+                  onClick={() => setCurrentIndex(idx)}
+                />
+              ))}
+            </div>
+          </div>
 
           {/* BOTÃO ESQUERDA */}
           <button

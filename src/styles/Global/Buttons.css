@@ -20,7 +20,9 @@
   cursor: pointer;
 }
 
-/* botão principal */
+/* ======================================================
+   /*! BOTÃO PRINCIPAL
+====================================================== **/
 .btn.primary {
   background: var(--bg-color-btn-primary);
   color: #ffffff;
@@ -31,7 +33,9 @@
   box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
 }
 
-/* botão secundário */
+/* ======================================================
+   /*! BOTÃO SECUNDÁRIO
+====================================================== **/
 .btn.secondary {
   border: 1px solid #58a6ff;
 
@@ -44,14 +48,16 @@
 }
 
 .btn.secondary:hover {
-  -webkit-text-fill-color: #ffffff; /* ESSENCIAL */
+  -webkit-text-fill-color: #ffffff; 
   color: #ffffff;
   background: var(--bg-color-btn-primary);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
 }
 
-/* botão overlay */
+/* ======================================================
+   /*! BOTÃO OVERLAY
+====================================================== **/
 .details-btn {
   padding: 13px 24px;
   border-radius: 999px;

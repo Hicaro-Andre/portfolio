@@ -72,7 +72,7 @@ export default function HeroDetails() {
             rel="noopener noreferrer"
           >
             <ExternalLink size={18} />
-            Ver Projeto Live
+            Ver Projeto
           </a>
         </div>
 

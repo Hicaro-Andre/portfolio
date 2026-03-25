@@ -1,4 +1,4 @@
-import p1 from "../assets/images_project/profile_project/APIs.png"
+import redenave from "../assets/images_project/profile_project/RedeNave.png"
 import p2 from "../assets/images_project/profile_project/edf.png"
 import p3 from "../assets/images_project/profile_project/java.webp"
 import p4 from "../assets/images_project/profile_project/javascript.png"
@@ -8,17 +8,17 @@ export const projects = [
   {
     id: 1,
     status: "Concluído",
-    title: "Monitora Saúde",
+    title: "Rede Nave",
     description:
-      "Sistema Web para monitoramento e avaliação de indicadores de saúde e processos.",
+      "Plataforma digital que apoia o protagonismo feminino com trilhas de aprendizagem, eventos e conteúdos acessíveis sobre desenvolvimento pessoal e empreendedorismo.",
     techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+      { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
+      { name: "React", color: "#00E5FF", textColor: "#000" },
+      { name: "Firebase", color: "#FFCA28", textColor: "#000" },
     ],
-    projectUrl: "https://monitora.saude.ma.gov.br/",
-    githubUrl: "#",
-    image: p1,
+    projectUrl: "https://rede-nave-front.vercel.app/",
+    githubUrl: "https://github.com/Hicaro-Andre/RedeNave-Front.git",
+    image: redenave,
   },
   {
     id: 2,

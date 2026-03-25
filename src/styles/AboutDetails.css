@@ -211,8 +211,9 @@
   justify-content: center;
   margin-top: 20px;
 }
+
 /* ======================================================
-   /*! MODAL
+   MODAL GALERIA - MOBILE FIRST
 ====================================================== */
 
 .gallery-modal {
@@ -222,84 +223,297 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   z-index: 9999;
+  padding: 16px;
+}
+
+/* CONTAINER PRINCIPAL */
+.gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
 }
 
 /* IMAGEM */
 .gallery-full-image {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
   z-index: 1;
 }
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
 
-  width: 45px;
-  height: 45px;
+/* DESCRIÇÃO */
+.gallery-description {
+  margin-top: 16px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 12px 16px;
+  text-align: center;
+  z-index: 10;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-
-  border-radius: 50%;
-
+.gallery-description p {
   color: white;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
 
+/* BOLINHAS INDICADORAS */
+.gallery-dots {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
   cursor: pointer;
-
-  z-index: 10000;
-
+  padding: 0;
   transition: all 0.3s ease;
 }
 
-.close-btn:hover {
-  background: #ff0000;
-  transform: scale(1.1);
+.gallery-dot.active {
+  width: 20px;
+  border-radius: 10px;
+  background: #00E5FF;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
 }
 
 /* CONTADOR */
 .gallery-counter {
   position: absolute;
-  top: 20px;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
+  
   color: white;
-  font-size: 14px;
-  z-index: 1000;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* BOTÃO FECHAR */
+.close-btn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  
+  width: 40px;
+  height: 40px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  
+  cursor: pointer;
+  z-index: 10000;
+  
+  transition: all 0.3s ease;
 }
 
 /* NAVEGAÇÃO */
 .nav {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
-
-  font-size: 40px;
+  
+  font-size: 32px;
   color: white;
-  background: none;
+  background: rgba(0, 0, 0, 0.6);
   border: none;
   cursor: pointer;
-
+  width: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   z-index: 1000;
 }
 
 .nav.left {
-  left: 20px;
+  left: 8px;
 }
 
 .nav.right {
-  right: 20px;
+  right: 8px;
 }
 
+/* ======================================================
+   TABLET (768px e acima)
+====================================================== */
+@media (min-width: 768px) {
+  .gallery-modal {
+    padding: 24px;
+  }
+
+  .gallery-full-image {
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+
+  .gallery-description {
+    margin-top: 24px;
+    padding: 16px 24px;
+    border-radius: 12px;
+  }
+
+  .gallery-description p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .gallery-dots {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .gallery-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .gallery-dot.active {
+    width: 28px;
+  }
+
+  .gallery-counter {
+    top: 16px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .close-btn {
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+
+  .nav {
+    font-size: 48px;
+    width: 50px;
+    height: 80px;
+  }
+
+  .nav.left {
+    left: 20px;
+  }
+
+  .nav.right {
+    right: 20px;
+  }
+}
+
+/* ======================================================
+   DESKTOP (1024px e acima)
+====================================================== */
+@media (min-width: 1024px) {
+  .gallery-full-image {
+    max-height: 75vh;
+  }
+
+  .gallery-description {
+    margin-top: 32px;
+    max-width: 80%;
+  }
+
+  .gallery-description p {
+    font-size: 18px;
+  }
+
+  .gallery-dots {
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .gallery-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .gallery-dot.active {
+    width: 32px;
+  }
+
+  .close-btn:hover {
+    background: #ff0000;
+    transform: scale(1.1);
+  }
+
+  .nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+/* ======================================================
+   TELAS MUITO PEQUENAS (até 480px)
+====================================================== */
+@media (max-width: 480px) {
+  .gallery-description p {
+    font-size: 12px;
+  }
+
+  .gallery-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .gallery-dot.active {
+    width: 16px;
+  }
+
+  .nav {
+    width: 32px;
+    height: 50px;
+    font-size: 28px;
+  }
+
+  .close-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .gallery-counter {
+    top: 6px;
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
 /* ======================================================
    /*! RESPONSIVIDADE 
 ====================================================== **/

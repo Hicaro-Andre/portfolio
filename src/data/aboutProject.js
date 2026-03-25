@@ -1,7 +1,7 @@
-import monitora from "../assets/images_project/galery/p1/APIs.png"
-import hans from "../assets/images_project/galery/p1/java.webp"
-import p3 from "../assets/images_project/galery/p1/edf.png"
+import { getProjectImages } from "/src/utils/projectImages";
 
+import hans from "../assets/images_project/galery/p1/java.webp";
+import p3 from "../assets/images_project/galery/p1/edf.png";
 
 export const aboutProjects = [
   {
@@ -12,9 +12,9 @@ export const aboutProjects = [
 
     status: "Concluído",
 
-    duration: "4 meses",
-    team: "4 desenvolvedores",
-    client: "Secretaria de Saúde",
+    duration: "2 meses",
+    team: "3 desenvolvedores",
+    client: "Rede Nave",
 
     features: [
       "Dashboards interativos com indicadores em tempo real",
@@ -22,14 +22,7 @@ export const aboutProjects = [
       "Interface responsiva para dispositivos móveis",
     ],
 
-    images: [
-      monitora,
-      monitora,
-      monitora,
-      monitora,
-      monitora,
-      monitora,
-    ],
+    images: getProjectImages("redenave"),
   },
   {
     id: 2,
@@ -49,14 +42,7 @@ export const aboutProjects = [
       "Interface responsiva para dispositivos móveis",
     ],
 
-    images: [
-      p3,
-      monitora,
-      hans,
-      p3,
-      hans,
-      monitora,
-    ],
+    images: [p3, hans, hans, p3, hans, hans],
   },
   {
     id: 3,
@@ -76,14 +62,7 @@ export const aboutProjects = [
       "Interface responsiva para dispositivos móveis",
     ],
 
-    images: [
-      hans,
-      monitora,
-      hans,
-      monitora,
-      hans,
-      monitora,
-    ],
+    images: [hans, hans, hans, hans, hans, hans],
   },
   {
     id: 4,
@@ -103,14 +82,7 @@ export const aboutProjects = [
       "Interface responsiva para dispositivos móveis",
     ],
 
-    images: [
-      p3,
-      monitora,
-      hans,
-      p3,
-      hans,
-      monitora,
-    ],
+    images: [p3, p3, hans, p3, hans, p3],
   },
   {
     id: 5,
@@ -130,13 +102,6 @@ export const aboutProjects = [
       "Interface responsiva para dispositivos móveis",
     ],
 
-    images: [
-      hans,
-      monitora,
-      hans,
-      monitora,
-      hans,
-      monitora,
-    ],
+    images: [hans, hans, hans, hans, hans, hans],
   },
 ];

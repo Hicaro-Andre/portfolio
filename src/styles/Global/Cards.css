@@ -59,13 +59,11 @@
   background: #58a6ff;
 }
 
-/* ITEM */
 .timeline-item {
   position: relative;
   width: 100%;
 }
 
-/* DOT */
 .timeline-dot {
   position: absolute;
   top: 50%;
@@ -85,7 +83,6 @@
   animation: pulseGlow 2s infinite ease-in-out;
 }
 
-/* card */
 .card-timeline {
   display: flex;
   flex-direction: column;
@@ -146,7 +143,6 @@
   gap: 10px;
 }
 
-/* badge base */
 .local-badge,
 .cr-badge {
   display: inline-block;
@@ -495,7 +491,7 @@
   .timeline-item {
     display: flex;
     width: 100%;
-    padding: 0 10px; /* espaço lateral */
+    padding: 0 10px;
   }
 
   .timeline-item.left {

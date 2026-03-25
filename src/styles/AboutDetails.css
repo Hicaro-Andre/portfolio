@@ -25,35 +25,79 @@
   gap: 20px;
 }
 
-/* TITULOS */
-.card h4 {
-  margin-bottom: 12px;
-  font-weight: 600;
+.card-body {
+  margin-top: 30px;
 }
 
+/* TITULOS */
+
+.card-title {
+  margin: 10px;
+  font-size: clamp(1.5rem, 2.5vw, 1.7rem);
+
+  background: linear-gradient(
+    90deg,
+    var(--bg-color-phone),
+    #1f6feb 60%,
+    #58a6ff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+}
+.card-subtitle {
+  margin: 10px;
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  color: #60a5fa;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-icon {
+  font-size: 16px;
+  display: flex;
+}
+.card p {
+  margin: 10px;
+}
 
 /* ======================================================
   /*! FEATURES
 ====================================================== */
 .features {
   margin-top: 10px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
+
+  list-style: none;
+  padding-left: 0;
 }
 
 .features li {
-  list-style: none;
   position: relative;
-  padding-left: 20px;
-  font-size: 14px;
+  padding: 8px 0 8px 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: 0.2s ease;
 }
 
 .features li::before {
-  content: "✔";
+  content: "▸";
   position: absolute;
   left: 0;
-  color: #58a6ff;
+  color: #60a5fa;
+  font-size: 0.8rem;
+}
+
+.features li:hover {
+  color: #ffffff;
+  transform: translateX(3px);
 }
 
 /* ======================================================
@@ -103,7 +147,6 @@
   border-radius: 50%;
 }
 
-
 /* ======================================================
    /*! INFO
 ====================================================== */
@@ -113,8 +156,8 @@
   font-size: 14px;
 }
 
-.info strong{
-  color: #58a6ff;
+.info strong {
+  color: #60a5fa;
 }
 
 /* ======================================================

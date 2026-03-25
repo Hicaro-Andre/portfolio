@@ -48,7 +48,7 @@
 }
 
 .back-projects:hover{
-  color:#58a6ff;
+  color: var(--bg-color-hover-links);
   transform:translateX(-3px);
 }
 

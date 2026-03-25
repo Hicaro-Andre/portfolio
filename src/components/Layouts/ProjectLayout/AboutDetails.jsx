@@ -3,6 +3,7 @@ import { aboutProjects } from "/src/data/aboutProject.js";
 import { projects } from "/src/data/projects.js";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { FaCogs } from "react-icons/fa";
 
 export default function AboutDetails() {
   const { id } = useParams();
@@ -21,16 +22,24 @@ export default function AboutDetails() {
         <div className="left-column">
           {/* sobre o projeto */}
           <div className="card">
-            <h3>Sobre o Projeto</h3>
+            <div className="card-header">
+              <h3 className="card-title">Sobre o Projeto</h3>
 
-            <p>{about.description}</p>
+              <p>{about.description}</p>
+            </div>
 
-            <h4>Principais Funcionalidades</h4>
-            <ul className="features">
-              {about.features?.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+            <div className="card-body">
+              <h4 className="card-subtitle">
+                <FaCogs className="card-icon" />
+                Principais Funcionalidades
+              </h4>
+
+              <ul className="features">
+                {about.features?.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* GALERIA FORA DO CARD */}

@@ -32,9 +32,9 @@
 =================================== */
 
 .other-project-card {
-  display: block; 
-  text-decoration: none; 
-  color: inherit; 
+  display: block;
+  text-decoration: none;
+  color: inherit;
 
   padding: 30px;
   border-radius: 28px;
@@ -46,8 +46,6 @@
   backdrop-filter: blur(6px);
 
   transition: all 0.25s ease;
-
-    
 }
 
 .other-project-card:hover {
@@ -68,8 +66,8 @@
 /* DESCRIÇÃO */
 .other-project-card p {
   font-size: 14px;
-  color: #cfcfcf;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 /* ===================================
@@ -94,8 +92,6 @@
   flex: 0 0 100%;
   padding: 10px;
 }
-
-
 
 /* ======================================================
    /*! RESPONSIVIDADE

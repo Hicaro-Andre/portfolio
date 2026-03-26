@@ -1,40 +1,133 @@
 /* ======================================================
+   /*?- CARD
+   /*?- MAIN CARD (ABOUT)
+   /*?- STATS (ABOUT)
+   /*?- CARD-SKILLS
+   /*?- CARDS - TIMELINE 
+   /*?- CARD - PROJECT
+   /*?- CARD (PROJECT DETAILS)
+   /*?- CARD (OTHER PROJECTS)
+====================================================== */
+
+/* ======================================================
    /*! CARDS  
 ====================================================== **/
 
-.card {
-  border: 1px solid rgba(29, 78, 216, 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 32px;
-  
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.6),       
-    0 0 40px rgba(29, 78, 216, 0.25);   
-
-  transition:
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
-
-  min-width: 300px;
-  align-self: center;
-
-  will-change: transform;
+:root {
+  --border-color: 1px solid rgba(29, 78, 216, 0.2);
+  --border-color-hover: 1px solid rgba(29, 78, 216, 0.6);
+  --bg-card:
+  --bg-card-hover: 
+  --bg-card-shadow:
+  --bg-card-shadow-hover: 
 }
 
-.card:hover {
-  transform: scale(1.015);
-  /* background: linear-gradient(
-    135deg,
-    rgba(31, 111, 235, 0.25),
-    rgba(0, 0, 0, 0.6)
-  ); */
+/* ==============================
+   /*! MAIN CARD (ABOUT)
+============================== */
 
-  /* box-shadow:
-    0 22px 55px rgba(0, 0, 0, 0.75),
-    0 0 70px rgba(31, 111, 235, 0.35); */
+.main-card {
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  border-radius: 28px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Glow elegante */
+.main-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  animation: aboutGlow 4s ease-in-out infinite;
+}
+
+@keyframes aboutGlow {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.main-card:hover {
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+}
+
+/* ==============================
+   /*! STATS (ABOUT)
+============================== */
+
+.about-stats {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.stat-card {
+  min-width: 220px;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+}
+.stat-card strong {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--color-dark);
+}
+
+.stat-card span {
+  font-size: 0.95rem;
+}
+/* ======================================================
+   /*! CARD-SKILLS
+====================================================== */
+
+.skills-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding: 28px 26px;
+  border-radius: 18px;
+  min-height: 260px;
+
+  background:var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow:var(--bg-card-shadow-hover)
 }
 
 /* ======================================================
@@ -89,23 +182,13 @@
   flex-direction: column;
   gap: 10px;
 
-  /* background: linear-gradient(
-    145deg,
-    rgba(31, 111, 235, 0.22) 0%,
-    rgba(20, 30, 60, 0.45) 45%,
-    rgba(0, 0, 0, 0.75) 100%
-  ); */
-
-  border: 1px solid rgba(88, 166, 255, 0.18);
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
   padding: 24px;
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: 0.35s ease;
-
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.85),
-    0 0 80px rgba(31, 111, 235, 0.25),
-    0 0 120px rgba(31, 111, 235, 0.12);
 
   box-sizing: border-box;
 
@@ -114,21 +197,12 @@
 }
 
 .card-timeline:hover {
-  border-color: #58a6ff;
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
 
   transform: translateY(-4px);
 
-  background: linear-gradient(
-    145deg,
-    rgba(31, 111, 235, 0.35) 0%,
-    rgba(25, 40, 80, 0.6) 45%,
-    rgba(10, 15, 35, 0.85) 100%
-  );
-
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.08),
-    0 0 20px rgba(31, 111, 235, 0.08),
-    0 0 30px rgba(31, 111, 235, 0.05);
 }
 
 .company {
@@ -435,6 +509,121 @@
 
 .tech-icons svg:hover {
   transform: scale(1.15);
+}
+
+/* ======================================================
+   /*! CARD - PROJECT
+====================================================== */
+
+.project-card {
+  flex: 0 0 100%;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+.card-inner {
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  border-radius: 20px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-inner:hover {
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow:var(--bg-card-shadow-hover)
+}
+
+/* ==============================
+   /*! CARD (PROJECT DETAILS)
+============================== */
+.card {
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 32px;
+
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  min-width: 300px;
+  align-self: center;
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+
+  will-change: transform;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+  transform: scale(1.015);
+}
+
+/* ===================================
+   /*! CARD (OTHER PROJECTS)
+=================================== */
+
+.other-project-card {
+  width: 100%;
+  max-width: 380px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-decoration: none;
+  color: inherit;
+
+  padding: 30px;
+  border-radius: 28px;
+
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.25s ease;
+}
+
+.other-project-card:hover {
+  transform: translateY(-6px);
+
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+}
+
+/* TEXTO */
+.other-project-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.other-project-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* TECHS */
+.other-projects-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 /* ======================================================

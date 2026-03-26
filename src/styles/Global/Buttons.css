@@ -1,12 +1,27 @@
 /* ======================================================
+   /*?- BTN PRINCIPAL
+   /*?- BTN SECUNDÁRIO
+   /*?- BOTÃO OVERLAY
+   /*?- BOTÃO CARROSSEL
+====================================================== */
+
+/* ======================================================
    /*! BUTTONS  
 ====================================================== **/
 :root{
-   --bg-color-btn-primary:  linear-gradient(
+  /* btn principal */
+   --bg-color-primary:  linear-gradient(
     135deg,
-    #1d4ed8,   /* Azul base escuro */
-    #2563eb    /* Azul mais vibrante para transição */
+    #1d4ed8, 
+    #2563eb   
   );
+  --txt-color-primary:#f0f4f8;
+  --bg-color-primary-hover:#1e40af;
+
+  /* btn secundário */
+  --bg-color-secondary:
+  --txt-color-secondary:
+  --bg-color-secondary-hover:
 }
 
 .btn {
@@ -14,7 +29,6 @@
   border-radius: 14px;
   font-weight: 500;
   text-decoration: none;
-  transition: 0.3s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -24,13 +38,11 @@
    /*! BOTÃO PRINCIPAL
 ====================================================== **/
 .btn.primary {
-  background: var(--bg-color-btn-primary);
-  color: var(--bg-h3);
+  background: var(--bg-color-primary);
+  color: var(--txt-color-primary);
 }
 .btn.primary:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.4); 
-  background: #1e40af;
+  background: var(--bg-color-primary-hover);
 }
 
 /* ======================================================

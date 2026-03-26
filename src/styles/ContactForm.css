@@ -36,15 +36,22 @@
   padding: 18px;
   border-radius: 18px;
 
-  background: linear-gradient(180deg,#0a0f1f 0%,#030712 40%,#000 100%);
-  
-  border: 1px solid rgba(88, 166, 255, 0.15);
+  background: var(--bg-card);
+  border:var(--border-color) ;
+  box-shadow: var(--bg-card-shadow);
   backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
 
   width: 100%;
 
   min-width: 320px; 
   max-width: 550px; 
+}
+.contact:hover{
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border:var(--border-color-hover) ;
+  box-shadow: var(--bg-card-shadow-hover);
 }
 
 .contact h5 {

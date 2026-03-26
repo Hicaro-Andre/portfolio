@@ -137,7 +137,12 @@
   font-size: clamp(2.4rem, 3vw, 3rem);
   font-weight: 600;
   line-height: 1.2;
-  color: var(--bg-h3);
+  background: var(--bg-h2);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .project-description {

@@ -34,7 +34,12 @@
 .card-title {
   margin: 10px;
   font-size: clamp(1.5rem, 2.5vw, 1.7rem);
-  color: (var--bg-h3);
+   background: var(--bg-h2);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .card-subtitle {

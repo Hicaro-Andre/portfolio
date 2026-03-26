@@ -34,24 +34,13 @@
 .card-title {
   margin: 10px;
   font-size: clamp(1.5rem, 2.5vw, 1.7rem);
-
-  background: linear-gradient(
-    90deg,
-    var(--bg-color-phone),
-    #1f6feb 60%,
-    #58a6ff
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  background-clip: text;
-  color: transparent;
+  color: (var--bg-h3);
 }
+
 .card-subtitle {
   margin: 10px;
   font-size: clamp(0.9rem, 2.2vw, 1.1rem);
-  color: #60a5fa;
+  color: (var--bg-h3);
 
   display: flex;
   align-items: center;
@@ -60,6 +49,7 @@
 .card-icon {
   font-size: 16px;
   display: flex;
+  color: var(--color-dark);
 }
 .card p {
   margin: 10px;
@@ -91,7 +81,7 @@
   content: "▸";
   position: absolute;
   left: 0;
-  color: #60a5fa;
+  color: var(--color-dark);
   font-size: 0.8rem;
 }
 
@@ -157,7 +147,7 @@
 }
 
 .info strong {
-  color: #60a5fa;
+  color: var(--color-dark);
 }
 
 /* ======================================================

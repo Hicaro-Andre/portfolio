@@ -2,7 +2,7 @@
    /*! FOOTER (MOBILE FIRST) 
 ====================================================== **/
 
-:root{
+:root {
   --bg-color-footer: rgba(0, 0, 0, 0.9);
 }
 
@@ -36,25 +36,21 @@
   border-radius: 16px;
   display: grid;
   place-items: center;
-  background: rgba(88, 166, 255, 0.08);
   border: 1px solid rgba(88, 166, 255, 0.15);
-  color: var(--bg-color-phone);
+  color: var(--color-dark);
   transition: all 0.35s ease;
 }
 
 /* Hover */
 .social-icons a:hover {
-  background: var(--bg-color-phone);
-  color: #0d1117;
+  background: #1e40af;
+  color: #ffffff;
   transform: translateY(-4px);
-  box-shadow:
-    0 10px 25px rgba(88, 166, 255, 0.4),
-    0 0 20px rgba(88, 166, 255, 0.6);
 }
 
 /* Copyright */
 .highlight {
-  color: #58a6ff;
+  color: var(--color-dark);
   font-weight: 600;
 }
 

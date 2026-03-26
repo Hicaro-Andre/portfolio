@@ -52,7 +52,7 @@
 }
 
 .hero-eyebrow {
-  color: #58a6ff;
+  color: var(--color-dark);
   font-size: 1.5rem;
   font-weight: 200;
   letter-spacing: 2px;
@@ -68,10 +68,10 @@
 .hero-name span {
   background: linear-gradient(
     135deg,
-    #79c0ff,
-    #1f6feb,
-    #22d3ee,  
-    #1f6feb
+    #1d4ed8,  
+    #2563eb,   
+    #60a5fa,   
+    #22d3ee   
   );
 
   background-size: 300% 300%;
@@ -83,7 +83,6 @@
 
   animation: gradientMove 6s ease infinite;
 }
-
 
 @keyframes gradientMove {
   0% {
@@ -107,7 +106,13 @@
 .barra-gradiente {
   width: 4rem;
   height: 0.25rem;
-  background: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
+  background: linear-gradient(
+  90deg,
+  #1d4ed8,     
+  #2563eb 40%, 
+  #3b82f6 70%,  
+  #60a5fa      
+);
   border-radius: 9999px;
   flex-shrink: 0;
 }
@@ -116,7 +121,13 @@
   font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: 600;
 
-  background: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
+  background: linear-gradient(
+  90deg,
+  #1d4ed8,     
+  #2563eb 40%, 
+  #3b82f6 70%,  
+  #60a5fa      
+);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -125,7 +136,14 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--bg-color-phone), #1f6feb);
+  background: linear-gradient(
+  90deg,
+  #1d4ed8,     
+  #2563eb 40%, 
+  #3b82f6 70%,  
+  #60a5fa      
+);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -185,7 +203,7 @@
   width: clamp(6px, 2vw, 14px);
   height: clamp(6px, 2vw, 14px);
   border-radius: 50%;
-  background: radial-gradient(circle, #58a6ff, #1f6feb);
+  background: radial-gradient(circle, #58a6ff, #1f6feb, #1d4ed8); 
   box-shadow: 0 0 15px rgba(88,166,255,0.8);
 }
 
@@ -228,7 +246,7 @@
   aspect-ratio: 1 / 1;
 
   border-radius: 50%;
-  border: 4px solid #58a6ff;
+  border: 4px solid var(--color-dark);
 
   box-sizing: border-box;
 }

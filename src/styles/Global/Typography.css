@@ -1,12 +1,20 @@
 :root {
-  /* cores dos titulos sections */
-  --bg-h2: linear-gradient(90deg, var(--bg-color-phone), #1f6feb 60%, #58a6ff);
+ 
+  --bg-h2:  linear-gradient(
+  90deg,
+  #1d4ed8,     
+  #2563eb 40%, 
+  #3b82f6 70%,  
+  #60a5fa      
+);
 
-  --bg-h3: #60a5fa;
-  --bg-h5: #60a5fa;
+  --bg-h3: #f0f4f8
+  --bg-h5: #f0f4f8;
 
   /* cores dos textos */
-  --txt-color: #f5f5f5;
+  --txt-color: #dce1e8;
+
+  --color-dark: #1d4ed8; 
 }
 
 /* ======================================================
@@ -59,7 +67,7 @@ h4 {
   font-size: clamp(1.6rem, 3.5vw, 1.8rem);
   font-weight: 700;
   margin-bottom: 6px;
-  color: var(--txt-color)
+  color: var(--bg-h3)
 }
 
 h5{

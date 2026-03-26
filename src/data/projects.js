@@ -15,6 +15,7 @@ export const projects = [
       { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
       { name: "React", color: "#00E5FF", textColor: "#000" },
       { name: "Firebase", color: "#FFCA28", textColor: "#000" },
+      { name: "Storyblok", color: "#0CE8E0", textColor: "#000" },
     ],
     projectUrl: "https://rede-nave-front.vercel.app/",
     githubUrl: "https://github.com/Hicaro-Andre/RedeNave-Front.git",

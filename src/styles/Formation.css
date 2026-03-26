@@ -4,7 +4,7 @@
 
 .training-section {
   padding: var(--padding-sections);
-  color: var(--txt-color);
+  color:var(--bg-h5);
   position: relative;
 }
 

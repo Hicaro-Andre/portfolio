@@ -57,7 +57,13 @@
 }
 
  .contact h5 span {
-  background: linear-gradient(90deg, var(--bg-color-phone), #1f6feb);
+  background: linear-gradient(
+  90deg,
+  #1d4ed8,     
+  #2563eb 40%, 
+  #3b82f6 70%,  
+  #60a5fa      
+);
   /* Propriedades essenciais para o gradiente funcionar no texto */
   -webkit-background-clip: text;
   background-clip: text;

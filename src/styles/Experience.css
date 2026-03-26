@@ -4,7 +4,7 @@
 
 .experience-section {
   padding: var(--padding-sections);
-  color: #f5f5f5;
+  color:var(--bg-h5);
   position: relative;
 }
 

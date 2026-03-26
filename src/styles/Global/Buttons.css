@@ -2,10 +2,10 @@
    /*! BUTTONS  
 ====================================================== **/
 :root{
-   --bg-color-btn-primary: linear-gradient(
+   --bg-color-btn-primary:  linear-gradient(
     135deg,
-    var(--bg-color-phone),
-    #1f6feb
+    #1d4ed8,   /* Azul base escuro */
+    #2563eb    /* Azul mais vibrante para transição */
   );
 }
 
@@ -25,19 +25,19 @@
 ====================================================== **/
 .btn.primary {
   background: var(--bg-color-btn-primary);
-  color: #ffffff;
+  color: var(--bg-h3);
 }
-
-.btn.primary:hover {
+.btn.primary:hover{
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.4); 
+  background: #1e40af;
 }
 
 /* ======================================================
    /*! BOTÃO SECUNDÁRIO
 ====================================================== **/
 .btn.secondary {
-  border: 1px solid #58a6ff;
+  border: 1px solid var(--color-dark);
 
   background: linear-gradient(90deg, var(--bg-color-phone), #1f6feb);
 
@@ -47,13 +47,17 @@
   color: transparent;
 }
 
+/* Hover */
 .btn.secondary:hover {
-  -webkit-text-fill-color: #ffffff; 
-  color: #ffffff;
-  background: var(--bg-color-btn-primary);
+  background: #1e40af; 
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #fff;
+  background-clip: unset;
+  color: var(--bg-h3);
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.4); 
 }
+
 
 /* ======================================================
    /*! BOTÃO OVERLAY

@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useMemo } from "react";
 import { projects } from "/src/data/projects.js";
 import "/src/styles/OtherProjects.css";
+import { HiH2 } from "react-icons/hi2";
 
 export default function OtherProjects() {
   const { id } = useParams();
@@ -27,10 +28,10 @@ export default function OtherProjects() {
 
   return (
     <section className="other-projects">
-      <h3 className="other-projects-title">
+      <h2 className="row-title other">
         Outros Projetos
         <span />
-      </h3>
+      </h2>
 
       <div className="other-projects-grid">
         {randomProjects.map((project) => (

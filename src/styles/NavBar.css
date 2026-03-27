@@ -17,7 +17,7 @@
   z-index: 1000;
   background: var(--bg-color-navbar);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #58a6ff50;
+  border-top: 1px solid #1d4ed850;
   transition: background 0.3s ease;
 }
 

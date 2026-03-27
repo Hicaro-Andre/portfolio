@@ -8,7 +8,7 @@
 
 .footer {
   background: var(--bg-color-footer);
-  border-top: 1px solid #58a6ff50;
+  border-top: 1px solid #1d4ed850;
   padding: clamp(2rem, 6vw, 3.5rem) 1.5rem;
   display: flex;
   justify-content: center;

@@ -9,19 +9,13 @@
    /*! BUTTONS  
 ====================================================== **/
 :root{
-  /* btn principal */
-   --bg-color-primary:  linear-gradient(
+   --bg-primary:  linear-gradient(
     135deg,
     #1d4ed8, 
     #2563eb   
   );
-  --txt-color-primary:#f0f4f8;
-  --bg-color-primary-hover:#1e40af;
-
-  /* btn secundário */
-  --bg-color-secondary:
-  --txt-color-secondary:
-  --bg-color-secondary-hover:
+  --txt-color:#f0f4f8;
+  --bg-hover:#1e40af;
 }
 
 .btn {
@@ -32,45 +26,91 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ======================================================
-   /*! BOTÃO PRINCIPAL
-====================================================== **/
+  /*! BOTÃO PRINCIPAL
+====================================================== */
 .btn.primary {
-  background: var(--bg-color-primary);
-  color: var(--txt-color-primary);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  background: var(--bg-primary);
+  color: var(--txt-color);
+  transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
-.btn.primary:hover{
-  background: var(--bg-color-primary-hover);
+
+.btn.primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:var(--bg-hover);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  z-index: -1;
 }
+
+.btn.primary:hover::before {
+  transform: scaleX(1);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+.btn.primary:active {
+  transform: scale(0.98);
+}
+
+
 
 /* ======================================================
    /*! BOTÃO SECUNDÁRIO
 ====================================================== **/
 .btn.secondary {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
   border: 1px solid var(--color-dark);
+  background: transparent;
+  color: #1e40af;
 
-  background: linear-gradient(90deg, var(--bg-color-phone), #1f6feb);
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, color 0.25s ease;
 }
 
-/* Hover */
+.btn.secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-hover);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  z-index: -1;
+}
+
+.btn.secondary:hover::before {
+  transform: scaleX(1);
+}
+
 .btn.secondary:hover {
-  background: #1e40af; 
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: #fff;
-  background-clip: unset;
-  color: var(--bg-h3);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.4); 
+  color: var(--txt-color);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
+  border-color: rgba(59, 130, 246, 0.45);
 }
 
-
+.btn.secondary:active {
+  transform: scale(0.98);
+}
 /* ======================================================
    /*! BOTÃO OVERLAY
 ====================================================== **/

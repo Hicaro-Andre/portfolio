@@ -14,12 +14,25 @@
 ====================================================== **/
 
 :root {
-  --border-color: 1px solid rgba(29, 78, 216, 0.2);
-  --border-color-hover: 1px solid rgba(29, 78, 216, 0.6);
-  --bg-card:
-  --bg-card-hover: 
-  --bg-card-shadow:
-  --bg-card-shadow-hover: 
+  --border-color: 1px solid rgba(29, 78, 216, 0.20);
+  --border-color-hover: 1px solid rgba(59, 130, 246, 0.45);
+  --bg-card: linear-gradient(
+  180deg,
+  rgba(3, 6, 14, 0.96) 0%,
+  rgba(1, 4, 10, 0.985) 100%
+);
+  --bg-card-hover: linear-gradient(
+  180deg,
+  rgba(6, 10, 20, 0.98) 0%,
+  rgba(2, 5, 12, 1) 100%
+);
+  --bg-card-shadow: 0 0 0 1px rgba(29, 78, 216, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(29, 78, 216, 0.08);
+  --bg-card-shadow-hover:   0 0 0 1px rgba(59, 130, 246, 0.15),
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(59, 130, 246, 0.12),
+    0 0 50px rgba(16, 185, 129, 0.05);
 }
 
 /* ==============================
@@ -362,14 +375,17 @@
 }
 
 .discipline-badge {
-  padding: 4px 10px;
-  font-size: 0.8rem;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
   border-radius: 999px;
 
-  border: 1px solid rgba(96, 165, 250, 0.4);
-  color: #60a5fa;
-  background: rgba(96, 165, 250, 0.08);
-  box-shadow: 0 0 8px rgba(96, 165, 250, 0.15);
+  color: rgba(147, 197, 253, 0.82);
+  border: 1px solid rgba(96, 165, 250, 0.16);
+  background: rgba(37, 99, 235, 0.035);
+  box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.03);
+
+  transition: all 0.25s ease;
 }
 
 /* certificados */

@@ -23,6 +23,7 @@ export const aboutProjects = [
     ],
 
     images: getProjectImages("redenave"),
+    imagesDescription: ["Teste 01", "Test02", "teste03", "teste04"],
   },
   {
     id: 2,

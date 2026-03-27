@@ -137,7 +137,7 @@ export default function AboutDetails() {
             ✕
           </button>
 
-          <div className="gallery-container">
+          <div className="gallery-modal-content">
             {/* CONTADOR/ÍNDICE */}
             <div className="gallery-counter">
               {currentIndex + 1} / {about.images.length}
@@ -156,9 +156,7 @@ export default function AboutDetails() {
               onClick={(e) => e.stopPropagation()}
             >
               <p>
-                {about.imagesDescription?.[currentIndex] ||
-                  about.description ||
-                  "Imagem do projeto"}
+                {about.imagesDescription?.[currentIndex] || "Imagem do projeto"}
               </p>
             </div>
 

@@ -22,7 +22,8 @@
 .right-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+
+  gap: 25px;
 }
 
 .card-body {
@@ -34,7 +35,7 @@
 .card-title {
   margin: 10px;
   font-size: clamp(1.5rem, 2.5vw, 1.7rem);
-   background: var(--bg-h2);
+  background: var(--bg-h2);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -156,19 +157,18 @@
 }
 
 /* ======================================================
-   /*! GALERIA
+   /*! GALERIA (GRID)
 ====================================================== */
 
 .gallery-container {
   margin-top: 10px;
-  padding: 10px;
 }
 
-/* GRID */
+/* GRID MOBILE FIRST */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 .gallery-item {
@@ -180,9 +180,9 @@
 
 .gallery-item img {
   width: 100%;
-  height: 140px;
+  height: 120px;
   object-fit: cover;
-  transition: 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
@@ -192,323 +192,166 @@
 /* BADGE */
 .gallery-badge {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
   background: rgba(0, 0, 0, 0.6);
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 10px;
+  font-size: 11px;
   color: white;
 }
 
+/* BOTÃO */
 .gallery {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 /* ======================================================
-   MODAL GALERIA - MOBILE FIRST
+   /*! MODAL GALERIA
 ====================================================== */
 
 .gallery-modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.95);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   z-index: 9999;
-  padding: 16px;
+  padding: 12px;
 }
 
-/* CONTAINER PRINCIPAL */
-.gallery-container {
+/* NOVO: container separado do grid */
+.gallery-modal-content {
   position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
 }
 
 /* IMAGEM */
 .gallery-full-image {
   width: 100%;
-  max-width: 100%;
-  max-height: 60vh;
+  max-height: 55vh;
   object-fit: contain;
   border-radius: 8px;
-  z-index: 1;
 }
 
 /* DESCRIÇÃO */
 .gallery-description {
-  margin-top: 16px;
+  margin-top: 12px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+
+  background: rgba(0, 0, 0, 0.75);
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 10px;
+
   text-align: center;
-  z-index: 10;
 }
 
 .gallery-description p {
   color: white;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 13px;
   margin: 0;
 }
 
-/* BOLINHAS INDICADORAS */
+/* DOTS */
 .gallery-dots {
-  margin-top: 16px;
+  margin-top: 12px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   justify-content: center;
   flex-wrap: wrap;
-  z-index: 10;
 }
 
 .gallery-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
   border: none;
   cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .gallery-dot.active {
-  width: 20px;
+  width: 16px;
   border-radius: 10px;
-  background: #00E5FF;
-  box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+  background: #1d4ed8;
 }
 
 /* CONTADOR */
 .gallery-counter {
   position: absolute;
-  top: 8px;
+  top: -24px;
   left: 50%;
   transform: translateX(-50%);
-  
+
   color: white;
-  font-size: 12px;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 4px 10px;
-  border-radius: 20px;
-  z-index: 10;
-  white-space: nowrap;
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3px 8px;
+  border-radius: 12px;
 }
 
-/* BOTÃO FECHAR */
+/* FECHAR */
 .close-btn {
   position: fixed;
-  top: 12px;
-  right: 12px;
-  
-  width: 40px;
-  height: 40px;
-  
+  top: 10px;
+  right: 10px;
+
+  width: 36px;
+  height: 36px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   background: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  
   color: white;
-  font-size: 20px;
-  font-weight: bold;
-  
-  cursor: pointer;
-  z-index: 10000;
-  
-  transition: all 0.3s ease;
+  font-size: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* NAVEGAÇÃO */
+/* NAV */
 .nav {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  
-  font-size: 32px;
+
+  font-size: 28px;
   color: white;
   background: rgba(0, 0, 0, 0.6);
+
   border: none;
-  cursor: pointer;
-  width: 40px;
-  height: 60px;
+  width: 36px;
+  height: 50px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  z-index: 1000;
+
+  border-radius: 6px;
 }
 
 .nav.left {
-  left: 8px;
+  left: 6px;
 }
 
 .nav.right {
-  right: 8px;
+  right: 6px;
 }
 
-/* ======================================================
-   TABLET (768px e acima)
-====================================================== */
-@media (min-width: 768px) {
-  .gallery-modal {
-    padding: 24px;
-  }
-
-  .gallery-full-image {
-    max-height: 70vh;
-    border-radius: 12px;
-  }
-
-  .gallery-description {
-    margin-top: 24px;
-    padding: 16px 24px;
-    border-radius: 12px;
-  }
-
-  .gallery-description p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .gallery-dots {
-    margin-top: 24px;
-    gap: 12px;
-  }
-
-  .gallery-dot {
-    width: 10px;
-    height: 10px;
-  }
-
-  .gallery-dot.active {
-    width: 28px;
-  }
-
-  .gallery-counter {
-    top: 16px;
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  .close-btn {
-    top: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 22px;
-  }
-
-  .nav {
-    font-size: 48px;
-    width: 50px;
-    height: 80px;
-  }
-
-  .nav.left {
-    left: 20px;
-  }
-
-  .nav.right {
-    right: 20px;
-  }
-}
-
-/* ======================================================
-   DESKTOP (1024px e acima)
-====================================================== */
-@media (min-width: 1024px) {
-  .gallery-full-image {
-    max-height: 75vh;
-  }
-
-  .gallery-description {
-    margin-top: 32px;
-    max-width: 80%;
-  }
-
-  .gallery-description p {
-    font-size: 18px;
-  }
-
-  .gallery-dots {
-    margin-top: 32px;
-    gap: 16px;
-  }
-
-  .gallery-dot {
-    width: 12px;
-    height: 12px;
-  }
-
-  .gallery-dot.active {
-    width: 32px;
-  }
-
-  .close-btn:hover {
-    background: #ff0000;
-    transform: scale(1.1);
-  }
-
-  .nav:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.05);
-  }
-}
-
-/* ======================================================
-   TELAS MUITO PEQUENAS (até 480px)
-====================================================== */
-@media (max-width: 480px) {
-  .gallery-description p {
-    font-size: 12px;
-  }
-
-  .gallery-dot {
-    width: 6px;
-    height: 6px;
-  }
-
-  .gallery-dot.active {
-    width: 16px;
-  }
-
-  .nav {
-    width: 32px;
-    height: 50px;
-    font-size: 28px;
-  }
-
-  .close-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
-    top: 8px;
-    right: 8px;
-  }
-
-  .gallery-counter {
-    top: 6px;
-    font-size: 10px;
-    padding: 3px 8px;
-  }
-}
 /* ======================================================
    /*! RESPONSIVIDADE 
 ====================================================== **/
@@ -517,10 +360,58 @@
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-item img {
+    height: 140px;
+  }
+
+  .gallery-modal-content {
+    max-width: 700px;
+  }
+
+  .gallery-full-image {
+    max-height: 65vh;
+  }
+
+  .gallery-description p {
+    font-size: 15px;
+  }
+
+  .nav {
+    font-size: 40px;
+    width: 45px;
+    height: 70px;
+  }
 }
 
 @media (min-width: 900px) {
   .about-grid {
     grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-modal-content {
+    max-width: 900px;
+  }
+
+  .gallery-full-image {
+    max-height: 75vh;
+  }
+
+  .gallery-description {
+    max-width: 80%;
+  }
+
+  .nav:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .close-btn:hover {
+    background: #ff0000;
   }
 }

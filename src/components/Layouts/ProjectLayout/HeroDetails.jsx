@@ -19,24 +19,21 @@ export default function HeroDetails() {
   return (
     <section className="hero-details">
       <div className="hero-details-container">
-
         {/* status mobile */}
         {project.status?.toLowerCase() === "em desenvolvimento" && (
-            <div className="project-status-badge-mob">
-              <span className="dot"></span>
-              Em desenvolvimento
-            </div>
-          )}
+          <div className="project-status-badge-mob">
+            <span className="dot"></span>
+            Em desenvolvimento
+          </div>
+        )}
 
         {/* image mobile */}
         <div className="project-image-mobile">
           <img src={project.image} alt={project.title} />
         </div>
 
-    
         <div className="project-content">
-      
-         {/* status desk */}
+          {/* status desk */}
           {project.status?.toLowerCase() === "em desenvolvimento" && (
             <div className="project-status-badge-desk">
               <span className="dot"></span>

@@ -9,7 +9,7 @@ export default function OtherProjects() {
 
   const randomProjects = useMemo(() => {
     const filteredProjects = projects.filter(
-      (project) => project.id !== Number(id)
+      (project) => project.id !== Number(id),
     );
 
     function shuffleArray(array) {

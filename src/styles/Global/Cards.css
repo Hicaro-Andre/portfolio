@@ -14,25 +14,24 @@
 ====================================================== **/
 
 :root {
-  --border-color: 1px solid rgba(29, 78, 216, 0.20);
+  --border-color: 1px solid rgba(29, 78, 216, 0.2);
   --border-color-hover: 1px solid rgba(59, 130, 246, 0.45);
   --bg-card: linear-gradient(
-  180deg,
-  rgba(3, 6, 14, 0.96) 0%,
-  rgba(1, 4, 10, 0.985) 100%
-);
+    180deg,
+    rgba(3, 6, 14, 0.96) 0%,
+    rgba(1, 4, 10, 0.985) 100%
+  );
   --bg-card-hover: linear-gradient(
-  180deg,
-  rgba(6, 10, 20, 0.98) 0%,
-  rgba(2, 5, 12, 1) 100%
-);
-  --bg-card-shadow: 0 0 0 1px rgba(29, 78, 216, 0.08),
-    0 10px 30px rgba(0, 0, 0, 0.45),
+    180deg,
+    rgba(6, 10, 20, 0.98) 0%,
+    rgba(2, 5, 12, 1) 100%
+  );
+  --bg-card-shadow:
+    0 0 0 1px rgba(29, 78, 216, 0.08), 0 10px 30px rgba(0, 0, 0, 0.45),
     0 0 20px rgba(29, 78, 216, 0.08);
-  --bg-card-shadow-hover:   0 0 0 1px rgba(59, 130, 246, 0.15),
-    0 18px 40px rgba(0, 0, 0, 0.55),
-    0 0 28px rgba(59, 130, 246, 0.12),
-    0 0 50px rgba(16, 185, 129, 0.05);
+  --bg-card-shadow-hover:
+    0 0 0 1px rgba(59, 130, 246, 0.15), 0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(59, 130, 246, 0.12), 0 0 50px rgba(16, 185, 129, 0.05);
 }
 
 /* ==============================
@@ -129,7 +128,7 @@
   border-radius: 18px;
   min-height: 260px;
 
-  background:var(--bg-card);
+  background: var(--bg-card);
   border: var(--border-color);
   box-shadow: var(--bg-card-shadow);
   backdrop-filter: blur(12px);
@@ -140,7 +139,7 @@
   transform: translateY(-6px);
   background: var(--bg-card-hover);
   border: var(--border-color-hover);
-  box-shadow:var(--bg-card-shadow-hover)
+  box-shadow: var(--bg-card-shadow-hover);
 }
 
 /* ======================================================
@@ -215,7 +214,6 @@
   box-shadow: var(--bg-card-shadow-hover);
 
   transform: translateY(-4px);
-
 }
 
 .company {
@@ -557,7 +555,7 @@
   transform: translateY(-6px);
   background: var(--bg-card-hover);
   border: var(--border-color-hover);
-  box-shadow:var(--bg-card-shadow-hover)
+  box-shadow: var(--bg-card-shadow-hover);
 }
 
 /* ==============================
@@ -567,6 +565,7 @@
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 32px;
+  width: 100%;
 
   transition:
     transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),

@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "/src/styles/Projects.css";
 import { projects } from "/src/data/projects.js";
+import translations from "/src/translations";
 
-export default function ProjectsCarousel() {
+export default function ProjectsCarousel({language}) {
+  const t = translations[language].projects
   const [index, setIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
   const canSlide = projects.length > visibleCards;
@@ -40,7 +42,7 @@ export default function ProjectsCarousel() {
   return (
     <section className="projects" id="projects">
       <h2 className="row-title">
-        Projetos
+        {t.title}
         <span />
       </h2>
 
@@ -71,7 +73,7 @@ export default function ProjectsCarousel() {
                   <div className="project-image">
                     {/* 🔥 Badge */}
                     {project.status === "Em desenvolvimento" && (
-                      <span className="dev-badge">Em Desenvolvimento</span>
+                      <span className="dev-badge">{t.dev}</span>
                     )}
 
                     <div className="image-overlay">
@@ -79,7 +81,7 @@ export default function ProjectsCarousel() {
                         to={`/project/${project.id}`}
                         className="details-btn"
                       >
-                        Ver detalhes
+                        {t.btnOverlay}
                       </Link>
                     </div>
                   </div>
@@ -112,7 +114,7 @@ export default function ProjectsCarousel() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Projeto
+                        {t.projectUrl}
                       </a>
 
                       <a

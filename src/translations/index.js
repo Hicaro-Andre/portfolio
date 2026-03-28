@@ -10,11 +10,14 @@ import enAbout from "./en/about";
 import ptSkills from "./pt/skills";
 import enSkills from "./en/skills";
 
+import ptProjects from "./pt/projects";
+import enProjects from "./en/projects";
+
 import ptExperience from "./pt/experience";
 import enExperience from "./en/experience";
 
-// import ptFormation from "./pt/formation";
-// import enFormation from "./en/formation";
+import ptFormation from "./pt/formation";
+import enFormation from "./en/formation";
 
 import ptContact from "./pt/contact";
 import enContact from "./en/contact";
@@ -28,9 +31,9 @@ const translations = {
     hero: ptHero,
     about: ptAbout,
     skills: ptSkills,
-
+    projects: ptProjects,
     experience:ptExperience,
-    // formation:ptFormation,
+    formation:ptFormation,
     contact:ptContact,
     footer:ptFooter
   },
@@ -39,9 +42,9 @@ const translations = {
     hero: enHero,
     about: enAbout,
     skills: enSkills,
-
+    projects: enProjects,
     experience:enExperience,
-    // formation:enFormation,
+    formation:enFormation,
     contact:enContact,
     footer:enFooter
   },

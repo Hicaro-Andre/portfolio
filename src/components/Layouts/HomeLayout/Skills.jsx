@@ -1,39 +1,23 @@
 import { useState } from "react";
 import "/src/styles/Skills.css";
+import { techIcons } from "/src/utils/Experience/icons"; 
 import { Code2, Server, Wrench, Languages } from "lucide-react";
 
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaGithub,
-  FaJava,
-} from "react-icons/fa";
+import translations from "/src/translations";
 
-import {
-  SiTypescript,
-  SiStoryblok,
-  SiExpress,
-  SiMongodb,
-  SiFirebase,
-  SiSpringboot,
-  SiPostgresql,
-} from "react-icons/si";
-
-export default function Skills() {
+export default function Skills({ language }) {
   const [openLanguage, setOpenLanguage] = useState(null);
 
   const toggleLanguage = (lang) => {
     setOpenLanguage(openLanguage === lang ? null : lang);
   };
 
+  const t = translations[language].skills;
+
   return (
     <section className="skills-section" id="skills">
       <h2 className="row-title">
-        Habilidades
+        {t.title}
         <span />
       </h2>
 
@@ -42,15 +26,15 @@ export default function Skills() {
         <div className="skills-card">
           <div className="skills-header">
             <Code2 size={22} />
-            <h3>Desenvolvimento Frontend</h3>
+            <h3>{t.categories.frontend}</h3>
           </div>
 
           <ul className="skills-list enhanced">
-            {/* html */}
+            {/* HTML */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaHtml5 color="#ff0000" />
+                  {techIcons.html}
                   HTML5
                 </span>
                 <span className="skill-percent">90%</span>
@@ -60,11 +44,11 @@ export default function Skills() {
               </div>
             </li>
 
-            {/* css */}
+            {/* CSS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaCss3Alt color="#0033FF" />
+                  {techIcons.css}
                   CSS3
                 </span>
                 <span className="skill-percent">90%</span>
@@ -74,11 +58,11 @@ export default function Skills() {
               </div>
             </li>
 
-            {/* js */}
+            {/* JS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaJs color="#ffff00" />
+                  {techIcons.js}
                   JavaScript
                 </span>
                 <span className="skill-percent">72%</span>
@@ -88,11 +72,11 @@ export default function Skills() {
               </div>
             </li>
 
-            {/* ts */}
+            {/* TS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiTypescript color="#00E5FF" />
+                  {techIcons.ts}
                   TypeScript
                 </span>
                 <span className="skill-percent">66%</span>
@@ -106,7 +90,7 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaReact color="#00E5FF" />
+                  {techIcons.react}
                   React
                 </span>
                 <span className="skill-percent">75%</span>
@@ -122,15 +106,15 @@ export default function Skills() {
         <div className="skills-card">
           <div className="skills-header purple">
             <Server size={22} />
-            <h3>Backend e Database</h3>
+            <h3>{t.categories.backend}</h3>
           </div>
 
           <ul className="skills-list enhanced">
-            {/* java */}
+            {/* Java */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaJava color="#ff0000" />
+                 {techIcons.java}
                   Java
                 </span>
                 <span className="skill-percent">40%</span>
@@ -140,11 +124,11 @@ export default function Skills() {
               </div>
             </li>
 
-            {/* sprint boot */}
+            {/* Spring */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiSpringboot color="#39FF14" />
+                 {techIcons.sprintboot}
                   Spring Boot
                 </span>
                 <span className="skill-percent">40%</span>
@@ -154,11 +138,11 @@ export default function Skills() {
               </div>
             </li>
 
-            {/* node */}
+            {/* Node */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaNodeJs color="#39ff14" />
+                  {techIcons.node}
                   Node.js
                 </span>
                 <span className="skill-percent">90%</span>
@@ -172,7 +156,7 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiExpress color="#F0F8FF" />
+                  {techIcons.express}
                   Express
                 </span>
                 <span className="skill-percent">90%</span>
@@ -186,7 +170,7 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiPostgresql color="#00E5FF" />
+                   {techIcons.postgresql}
                   PostgreSQL
                 </span>
                 <span className="skill-percent">60%</span>
@@ -200,7 +184,7 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiMongodb color="#39FF14" />
+                  {techIcons.mongo}
                   MongoDB
                 </span>
                 <span className="skill-percent">75%</span>
@@ -214,7 +198,7 @@ export default function Skills() {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiFirebase color="#FFCA28" />
+                  {techIcons.firebase}
                   Firebase
                 </span>
                 <span className="skill-percent">80%</span>
@@ -226,43 +210,18 @@ export default function Skills() {
           </ul>
         </div>
 
-        {/* MOBILE */}
-        {/* <div className="skills-card">
-          <div className="skills-header green">
-            <Smartphone size={22} />
-            <h3>Desenvolvimento Mobile</h3>
-          </div>
-
-          <ul className="skills-list enhanced">
-            
-            <li className="skill-item">
-              <div className="skill-top">
-                <span className="skill-name">
-                  <FaReact color="#61DAFB" />
-                  React Native
-                </span>
-                <span className="skill-percent">40%</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "40%" }} />
-              </div>
-            </li>
-          </ul>
-        </div> */}
-
-        {/* OUTRAS FERRAMENTAS */}
+        {/* TOOLS */}
         <div className="skills-card">
           <div className="skills-header gradient">
             <Wrench size={22} />
-            <h3>Outras Ferramentas</h3>
+            <h3>{t.categories.tools}</h3>
           </div>
 
           <ul className="skills-list enhanced">
-            {/* git */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaGitAlt color="#FF5E00" />
+                  {techIcons.git}
                   Git
                 </span>
                 <span className="skill-percent">92%</span>
@@ -272,11 +231,10 @@ export default function Skills() {
               </div>
             </li>
 
-            {/* GitHub */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <FaGithub color="#F0F8FF" />
+                  {techIcons.github}
                   GitHub
                 </span>
                 <span className="skill-percent">95%</span>
@@ -286,11 +244,10 @@ export default function Skills() {
               </div>
             </li>
 
-            {/* Storyblok */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <SiStoryblok color="#0CE8E0" />
+                  {techIcons.storyblok}
                   Storyblok
                 </span>
                 <span className="skill-percent">88%</span>
@@ -302,42 +259,34 @@ export default function Skills() {
           </ul>
         </div>
 
-        {/* IDIOMAS */}
+        {/* LANGUAGES */}
         <div className="skills-card">
           <div className="skills-header gradient">
             <Languages size={22} />
-            <h3>Idiomas</h3>
+            <h3>{t.categories.languages}</h3>
           </div>
 
           <ul className="skills-list enhanced">
-            {/* português */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <img
-                    src="https://flagcdn.com/br.svg"
-                    alt="Brasil"
-                    className="flag"
-                  />
-                  Português
+                  <img src="https://flagcdn.com/br.svg" className="flag" />
+                  {t.languageNames.portuguese}
                 </span>
-                <span className="language-level native">Nativo</span>
+                <span className="language-level native">
+                  {t.levels.native}
+                </span>
               </div>
               <div className="progress-bar">
                 <div className="progress-fill" style={{ width: "100%" }} />
               </div>
             </li>
 
-            {/* inglês */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  <img
-                    src="https://flagcdn.com/us.svg"
-                    alt="Estados Unidos"
-                    className="flag"
-                  />
-                  Inglês
+                  <img src="https://flagcdn.com/us.svg" className="flag" />
+                  {t.languageNames.english}
                 </span>
                 <span className="skill-percent">42%</span>
               </div>

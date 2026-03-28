@@ -45,10 +45,10 @@ function App() {
         <Navbar language={language} setLanguage={setLanguage} />
         <Hero language={language} />
         <About language={language} />
-        <Skills />
+        <Skills language={language}/>
         <Projects />
-        <Experience />
-        <Formation />
+        <Experience language={language}/>
+        <Formation language={language}/>
         <ContactForm language={language} />
         <Footer language={language} />
       </main>

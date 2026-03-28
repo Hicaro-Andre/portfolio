@@ -105,13 +105,15 @@
   border-radius: 10px;
 
   background: #0f141b;
-  border: 1px solid rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(29, 78, 216, 0.2);
   transition: all 0.3s ease;
 }
 
 .input-wrapper:focus-within {
-  border: 1px solid rgba(88, 166, 255, 0.35);
-  box-shadow: 0 5px 15px rgba(88, 166, 255, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.45);
+
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.15), 0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(59, 130, 246, 0.12), 0 0 50px rgba(16, 185, 129, 0.05);
 }
 
 .input-wrapper input,
@@ -137,8 +139,8 @@
 ====================================================== */
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #0f141b inset;
-  -webkit-text-fill-color: var(--txt-color);
+  -webkit-box-shadow: 0 0 0 1000px #3f4a57 inset;
+  -webkit-text-fill-color: #e6edf3;
   border-radius: 10px;
   padding: 5px;
 }

@@ -42,8 +42,6 @@
   flex-direction: column;
   gap: 1.5rem;
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
 }
 
 .hero-section.visible .hero-content {

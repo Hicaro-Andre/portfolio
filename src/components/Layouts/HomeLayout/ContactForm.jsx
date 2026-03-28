@@ -10,10 +10,13 @@ import {
   Send,
   Phone,
   Github,
-  X,
 } from "lucide-react";
 
-export default function Contact() {
+import translations from "/src/translations";
+
+export default function Contact({ language = "pt" }) {
+  const t = translations[language]?.contact;
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -53,41 +56,52 @@ export default function Contact() {
 
       setForm({ name: "", email: "", subject: "", message: "" });
       setErrors({});
-      setIsModalOpen(true); // 🔥 abre o modal
+      setIsModalOpen(true);
     } catch (error) {
-      alert("Erro ao enviar mensagem ❌");
+      alert(t.error);
     }
   };
 
   return (
     <section className="contact-section" id="contact">
       <h2 className="row-title">
-        Contato
+        {t.title}
         <span />
       </h2>
 
       <div className="contact-wrapper">
         <form className="contact" onSubmit={handleSubmit}>
           <h5>
-            Vamos tirar sua <span>ideia</span> do papel.
+            {t.subtitle.split(" ").slice(0, -2).join(" ")}{" "}
+            <span>{t.subtitle.split(" ").slice(-2).join(" ")}</span>
           </h5>
 
           {/* Nome */}
           <div className="field">
-            <label>Nome</label>
+            <label>{t.fields.name}</label>
             <div className="input-wrapper">
               <User size={18} />
-              <input id="name" value={form.name} onChange={handleChange}  maxLength={45} />
+              <input
+                id="name"
+                value={form.name}
+                onChange={handleChange}
+                maxLength={45}
+              />
             </div>
             {errors.name && <small className="error-text">{errors.name}</small>}
           </div>
 
           {/* Email */}
           <div className="field">
-            <label>E-mail</label>
+            <label>{t.fields.email}</label>
             <div className="input-wrapper">
               <Mail size={18} />
-              <input id="email" value={form.email} onChange={handleChange} maxLength={60}/>
+              <input
+                id="email"
+                value={form.email}
+                onChange={handleChange}
+                maxLength={60}
+              />
             </div>
             {errors.email && (
               <small className="error-text">{errors.email}</small>
@@ -96,7 +110,7 @@ export default function Contact() {
 
           {/* Assunto */}
           <div className="field">
-            <label>Assunto</label>
+            <label>{t.fields.subject}</label>
             <div className="input-wrapper">
               <MessageSquare size={18} />
               <input
@@ -113,7 +127,7 @@ export default function Contact() {
 
           {/* Mensagem */}
           <div className="field">
-            <label>Mensagem</label>
+            <label>{t.fields.message}</label>
             <div className="input-wrapper textarea">
               <MessageSquare size={18} />
               <textarea
@@ -129,7 +143,7 @@ export default function Contact() {
           </div>
 
           <button type="submit" className="btn primary submit-btn">
-            Enviar mensagem <Send size={18} />
+            {t.button} <Send size={18} />
           </button>
 
           {/* Sociais */}
@@ -140,13 +154,21 @@ export default function Contact() {
               </div>
             </a>
 
-            <a href="https://wa.me/5598984245018" target="_blank">
+            <a
+              href="https://wa.me/5598984245018"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="card-icon-2">
                 <Phone size={15} />
               </div>
             </a>
 
-            <a href="https://github.com/Hicaro-Andre" target="_blank">
+            <a
+              href="https://github.com/Hicaro-Andre"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="card-icon-3">
                 <Github size={15} />
               </div>
@@ -155,15 +177,18 @@ export default function Contact() {
         </form>
       </div>
 
-      {/* 🔥 MODAL */}
+      {/* MODAL */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal">
-            <h3>Mensagem enviada 🚀</h3>
-            <p>Em breve entrarei em contato com você.</p>
+            <h3>{t.success.title}</h3>
+            <p>{t.success.description}</p>
 
-            <button className="modal-btn" onClick={() => setIsModalOpen(false)}>
-              Fechar
+            <button
+              className="modal-btn"
+              onClick={() => setIsModalOpen(false)}
+            >
+              {t.success.close}
             </button>
           </div>
         </div>

@@ -1,0 +1,235 @@
+/* ======================================================
+   /*?- ROW TITLE SECTIONS
+   /*?- NAVBAR
+   /*?- HERO 
+   /*?- ABOUT 
+   /*?- SKILLS
+   /*?- ABOUT DETAILS
+====================================================== */
+
+/* ======================================================
+   /*! ROW TITLE SECTIONS
+====================================================== **/
+.row-title span {
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-color-phone),
+    #1f6feb 60%,
+    #58a6ff
+  );
+  margin: 16px auto 0;
+  border-radius: 999px;
+
+  /* estado inicial */
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+
+  transition: all 0.6s ease;
+}
+
+/* quando ativa */
+.section-visible .row-title span {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* ======================================================
+   /*! NAVBAR 
+====================================================== **/
+
+/* NAVBAR ENTRADA */
+.navbar {
+  opacity: 0;
+  transform: translateY(-30px);
+  filter: blur(8px);
+  animation: navbarReveal 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes navbarReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* NAVEGAÇÃO LINKS */
+.nav-links a {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: navItemReveal 0.6s ease forwards;
+}
+
+.nav-links a:nth-child(1) { animation-delay: 0.5s; }
+.nav-links a:nth-child(2) { animation-delay: 0.6s; }
+.nav-links a:nth-child(3) { animation-delay: 0.7s; }
+.nav-links a:nth-child(4) { animation-delay: 0.8s; }
+.nav-links a:nth-child(5) { animation-delay: 0.9s; }
+.nav-links a:nth-child(6) { animation-delay: 1s; }
+.nav-links a:nth-child(7) { animation-delay: 1.1s; }
+
+@keyframes navItemReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LINHA GLOW */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 0.5px;
+  width: 0%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(29, 78, 216, 0.6),
+    rgba(59, 130, 246, 0.6),
+    transparent
+  );
+
+  opacity: 0.7;
+
+  animation: navbarGlow 1.5s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes navbarGlow {
+  to {
+    width: 100%;
+  }
+}
+
+/* LOGO */
+.logo-img {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: logoReveal 0.6s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes logoReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ======================================================
+   /*! HERO 
+====================================================== **/
+
+/* ENTRADA HERO */
+.hero-section {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(10px);
+  transition: all 0.8s ease;
+}
+
+.hero-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ANIMAÇÃO TEXTO CASCATA */
+.hero-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-section.visible .hero-eyebrow {
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-section.visible .hero-name {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-section.visible .hero-role-container {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.hero-section.visible .hero-description {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.hero-section.visible .hero-actions {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 1.1s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* FOTO COM ENTRADA */
+.hero-photo,
+.hero-photo-mobile {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.hero-section.visible .hero-photo,
+.hero-section.visible .hero-photo-mobile {
+  animation: photoReveal 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes photoReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ======================================================
+   /*! ABOUT 
+====================================================== **/
+
+/* ======================================================
+   /*! SKILLS
+====================================================== **/
+
+/* ======================================================
+   /*! PROJECTS
+====================================================== **/
+
+/* ======================================================
+   /*! EXPERIENCE
+====================================================== **/
+
+/* ======================================================
+   /*! FORMAÇÃO
+====================================================== **/
+
+/* ======================================================
+   /*! CONTACT
+====================================================== **/
+
+/* ======================================================
+   /*! ABOUT DETAILS
+====================================================== **/
+
+/* ======================================================
+   /*! OTHER PROJECTS
+====================================================== **/

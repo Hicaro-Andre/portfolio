@@ -1,149 +1,89 @@
 import "/src/styles/Experience.css";
+import translations from "/src/translations";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaGithub,
+
   FaCheckCircle,
   FaTools,
+
 } from "react-icons/fa";
 
-export default function Experience() {
+import { techIcons } from "/src/utils/Experience/icons"; 
+
+export default function Experience({ language }) {
+
+  const t = translations[language].experience;
+
   return (
     <section className="experience-section" id="experience">
       <h2 className="row-title">
-        Experiência
+        {t.title}
         <span />
       </h2>
 
       <div className="experience-container">
         <div className="timeline">
-          {/* card 2  */}
-          <div className="timeline-item left">
-            <span className="timeline-dot" />
-            <div className="card-timeline">
-              {/* header */}
-              <div className="card-timeline-header">
-                <div className="header-top">
-                  <h4 className="title"> Co-Fundador e Web Designer</h4>
-                  <p className="company">Upaon Solutions</p>
-                </div>
+          {t.items.map((item) => (
+            <div key={item.id} className={`timeline-item ${item.side}`}>
+              <span className="timeline-dot" />
 
-                <div className="header-bottom">
-                  <p>Abr 2020 - Remoto</p>
+              <div className="card-timeline">
+                {/* HEADER */}
+                <div className="card-timeline-header">
+                  <div className="header-top">
+                    <h4 className="title">{item.role}</h4>
+                    <p className="company">{item.company}</p>
+                  </div>
 
-                  <div className="badge-group">
-                    <span className="local-badge">São Luís - MA</span>
+                  <div className="header-bottom">
+                    <p>{item.date}</p>
+
+                    <div className="badge-group">
+                      <span className="local-badge">
+                        {item.location}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* body */}
-              <div className="card-timeline-body">
-                <p className="description">
-                  Startup voltada à prestação de serviços em Tecnologia da
-                  Informação e desenvolvimento de software.
-                </p>
+                {/* BODY */}
+                <div className="card-timeline-body">
+                  <p className="description">{item.description}</p>
 
-                {/* Atividades e Responsabilidades */}
-                <div className="timeline-section">
-                  <h5 className="timeline-title">
-                    <FaCheckCircle className="timeline-icon" />
-                    Atividades e Responsabilidades
-                  </h5>
-                  <ul>
-                    <li>Desenvolvimento de projetos acadêmicos completos</li>
-                    <li>Aplicação prática de modelagem de banco de dados</li>
-                    <li>Implementação de algoritmos eficientes</li>
-                  </ul>
-                  <div className="separator"></div>
-                </div>
+                  {/* RESPONSABILIDADES */}
+                  <div className="timeline-section">
+                    <h5 className="timeline-title">
+                      <FaCheckCircle className="timeline-icon" />
+                      {item.responsibilitiesTitle}
+                    </h5>
 
-                {/* Tecnologias Usadas */}
-                <div className="timeline-section">
-                  <h5 className="timeline-title">
-                    <FaTools className="timeline-icon" />
-                    Tecnologias Usadas
-                  </h5>
+                    <ul>
+                      {item.responsibilities.map((resp, index) => (
+                        <li key={index}>{resp}</li>
+                      ))}
+                    </ul>
 
-                  <div className="tech-icons">
-                    <FaHtml5 color="#ff0000" />
-                    <FaCss3Alt color="#0033FF" />
-                    <FaJs color="#ffff00" />
-                    <FaReact color="#7DF9FF" />
-                    <FaNodeJs color="#39ff14" />
-                    <FaGitAlt color="#FF5E00" />
-                    <FaGithub color="#F0F8FF" />
+                    <div className="separator"></div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* card 1  */}
-          <div className="timeline-item right">
-            <span className="timeline-dot" />
-            <div className="card-timeline">
-              {/* header */}
-              <div className="card-timeline-header">
-                <div className="header-top">
-                  <h4 className="title"> Co-Fundador e Web Designer</h4>
-                  <p className="company">Upaon Solutions</p>
-                </div>
+                  {/* TECNOLOGIAS */}
+                  <div className="timeline-section">
+                    <h5 className="timeline-title">
+                      <FaTools className="timeline-icon" />
+                      {item.techTitle}
+                    </h5>
 
-                <div className="header-bottom">
-                  <p>Abr 2020 - Remoto</p>
-
-                  <div className="badge-group">
-                    <span className="local-badge">São Luís - MA</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* body */}
-              <div className="card-timeline-body">
-                <p className="description">
-                  Startup voltada à prestação de serviços em Tecnologia da
-                  Informação e desenvolvimento de software.
-                </p>
-
-                {/* Atividades e Responsabilidades */}
-                <div className="timeline-section">
-                  <h5 className="timeline-title">
-                    <FaCheckCircle className="timeline-icon" />
-                    Atividades e Responsabilidades
-                  </h5>
-                  <ul>
-                    <li>Desenvolvimento de projetos acadêmicos completos</li>
-                    <li>Aplicação prática de modelagem de banco de dados</li>
-                    <li>Implementação de algoritmos eficientes</li>
-                  </ul>
-                  <div className="separator"></div>
-                </div>
-
-                {/* Tecnologias Usadas */}
-                <div className="timeline-section">
-                  <h5 className="timeline-title">
-                    <FaTools className="timeline-icon" />
-                    Tecnologias Usadas
-                  </h5>
-
-                  <div className="tech-icons">
-                    <FaHtml5 color="#ff0000" />
-                    <FaCss3Alt color="#0033FF" />
-                    <FaJs color="#ffff00" />
-                    <FaReact color="#7DF9FF" />
-                    <FaNodeJs color="#39ff14" />
-                    <FaGitAlt color="#FF5E00" />
-                    <FaGithub color="#F0F8FF" />
+                    <div className="tech-icons">
+                      {item.techs?.map((tech, index) => (
+                        <span key={index}>
+                          {techIcons[tech]} 
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -4,9 +4,12 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails";
 import ScrollToTop from "./components/ScrollToTop";
+import useSectionObserver from "./hooks/useSectionObserver"; // 👈 IMPORTA
 
 function App() {
   const [language, setLanguage] = useState("pt");
+
+  useSectionObserver(); // 👈 ATIVA A ANIMAÇÃO GLOBAL
 
   return (
     <BrowserRouter>

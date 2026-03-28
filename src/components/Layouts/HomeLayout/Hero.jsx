@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/Hero.css";
 import myfoto from "/src/assets/images/hero_image/me.jpg";
+import translations from "/src/translations";
 
 export default function Hero({ language }) {
   const heroRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
+
+  const t = translations[language].hero;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -55,9 +58,7 @@ export default function Hero({ language }) {
         </div>
 
         <div className="hero-content">
-          <span className="hero-eyebrow">
-            {language === "pt" ? "Olá, eu sou" : "Hey, I’m"}
-          </span>
+          <span className="hero-eyebrow">{t.eyebrow}</span>
 
           <h1 className="hero-name">
             Hicaro <span>André</span>
@@ -66,38 +67,24 @@ export default function Hero({ language }) {
           <div className="hero-role-container">
             <div className="barra-gradiente"></div>
 
-            <p className="hero-role">
-              {language === "pt"
-                ? "DESENVOLVEDOR FULL STACK"
-                : "FULL STACK DEVELOPER"}
-            </p>
+            <p className="hero-role">{t.role}</p>
           </div>
 
           <p className="hero-description">
-            {language === "pt" ? (
-              <>
-                Transformando ideias em{" "}
-                <span className="highlight">produtos digitais</span> com foco em{" "}
-                <span className="highlight">escala</span>, performance e
-                experiências bem construídas que geram impacto real.
-              </>
-            ) : (
-              <>
-                Turning ideas into{" "}
-                <span className="highlight">digital products</span> focused on{" "}
-                <span className="highlight">scale</span>, performance and
-                well-crafted experiences that drive real impact.
-              </>
-            )}
+            {t.description.part1}{" "}
+            <span className="highlight">{t.description.highlight1}</span>{" "}
+            {t.description.part2}{" "}
+            <span className="highlight">{t.description.highlight2}</span>
+            {t.description.part3}
           </p>
 
           <div className="hero-actions">
             <a href="#projects" className="btn primary">
-              {language === "pt" ? "Ver Projetos" : "View Projects"}
+              {t.buttons.projects}
             </a>
 
             <a href="/public/hicaro-cv.pdf" download className="btn secondary">
-              {language === "pt" ? "Baixar CV" : "Download CV"}
+              {t.buttons.cv}
             </a>
           </div>
         </div>

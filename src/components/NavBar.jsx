@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "/public/hico-logo.png";
 import "/src/styles/NavBar.css";
+import translations from "/src/translations";
 
 export default function Navbar({ language, setLanguage }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("hero");
   const navRef = useRef(null);
+
+  const t = translations[language]; // 🔥 NOVO
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "pt" ? "en" : "pt"));
@@ -13,10 +16,10 @@ export default function Navbar({ language, setLanguage }) {
 
   const handleLinkClick = (id) => {
     setActiveLink(id);
-    setMenuOpen(false); // fecha no mobile
+    setMenuOpen(false);
   };
 
-  // Intersection Observer melhorado
+  // Intersection Observer
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
@@ -31,7 +34,7 @@ export default function Navbar({ language, setLanguage }) {
       {
         rootMargin: "-80px 0px -30% 0px",
         threshold: 0.3,
-      },
+      }
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -46,7 +49,8 @@ export default function Navbar({ language, setLanguage }) {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -73,13 +77,13 @@ export default function Navbar({ language, setLanguage }) {
           className={`nav-links ${menuOpen ? "active" : ""}`}
         >
           {[
-            { id: "hero", pt: "Início", en: "Home" },
-            { id: "about", pt: "Sobre", en: "About" },
-            { id: "skills", pt: "Habilidades", en: "Skills" },
-            { id: "projects", pt: "Projetos", en: "Projects" },
-            { id: "experience", pt: "Experiência", en: "Experience" },
-            { id: "formation", pt: "Formação", en: "Formation" },
-            { id: "contact", pt: "Contato", en: "Contact" },
+            { id: "hero", label: t.navbar.home },
+            { id: "about", label: t.navbar.about },
+            { id: "skills", label: t.navbar.skills },
+            { id: "projects", label: t.navbar.projects },
+            { id: "experience", label: t.navbar.experience },
+            { id: "formation", label: t.navbar.formation },
+            { id: "contact", label: t.navbar.contact },
           ].map((item) => (
             <a
               key={item.id}
@@ -87,7 +91,7 @@ export default function Navbar({ language, setLanguage }) {
               onClick={() => handleLinkClick(item.id)}
               className={activeLink === item.id ? "active" : ""}
             >
-              {language === "pt" ? item.pt : item.en}
+              {item.label}
             </a>
           ))}
 

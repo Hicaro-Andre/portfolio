@@ -1,12 +1,31 @@
 import "/src/styles/HeroDetails.css";
 import { useParams } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
-import { projects } from "/src/data/projects.js";
+import { projects } from "/src/data/projects";
+
+// Tipagem
+type Tech = {
+  name: string;
+  color: string;
+  textColor: string;
+};
+
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  projectUrl: string;
+  techs: Tech[];
+  status?: string;
+};
 
 export default function HeroDetails() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
-  const project = projects.find((p) => p.id === Number(id));
+  const project: Project | undefined = projects.find(
+    (p: Project) => p.id === Number(id)
+  );
 
   if (!project) {
     return (
@@ -64,7 +83,7 @@ export default function HeroDetails() {
           {/* btn */}
           <a
             href={project.projectUrl}
-            className="btn primary project-btn"
+            className="btn primary"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -1,11 +1,25 @@
 import "/src/styles/About.css";
-import { getExperience } from "/src/utils/dateUtils.js";
-import { projects } from "/src/data/projects.js";
+import { getExperience } from "/src/utils/dateUtils";
+import { projects } from "/src/data/projects";
 import translations from "/src/translations";
 
-export default function About({ language }) {
+// 🔥 Tipos
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  status?: string;
+};
+
+type Language = "pt" | "en"; // ajuste se tiver mais idiomas
+
+type Props = {
+  language: Language;
+};
+
+export default function About({ language }: Props) {
   const completedProjects = projects.filter(
-    (project) => project.status === "Concluído",
+    (project: Project) => project.status === "Concluído"
   ).length;
 
   const t = translations[language].about;
@@ -18,7 +32,7 @@ export default function About({ language }) {
       </h2>
 
       <div className="about-container">
-        <div className="main-card">
+        <div className="card main-card">
           <div className="about-top">
             <span className="about-role">{t.role}</span>
           </div>
@@ -31,12 +45,12 @@ export default function About({ language }) {
       </div>
 
       <div className="about-stats">
-        <div className="stat-card">
+        <div className="card stat-card">
           <strong>{getExperience()}+</strong>
           <span>{t.stats.experience}</span>
         </div>
 
-        <div className="stat-card">
+        <div className="card stat-card">
           <strong>{completedProjects}+</strong>
           <span>{t.stats.projects}</span>
         </div>

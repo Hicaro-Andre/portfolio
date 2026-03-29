@@ -145,23 +145,7 @@ input:-webkit-autofill {
   padding: 5px;
 }
 
-/* ======================================================
-  /*! BTN
-====================================================== */
 
-.submit-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 0.8rem;
-  gap: 8px;
-  font-weight: 600;
-}
-
-.submit-btn svg {
-  display: flex;
-}
 
 /* ======================================================
    /*! SOCIAIS

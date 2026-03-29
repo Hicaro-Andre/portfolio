@@ -30,6 +30,32 @@
   margin-top: 30px;
 }
 
+
+/* ==============================
+   /*! CARD (PROJECT DETAILS)
+============================== */
+.card-details {
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  min-width: 300px;
+  align-self: center;
+
+
+  will-change: transform;
+}
+
+.card-details:hover {
+  transform: scale(1.015);
+}
+
 /* TITULOS */
 
 .card-title {

@@ -1,17 +1,47 @@
 import "/src/styles/AboutDetails.css";
-import { aboutProjects } from "/src/data/aboutProject.js";
-import { projects } from "/src/data/projects.js";
+import { aboutProjects } from "/src/data/aboutProject";
+import { projects } from "/src/data/projects";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { FaCogs } from "react-icons/fa";
 
-export default function AboutDetails() {
-  const { id } = useParams();
-  const about = aboutProjects.find((p) => p.id === Number(id));
-  const project = projects.find((p) => p.id === Number(id));
+// Tipagens
+type Tech = {
+  name: string;
+  color: string;
+  textColor?: string;
+};
 
-  const [openGallery, setOpenGallery] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+type Project = {
+  id: number;
+  techs: Tech[];
+};
+
+type AboutProject = {
+  id: number;
+  description: string;
+  features?: string[];
+  images: string[];
+  imagesDescription?: string[];
+  status: string;
+  duration: string;
+  team: string;
+  client: string;
+};
+
+export default function AboutDetails() {
+  const { id } = useParams<{ id: string }>();
+
+  const about: AboutProject | undefined = aboutProjects.find(
+    (p: AboutProject) => p.id === Number(id)
+  );
+
+  const project: Project | undefined = projects.find(
+    (p: Project) => p.id === Number(id)
+  );
+
+  const [openGallery, setOpenGallery] = useState<boolean>(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   if (!about) return <p>Projeto não encontrado</p>;
 
@@ -21,7 +51,7 @@ export default function AboutDetails() {
         {/* COLUNA ESQUERDA */}
         <div className="left-column">
           {/* sobre o projeto */}
-          <div className="card">
+          <div className="card card-details">
             <div className="card-header">
               <h3 className="card-title">Sobre o Projeto</h3>
 
@@ -42,8 +72,8 @@ export default function AboutDetails() {
             </div>
           </div>
 
-          {/* GALERIA FORA DO CARD */}
-          <div className="card">
+          {/* GALERIA */}
+          <div className="card card-details">
             <h3>Galeria</h3>
             <div className="gallery-container">
               <div className="gallery-grid">
@@ -64,6 +94,7 @@ export default function AboutDetails() {
                 ))}
               </div>
             </div>
+
             <div className="gallery">
               <button
                 className="btn primary"
@@ -80,20 +111,21 @@ export default function AboutDetails() {
 
         {/* COLUNA DIREITA */}
         <div className="right-column">
-          <div className="card">
+          <div className="card card-details">
             <h4>Status</h4>
             <div className="status">
               <span
-                className={`dot ${about.status === "Concluído" ? "done" : "progress"}`}
+                className={`dot ${about.status === "Concluído" ? "done" : "progress"
+                  }`}
               ></span>
               {about.status}
             </div>
           </div>
 
-          <div className="card">
+          <div className="card card-details">
             <h4>Tecnologias</h4>
             <div className="tech-list">
-              {project.techs?.map((tech, i) => (
+              {project?.techs?.map((tech, i) => (
                 <span key={i} className="tech">
                   <span
                     className="tech-dot"
@@ -106,7 +138,7 @@ export default function AboutDetails() {
             </div>
           </div>
 
-          <div className="card ">
+          <div className="card card-details">
             <h4>Informações</h4>
             <div className="info">
               <p>
@@ -132,66 +164,66 @@ export default function AboutDetails() {
       {/* MODAL */}
       {openGallery && (
         <div className="gallery-modal" onClick={() => setOpenGallery(false)}>
-          {/* BOTÃO FECHAR */}
           <button className="close-btn" onClick={() => setOpenGallery(false)}>
             ✕
           </button>
 
           <div className="gallery-modal-content">
-            {/* CONTADOR/ÍNDICE */}
             <div className="gallery-counter">
               {currentIndex + 1} / {about.images.length}
             </div>
 
-            {/* IMAGEM */}
             <img
               src={about.images[currentIndex]}
               className="gallery-full-image"
               onClick={(e) => e.stopPropagation()}
             />
 
-            {/* DESCRIÇÃO DA IMAGEM */}
             <div
               className="gallery-description"
               onClick={(e) => e.stopPropagation()}
             >
               <p>
-                {about.imagesDescription?.[currentIndex] || "Imagem do projeto"}
+                {about.imagesDescription?.[currentIndex] ||
+                  "Imagem do projeto"}
               </p>
             </div>
 
-            {/* BOLINHAS INDICADORAS */}
-            <div className="gallery-dots" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="gallery-dots"
+              onClick={(e) => e.stopPropagation()}
+            >
               {about.images.map((_, idx) => (
                 <button
                   key={idx}
-                  className={`gallery-dot ${idx === currentIndex ? "active" : ""}`}
+                  className={`gallery-dot ${idx === currentIndex ? "active" : ""
+                    }`}
                   onClick={() => setCurrentIndex(idx)}
                 />
               ))}
             </div>
           </div>
 
-          {/* BOTÃO ESQUERDA */}
+          {/* ESQUERDA */}
           <button
             className="nav left"
             onClick={(e) => {
               e.stopPropagation();
               setCurrentIndex((prev) =>
-                prev === 0 ? about.images.length - 1 : prev - 1,
+                prev === 0 ? about.images.length - 1 : prev - 1
               );
             }}
           >
             ‹
           </button>
 
-          {/* BOTÃO DIREITA */}
+          {/* DIREITA */}
           <button
             className="nav right"
             onClick={(e) => {
               e.stopPropagation();
               setCurrentIndex((prev) =>
-                prev === about.images.length - 1 ? 0 : prev + 1,
+                prev === about.images.length - 1 ? 0 : prev + 1
               );
             }}
           >

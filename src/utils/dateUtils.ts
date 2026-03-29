@@ -1,4 +1,4 @@
-export const getExperience = () => {
+export const getExperience = (): number => {
   const startDate = new Date("2023-08-01");
   const now = new Date();
 

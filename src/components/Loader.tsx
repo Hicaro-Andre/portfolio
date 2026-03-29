@@ -1,5 +1,5 @@
-import logo from "/src/assets/hico-logo.png";
-import "/src/styles/Global/Loader.css"
+import logo from "../assets/hico-logo.png";
+import "../styles/Global/Loader.css"
 
 export default function Loader() {
   return (

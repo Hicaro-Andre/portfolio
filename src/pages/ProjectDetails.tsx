@@ -1,21 +1,24 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loader from "../components/Loader";
-import ParticlesBg from "../components/ParticlesBg.jsx";
+import ParticlesBg from "../components/ParticlesBg";
 
-import ProjectNavbar from "../components/Layouts/ProjectLayout/ProjectNavbar.jsx";
-import HeroDetails from "../components/Layouts/ProjectLayout/HeroDetails.jsx";
-import AboutDetails from "../components/Layouts/ProjectLayout/AboutDetails.jsx";
-import OtherProjects from "../components/Layouts/ProjectLayout/OtherProjects.jsx";
+import ProjectNavbar from "../components/Layouts/ProjectLayout/ProjectNavbar";
+import HeroDetails from "../components/Layouts/ProjectLayout/HeroDetails";
+import AboutDetails from "../components/Layouts/ProjectLayout/AboutDetails";
+import OtherProjects from "../components/Layouts/ProjectLayout/OtherProjects";
 
-// Imagem WhatsApp
 import wpp from "../assets/whatsapp.svg";
 
-export default function ProjectDetails() {
-  const { id } = useParams();
-  const [loading, setLoading] = useState(true);
+type Language = "pt" | "en";
 
-  const [language, setLanguage] = useState("pt");
+type ProjectDetailsProps = {
+  language: Language;
+};
+
+export default function ProjectDetails({ language }: ProjectDetailsProps) {
+  const { id } = useParams<{ id: string }>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setLoading(true);
@@ -29,22 +32,19 @@ export default function ProjectDetails() {
 
   return (
     <>
-      {/* Fundo de partículas sempre ativo */}
       <ParticlesBg />
 
-      {/* Enquanto carrega mostra o spinner */}
       {loading ? (
-        <Loader /> // Spinner de carregamento
+        <Loader />
       ) : (
         <>
           <main>
-            <ProjectNavbar language={language} setLanguage={setLanguage} />
+            <ProjectNavbar language={language} />
             <HeroDetails />
             <AboutDetails />
             <OtherProjects />
           </main>
 
-          {/* Botão WhatsApp */}
           <a
             href="https://wa.me/98984245018"
             className="whatsapp-button"

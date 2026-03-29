@@ -29,12 +29,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
 }
 
 /* ======================================================
   /*! BOTÃO PRINCIPAL
 ====================================================== */
-.btn.primary {
+.primary {
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -44,7 +45,7 @@
   transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.btn.primary::before {
+.primary::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -55,16 +56,16 @@
   z-index: -1;
 }
 
-.btn.primary:hover::before {
+.primary:hover::before {
   transform: scaleX(1);
 }
 
-.btn.primary:hover {
+.primary:hover {
   transform: translateY(-1px) scale(1.02);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
 }
 
-.btn.primary:active {
+.primary:active {
   transform: scale(0.98);
 }
 
@@ -73,7 +74,7 @@
 /* ======================================================
    /*! BOTÃO SECUNDÁRIO
 ====================================================== **/
-.btn.secondary {
+.secondary {
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -86,7 +87,7 @@
     border-color 0.25s ease, color 0.25s ease;
 }
 
-.btn.secondary::before {
+.secondary::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -97,24 +98,26 @@
   z-index: -1;
 }
 
-.btn.secondary:hover::before {
+.secondary:hover::before {
   transform: scaleX(1);
 }
 
-.btn.secondary:hover {
+.secondary:hover {
   color: var(--txt-color);
   transform: translateY(-1px) scale(1.02);
   box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
   border-color: rgba(59, 130, 246, 0.45);
 }
 
-.btn.secondary:active {
+.secondary:active {
   transform: scale(0.98);
 }
+
+
 /* ======================================================
    /*! BOTÃO OVERLAY
 ====================================================== **/
-.details-btn {
+.btn-overlay {
   padding: 13px 24px;
   border-radius: 999px;
   border: 1px solid #fff;
@@ -126,7 +129,7 @@
   transition: all 0.3s ease;
 }
 
-.details-btn:hover {
+.btn-overlay:hover {
   background: #fff;
   color: #000;
 }

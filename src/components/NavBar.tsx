@@ -1,57 +1,37 @@
-import React, { useState, useEffect, useRef } from "react";
-import logo from "/public/hico-logo.png";
+import { useState, useRef } from "react";
 import "/src/styles/NavBar.css";
 import translations from "/src/translations";
 
-export default function Navbar({ language, setLanguage }) {
+import { useLanguage } from "/src/hooks/useLanguage";
+import { useActiveSection } from "/src/hooks/useActiveSection";
+import { useClickOutside } from "/src/hooks/useClickOutside";
+
+const logo = "/hico-logo.png";
+
+type Language = "pt" | "en";
+
+type NavbarProps = {
+  language: Language;
+  setLanguage: React.Dispatch<React.SetStateAction<Language>>;
+};
+
+export default function Navbar({ language, setLanguage }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("hero");
-  const navRef = useRef(null);
+  const navRef = useRef<HTMLDivElement | null>(null);
 
-  const t = translations[language]; // 🔥 NOVO
+  const t = translations[language];
 
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "pt" ? "en" : "pt"));
-  };
+  const { toggleLanguage } = useLanguage(setLanguage);
 
-  const handleLinkClick = (id) => {
+  useActiveSection(setActiveLink);
+
+  useClickOutside(navRef, () => setMenuOpen(false));
+
+  const handleLinkClick = (id: string) => {
     setActiveLink(id);
     setMenuOpen(false);
   };
-
-  // Intersection Observer
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveLink(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-80px 0px -30% 0px",
-        threshold: 0.3,
-      }
-    );
-
-    sections.forEach((sec) => observer.observe(sec));
-    return () => observer.disconnect();
-  }, []);
-
-  // Fecha menu ao clicar fora
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   return (
     <header className="navbar">
@@ -63,19 +43,13 @@ export default function Navbar({ language, setLanguage }) {
         <button
           className={`menu-toggle ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu de navegação"
-          aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
         >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </button>
 
-        <nav
-          id="primary-navigation"
-          className={`nav-links ${menuOpen ? "active" : ""}`}
-        >
+        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
           {[
             { id: "hero", label: t.navbar.home },
             { id: "about", label: t.navbar.about },

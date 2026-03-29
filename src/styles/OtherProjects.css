@@ -35,6 +35,52 @@
 }
 
 /* ===================================
+   /*! CARD (OTHER PROJECTS)
+=================================== */
+
+.other-project-card {
+  width: 100%;
+  max-width: 380px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-decoration: none;
+  color: inherit;
+
+  padding: 30px;
+  border-radius: 28px;
+
+  backdrop-filter: blur(6px);
+
+  transition: all 0.25s ease;
+}
+
+.other-project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* TEXTO */
+.other-project-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.other-project-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* TECHS */
+.other-projects-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ===================================
    /*! RESPONSIVIDADE
 =================================== */
 

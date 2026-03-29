@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { validateContactForm } from "/src/utils/validation.js";
+import { validateContactForm } from "/src/utils/validation";
 
 import "/src/styles/ContactForm.css";
 import {
@@ -14,24 +14,45 @@ import {
 
 import translations from "/src/translations";
 
-export default function Contact({ language = "pt" }) {
+// 🔥 Tipos
+type Language = "pt" | "en";
+
+type FormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+type FormErrors = Partial<FormData>;
+
+type Props = {
+  language?: Language;
+};
+
+export default function Contact({ language = "pt" }: Props) {
   const t = translations[language]?.contact;
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormData>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
 
-  const [errors, setErrors] = useState({});
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleChange = (e) => {
+  // 🔥 Tipagem do evento
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
 
     const validationErrors = validateContactForm(form);
@@ -43,15 +64,15 @@ export default function Contact({ language = "pt" }) {
 
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
         {
           from_name: form.name,
           from_email: form.email,
           subject: form.subject,
           message: form.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
       );
 
       setForm({ name: "", email: "", subject: "", message: "" });
@@ -88,7 +109,9 @@ export default function Contact({ language = "pt" }) {
                 maxLength={45}
               />
             </div>
-            {errors.name && <small className="error-text">{errors.name}</small>}
+            {errors.name && (
+              <small className="error-text">{errors.name}</small>
+            )}
           </div>
 
           {/* Email */}
@@ -142,7 +165,7 @@ export default function Contact({ language = "pt" }) {
             )}
           </div>
 
-          <button type="submit" className="btn primary submit-btn">
+          <button type="submit" className="btn primary">
             {t.button} <Send size={18} />
           </button>
 

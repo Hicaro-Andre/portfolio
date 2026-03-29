@@ -1,17 +1,39 @@
 import "/src/styles/Experience.css";
 import translations from "/src/translations";
-import {
 
+import {
   FaCheckCircle,
   FaTools,
-
 } from "react-icons/fa";
 
-import { techIcons } from "/src/utils/Experience/icons"; 
+import { techIcons } from "/src/components/icons/techIcons";
 
-export default function Experience({ language }) {
+// 🔥 Tipos principais
+type Language = "pt" | "en";
 
-  const t = translations[language].experience;
+type ExperienceItem = {
+  id: number;
+  side: "left" | "right";
+  role: string;
+  company: string;
+  date: string;
+  location: string;
+  description: string;
+  responsibilitiesTitle: string;
+  responsibilities: string[];
+  techTitle: string;
+  techs?: string[];
+};
+
+type Props = {
+  language: Language;
+};
+
+export default function Experience({ language }: Props) {
+  const t = translations[language].experience as {
+    title: string;
+    items: ExperienceItem[];
+  };
 
   return (
     <section className="experience-section" id="experience">
@@ -22,11 +44,11 @@ export default function Experience({ language }) {
 
       <div className="experience-container">
         <div className="timeline">
-          {t.items.map((item) => (
+          {t.items.map((item: ExperienceItem) => (
             <div key={item.id} className={`timeline-item ${item.side}`}>
               <span className="timeline-dot" />
 
-              <div className="card-timeline">
+              <div className="card card-timeline">
                 {/* HEADER */}
                 <div className="card-timeline-header">
                   <div className="header-top">
@@ -57,7 +79,7 @@ export default function Experience({ language }) {
                     </h5>
 
                     <ul>
-                      {item.responsibilities.map((resp, index) => (
+                      {item.responsibilities.map((resp: string, index: number) => (
                         <li key={index}>{resp}</li>
                       ))}
                     </ul>
@@ -73,9 +95,9 @@ export default function Experience({ language }) {
                     </h5>
 
                     <div className="tech-icons">
-                      {item.techs?.map((tech, index) => (
+                      {item.techs?.map((tech: string, index: number) => (
                         <span key={index}>
-                          {techIcons[tech]} 
+                          {techIcons[tech as keyof typeof techIcons]}
                         </span>
                       ))}
                     </div>

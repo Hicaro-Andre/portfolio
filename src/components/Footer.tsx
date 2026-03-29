@@ -1,9 +1,13 @@
 import React from "react";
 import "/src/styles/Footer.css";
 import { Linkedin, Github, Instagram } from "lucide-react";
-import translations from "/src/translations";
+import translations from "../translations";
 
-const Footer = ({ language }) => {
+type FooterProps = {
+  language: "pt" | "en"; // você pode expandir depois
+};
+
+const Footer: React.FC<FooterProps> = ({ language }) => {
   const currentYear = new Date().getFullYear();
 
   const t = translations[language]?.footer;

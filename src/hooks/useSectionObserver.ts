@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-export default function useSectionObserver() {
+export default function useSectionObserver(): void {
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll<HTMLElement>("section");
 
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("section-visible");
@@ -14,7 +14,7 @@ export default function useSectionObserver() {
       },
       {
         threshold: 0.3,
-      },
+      }
     );
 
     sections.forEach((section) => observer.observe(section));

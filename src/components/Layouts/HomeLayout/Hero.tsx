@@ -3,10 +3,19 @@ import "/src/styles/Hero.css";
 import myfoto from "/src/assets/images/hero_image/me.jpg";
 import translations from "/src/translations";
 
-export default function Hero({ language }) {
-  const heroRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
+// 🔥 Tipos
+type Language = "pt" | "en";
+
+type Props = {
+  language: Language;
+};
+
+export default function Hero({ language }: Props) {
+  // 🔥 Tipagem correta do ref
+  const heroRef = useRef<HTMLElement | null>(null);
+
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [reduceMotion, setReduceMotion] = useState<boolean>(false);
 
   const t = translations[language].hero;
 
@@ -15,12 +24,14 @@ export default function Hero({ language }) {
     setReduceMotion(mediaQuery.matches);
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      (entries: IntersectionObserverEntry[]) => {
+        const entry = entries[0];
+
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.3 }
     );
 
     if (heroRef.current) {

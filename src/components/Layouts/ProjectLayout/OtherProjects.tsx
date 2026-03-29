@@ -1,18 +1,31 @@
 import { Link, useParams } from "react-router-dom";
 import { useMemo } from "react";
-import { projects } from "/src/data/projects.js";
+import { projects } from "/src/data/projects";
 import "/src/styles/OtherProjects.css";
-import { HiH2 } from "react-icons/hi2";
+
+// Tipagem dos dados
+type Tech = {
+  name: string;
+  color: string;
+  textColor: string;
+};
+
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  techs: Tech[];
+};
 
 export default function OtherProjects() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
-  const randomProjects = useMemo(() => {
+  const randomProjects = useMemo<Project[]>(() => {
     const filteredProjects = projects.filter(
-      (project) => project.id !== Number(id),
+      (project: Project) => project.id !== Number(id)
     );
 
-    function shuffleArray(array) {
+    function shuffleArray(array: Project[]): Project[] {
       const shuffled = [...array];
 
       for (let i = shuffled.length - 1; i > 0; i--) {
@@ -38,7 +51,7 @@ export default function OtherProjects() {
           <Link
             key={project.id}
             to={`/project/${project.id}`}
-            className="other-project-card"
+            className="card other-project-card"
           >
             <h3>{project.title}</h3>
 

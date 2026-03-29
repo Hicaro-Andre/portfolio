@@ -1,18 +1,27 @@
 import { useState } from "react";
 import "/src/styles/Skills.css";
-import { techIcons } from "/src/utils/Experience/icons"; 
+import { techIcons } from "/src/components/icons/techIcons";
 import { Code2, Server, Wrench, Languages } from "lucide-react";
-
 import translations from "/src/translations";
 
-export default function Skills({ language }) {
-  const [openLanguage, setOpenLanguage] = useState(null);
+// Tipagem das props
+type SkillsProps = {
+  language: "pt" | "en";
+};
 
-  const toggleLanguage = (lang) => {
+// Tipagem flexível (evita erro sem precisar tipar todo translations agora)
+type Translations = {
+  [key: string]: any;
+};
+
+export default function Skills({ language }: SkillsProps) {
+  const [openLanguage, setOpenLanguage] = useState<string | null>(null);
+
+  const toggleLanguage = (lang: string) => {
     setOpenLanguage(openLanguage === lang ? null : lang);
   };
 
-  const t = translations[language].skills;
+  const t = (translations as Translations)[language]?.skills;
 
   return (
     <section className="skills-section" id="skills">
@@ -23,14 +32,13 @@ export default function Skills({ language }) {
 
       <div className="skills-grid">
         {/* FRONT-END */}
-        <div className="skills-card">
+        <div className="card skills-card">
           <div className="skills-header">
             <Code2 size={22} />
             <h3>{t.categories.frontend}</h3>
           </div>
 
           <ul className="skills-list enhanced">
-            {/* HTML */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -44,7 +52,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* CSS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -58,7 +65,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* JS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -72,7 +78,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* TS */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -86,7 +91,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* React */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -103,18 +107,17 @@ export default function Skills({ language }) {
         </div>
 
         {/* BACK-END */}
-        <div className="skills-card">
+        <div className="card skills-card">
           <div className="skills-header purple">
             <Server size={22} />
             <h3>{t.categories.backend}</h3>
           </div>
 
           <ul className="skills-list enhanced">
-            {/* Java */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                 {techIcons.java}
+                  {techIcons.java}
                   Java
                 </span>
                 <span className="skill-percent">40%</span>
@@ -124,11 +127,10 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* Spring */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                 {techIcons.sprintboot}
+                  {techIcons.sprintboot}
                   Spring Boot
                 </span>
                 <span className="skill-percent">40%</span>
@@ -138,7 +140,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* Node */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -152,7 +153,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* Express */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -166,11 +166,10 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* PostgreSQL */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                   {techIcons.postgresql}
+                  {techIcons.postgresql}
                   PostgreSQL
                 </span>
                 <span className="skill-percent">60%</span>
@@ -180,7 +179,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* MongoDB */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -194,7 +192,6 @@ export default function Skills({ language }) {
               </div>
             </li>
 
-            {/* Firebase */}
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
@@ -211,7 +208,7 @@ export default function Skills({ language }) {
         </div>
 
         {/* TOOLS */}
-        <div className="skills-card">
+        <div className="card skills-card">
           <div className="skills-header gradient">
             <Wrench size={22} />
             <h3>{t.categories.tools}</h3>
@@ -260,7 +257,7 @@ export default function Skills({ language }) {
         </div>
 
         {/* LANGUAGES */}
-        <div className="skills-card">
+        <div className="card skills-card">
           <div className="skills-header gradient">
             <Languages size={22} />
             <h3>{t.categories.languages}</h3>

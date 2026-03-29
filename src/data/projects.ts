@@ -1,10 +1,26 @@
-import redenave from "../assets/images_project/profile_project/RedeNave.png"
-import p2 from "../assets/images_project/profile_project/edf.png"
-import p3 from "../assets/images_project/profile_project/java.webp"
-import p4 from "../assets/images_project/profile_project/javascript.png"
+import redenave from "../assets/images_project/profile_project/RedeNave.png";
+import p2 from "../assets/images_project/profile_project/edf.png";
+import p3 from "../assets/images_project/profile_project/java.webp";
+import p4 from "../assets/images_project/profile_project/javascript.png";
 
+export type Tech = {
+  name: string;
+  color: string;
+  textColor: string;
+};
 
-export const projects = [
+export type Project = {
+  id: number;
+  status: string;
+  title: string;
+  description: string;
+  techs: Tech[];
+  projectUrl: string;
+  githubUrl: string;
+  image: string;
+};
+
+export const projects: Project[] = [
   {
     id: 1,
     status: "Concluído",
@@ -61,10 +77,9 @@ export const projects = [
     ],
     projectUrl: "#",
     githubUrl: "#",
-
     image: p4,
   },
-   {
+  {
     id: 5,
     status: "Em desenvolvimento",
     title: "São Paulo",
@@ -76,10 +91,9 @@ export const projects = [
     ],
     projectUrl: "#",
     githubUrl: "#",
-
     image: p4,
   },
-  //  {
+  // {
   //   id: 6,
   //   status: "Em desenvolvimento",
   //   title: "Barcelona",
@@ -91,7 +105,6 @@ export const projects = [
   //   ],
   //   projectUrl: "#",
   //   githubUrl: "#",
-
   //   image: p4,
   // },
 ];

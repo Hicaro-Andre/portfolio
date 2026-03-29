@@ -4,12 +4,12 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails";
 import ScrollToTop from "./components/ScrollToTop";
-import useSectionObserver from "./hooks/useSectionObserver"; // 👈 IMPORTA
+import useSectionObserver from "./hooks/useSectionObserver";
 
 function App() {
-  const [language, setLanguage] = useState("pt");
+  const [language, setLanguage] = useState<"pt" | "en">("pt");
 
-  useSectionObserver(); // 👈 ATIVA A ANIMAÇÃO GLOBAL
+  useSectionObserver();
 
   return (
     <BrowserRouter>

@@ -7,10 +7,38 @@ import certificado from "/src/assets/images_project/profile_project/APIs.png";
 import { FaBolt, FaGraduationCap, FaTimes } from "react-icons/fa";
 import { GiAchievement } from "react-icons/gi";
 
-export default function Formation({language}) {
-  const t = translations[language].formation;
+// 🔥 Tipos
+type Language = "pt" | "en";
 
-  const [openModalId, setOpenModalId] = useState(null);
+type FormationItem = {
+  id: number;
+  side: "left" | "right";
+  status: string;
+  course: string;
+  institution: string;
+  date: string;
+  location: string;
+  cr: string;
+  description: string;
+  highlightsTitle: string;
+  highlights: string[];
+  disciplinesTitle: string;
+  disciplines: string[];
+  certificateTitle: string;
+};
+
+type Props = {
+  language: Language;
+};
+
+export default function Formation({ language }: Props) {
+  const t = translations[language].formation as {
+    title: string;
+    items: FormationItem[];
+  };
+
+  // 🔥 number | null (importante!)
+  const [openModalId, setOpenModalId] = useState<number | null>(null);
 
   return (
     <section className="training-section" id="formation">
@@ -21,11 +49,11 @@ export default function Formation({language}) {
 
       <div className="training-container">
         <div className="timeline">
-          {t.items.map((item) => (
+          {t.items.map((item: FormationItem) => (
             <div key={item.id} className={`timeline-item ${item.side}`}>
               <span className="timeline-dot" />
 
-              <div className="card-timeline">
+              <div className="card card-timeline">
                 <span className="status-badge">{item.status}</span>
 
                 {/* HEADER */}
@@ -57,7 +85,7 @@ export default function Formation({language}) {
                     </h5>
 
                     <ul>
-                      {item.highlights.map((highlight, index) => (
+                      {item.highlights.map((highlight: string, index: number) => (
                         <li key={index}>{highlight}</li>
                       ))}
                     </ul>
@@ -71,11 +99,13 @@ export default function Formation({language}) {
                     </h5>
 
                     <div className="discipline-badges">
-                      {item.disciplines.map((discipline, index) => (
-                        <span key={index} className="discipline-badge">
-                          {discipline}
-                        </span>
-                      ))}
+                      {item.disciplines.map(
+                        (discipline: string, index: number) => (
+                          <span key={index} className="discipline-badge">
+                            {discipline}
+                          </span>
+                        )
+                      )}
                     </div>
                   </div>
 
@@ -101,7 +131,9 @@ export default function Formation({language}) {
                   >
                     <div
                       className="certificate-content"
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e: React.MouseEvent<HTMLDivElement>) =>
+                        e.stopPropagation()
+                      }
                     >
                       <FaTimes
                         className="close-modal"

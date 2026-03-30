@@ -26,7 +26,7 @@ export const projects: Project[] = [
     status: "Concluído",
     title: "Rede Nave",
     description:
-      "Plataforma digital que apoia o protagonismo feminino com trilhas de aprendizagem, eventos e conteúdos acessíveis sobre desenvolvimento pessoal e empreendedorismo.",
+      "Plataforma com versão web e app Android que apoia o tratamento da hanseníase.",
     techs: [
       { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
       { name: "React", color: "#00E5FF", textColor: "#000" },
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    status: "Em desenvolvimento",
+    status: "Em Desenvolvimento",
     title: "App Hans+",
     description:
       "Plataforma com versão web e app Android que apoia o tratamento da hanseníase.",
@@ -53,10 +53,10 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    status: "Em desenvolvimento",
-    title: "RENAVEH",
+    status: "Em Desenvolvimento",
+    title: "App Hans+",
     description:
-      "Sistema web para cadastro de pacientes e gestão de notificações hospitalares.",
+      "bdfbdfbdfbdbd",
     techs: [
       { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
       { name: "JavaScript", color: "#ffff00", textColor: "#000" },
@@ -67,9 +67,9 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    status: "Em desenvolvimento",
-    title: "CadServ",
-    description: "Sistema de cadastro e gestão de servidores.",
+    status: "Em Desenvolvimento",
+    title: "App Hans+",
+    description: "bxnnfn eu vou conseguir",
     techs: [
       { name: "Laravel", color: "#ff0000", textColor: "#fff" },
       { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
@@ -79,32 +79,5 @@ export const projects: Project[] = [
     githubUrl: "#",
     image: p4,
   },
-  {
-    id: 5,
-    status: "Em desenvolvimento",
-    title: "São Paulo",
-    description: "Sistema de cadastro e gestão de servidores.",
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "#",
-    githubUrl: "#",
-    image: p4,
-  },
-  // {
-  //   id: 6,
-  //   status: "Em desenvolvimento",
-  //   title: "Barcelona",
-  //   description: "Sistema de cadastro e gestão de servidores.",
-  //   techs: [
-  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-  //   ],
-  //   projectUrl: "#",
-  //   githubUrl: "#",
-  //   image: p4,
-  // },
+
 ];

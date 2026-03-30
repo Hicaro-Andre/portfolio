@@ -5,6 +5,7 @@ import translations from "/src/translations";
 import { useLanguage } from "/src/hooks/useLanguage";
 import { useActiveSection } from "/src/hooks/useActiveSection";
 import { useClickOutside } from "/src/hooks/useClickOutside";
+import LanguageToggle from "./ui/LanguageToggle";
 
 const logo = "/hico-logo.png";
 
@@ -69,29 +70,10 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
             </a>
           ))}
 
-          <button className="lang-toggle" onClick={toggleLanguage}>
-            <span
-              className={`lang-option ${language === "pt" ? "active" : ""}`}
-            >
-              <img
-                src="https://flagcdn.com/br.svg"
-                alt="Português"
-                className="flag"
-              />
-            </span>
-
-            <span
-              className={`lang-option ${language === "en" ? "active" : ""}`}
-            >
-              <img
-                src="https://flagcdn.com/us.svg"
-                alt="English"
-                className="flag"
-              />
-            </span>
-
-            <div className={`toggle-indicator ${language}`} />
-          </button>
+          <LanguageToggle
+            language={language}
+            onToggle={toggleLanguage}
+          />
         </nav>
       </div>
     </header>

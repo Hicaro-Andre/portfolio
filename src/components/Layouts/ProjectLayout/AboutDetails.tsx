@@ -1,6 +1,7 @@
 import "/src/styles/AboutDetails.css";
 import { aboutProjects } from "/src/data/aboutProject";
 import { projects } from "/src/data/projects";
+
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { FaCogs } from "react-icons/fa";
@@ -14,6 +15,7 @@ type Tech = {
 
 type Project = {
   id: number;
+  status: string; // ✅ agora vem direto do mock
   techs: Tech[];
 };
 
@@ -29,16 +31,25 @@ type AboutProject = {
   client: string;
 };
 
-export default function AboutDetails() {
+type Language = "pt" | "en";
+
+type Props = {
+  language: Language;
+};
+
+export default function AboutDetails({ language = "pt" }: Props) {
   const { id } = useParams<{ id: string }>();
 
   const about: AboutProject | undefined = aboutProjects.find(
-    (p: AboutProject) => p.id === Number(id)
+    (p) => p.id === Number(id)
   );
 
   const project: Project | undefined = projects.find(
-    (p: Project) => p.id === Number(id)
+    (p) => p.id === Number(id)
   );
+
+  // ✅ status direto do mock
+  const status = project?.status;
 
   const [openGallery, setOpenGallery] = useState<boolean>(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -48,13 +59,14 @@ export default function AboutDetails() {
   return (
     <section className="about-details">
       <div className="about-grid">
+
         {/* COLUNA ESQUERDA */}
         <div className="left-column">
-          {/* sobre o projeto */}
+
+          {/* SOBRE */}
           <div className="card card-details">
             <div className="card-header">
               <h3 className="card-title">Sobre o Projeto</h3>
-
               <p>{about.description}</p>
             </div>
 
@@ -75,6 +87,7 @@ export default function AboutDetails() {
           {/* GALERIA */}
           <div className="card card-details">
             <h3>Galeria</h3>
+
             <div className="gallery-container">
               <div className="gallery-grid">
                 {about.images?.slice(0, 6).map((img, index) => (
@@ -111,19 +124,25 @@ export default function AboutDetails() {
 
         {/* COLUNA DIREITA */}
         <div className="right-column">
+
+          {/* STATUS */}
           <div className="card card-details">
             <h4>Status</h4>
+
             <div className="status">
               <span
-                className={`dot ${about.status === "Concluído" ? "done" : "progress"
+                className={`dot ${status === "Concluído" ? "done" : "progress"
                   }`}
               ></span>
-              {about.status}
+
+              {status || "Sem status"}
             </div>
           </div>
 
+          {/* TECNOLOGIAS */}
           <div className="card card-details">
             <h4>Tecnologias</h4>
+
             <div className="tech-list">
               {project?.techs?.map((tech, i) => (
                 <span key={i} className="tech">
@@ -138,19 +157,23 @@ export default function AboutDetails() {
             </div>
           </div>
 
+          {/* INFO */}
           <div className="card card-details">
             <h4>Informações</h4>
+
             <div className="info">
               <p>
                 <strong>Duração</strong>
                 <br />
                 {about.duration}
               </p>
+
               <p>
                 <strong>Equipe</strong>
                 <br />
                 {about.team}
               </p>
+
               <p>
                 <strong>Cliente</strong>
                 <br />

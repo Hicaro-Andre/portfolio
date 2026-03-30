@@ -68,7 +68,7 @@ export default function ProjectsCarousel({ language }: Props) {
   return (
     <section className="projects" id="projects">
       <h2 className="row-title">
-        {t.title}
+        Projetos
         <span />
       </h2>
 
@@ -97,8 +97,9 @@ export default function ProjectsCarousel({ language }: Props) {
               <div className="project-card" key={project.id}>
                 <div className="card card-inner">
                   <div className="project-image">
-                    {project.status === "Em desenvolvimento" && (
-                      <span className="dev-badge">{t.dev}</span>
+
+                    {project.status?.toLowerCase().includes("desenvolvimento") && (
+                      <span className="dev-badge">{project.status}</span>
                     )}
 
                     <div className="image-overlay">
@@ -106,7 +107,7 @@ export default function ProjectsCarousel({ language }: Props) {
                         to={`/project/${project.id}`}
                         className="btn-overlay"
                       >
-                        {t.btnOverlay}
+                        Ver Detalhes
                       </Link>
                     </div>
                   </div>
@@ -143,7 +144,7 @@ export default function ProjectsCarousel({ language }: Props) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {t.projectUrl}
+                        {project.projectUrl}
                       </a>
 
                       <a

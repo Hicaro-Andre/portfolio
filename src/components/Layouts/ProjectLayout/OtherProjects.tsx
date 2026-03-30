@@ -16,8 +16,13 @@ type Project = {
   description: string;
   techs: Tech[];
 };
+type Language = "pt" | "en";
 
-export default function OtherProjects() {
+type Props = {
+  language: Language;
+};
+
+export default function OtherProjects({ language = "pt" }: Props) {
   const { id } = useParams<{ id: string }>();
 
   const randomProjects = useMemo<Project[]>(() => {

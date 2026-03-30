@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 import Loader from "../components/Loader";
 import ParticlesBg from "../components/ParticlesBg";
 
@@ -14,9 +15,13 @@ type Language = "pt" | "en";
 
 type ProjectDetailsProps = {
   language: Language;
+  setLanguage: React.Dispatch<React.SetStateAction<Language>>;
 };
 
-export default function ProjectDetails({ language }: ProjectDetailsProps) {
+export default function ProjectDetails({
+  language,
+  setLanguage,
+}: ProjectDetailsProps) {
   const { id } = useParams<{ id: string }>();
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -39,10 +44,10 @@ export default function ProjectDetails({ language }: ProjectDetailsProps) {
       ) : (
         <>
           <main>
-            <ProjectNavbar language={language} />
-            <HeroDetails />
-            <AboutDetails />
-            <OtherProjects />
+            <ProjectNavbar language={language} setLanguage={setLanguage} />
+            <HeroDetails language={language} />
+            <AboutDetails language={language} />
+            <OtherProjects language={language} />
           </main>
 
           <a
@@ -50,12 +55,9 @@ export default function ProjectDetails({ language }: ProjectDetailsProps) {
             className="whatsapp-button"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open WhatsApp chat"
           >
-            <img
-              className="icon-dark"
-              src={wpp}
-              alt="Fale comigo no WhatsApp"
-            />
+            <img className="icon-dark" src={wpp} alt="Talk to me on WhatsApp" />
           </a>
         </>
       )}

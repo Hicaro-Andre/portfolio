@@ -19,14 +19,15 @@ export default function ParticlesBg() {
   return (
     <Particles
       id="tsparticles"
+      style={{ pointerEvents: "none" }} // 🔥 resolve o problema de clique
       options={{
         preset: "stars",
         background: {
-          color: { value: "#000" }, // 🔹 Cor do fundo
+          color: { value: "#000" },
         },
         fullScreen: {
-          enable: true, // 🔹 Faz ocupar a tela inteira
-          zIndex: -1,   // 🔹 Coloca atrás do conteúdo
+          enable: true,
+          zIndex: -1,
         },
       }}
     />

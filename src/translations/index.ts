@@ -25,6 +25,18 @@ import enContact from "./en/contact";
 import ptFooter from "./pt/footer";
 import enFooter from "./en/footer";
 
+import ptNavBarDetails from "./pt/navbarDetails";
+import enNavBarDetails from "./en/navbarDetails";
+
+// import ptHeroDetails from "./pt/heroDetails";
+// import enHeroDetails from "./en/heroDetails";
+
+// import ptAboutDetails from "./pt/aboutDetails";
+// import enAboutDetails from "./en/aboutDetails";
+
+// import ptOtherProject from "./pt/otherProjects";
+// import enOtherProject from "./en/otherProjects";
+
 const translations = {
   pt: {
     navbar: ptNavbar,
@@ -32,10 +44,14 @@ const translations = {
     about: ptAbout,
     skills: ptSkills,
     projects: ptProjects,
-    experience:ptExperience,
-    formation:ptFormation,
-    contact:ptContact,
-    footer:ptFooter
+    experience: ptExperience,
+    formation: ptFormation,
+    contact: ptContact,
+    footer: ptFooter,
+    navbarDetails: ptNavBarDetails,
+    // heroDetails: ptHeroDetails,
+    // aboutDetails: ptAboutDetails,
+    // otherprojects: ptOtherProject
   },
   en: {
     navbar: enNavbar,
@@ -43,10 +59,14 @@ const translations = {
     about: enAbout,
     skills: enSkills,
     projects: enProjects,
-    experience:enExperience,
-    formation:enFormation,
-    contact:enContact,
-    footer:enFooter
+    experience: enExperience,
+    formation: enFormation,
+    contact: enContact,
+    footer: enFooter,
+    navbarDetails: enNavBarDetails,
+    // heroDetails: enHeroDetails,
+    // aboutDetails: enAboutDetails,
+    // otherprojects: enOtherProject
   },
 };
 

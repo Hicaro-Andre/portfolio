@@ -28,14 +28,14 @@ import enFooter from "./en/footer";
 import ptNavBarDetails from "./pt/navbarDetails";
 import enNavBarDetails from "./en/navbarDetails";
 
-// import ptHeroDetails from "./pt/heroDetails";
-// import enHeroDetails from "./en/heroDetails";
+import ptHeroDetails from "./pt/heroDetails";
+import enHeroDetails from "./en/heroDetails";
 
-// import ptAboutDetails from "./pt/aboutDetails";
-// import enAboutDetails from "./en/aboutDetails";
+import ptAboutDetails from "./pt/aboutDetails";
+import enAboutDetails from "./en/aboutDetails";
 
-// import ptOtherProject from "./pt/otherProjects";
-// import enOtherProject from "./en/otherProjects";
+import ptOtherProject from "./pt/otherProjects";
+import enOtherProject from "./en/otherProjects";
 
 const translations = {
   pt: {
@@ -49,9 +49,9 @@ const translations = {
     contact: ptContact,
     footer: ptFooter,
     navbarDetails: ptNavBarDetails,
-    // heroDetails: ptHeroDetails,
-    // aboutDetails: ptAboutDetails,
-    // otherprojects: ptOtherProject
+    heroDetails: ptHeroDetails,
+    aboutDetails: ptAboutDetails,
+    otherprojects: ptOtherProject
   },
   en: {
     navbar: enNavbar,
@@ -64,9 +64,9 @@ const translations = {
     contact: enContact,
     footer: enFooter,
     navbarDetails: enNavBarDetails,
-    // heroDetails: enHeroDetails,
-    // aboutDetails: enAboutDetails,
-    // otherprojects: enOtherProject
+    heroDetails: enHeroDetails,
+    aboutDetails: enAboutDetails,
+    otherprojects: enOtherProject
   },
 };
 

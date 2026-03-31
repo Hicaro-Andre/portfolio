@@ -31,6 +31,12 @@ type Props = {
 export default function ProjectsCarousel({ language }: Props) {
   const t = translations[language].projects;
 
+  // Mescla dado fixo + tradução pelo id
+  const translatedProjects = projects.map((project) => ({
+    ...project,
+    ...t.items[project.id as keyof typeof t.items],
+  }));
+
   const [index, setIndex] = useState<number>(0);
   const [visibleCards, setVisibleCards] = useState<number>(3);
 
@@ -68,7 +74,7 @@ export default function ProjectsCarousel({ language }: Props) {
   return (
     <section className="projects" id="projects">
       <h2 className="row-title">
-        Projetos
+        {t.sectionTitle}
         <span />
       </h2>
 
@@ -93,7 +99,8 @@ export default function ProjectsCarousel({ language }: Props) {
               transform: `translateX(calc(-${index} * (100% / ${visibleCards})))`,
             }}
           >
-            {projects.map((project: Project) => (
+
+            {translatedProjects.map((project) => (
               <div className="project-card" key={project.id}>
                 <div className="card card-inner">
                   <div className="project-image">
@@ -107,7 +114,7 @@ export default function ProjectsCarousel({ language }: Props) {
                         to={`/project/${project.id}`}
                         className="btn-overlay"
                       >
-                        Ver Detalhes
+                        {t.viewDetails}
                       </Link>
                     </div>
                   </div>
@@ -144,7 +151,7 @@ export default function ProjectsCarousel({ language }: Props) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {project.projectUrl}
+                        {t.urlProject}
                       </a>
 
                       <a

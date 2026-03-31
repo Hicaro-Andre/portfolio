@@ -1,28 +1,23 @@
 import "/src/styles/About.css";
 import { getExperience } from "/src/utils/dateUtils";
-import { projects } from "/src/data/projects";
 import translations from "/src/translations";
 
-// 🔥 Tipos
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  status?: string;
-};
-
-type Language = "pt" | "en"; // ajuste se tiver mais idiomas
+type Language = "pt" | "en";
 
 type Props = {
   language: Language;
 };
 
 export default function About({ language }: Props) {
-  const completedProjects = projects.filter(
-    (project: Project) => project.status === "Concluído"
-  ).length;
-
   const t = translations[language].about;
+  const p = translations[language].projects;
+
+  // Conta projetos concluídos a partir dos items traduzidos
+  const completedProjects = Object.values(p.items).filter(
+    (item) =>
+      item.status?.toLowerCase() === "concluído" ||
+      item.status?.toLowerCase() === "completed"
+  ).length;
 
   return (
     <section className="about-section" id="about">
@@ -36,7 +31,6 @@ export default function About({ language }: Props) {
           <div className="about-top">
             <span className="about-role">{t.role}</span>
           </div>
-
           <div className="about-text">
             <p>{t.description.p1}</p>
             <p>{t.description.p2}</p>
@@ -49,7 +43,6 @@ export default function About({ language }: Props) {
           <strong>{getExperience()}+</strong>
           <span>{t.stats.experience}</span>
         </div>
-
         <div className="card stat-card">
           <strong>{completedProjects}+</strong>
           <span>{t.stats.projects}</span>

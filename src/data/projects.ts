@@ -11,9 +11,6 @@ export type Tech = {
 
 export type Project = {
   id: number;
-  status: string;
-  title: string;
-  description: string;
   techs: Tech[];
   projectUrl: string;
   githubUrl: string;
@@ -23,10 +20,6 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    status: "Concluído",
-    title: "Rede Nave",
-    description:
-      "Plataforma com versão web e app Android que apoia o tratamento da hanseníase.",
     techs: [
       { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
       { name: "React", color: "#00E5FF", textColor: "#000" },
@@ -39,10 +32,6 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    status: "Em Desenvolvimento",
-    title: "App Hans+",
-    description:
-      "Plataforma com versão web e app Android que apoia o tratamento da hanseníase.",
     techs: [
       { name: "Laravel", color: "#ff0000", textColor: "#fff" },
       { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
@@ -53,10 +42,6 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    status: "Em Desenvolvimento",
-    title: "App Hans+",
-    description:
-      "bdfbdfbdfbdbd",
     techs: [
       { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
       { name: "JavaScript", color: "#ffff00", textColor: "#000" },
@@ -67,9 +52,6 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    status: "Em Desenvolvimento",
-    title: "App Hans+",
-    description: "bxnnfn eu vou conseguir",
     techs: [
       { name: "Laravel", color: "#ff0000", textColor: "#fff" },
       { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },

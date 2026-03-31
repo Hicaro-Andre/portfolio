@@ -1,35 +1,11 @@
 import "/src/styles/AboutDetails.css";
 import { aboutProjects } from "/src/data/aboutProject";
 import { projects } from "/src/data/projects";
-
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { FaCogs } from "react-icons/fa";
-
-// Tipagens
-type Tech = {
-  name: string;
-  color: string;
-  textColor?: string;
-};
-
-type Project = {
-  id: number;
-  status: string; // ✅ agora vem direto do mock
-  techs: Tech[];
-};
-
-type AboutProject = {
-  id: number;
-  description: string;
-  features?: string[];
-  images: string[];
-  imagesDescription?: string[];
-  status: string;
-  duration: string;
-  team: string;
-  client: string;
-};
+import translations from "/src/translations";
+import type { Tech } from "/src/data/projects";
 
 type Language = "pt" | "en";
 
@@ -38,23 +14,34 @@ type Props = {
 };
 
 export default function AboutDetails({ language = "pt" }: Props) {
+  const t = translations[language].aboutDetails;  // labels + items traduzidos
+  const p = translations[language].projects;       // status traduzido
+
   const { id } = useParams<{ id: string }>();
+  const numId = Number(id);
 
-  const about: AboutProject | undefined = aboutProjects.find(
-    (p) => p.id === Number(id)
-  );
+  // Dado fixo (só imagens)
+  const aboutBase = aboutProjects.find((a) => a.id === numId);
 
-  const project: Project | undefined = projects.find(
-    (p) => p.id === Number(id)
-  );
+  // Tradução do about pelo id
+  const aboutTranslation = t.items[numId as keyof typeof t.items] ?? {};
 
-  // ✅ status direto do mock
-  const status = project?.status;
+  // Merge: imagens fixas + tudo mais traduzido
+  const about = aboutBase
+    ? { ...aboutBase, ...aboutTranslation }
+    : null;
+
+  // Status vem de projects.items traduzido
+  const projectBase = projects.find((proj) => proj.id === numId);
+  const projectTranslation = p.items[numId as keyof typeof p.items] as
+    | { status?: string }
+    | undefined;
+  const status = projectTranslation?.status;
 
   const [openGallery, setOpenGallery] = useState<boolean>(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  if (!about) return <p>Projeto não encontrado</p>;
+  if (!about) return null;
 
   return (
     <section className="about-details">
@@ -66,18 +53,18 @@ export default function AboutDetails({ language = "pt" }: Props) {
           {/* SOBRE */}
           <div className="card card-details">
             <div className="card-header">
-              <h3 className="card-title">Sobre o Projeto</h3>
+              <h3 className="card-title">{t.sectionAbout}</h3>
               <p>{about.description}</p>
             </div>
 
             <div className="card-body">
               <h4 className="card-subtitle">
                 <FaCogs className="card-icon" />
-                Principais Funcionalidades
+                {t.sectionFeatures}
               </h4>
 
               <ul className="features">
-                {about.features?.map((item, i) => (
+                {about.features?.map((item: string, i: number) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
@@ -86,11 +73,11 @@ export default function AboutDetails({ language = "pt" }: Props) {
 
           {/* GALERIA */}
           <div className="card card-details">
-            <h3>Galeria</h3>
+            <h3>{t.sectionGallery}</h3>
 
             <div className="gallery-container">
               <div className="gallery-grid">
-                {about.images?.slice(0, 6).map((img, index) => (
+                {about.images?.slice(0, 6).map((img: string, index: number) => (
                   <div
                     key={index}
                     className="gallery-item"
@@ -99,7 +86,7 @@ export default function AboutDetails({ language = "pt" }: Props) {
                       setCurrentIndex(index);
                     }}
                   >
-                    <img src={img} alt={`Imagem ${index}`} />
+                    <img src={img} alt={`${t.sectionGallery} ${index + 1}`} />
                     <span className="gallery-badge">
                       {index + 1}/{about.images.length}
                     </span>
@@ -116,7 +103,7 @@ export default function AboutDetails({ language = "pt" }: Props) {
                   setCurrentIndex(0);
                 }}
               >
-                Ver todas as fotos
+                {t.btnGallery}
               </button>
             </div>
           </div>
@@ -127,30 +114,31 @@ export default function AboutDetails({ language = "pt" }: Props) {
 
           {/* STATUS */}
           <div className="card card-details">
-            <h4>Status</h4>
+            <h4>{t.sectionStatus}</h4>
 
             <div className="status">
               <span
-                className={`dot ${status === "Concluído" ? "done" : "progress"
+                className={`dot ${status?.toLowerCase() === "concluído" ||
+                    status?.toLowerCase() === "completed"
+                    ? "done"
+                    : "progress"
                   }`}
-              ></span>
-
-              {status || "Sem status"}
+              />
+              {status || t.noStatus}
             </div>
           </div>
 
           {/* TECNOLOGIAS */}
           <div className="card card-details">
-            <h4>Tecnologias</h4>
+            <h4>{t.sectionTechs}</h4>
 
             <div className="tech-list">
-              {project?.techs?.map((tech, i) => (
+              {projectBase?.techs?.map((tech: Tech, i: number) => (
                 <span key={i} className="tech">
                   <span
                     className="tech-dot"
                     style={{ background: tech.color }}
-                  ></span>
-
+                  />
                   {tech.name}
                 </span>
               ))}
@@ -159,23 +147,23 @@ export default function AboutDetails({ language = "pt" }: Props) {
 
           {/* INFO */}
           <div className="card card-details">
-            <h4>Informações</h4>
+            <h4>{t.sectionInfo}</h4>
 
             <div className="info">
               <p>
-                <strong>Duração</strong>
+                <strong>{t.labelDuration}</strong>
                 <br />
                 {about.duration}
               </p>
 
               <p>
-                <strong>Equipe</strong>
+                <strong>{t.labelTeam}</strong>
                 <br />
                 {about.team}
               </p>
 
               <p>
-                <strong>Cliente</strong>
+                <strong>{t.labelClient}</strong>
                 <br />
                 {about.client}
               </p>
@@ -207,8 +195,7 @@ export default function AboutDetails({ language = "pt" }: Props) {
               onClick={(e) => e.stopPropagation()}
             >
               <p>
-                {about.imagesDescription?.[currentIndex] ||
-                  "Imagem do projeto"}
+                {about.imagesDescription?.[currentIndex] || t.defaultImageDesc}
               </p>
             </div>
 
@@ -216,18 +203,16 @@ export default function AboutDetails({ language = "pt" }: Props) {
               className="gallery-dots"
               onClick={(e) => e.stopPropagation()}
             >
-              {about.images.map((_, idx) => (
+              {about.images.map((_: string, idx: number) => (
                 <button
                   key={idx}
-                  className={`gallery-dot ${idx === currentIndex ? "active" : ""
-                    }`}
+                  className={`gallery-dot ${idx === currentIndex ? "active" : ""}`}
                   onClick={() => setCurrentIndex(idx)}
                 />
               ))}
             </div>
           </div>
 
-          {/* ESQUERDA */}
           <button
             className="nav left"
             onClick={(e) => {
@@ -240,7 +225,6 @@ export default function AboutDetails({ language = "pt" }: Props) {
             ‹
           </button>
 
-          {/* DIREITA */}
           <button
             className="nav right"
             onClick={(e) => {

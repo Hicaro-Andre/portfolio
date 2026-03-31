@@ -1,4 +1,4 @@
 const heroDetails = {
-  btn: "View Project"
+  btnView: "View Project"
 }
 export default heroDetails

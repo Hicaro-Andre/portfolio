@@ -22,7 +22,7 @@ function App() {
 
         <Route
           path="/project/:id"
-          element={<ProjectDetails language={language} />}
+          element={<ProjectDetails language={language} setLanguage={setLanguage} />}
         />
       </Routes>
     </BrowserRouter>

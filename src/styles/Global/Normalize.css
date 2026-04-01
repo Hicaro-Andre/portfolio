@@ -1,0 +1,86 @@
+/* Reset + Normalize moderno */
+
+/* Box sizing padrão */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margens padrão */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Melhor renderização de texto */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Altura padrão */
+html, body, #root {
+  height: 100%;
+}
+
+/* Corpo */
+body {
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Imagens e mídias responsivas */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Formulários herdam fonte */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Remove estilo padrão de lista */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Links sem decoração padrão */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Botões clicáveis */
+button {
+  cursor: pointer;
+  background: none;
+}
+
+/* Tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evita overflow em textos */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Root stacking context */
+#root {
+  isolation: isolate;
+}

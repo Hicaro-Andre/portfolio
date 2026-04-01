@@ -5,6 +5,7 @@ import "./styles/Global/Buttons.css";
 import "./styles/Global/Typography.css";
 import "./styles/Global/Cards.css";
 import "./styles/Global/Animation.css";
+import "./styles/Global/Normalize.css";
 import App from "./App";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 

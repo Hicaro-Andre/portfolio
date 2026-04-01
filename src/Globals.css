@@ -112,3 +112,32 @@ section {
     transform: scale(1);
   }
 }
+
+
+/* ======================================================
+   /*! SCROLLBAR   
+====================================================== **/
+/* Scrollbar inteira */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fundo */
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    180deg,
+    rgba(3, 6, 14, 0.96) 0%,
+    rgba(1, 4, 10, 0.985) 100%
+  );
+}
+
+/* Barra que você arrasta */
+::-webkit-scrollbar-thumb {
+  background: #1d4ed8;
+  border-radius: 10px;
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}

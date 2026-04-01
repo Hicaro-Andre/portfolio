@@ -1,10 +1,11 @@
 const about = {
   title: "Sobre Mim",
-  role: "Full Stack Developer",
+  role: "Desenvolvedor Full Stack",
 
   description: {
-    p1: "Desenvolvedor Full Stack formado em Ciência da Computação, com foco em construção de aplicações modernas, APIs eficientes e interfaces responsivas.",
-    p2: "Busco criar soluções bem estruturadas, com código limpo, performance e escalabilidade. Atualmente evoluindo em arquitetura de software e estrutura de dados.",
+    p1: "Sou desenvolvedor full stack com formação em Ciência da Computação, movido por desafios e pela busca constante de evolução na área de tecnologia. Ao longo da minha jornada, adquiri experiência prática com desenvolvimento web, atuando tanto no front-end quanto no back-end, utilizando tecnologias como JavaScript, TypeScript, React, Node.js e Java, sempre com foco em performance, organização de código e boas práticas.",
+    p2: "Tenho interesse em atuar em ambientes desafiadores, onde possa aprender continuamente, colaborar com equipes e contribuir de forma significativa no desenvolvimento de sistemas eficientes e escaláveis.",
+    p3: "Sou disciplinado, resiliente e comprometido com minha evolução profissional — características que refletem diretamente na minha forma de estudar, desenvolver e encarar novos desafios.",
   },
 
   stats: {

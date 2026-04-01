@@ -34,6 +34,7 @@ export default function About({ language }: Props) {
           <div className="about-text">
             <p>{t.description.p1}</p>
             <p>{t.description.p2}</p>
+            <p>{t.description.p3}</p>
           </div>
         </div>
       </div>

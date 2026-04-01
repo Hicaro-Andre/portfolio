@@ -17,6 +17,10 @@ import {
   SiFirebase,
   SiSpringboot,
   SiPostgresql,
+  SiBootstrap,
+  SiTailwindcss,
+  SiSass,
+  SiNextdotjs,
 } from "react-icons/si";
 
 export const techIcons = {
@@ -29,10 +33,14 @@ export const techIcons = {
   sprintboot: <SiSpringboot color="#39FF14" />,
   node: <FaNodeJs color="#39ff14" />,
   express: <SiExpress color="#F0F8FF" />,
-  postgresql:<SiPostgresql color="#00E5FF" />,
+  postgresql: <SiPostgresql color="#00E5FF" />,
   mongo: <SiMongodb color="#39FF14" />,
-  firebase:<SiFirebase color="#FFCA28" />,
+  firebase: <SiFirebase color="#FFCA28" />,
   git: <FaGitAlt color="#FF5E00" />,
   github: <FaGithub color="#F0F8FF" />,
   storyblok: <SiStoryblok color="#0CE8E0" />,
+  bootstrap: <SiBootstrap color="#851585" />,
+  sass: <SiSass color="#ff4dff" />,
+  tailwind: <SiTailwindcss color="#00ffff" />,
+  nextjs: <SiNextdotjs color="#e6f1ff" />
 };

@@ -2,7 +2,6 @@ import { useState } from "react";
 import translations from "/src/translations";
 import "/src/styles/Formation.css";
 
-import certificado from "/src/assets/images_project/profile_project/APIs.png";
 
 import { FaBolt, FaGraduationCap, FaTimes } from "react-icons/fa";
 import { GiAchievement } from "react-icons/gi";
@@ -25,6 +24,7 @@ type FormationItem = {
   disciplinesTitle: string;
   disciplines: string[];
   certificateTitle: string;
+  certificateImage: string;
 };
 
 type Props = {
@@ -145,7 +145,7 @@ export default function Formation({ language }: Props) {
                       </h3>
 
                       <img
-                        src={certificado}
+                        src={item.certificateImage}
                         alt="Certificado"
                         className="certificate-image"
                       />

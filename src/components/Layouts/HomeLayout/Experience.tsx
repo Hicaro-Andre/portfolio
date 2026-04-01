@@ -8,7 +8,7 @@ import {
 
 import { techIcons } from "/src/components/icons/techIcons";
 
-// 🔥 Tipos principais
+
 type Language = "pt" | "en";
 
 type ExperienceItem = {

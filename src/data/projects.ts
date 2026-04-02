@@ -1,7 +1,6 @@
-import redenave from "../assets/images_project/profile_project/RedeNave.png";
-import p2 from "../assets/images_project/profile_project/edf.png";
-import p3 from "../assets/images_project/profile_project/java.webp";
-import p4 from "../assets/images_project/profile_project/javascript.png";
+import redenave from "../assets/images/RedeNave.png";
+import hangtabosa from "../assets/images/general-img-landscape.png";
+
 
 export type Tech = {
   name: string;
@@ -33,33 +32,35 @@ export const projects: Project[] = [
   {
     id: 2,
     techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-    ],
-    projectUrl: "https://hansmais.netlify.app/",
-    githubUrl: "#",
-    image: p2,
-  },
-  {
-    id: 3,
-    techs: [
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "https://renaveh.saude.ma.gov.br/",
-    githubUrl: "#",
-    image: p3,
-  },
-  {
-    id: 4,
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+      { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
+      { name: "Node", color: "#39ff14", textColor: "#000" },
+      { name: "Express", color: "#F0F8FF", textColor: "#000" },
+
     ],
     projectUrl: "#",
     githubUrl: "#",
-    image: p4,
+    image: hangtabosa,
   },
+  // {
+  //   id: 3,
+  //   techs: [
+  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
+  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+  //   ],
+  //   projectUrl: "https://renaveh.saude.ma.gov.br/",
+  //   githubUrl: "#",
+  //   image: p3,
+  // },
+  // {
+  //   id: 4,
+  //   techs: [
+  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
+  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
+  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+  //   ],
+  //   projectUrl: "#",
+  //   githubUrl: "#",
+  //   image: p4,
+  // },
 
 ];

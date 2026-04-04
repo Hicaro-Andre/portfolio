@@ -6,12 +6,12 @@ const projects = {
   items: {
     1: {
       title: "Rede Nave",
-      description: "Rede NAVE is a non-profit organization that strengthens female empowerment through entrepreneurship, offering training and opportunities for income generation and financial independence.",
+      description: "Rede NAVE is a non-profit organization that promotes women's empowerment through entrepreneurship, offering training and opportunities for financial independence.",
       status: "Completed",
     },
     2: {
       title: "Customer Service Automation",
-      description: "Project under development in the Bolsa Futuro Digital (SOFTEX) residency program, focused on an automated service solution. The proposal aims to optimize communication, making interactions faster and more efficient. The application prioritizes workflow organization and user experience improvement.",
+      description: "Project under development in the Bolsa Futuro Digital (SOFTEX) program, focused on automating customer service to make communication faster, more organized, and efficient, improving user experience.",
       status: "In Development",
     },
     // 3: {

@@ -57,13 +57,17 @@ export default function Experience({ language }: Props) {
                   </div>
 
                   <div className="header-bottom">
-                    <p>{item.date}</p>
+                    <div className="period">
+                      <p>{item.date}</p>
+                    </div>
 
                     <div className="badge-group">
                       <span className="local-badge">
                         {item.location}
                       </span>
                     </div>
+
+
                   </div>
                 </div>
 

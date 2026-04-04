@@ -23,6 +23,7 @@
   overflow: hidden;
   width: 100%;
   min-width: 0;
+  padding: 8px;
 }
 
 /* TRACK */
@@ -49,7 +50,7 @@
 
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
 
   transition:
     transform 0.3s ease,
@@ -57,7 +58,12 @@
 }
 
 .card-inner:hover {
-  transform: translateY(-6px);
+  box-shadow:
+  0 1px 0 1px rgba(59, 130, 246, 0.25),
+  0 20px 40px rgba(0, 0, 0, 0.6),
+  0 10px 30px rgba(59, 130, 246, 0.2),
+  0 20px 60px rgba(16, 185, 129, 0.15);
+  transform: scale(1.05);
 }
 
 /* ======================================================
@@ -67,12 +73,7 @@
 .project-image {
   position: relative;
   height: 230px;
-  background: linear-gradient(
-    135deg,
-    #58a6ff, 
-    #1f6feb,  
-    #1d4ed8    
-  );
+  background: linear-gradient(135deg, #58a6ff, #1f6feb, #1d4ed8);
   overflow: hidden;
 }
 
@@ -247,33 +248,11 @@
     padding-left: 6px;
     padding-right: 6px;
   }
-
-  .projects .carousel-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 1.2rem;
-  }
-
-  .projects .carousel-btn:first-of-type {
-    left: -14px;
-  }
-
-  .projects .carousel-btn:last-of-type {
-    right: -14px;
-  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .project-card {
     flex: 0 0 50%;
-  }
-
-  .projects .carousel-btn:first-of-type {
-    left: -18px;
-  }
-
-  .projects .carousel-btn:last-of-type {
-    right: -18px;
   }
 }
 

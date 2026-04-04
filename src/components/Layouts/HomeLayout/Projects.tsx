@@ -88,7 +88,21 @@ export default function ProjectsCarousel({ language }: Props) {
             onClick={prev}
             disabled={index === 0}
           >
-            ‹
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="#1d4ed8"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         )}
 
@@ -175,7 +189,21 @@ export default function ProjectsCarousel({ language }: Props) {
             onClick={next}
             disabled={index === maxIndex}
           >
-            ›
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="#1d4ed8"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         )}
       </div>

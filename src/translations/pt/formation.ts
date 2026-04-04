@@ -34,8 +34,6 @@ const formation = {
         "Componentização e Gerenciamento de Estado",
         "HTML, CSS e Responsividade"
       ],
-
-      certificateTitle: "Certificado Acadêmico",
       certificateImage: crSoftex,
     },
 
@@ -68,8 +66,6 @@ const formation = {
         "Engenharia de Software",
         "Sistemas Operacionais"
       ],
-
-      certificateTitle: "Certificado Acadêmico",
       certificateImage: crFama,
     }
   ],

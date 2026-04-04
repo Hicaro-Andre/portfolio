@@ -3,14 +3,7 @@ import emailjs from "@emailjs/browser";
 import { validateContactForm } from "/src/utils/validation";
 
 import "/src/styles/ContactForm.css";
-import {
-  Mail,
-  User,
-  MessageSquare,
-  Send,
-  Phone,
-  Github,
-} from "lucide-react";
+import { Mail, Send, Phone, Github } from "lucide-react";
 
 import translations from "/src/translations";
 
@@ -31,6 +24,9 @@ type Props = {
 };
 
 export default function Contact({ language = "pt" }: Props) {
+  const [isSending, setIsSending] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const t = translations[language]?.contact;
 
   const [form, setForm] = useState<FormData>({
@@ -41,45 +37,51 @@ export default function Contact({ language = "pt" }: Props) {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  // 🔥 Tipagem do evento
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ): void => {
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ): Promise<void> => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const validationErrors = validateContactForm(form);
+    setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
+    if (Object.keys(validationErrors).length > 0) return;
+
+    setIsSending(true);
 
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          from_email: form.email,
+          name: form.name,
+          email: form.email,
           subject: form.subject,
           message: form.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      setForm({ name: "", email: "", subject: "", message: "" });
-      setErrors({});
       setIsModalOpen(true);
+
+      // limpa formulário
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
     } catch (error) {
-      alert(t.error);
+      console.error("Erro ao enviar:", error);
+      alert("Erro ao enviar mensagem. Tente novamente.");
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -101,7 +103,6 @@ export default function Contact({ language = "pt" }: Props) {
           <div className="field">
             <label>{t.fields.name}</label>
             <div className="input-wrapper">
-              <User size={18} />
               <input
                 id="name"
                 value={form.name}
@@ -109,16 +110,13 @@ export default function Contact({ language = "pt" }: Props) {
                 maxLength={45}
               />
             </div>
-            {errors.name && (
-              <small className="error-text">{errors.name}</small>
-            )}
+            {errors.name && <small className="error-text">{errors.name}</small>}
           </div>
 
           {/* Email */}
           <div className="field">
             <label>{t.fields.email}</label>
             <div className="input-wrapper">
-              <Mail size={18} />
               <input
                 id="email"
                 value={form.email}
@@ -135,7 +133,6 @@ export default function Contact({ language = "pt" }: Props) {
           <div className="field">
             <label>{t.fields.subject}</label>
             <div className="input-wrapper">
-              <MessageSquare size={18} />
               <input
                 id="subject"
                 value={form.subject}
@@ -152,7 +149,6 @@ export default function Contact({ language = "pt" }: Props) {
           <div className="field">
             <label>{t.fields.message}</label>
             <div className="input-wrapper textarea">
-              <MessageSquare size={18} />
               <textarea
                 id="message"
                 value={form.message}
@@ -165,8 +161,14 @@ export default function Contact({ language = "pt" }: Props) {
             )}
           </div>
 
-          <button type="submit" className="btn primary">
-            {t.button} <Send size={18} />
+          {/* BOTÃO */}
+          <button
+            type="submit"
+            className="btn primary"
+            disabled={isSending}
+          >
+            {isSending ? t.buttonSend : t.button}
+            {!isSending && <Send size={18} />}
           </button>
 
           {/* Sociais */}
@@ -203,15 +205,20 @@ export default function Contact({ language = "pt" }: Props) {
       {/* MODAL */}
       {isModalOpen && (
         <div className="modal-overlay">
-          <div className="modal">
-            <h3>{t.success.title}</h3>
-            <p>{t.success.description}</p>
+          <div className="modal success-modal">
+
+            <div className="success-icon">
+              ✓
+            </div>
+
+            <h3>{t.modalTitle}</h3>
+            <p>{t.modalMessage}</p>
 
             <button
               className="modal-btn"
               onClick={() => setIsModalOpen(false)}
             >
-              {t.success.close}
+              {t.modalbtn}
             </button>
           </div>
         </div>

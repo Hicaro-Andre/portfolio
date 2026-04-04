@@ -6,12 +6,12 @@ const projects = {
   items: {
     1: {
       title: "Rede Nave",
-      description: "A Rede NAVE é uma organização sem fins lucrativos que fortalece o protagonismo feminino por meio do empreendedorismo, oferecendo capacitação e oportunidades para geração de renda e autonomia financeira.",
+      description: "A Rede NAVE é uma organização sem fins lucrativos que promove o protagonismo feminino por meio do empreendedorismo, oferecendo capacitação e oportunidades para autonomia financeira.",
       status: "Concluído",
     },
     2: {
       title: "Automação de Atendimento",
-      description: "Projeto em desenvolvimento na residência Bolsa Futuro Digital (SOFTEX), focado em uma solução de automação de atendimento. A proposta busca otimizar a comunicação, tornando as interações mais rápidas e eficientes. A aplicação prioriza organização de fluxos e melhoria da experiência do usuário.",
+      description: "Projeto em desenvolvimento na residência Bolsa Futuro Digital (SOFTEX), voltado à automação de atendimento para tornar a comunicação mais rápida, organizada e eficiente, melhorando a experiência do usuário.",
       status: "Em Desenvolvimento",
     },
     // 3: {

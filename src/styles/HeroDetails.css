@@ -134,8 +134,8 @@
 }
 
 .project-title {
-  font-size: clamp(2.4rem, 3vw, 3rem);
-  font-weight: 600;
+  font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+  font-weight: 700;
   line-height: 1.2;
   background: var(--bg-h2);
 

@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import translations from "/src/translations";
 import "/src/styles/Formation.css";
 
-
-import { FaBolt, FaGraduationCap, FaTimes } from "react-icons/fa";
+import { FaBolt, FaGraduationCap } from "react-icons/fa";
 import { GiAchievement } from "react-icons/gi";
 
 // 🔥 Tipos
@@ -23,7 +22,6 @@ type FormationItem = {
   highlights: string[];
   disciplinesTitle: string;
   disciplines: string[];
-  certificateTitle: string;
   certificateImage: string;
 };
 
@@ -37,8 +35,40 @@ export default function Formation({ language }: Props) {
     items: FormationItem[];
   };
 
-  // 🔥 number | null (importante!)
   const [openModalId, setOpenModalId] = useState<number | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+
+  // 🔥 REF do modal
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  // 🔥 Fechar com animação
+  const handleClose = () => {
+    setIsClosing(true);
+
+    setTimeout(() => {
+      setOpenModalId(null);
+      setIsClosing(false);
+    }, 300);
+  };
+
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        openModalId !== null &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        handleClose();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openModalId]);
 
   return (
     <section className="training-section" id="formation">
@@ -64,8 +94,9 @@ export default function Formation({ language }: Props) {
                   </div>
 
                   <div className="header-bottom">
-                    <p>{item.date}</p>
-
+                    <div className="period">
+                      <p>{item.date}</p>
+                    </div>
                     <div className="badge-group">
                       <span className="local-badge">{item.location}</span>
                       <span className="cr-badge">{item.cr}</span>
@@ -77,7 +108,6 @@ export default function Formation({ language }: Props) {
                 <div className="card-timeline-body">
                   <p className="description">{item.description}</p>
 
-                  {/* Destaques */}
                   <div className="timeline-section">
                     <h5 className="timeline-title">
                       <FaBolt className="timeline-icon" />
@@ -85,13 +115,12 @@ export default function Formation({ language }: Props) {
                     </h5>
 
                     <ul>
-                      {item.highlights.map((highlight: string, index: number) => (
+                      {item.highlights.map((highlight, index) => (
                         <li key={index}>{highlight}</li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Disciplinas */}
                   <div className="timeline-section">
                     <h5 className="timeline-title">
                       <FaGraduationCap className="timeline-icon" />
@@ -99,24 +128,26 @@ export default function Formation({ language }: Props) {
                     </h5>
 
                     <div className="discipline-badges">
-                      {item.disciplines.map(
-                        (discipline: string, index: number) => (
-                          <span key={index} className="discipline-badge">
-                            {discipline}
-                          </span>
-                        )
-                      )}
+                      {item.disciplines.map((discipline, index) => (
+                        <span key={index} className="discipline-badge">
+                          {discipline}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
                   <div className="separator"></div>
                 </div>
 
-                {/* FOOTER / CERTIFICADO */}
-                <div className="card-timeline-footer certificate-container">
+                {/* FOOTER */}
+                <div className="certificate-container">
                   <div
                     className="certificate-trigger"
-                    onClick={() => setOpenModalId(item.id)}
+                    onClick={() =>
+                      openModalId === item.id
+                        ? handleClose()
+                        : setOpenModalId(item.id)
+                    }
                     title="Clique para ver o certificado"
                   >
                     <GiAchievement className="certificate-icon" />
@@ -124,26 +155,16 @@ export default function Formation({ language }: Props) {
                 </div>
 
                 {/* MODAL */}
-                {openModalId === item.id && (
+                {(openModalId === item.id || isClosing) && (
                   <div
-                    className="certificate-modal"
-                    onClick={() => setOpenModalId(null)}
+                    className={`certificate-modal ${openModalId === item.id && !isClosing ? "open" : ""
+                      } ${isClosing ? "closing" : ""}`}
                   >
                     <div
-                      className="certificate-content"
-                      onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                        e.stopPropagation()
-                      }
+                      ref={modalRef} // 🔥 AQUI É O SEGREDO
+                      className={`certificate-content ${openModalId === item.id && !isClosing ? "open" : ""
+                        } ${isClosing ? "closing" : ""}`}
                     >
-                      <FaTimes
-                        className="close-modal"
-                        onClick={() => setOpenModalId(null)}
-                      />
-
-                      <h3 className="certificate-title">
-                        {item.certificateTitle}
-                      </h3>
-
                       <img
                         src={item.certificateImage}
                         alt="Certificado"

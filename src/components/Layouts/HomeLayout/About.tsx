@@ -28,23 +28,27 @@ export default function About({ language }: Props) {
 
       <div className="about-container">
         <div className="card main-card">
-          <div className="about-top">
-            <span className="about-role">{t.role}</span>
+
+          <div className="about-content-text">
+            <div className="about-top">
+              <span className="about-role">{t.role}</span>
+            </div>
+            <div className="about-text">
+              <p>{t.description.p1}</p>
+              <p>{t.description.p2}</p>
+              <p>{t.description.p3}</p>
+            </div>
           </div>
-          <div className="about-text">
-            <p>{t.description.p1}</p>
-            <p>{t.description.p2}</p>
-            <p>{t.description.p3}</p>
-          </div>
+
         </div>
       </div>
 
       <div className="about-stats">
-        <div className="card stat-card">
+        <div className=" stat-card">
           <strong>{getExperience()}+</strong>
           <span>{t.stats.experience}</span>
         </div>
-        <div className="card stat-card">
+        <div className=" stat-card">
           <strong>{completedProjects}+</strong>
           <span>{t.stats.projects}</span>
         </div>

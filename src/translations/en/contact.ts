@@ -8,12 +8,16 @@ const contact = {
     message: "Message",
   },
   button: "Send message",
+  buttonSend: "Sending...",
   success: {
     title: "Message sent 🚀",
-    description: "I will contact you soon.",
+    description: "I will get back to you shortly.",
     close: "Close",
   },
   error: "Error sending message ❌",
+  modalTitle: "Message sent!",
+  modalMessage: "I received your message and will reply soon.",
+  modalbtn: "Close"
 };
 
 export default contact;

@@ -36,12 +36,9 @@
   min-height: 260px;
 
   backdrop-filter: blur(12px);
-  transition: all 0.35s ease;
+  
 }
 
-.skills-card:hover {
-  transform: translateY(-6px);
-}
 
 /* ======================================================
    /*! HEADER
@@ -84,17 +81,19 @@
 
 .skill-item {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   flex-direction: column;
+  transition: transform 0.3s ease;
+}
+.skill-item:hover {
+  transform: translateX(8px);
 }
 
 .skill-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   font-weight: 500;
-  margin-bottom: 5px;
 }
 
 .skill-name {

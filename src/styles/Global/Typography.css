@@ -23,7 +23,7 @@
   --bg-h5: #f0f4f8;
 
   /* cores dos textos */
-  --txt-color: #dce1e8;
+  --txt-color: rgb(209 213 219 );
 
   --color-dark: #1d4ed8; 
 }
@@ -62,9 +62,13 @@ h2 {
   margin: 16px auto 0;
   border-radius: 999px;
 
-
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
 }
 
+.section-visible .row-title span {
+  transform: scaleX(1);
+}
 /* titulo dos cards */
 h3 {
   font-size: 1.25rem;
@@ -73,8 +77,7 @@ h3 {
 
 /* titulo dos cards da timelines */
 h4 {
-  font-size: clamp(1.6rem, 3.5vw, 1.8rem);
-  font-weight: 700;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   color: var(--bg-h3)
 }
 
@@ -86,6 +89,5 @@ h5{
 
 /* textos */
 p {
-  line-height: 1.7;
   color: var(--txt-color);
 }

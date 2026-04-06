@@ -41,49 +41,49 @@ export const projects: Project[] = [
     githubUrl: "#",
     image: hangtabosa,
   },
-  {
-    id: 3,
-    techs: [
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "https://renaveh.saude.ma.gov.br/",
-    githubUrl: "#",
-    image: redenave,
-  },
+  // {
+  //   id: 3,
+  //   techs: [
+  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
+  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+  //   ],
+  //   projectUrl: "https://renaveh.saude.ma.gov.br/",
+  //   githubUrl: "#",
+  //   image: redenave,
+  // },
 
-  {
-    id: 4,
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "#",
-    githubUrl: "#",
-    image: redenave,
-  },
-  {
-    id: 5,
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "#",
-    githubUrl: "#",
-    image: redenave,
-  },
-  {
-    id: 6,
-    techs: [
-      { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-      { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-      { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-    ],
-    projectUrl: "#",
-    githubUrl: "#",
-    image: redenave,
-  },
+  // {
+  //   id: 4,
+  //   techs: [
+  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
+  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
+  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+  //   ],
+  //   projectUrl: "#",
+  //   githubUrl: "#",
+  //   image: redenave,
+  // },
+  // {
+  //   id: 5,
+  //   techs: [
+  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
+  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
+  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+  //   ],
+  //   projectUrl: "#",
+  //   githubUrl: "#",
+  //   image: redenave,
+  // },
+  // {
+  //   id: 6,
+  //   techs: [
+  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
+  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
+  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
+  //   ],
+  //   projectUrl: "#",
+  //   githubUrl: "#",
+  //   image: redenave,
+  // },
 
 ];

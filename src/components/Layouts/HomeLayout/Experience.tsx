@@ -49,16 +49,18 @@ export default function Experience({ language }: Props) {
               <span className="timeline-dot" />
 
               <div className="card card-timeline">
+
+
                 {/* HEADER */}
                 <div className="card-timeline-header">
                   <div className="header-top">
-                    <h4 className="title">{item.role}</h4>
-                    <p className="company">{item.company}</p>
+                    <h4>{item.role}</h4>
+                    <p>{item.company}</p>
                   </div>
 
                   <div className="header-bottom">
                     <div className="period">
-                      <p>{item.date}</p>
+                      <p >{item.date}</p>
                     </div>
 
                     <div className="badge-group">
@@ -107,6 +109,8 @@ export default function Experience({ language }: Props) {
                     </div>
                   </div>
                 </div>
+
+
               </div>
             </div>
           ))}

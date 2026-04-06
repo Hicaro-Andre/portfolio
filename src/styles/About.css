@@ -20,11 +20,12 @@
 .about-content-text{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  padding: 15px;
 }
-/* .about-top {
-  border: solid;
-} */
+.about-top{
+  margin-bottom: 15px;
+}
+
 
 .about-role {
   display: flex;

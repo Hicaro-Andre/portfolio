@@ -25,7 +25,9 @@
 
   gap: 25px;
 }
-
+.card-details h4{
+  margin-bottom: 1.5rem
+}
 .card-body {
   margin-top: 30px;
 }
@@ -47,6 +49,8 @@
 
 
   will-change: transform;
+
+
 }
 
 
@@ -54,9 +58,9 @@
 /* TITULOS */
 
 .card-title {
-  margin: 10px;
   font-size: clamp(1.5rem, 2.5vw, 1.7rem);
   background: var(--bg-h2);
+  margin-bottom: 1.5rem;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,7 +69,6 @@
 }
 
 .card-subtitle {
-  margin: 10px;
   font-size: clamp(0.9rem, 2.2vw, 1.1rem);
   color: (var--bg-h3);
 
@@ -78,16 +81,13 @@
   display: flex;
   color: var(--color-dark);
 }
-.card p {
-  margin: 10px;
-}
+
 
 /* ======================================================
   /*! FEATURES
 ====================================================== */
 .features {
   margin-top: 10px;
-  margin: 10px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -184,6 +184,7 @@
 .gallery-container {
   margin-top: 10px;
 }
+
 
 /* GRID MOBILE FIRST */
 .gallery-grid {

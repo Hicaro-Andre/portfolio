@@ -61,6 +61,7 @@
   font-size: clamp(3.1rem, 8vw, 6rem);
   font-weight: 800;
   line-height: 1.05;
+  color: var(--bg-h3);
 }
 
 .hero-name span {

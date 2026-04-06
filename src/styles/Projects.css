@@ -161,6 +161,8 @@
 .project-content {
   padding: 22px;
   flex: 1;
+
+  
 }
 
 .project-content h3 a {
@@ -197,12 +199,13 @@
 .project-links {
   display: flex;
   gap: 18px;
+  
 }
 
 .project-links a {
   position: relative;
   font-size: 1.05rem;
-  color: var(--txt-color);
+  color: var(--bg-h3);
   text-decoration: none;
   transition: 0.25s ease;
 }

@@ -3,7 +3,7 @@
 ====================================================== */
 
 .experience-section {
-  padding: var(--padding-sections);
+  padding: var(--navbar-height) 6% 0;
   color:var(--bg-h5);
   position: relative;
 }

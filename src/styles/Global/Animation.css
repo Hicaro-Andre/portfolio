@@ -7,7 +7,7 @@
 /* ======================================================
    /*! ROW TITLE SECTIONS
 ====================================================== **/
-.row-title span {
+/* .row-title span {
   display: block;
   width: 80px;
   height: 4px;
@@ -20,7 +20,7 @@
   margin: 16px auto 0;
   border-radius: 999px;
 
-  /* estado inicial */
+  
   transform: scaleX(0);
   transform-origin: center;
   opacity: 0;
@@ -28,11 +28,11 @@
   transition: all 0.6s ease;
 }
 
-/* quando ativa */
+
 .section-visible .row-title span {
   transform: scaleX(1);
   opacity: 1;
-}
+} */
 
 /* ======================================================
    /*! NAVBAR 

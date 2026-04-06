@@ -1,4 +1,4 @@
-import logo from "../assets/hico-logo.png";
+import logo from "../assets/loader.png";
 import "../styles/Global/Loader.css"
 
 export default function Loader() {

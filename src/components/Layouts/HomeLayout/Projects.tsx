@@ -133,7 +133,9 @@ export default function ProjectsCarousel({ language }: Props) {
                     </div>
                   </div>
 
+
                   <div className="project-content">
+
                     <h3>
                       <Link to={`/project/${project.id}`}>
                         {project.title}
@@ -176,6 +178,7 @@ export default function ProjectsCarousel({ language }: Props) {
                         GitHub
                       </a>
                     </div>
+
                   </div>
                 </div>
               </div>

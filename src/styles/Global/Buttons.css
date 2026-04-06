@@ -10,7 +10,7 @@
 ====================================================== **/
 :root {
   --bg-primary: linear-gradient(135deg, #1d4ed8, #2563eb);
-  --txt-color: #f0f4f8;
+  --btn-color: #f0f4f8;
   --bg-hover: #1e40af;
 }
 
@@ -37,7 +37,7 @@
   z-index: 1;
 
   background: var(--bg-primary);
-  color: var(--txt-color);
+  color: var(--btn-color);
   transition:
     transform 0.25s ease,
     color 0.25s ease,
@@ -103,7 +103,7 @@
 }
 
 .secondary:hover {
-  color: var(--txt-color);
+  color: var(--btn-color);
   transform: translateY(-1px) scale(1.02);
   box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
   border-color: rgba(59, 130, 246, 0.45);

@@ -1,5 +1,6 @@
 import "/src/styles/About.css";
 import { getExperience } from "/src/utils/dateUtils";
+import useSectionObserver from "/src/hooks/useSectionObserver";
 import translations from "/src/translations";
 
 type Language = "pt" | "en";
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export default function About({ language }: Props) {
+  useSectionObserver();
   const t = translations[language].about;
   const p = translations[language].projects;
 

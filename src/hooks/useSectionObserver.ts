@@ -13,7 +13,7 @@ export default function useSectionObserver(): void {
         });
       },
       {
-        threshold: 0.3,
+        threshold: 0.1,
       }
     );
 
@@ -21,4 +21,9 @@ export default function useSectionObserver(): void {
 
     return () => observer.disconnect();
   }, []);
+
+
+
+
+
 }

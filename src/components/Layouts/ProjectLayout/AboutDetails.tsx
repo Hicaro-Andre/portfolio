@@ -73,7 +73,7 @@ export default function AboutDetails({ language = "pt" }: Props) {
 
           {/* GALERIA */}
           <div className="card card-details">
-            <h3>{t.sectionGallery}</h3>
+            <h4>{t.sectionGallery}</h4>
 
             <div className="gallery-container">
               <div className="gallery-grid">
@@ -119,9 +119,9 @@ export default function AboutDetails({ language = "pt" }: Props) {
             <div className="status">
               <span
                 className={`dot ${status?.toLowerCase() === "concluído" ||
-                    status?.toLowerCase() === "completed"
-                    ? "done"
-                    : "progress"
+                  status?.toLowerCase() === "completed"
+                  ? "done"
+                  : "progress"
                   }`}
               />
               {status || t.noStatus}

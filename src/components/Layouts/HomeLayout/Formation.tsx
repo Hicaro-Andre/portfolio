@@ -86,6 +86,8 @@ export default function Formation({ language }: Props) {
               <div className="card card-timeline">
                 <span className="status-badge">{item.status}</span>
 
+
+
                 {/* HEADER */}
                 <div className="card-timeline-header">
                   <div className="header-top">

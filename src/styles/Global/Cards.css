@@ -130,7 +130,7 @@
 
 }
 .header-top h4{
-   font-size: clamp(1.2rem, 3vw, 1.6rem);
+   font-size: clamp(1.6rem, 3vw, 1.8rem);
   font-weight: 700;
 }
 

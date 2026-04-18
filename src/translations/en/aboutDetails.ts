@@ -43,40 +43,16 @@ const aboutDetails = {
       description: "This project is being developed within the Bolsa Futuro Digital (SOFTEX) residency program, aiming to create a modern automated service solution. The application is built with a focus on organization, scalability, and development best practices, aiming to optimize communication and improve user experience. The project also explores a flexible architecture, allowing continuous evolution and easy maintenance.",
       // duration: "4 months",
       team: "1 developer",
-      // client: "",
-      // features: [
-      //   "Interactive dashboards with real-time indicators",
-      //   "User management with different access levels",
-      //   "Responsive interface for mobile devices",
-      // ],
+      client: "",
+      features: [
+        "Automated WhatsApp attendance with instant responses",
+        "Integration with WAHA for message management",
+        "Automation flows built with n8n",
+        "Containerization with Docker for easy deploy and scalability",
+        "Organized and centralized communication in one place",
+      ],
       imagesDescription: [],
     },
-
-    // 3: {
-    //   description: "test description for example 3",
-    //   duration: "4 months",
-    //   team: "4 developers",
-    //   client: "Health Department",
-    //   features: [
-    //     "Interactive dashboards with real-time indicators",
-    //     "User management with different access levels",
-    //     "Responsive interface for mobile devices",
-    //   ],
-    //   imagesDescription: [],
-    // },
-
-    // 4: {
-    //   description: "test description for example 4",
-    //   duration: "4 months",
-    //   team: "4 developers",
-    //   client: "Health Department",
-    //   features: [
-    //     "Interactive dashboards with real-time indicators",
-    //     "User management with different access levels",
-    //     "Responsive interface for mobile devices",
-    //   ],
-    //   imagesDescription: [],
-    // },
   },
 };
 

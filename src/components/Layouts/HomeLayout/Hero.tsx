@@ -94,7 +94,7 @@ export default function Hero({ language }: Props) {
               {t.buttons.projects}
             </a>
 
-            <a href="/public/hicaro-cv.pdf" download className="btn secondary">
+            <a href="/hicaro-cv.pdf" download className="btn secondary">
               {t.buttons.cv}
             </a>
           </div>

@@ -32,9 +32,9 @@ export const projects: Project[] = [
   {
     id: 2,
     techs: [
-      { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
-      { name: "Node", color: "#39ff14", textColor: "#000" },
-      { name: "Express", color: "#F0F8FF", textColor: "#000" },
+      { name: "Docker", color: "#00D4FF", textColor: "#000" },
+      { name: "Waha", color: "#25FF84", textColor: "#000" },
+      { name: "n8n", color: "#FF6B35", textColor: "#000" },
 
     ],
     projectUrl: "#",

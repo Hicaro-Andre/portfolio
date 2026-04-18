@@ -4,7 +4,7 @@ import { techIcons } from "/src/components/icons/techIcons";
 import { Code2, Server, Wrench, Languages } from "lucide-react";
 import translations from "/src/translations";
 
-// Tipagem das props
+
 type SkillsProps = {
   language: "pt" | "en";
 };
@@ -94,6 +94,32 @@ export default function Skills({ language }: SkillsProps) {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
+                  {techIcons.react}
+                  React
+                </span>
+                <span className="skill-percent">85%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "85%" }} />
+              </div>
+            </li>
+
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  {techIcons.nextjs}
+                  Next
+                </span>
+                <span className="skill-percent">78%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "78%" }} />
+              </div>
+            </li>
+
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
                   {techIcons.sass}
                   Sass
                 </span>
@@ -117,31 +143,7 @@ export default function Skills({ language }: SkillsProps) {
               </div>
             </li>
 
-            <li className="skill-item">
-              <div className="skill-top">
-                <span className="skill-name">
-                  {techIcons.react}
-                  React
-                </span>
-                <span className="skill-percent">85%</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "85%" }} />
-              </div>
-            </li>
 
-            <li className="skill-item">
-              <div className="skill-top">
-                <span className="skill-name">
-                  {techIcons.nextjs}
-                  NextJs
-                </span>
-                <span className="skill-percent">78%</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "78%" }} />
-              </div>
-            </li>
           </ul>
         </div>
 
@@ -153,31 +155,8 @@ export default function Skills({ language }: SkillsProps) {
           </div>
 
           <ul className="skills-list enhanced">
-            <li className="skill-item">
-              <div className="skill-top">
-                <span className="skill-name">
-                  {techIcons.java}
-                  Java
-                </span>
-                <span className="skill-percent">40%</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "40%" }} />
-              </div>
-            </li>
 
-            <li className="skill-item">
-              <div className="skill-top">
-                <span className="skill-name">
-                  {techIcons.sprintboot}
-                  Spring Boot
-                </span>
-                <span className="skill-percent">40%</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "40%" }} />
-              </div>
-            </li>
+
 
             <li className="skill-item">
               <div className="skill-top">
@@ -202,6 +181,32 @@ export default function Skills({ language }: SkillsProps) {
               </div>
               <div className="progress-bar">
                 <div className="progress-fill" style={{ width: "90%" }} />
+              </div>
+            </li>
+
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  {techIcons.nestjs}
+                  NestJS
+                </span>
+                <span className="skill-percent">20%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "20%" }} />
+              </div>
+            </li>
+
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
+                  {techIcons.prisma}
+                  Prisma
+                </span>
+                <span className="skill-percent">20%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "20%" }} />
               </div>
             </li>
 
@@ -257,6 +262,19 @@ export default function Skills({ language }: SkillsProps) {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
+                  {techIcons.github}
+                  GitHub
+                </span>
+                <span className="skill-percent">95%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: "95%" }} />
+              </div>
+            </li>
+
+            <li className="skill-item">
+              <div className="skill-top">
+                <span className="skill-name">
                   {techIcons.git}
                   Git
                 </span>
@@ -270,13 +288,13 @@ export default function Skills({ language }: SkillsProps) {
             <li className="skill-item">
               <div className="skill-top">
                 <span className="skill-name">
-                  {techIcons.github}
-                  GitHub
+                  {techIcons.docker}
+                  Docker
                 </span>
-                <span className="skill-percent">95%</span>
+                <span className="skill-percent">80%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "95%" }} />
+                <div className="progress-fill" style={{ width: "80%" }} />
               </div>
             </li>
 

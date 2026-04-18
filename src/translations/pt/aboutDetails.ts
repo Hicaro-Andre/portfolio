@@ -11,6 +11,7 @@ const aboutDetails = {
   labelClient: "Cliente",
   noStatus: "Sem status",
   defaultImageDesc: "Imagem do projeto",
+
   items: {
     1: {
       description: "Projeto desenvolvido como protótipo de redesign do site da Rede NAVE, no contexto do curso Bolsa Futuro Digital (SOFTEX), como projeto integrador. A proposta tem foco na modernização da experiência digital, usabilidade e performance. A aplicação foi construída com tecnologias modernas e arquitetura baseada em componentes, visando maior organização e escalabilidade. Como diferencial, integra o Storyblok como CMS headless, permitindo gerenciar e atualizar conteúdos de forma dinâmica e independente do código, facilitando a manutenção e evolução da plataforma.",
@@ -45,40 +46,17 @@ const aboutDetails = {
       description: "Este projeto está sendo desenvolvido no contexto da residência Bolsa Futuro Digital (SOFTEX), com o objetivo de criar uma solução moderna de automação de atendimento. A aplicação é construída com foco em organização, escalabilidade e boas práticas de desenvolvimento, visando otimizar a comunicação e melhorar a experiência do usuário. O projeto também explora uma arquitetura flexível, permitindo evolução contínua e fácil manutenção.",
       // duration: "4 meses",
       team: "1 desenvolvedor",
-      // client: "",
-      // features: [
-      //   "Dashboards interativos com indicadores em tempo real",
-      //   "Gestão de usuários com diferentes níveis de acesso",
-      //   "Interface responsiva para dispositivos móveis",
-      // ],
+      client: "",
+      features: [
+        "Atendimento automatizado via WhatsApp com respostas instantâneas",
+        "Integração com WAHA para gerenciamento de mensagens",
+        "Fluxos de automação criados com n8n",
+        "Containerização com Docker para fácil deploy e escalabilidade",
+        "Comunicação organizada e centralizada em um único lugar",
+      ],
       imagesDescription: [],
     },
 
-
-    // 3: {
-    //   description: "descrição teste para o exemplo 3",
-    //   duration: "4 meses",
-    //   team: "4 desenvolvedores",
-    //   client: "Secretaria de Saúde",
-    //   features: [
-    //     "Dashboards interativos com indicadores em tempo real",
-    //     "Gestão de usuários com diferentes níveis de acesso",
-    //     "Interface responsiva para dispositivos móveis",
-    //   ],
-    //   imagesDescription: [],
-    // },
-    // 4: {
-    //   description: "descrição teste para o exemplo 4",
-    //   duration: "4 meses",
-    //   team: "4 desenvolvedores",
-    //   client: "Secretaria de Saúde",
-    //   features: [
-    //     "Dashboards interativos com indicadores em tempo real",
-    //     "Gestão de usuários com diferentes níveis de acesso",
-    //     "Interface responsiva para dispositivos móveis",
-    //   ],
-    //   imagesDescription: [],
-    // },
   },
 };
 

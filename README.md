@@ -1,7 +1,6 @@
 # Hicaro André — Portfolio
 
-[![Deploy](https://img.shields.io/badge/Deploy-Vercel-000?style=flat-square&logo=vercel&logoColor=white)](https://hicaro-portfolio.vercel.app/)
-[![Version](https://img.shields.io/badge/version-1.0.0-1d4ed8?style=flat-square)](#-controle-de-versão)
+> 🌐 Acesse: [hicaro-portfolio.vercel.app](https://hicaro-portfolio.vercel.app/)
 
 ---
 

@@ -190,10 +190,10 @@ export default function Skills({ language }: SkillsProps) {
                   {techIcons.nestjs}
                   NestJS
                 </span>
-                <span className="skill-percent">20%</span>
+                <span className="skill-percent">50%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "20%" }} />
+                <div className="progress-fill" style={{ width: "50%" }} />
               </div>
             </li>
 
@@ -203,10 +203,10 @@ export default function Skills({ language }: SkillsProps) {
                   {techIcons.prisma}
                   Prisma
                 </span>
-                <span className="skill-percent">20%</span>
+                <span className="skill-percent">50%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "20%" }} />
+                <div className="progress-fill" style={{ width: "50%" }} />
               </div>
             </li>
 
@@ -342,10 +342,10 @@ export default function Skills({ language }: SkillsProps) {
                   <img src="https://flagcdn.com/us.svg" className="flag" />
                   {t.languageNames.english}
                 </span>
-                <span className="skill-percent">42%</span>
+                <span className="skill-percent">50%</span>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: "42%" }} />
+                <div className="progress-fill" style={{ width: "50%" }} />
               </div>
             </li>
           </ul>

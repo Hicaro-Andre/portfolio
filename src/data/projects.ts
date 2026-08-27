@@ -1,5 +1,6 @@
 import redenave from "../assets/images/RedeNave.png";
-import hangtabosa from "../assets/images/general-img-landscape.png";
+import dashpie from "../assets/images/dashpie.png"
+import studypanel from "../assets/images/general-img-landscape.png"
 
 
 export type Tech = {
@@ -32,58 +33,33 @@ export const projects: Project[] = [
   {
     id: 2,
     techs: [
-      { name: "Docker", color: "#00D4FF", textColor: "#000" },
-      { name: "Waha", color: "#25FF84", textColor: "#000" },
-      { name: "n8n", color: "#FF6B35", textColor: "#000" },
-
+      { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
+      { name: "React", color: "#00E5FF", textColor: "#000" },
+      { name: "Tailwind", color: "#00D9FF", textColor: "#000" },
+      { name: "Node", color: "#00FF41", textColor: "#000" },
+      { name: "Next", color: "#FFFFFF", textColor: "#000" },
+      { name: "Nest", color: "#FF0040", textColor: "#fff" },
+      { name: "Postgres", color: "#0099FF", textColor: "#000" },
+      // { name: "Axios", color: "#5A29E4", textColor: "#fff" },
     ],
     projectUrl: "#",
     githubUrl: "#",
-    image: hangtabosa,
+    image: dashpie,
   },
-  // {
-  //   id: 3,
-  //   techs: [
-  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-  //   ],
-  //   projectUrl: "https://renaveh.saude.ma.gov.br/",
-  //   githubUrl: "#",
-  //   image: redenave,
-  // },
-
-  // {
-  //   id: 4,
-  //   techs: [
-  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-  //   ],
-  //   projectUrl: "#",
-  //   githubUrl: "#",
-  //   image: redenave,
-  // },
-  // {
-  //   id: 5,
-  //   techs: [
-  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-  //   ],
-  //   projectUrl: "#",
-  //   githubUrl: "#",
-  //   image: redenave,
-  // },
-  // {
-  //   id: 6,
-  //   techs: [
-  //     { name: "Laravel", color: "#ff0000", textColor: "#fff" },
-  //     { name: "PostgreSQL", color: "#0033FF", textColor: "#fff" },
-  //     { name: "JavaScript", color: "#ffff00", textColor: "#000" },
-  //   ],
-  //   projectUrl: "#",
-  //   githubUrl: "#",
-  //   image: redenave,
-  // },
-
+  {
+    id: 3,
+    techs: [
+      { name: "TypeScript", color: "#00B4FF", textColor: "#000" },
+      { name: "React", color: "#00E5FF", textColor: "#000" },
+      { name: "Tailwind", color: "#00D9FF", textColor: "#000" },
+      { name: "Node", color: "#00FF41", textColor: "#000" },
+      { name: "Next", color: "#FFFFFF", textColor: "#000" },
+      { name: "Nest", color: "#FF0040", textColor: "#fff" },
+      { name: "Postgres", color: "#0099FF", textColor: "#000" },
+      // { name: "Axios", color: "#5A29E4", textColor: "#fff" },
+    ],
+    projectUrl: "#",
+    githubUrl: "#",
+    image: studypanel,
+  },
 ];

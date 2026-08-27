@@ -8,6 +8,7 @@ export type AboutProject = {
 
 export const aboutProjects: AboutProject[] = [
   { id: 1, images: getProjectImages("redenave") },
-  { id: 2, images: getProjectImages("hangtabosa") },
+  { id: 2, images: getProjectImages("doctorpie") },
+  { id: 3, images: getProjectImages("studypanel") },
 
 ];

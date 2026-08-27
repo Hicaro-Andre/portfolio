@@ -43,20 +43,34 @@ const aboutDetails = {
 
 
     2: {
-      description: "Este projeto está sendo desenvolvido no contexto da residência Bolsa Futuro Digital (SOFTEX), com o objetivo de criar uma solução moderna de automação de atendimento. A aplicação é construída com foco em organização, escalabilidade e boas práticas de desenvolvimento, visando otimizar a comunicação e melhorar a experiência do usuário. O projeto também explora uma arquitetura flexível, permitindo evolução contínua e fácil manutenção.",
+      description: "",
       // duration: "4 meses",
-      team: "1 desenvolvedor",
+      team: "2 desenvolvedor",
       client: "",
       features: [
-        "Atendimento automatizado via WhatsApp com respostas instantâneas",
-        "Integração com WAHA para gerenciamento de mensagens",
-        "Fluxos de automação criados com n8n",
-        "Containerização com Docker para fácil deploy e escalabilidade",
-        "Comunicação organizada e centralizada em um único lugar",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
       ],
       imagesDescription: [],
     },
 
+    3: {
+      description: "-",
+      // duration: "4 meses",
+      team: "2 desenvolvedor",
+      client: "",
+      features: [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+      ],
+      imagesDescription: [],
+    },
   },
 };
 

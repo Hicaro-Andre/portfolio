@@ -1,0 +1,98 @@
+/* ======================================================
+   THEME TOGGLE BUTTON
+====================================================== */
+
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 76px;
+  height: 42px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--toggle-border);
+  background: var(--toggle-bg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.2);
+}
+
+.theme-option {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  opacity: 0.55;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-option.active {
+  opacity: 1;
+}
+
+.theme-icon-sun {
+  color: #f59e0b;
+  transition: transform 0.3s ease;
+}
+
+.theme-icon-moon {
+  color: #60a5fa;
+  transition: transform 0.3s ease;
+}
+
+[data-theme="light"] .theme-icon-moon {
+  color: #94a3b8;
+}
+
+[data-theme="light"] .theme-option.active .theme-icon-sun {
+  transform: scale(1.1) rotate(15deg);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .theme-option.active .theme-icon-moon {
+  transform: scale(1.1) rotate(-10deg);
+  color: #ffffff;
+}
+
+.theme-indicator {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease;
+  z-index: 1;
+}
+
+[data-theme="light"] .theme-indicator {
+  transform: translateX(0%);
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.45);
+}
+
+[data-theme="dark"] .theme-indicator {
+  transform: translateX(100%);
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.45);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}

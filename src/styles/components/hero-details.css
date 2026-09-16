@@ -1,0 +1,176 @@
+/* ======================================================
+   HERO DETAILS (PROJECT PAGE)
+====================================================== */
+
+.hero-details {
+  padding: calc(var(--navbar-height) + 40px) 6% 40px;
+  position: relative;
+}
+
+.hero-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.project-image-mobile {
+  width: 100%;
+  margin: 0 auto;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+}
+
+.project-image-mobile img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-image-mobile:hover img {
+  transform: scale(1.04);
+}
+
+.project-image-desk {
+  display: none;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  transition: all 0.35s ease;
+}
+
+.project-image-desk:hover {
+  border-color: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+}
+
+.project-image-desk img {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-image-desk:hover img {
+  transform: scale(1.04);
+}
+
+.hero-details .project-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.project-status-badge-mob,
+.project-status-badge-desk {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  padding: 6px 15px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(10, 15, 26, 0.78);
+  border: 1px solid rgba(255, 215, 0, 0.65);
+  color: #ffd700;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .project-status-badge-mob,
+[data-theme="light"] .project-status-badge-desk {
+  background: rgba(15, 23, 42, 0.86);
+  border: 1px solid rgba(245, 158, 11, 0.75);
+  color: #fbbf24;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.project-status-badge-mob .dot,
+.project-status-badge-desk .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffd700;
+  animation: pulseDot 1.5s infinite;
+}
+
+[data-theme="light"] .project-status-badge-mob .dot,
+[data-theme="light"] .project-status-badge-desk .dot {
+  background: #fbbf24;
+}
+
+.project-status-badge-desk {
+  display: none;
+}
+
+.project-title {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  background: var(--bg-h2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-details .project-description {
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.75;
+  color: var(--txt-color);
+}
+
+.hero-details .project-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (min-width: 860px) {
+  .hero-details-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .hero-details .project-content {
+    flex: 1.1;
+  }
+
+  .project-image-mobile {
+    display: none;
+  }
+
+  .project-image-desk {
+    display: block;
+    flex: 0.9;
+    max-width: 520px;
+  }
+
+  .project-status-badge-desk {
+    display: inline-flex;
+  }
+
+  .project-status-badge-mob {
+    display: none;
+  }
+}

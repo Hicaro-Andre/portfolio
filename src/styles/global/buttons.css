@@ -1,0 +1,170 @@
+/* ======================================================
+   BUTTONS SYSTEM
+====================================================== */
+
+.btn {
+  padding: 13px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  border: none;
+}
+
+/* ======================================================
+   BOTÃO PRINCIPAL
+====================================================== */
+.primary {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: var(--bg-primary);
+  color: var(--btn-color);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+}
+
+.primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-hover);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.primary:hover::before {
+  transform: scaleX(1);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.45);
+}
+
+.primary:active {
+  transform: scale(0.97);
+}
+
+/* ======================================================
+   BOTÃO SECUNDÁRIO
+====================================================== */
+.secondary {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1.5px solid var(--color-dark);
+  background: transparent;
+  color: var(--color-dark);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.1);
+}
+
+.secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.secondary:hover::before {
+  transform: scaleX(1);
+}
+
+.secondary:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(29, 78, 216, 0.35);
+  border-color: transparent;
+}
+
+.secondary:active {
+  transform: scale(0.97);
+}
+
+/* ======================================================
+   BOTÃO OVERLAY (Card Hover)
+====================================================== */
+.btn-overlay {
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1.5px solid #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+}
+
+.btn-overlay:hover {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* ======================================================
+   BOTÃO CARROSSEL
+====================================================== */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.1);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+.carousel-btn:first-of-type {
+  left: -24px;
+}
+
+.carousel-btn:last-of-type {
+  right: -24px;
+}
+
+@media (min-width: 1024px) {
+  .carousel-btn:first-of-type {
+    left: -45px;
+  }
+  .carousel-btn:last-of-type {
+    right: -45px;
+  }
+}

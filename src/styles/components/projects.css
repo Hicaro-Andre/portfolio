@@ -1,0 +1,342 @@
+/* ======================================================
+   PROJECTS SECTION & CAROUSEL
+====================================================== */
+
+.projects {
+  padding: var(--padding-sections);
+  color: var(--txt-color);
+  width: 100%;
+}
+
+/* ======================================================
+   CAROUSEL
+====================================================== */
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1350px;
+  margin: auto;
+  width: 100%;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+
+/* TRACK */
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+/* ======================================================
+   CARD - PROJECT
+====================================================== */
+
+.project-card {
+  flex: 0 0 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-inner {
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card-inner:hover {
+  border: var(--border-color-hover);
+  box-shadow:
+    0 1px 0 1px rgba(59, 130, 246, 0.25),
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 10px 30px rgba(59, 130, 246, 0.2),
+    0 20px 60px rgba(16, 185, 129, 0.15);
+  transform: translateY(-6px);
+}
+
+[data-theme="light"] .card-inner:hover {
+  box-shadow:
+    0 1px 0 1px rgba(37, 99, 235, 0.2),
+    0 16px 36px rgba(15, 23, 42, 0.12),
+    0 8px 20px rgba(37, 99, 235, 0.1);
+}
+
+/* ======================================================
+   IMAGE CONTAINER & BADGE
+====================================================== */
+
+.project-image {
+  position: relative;
+  height: 230px;
+  min-height: 230px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb, #60a5fa);
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+}
+
+.card-inner:hover .project-image img {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* ======================================================
+   BADGE EM DESENVOLVIMENTO (DARK & LIGHT MODES)
+====================================================== */
+
+.dev-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0006;
+  border: 1px solid rgba(255, 255, 0, .5);
+  color: #ff0;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 0.5px;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .dev-badge {
+  background: rgba(15, 23, 42, 0.86);
+  border: 1px solid rgba(245, 158, 11, 0.75);
+  color: #fbbf24;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.dev-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #ffd700;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseDot 1.5s infinite;
+}
+
+[data-theme="light"] .dev-badge::before {
+  background: #fbbf24;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1.35);
+    box-shadow: 0 0 0 7px rgba(255, 215, 0, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+/* ======================================================
+   IMAGE OVERLAY
+====================================================== */
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 78, 216, 0.78),
+    rgba(37, 99, 235, 0.72),
+    rgba(96, 165, 250, 0.65)
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+
+.card-inner:hover .image-overlay {
+  opacity: 1;
+}
+
+/* ======================================================
+   CARD CONTENT
+====================================================== */
+
+.project-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-content h3 {
+  margin-bottom: 12px;
+}
+
+.project-content h3 a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--txt-heading);
+  transition: color 0.25s ease;
+  display: inline-block;
+}
+
+.project-content h3 a:hover {
+  color: var(--color-primary);
+}
+
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: var(--txt-color);
+  flex-grow: 1;
+}
+
+.project-techs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  min-height: 58px;
+  align-content: flex-start;
+}
+
+.tech-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #1f1f26;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================================================
+   LINKS
+====================================================== */
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--separator-color);
+}
+
+.project-links a {
+  position: relative;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--bg-h3);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.project-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #58a6ff, #1f6feb);
+  transition: width 0.3s ease;
+}
+
+.project-links a:hover::after {
+  width: 100%;
+}
+
+.project-links a:hover {
+  color: var(--bg-color-hover-links);
+}
+
+/* ======================================================
+   RESPONSIVIDADE
+====================================================== */
+
+@media (max-width: 767px) {
+  .projects {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel-wrapper {
+    max-width: 85%;
+  }
+
+  .project-card {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .project-card {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-card {
+    flex: 0 0 33.3333%;
+  }
+
+  .static-mode {
+    display: flex;
+    justify-content: center;
+  }
+
+  .static-mode .carousel-track {
+    transform: none !important;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .static-mode .project-card {
+    flex: 0 0 500px;
+    max-width: 520px;
+  }
+}

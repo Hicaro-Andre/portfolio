@@ -1,33 +1,33 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import Navbar from "../components/NavBar";
-import Footer from "../components/Footer";
-import ParticlesBg from "../components/ParticlesBg";
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
+import ParticlesBg from "@/components/ui/ParticlesBg";
 
-import Hero from "../components/Layouts/HomeLayout/Hero";
-import About from "../components/Layouts/HomeLayout/About";
-import ContactForm from "../components/Layouts/HomeLayout/ContactForm";
-import Skills from "../components/Layouts/HomeLayout/Skills";
-import Experience from "../components/Layouts/HomeLayout/Experience";
-import Projects from "../components/Layouts/HomeLayout/Projects";
-import Formation from "../components/Layouts/HomeLayout/Formation";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
+import Experience from "@/components/sections/Experience";
+import Formation from "@/components/sections/Formation";
+import Contact from "@/components/sections/Contact";
 
-// Imagem WhatsApp
-import wpp from "../assets/whatsapp.svg";
-
-type Language = "pt" | "en";
+import wpp from "@/assets/whatsapp.svg";
+import wppLight from "@/assets/whatsapp-light.svg";
+import type { Language } from "@/types";
 
 type LocationState = {
   scrollTo?: string;
 };
 
 type HomeProps = {
-  language: Language;
-  setLanguage: React.Dispatch<React.SetStateAction<Language>>;
+  language?: Language;
+  setLanguage?: React.Dispatch<React.SetStateAction<Language>>;
 };
 
-function Home({ language, setLanguage }: HomeProps) {
+export default function Home({}: HomeProps) {
   const location = useLocation();
 
   useEffect(() => {
@@ -45,38 +45,44 @@ function Home({ language, setLanguage }: HomeProps) {
             top: offsetPosition,
             behavior: "smooth",
           });
-        }, 100);
+        }, 120);
       }
     }
   }, [location]);
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <ParticlesBg />
 
       <main>
-        <Navbar language={language} setLanguage={setLanguage} />
-        <Hero language={language} />
-        <About language={language} />
-        <Skills language={language} />
-        <Projects language={language} />
-        <Experience language={language} />
-        <Formation language={language} />
-        <ContactForm language={language} />
-        <Footer language={language} />
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Formation />
+        <Contact />
+        <Footer />
       </main>
 
       {/* Botão WhatsApp */}
       <a
-        href="https://wa.me/98984245018"
+        href="https://wa.me/5598984245018"
         className="whatsapp-button"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Fale comigo no WhatsApp"
+        title="WhatsApp"
       >
-        <img className="icon-dark" src={wpp} alt="Fale comigo no WhatsApp" />
+        <img src={wpp} alt="WhatsApp" width="42" height="42" className="whatsapp-icon-dark" />
+        <img src={wppLight} alt="WhatsApp" width="42" height="42" className="whatsapp-icon-light" />
       </a>
-    </>
+    </motion.div>
   );
 }
-
-export default Home;

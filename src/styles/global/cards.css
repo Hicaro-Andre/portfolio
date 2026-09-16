@@ -1,0 +1,437 @@
+/* ======================================================
+   CARDS SYSTEM & TIMELINES
+====================================================== */
+
+.card {
+  background: var(--bg-card);
+  border: var(--border-color);
+  box-shadow: var(--bg-card-shadow);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+}
+
+/* ======================================================
+   TIMELINE (EXPERIENCE & FORMATION)
+====================================================== */
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Linha vertical - mobile */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 3px;
+  height: 100%;
+  background: var(--color-dark);
+  opacity: 0.8;
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -21px;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle at center, #58a6ff 10%, transparent 40%),
+    conic-gradient(from 180deg, #58a6ff, #1f6feb, #1d4ed8, #58a6ff);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.6);
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.card-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.card-timeline:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-timeline-hover);
+  border: var(--border-color-hover);
+  box-shadow: var(--bg-card-shadow-hover);
+}
+
+.card-timeline-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+}
+
+.header-top {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 1.2rem;
+  gap: 4px;
+}
+
+.header-top h4 {
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  color: var(--bg-h3);
+}
+
+.header-top p {
+  background: var(--bg-h2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.header-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.period p {
+  font-size: 0.95rem;
+  color: var(--txt-muted);
+}
+
+.badge-group {
+  display: flex;
+  align-self: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Badges adaptativas com alto contraste */
+.local-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  color: var(--badge-yellow-color);
+  background: var(--badge-yellow-bg);
+  border: 1px solid var(--badge-yellow-border);
+  box-shadow: var(--badge-yellow-shadow);
+  transition: 0.3s ease;
+}
+
+.cr-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  color: var(--badge-green-color);
+  background: var(--badge-green-bg);
+  border: 1px solid var(--badge-green-border);
+  box-shadow: var(--badge-green-shadow);
+  transition: 0.3s ease;
+}
+
+.status-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  color: var(--badge-green-color);
+  background: var(--badge-green-bg);
+  border: 1px solid var(--badge-green-border);
+  box-shadow: var(--badge-green-shadow);
+}
+
+.card-timeline-body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+}
+
+.description {
+  line-height: 1.6;
+  margin: 15px 0;
+  color: var(--txt-color);
+}
+
+.timeline-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--bg-h5);
+}
+
+.timeline-icon {
+  color: var(--color-dark);
+  font-size: 1rem;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--separator-color);
+  margin: 16px 0;
+}
+
+.card-timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-timeline li {
+  position: relative;
+  padding: 4px 0 4px 20px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: 0.2s ease;
+  color: var(--txt-color);
+}
+
+.card-timeline li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--color-dark);
+  font-size: 0.85rem;
+}
+
+.card-timeline li:hover {
+  color: var(--color-primary);
+  transform: translateX(3px);
+}
+
+/* Disciplinas */
+.discipline-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.discipline-badge {
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 999px;
+  color: var(--discipline-badge-color);
+  border: 1px solid var(--discipline-badge-border);
+  background: var(--discipline-badge-bg);
+  transition: all 0.25s ease;
+}
+
+.discipline-badge:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* Certificado */
+.certificate-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.certificate-trigger {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-icon {
+  color: #ef4444;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.certificate-trigger:hover .certificate-icon {
+  transform: scale(1.25) rotate(5deg);
+}
+
+.certificate-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.certificate-modal.open {
+  opacity: 1;
+}
+
+.certificate-modal.closing {
+  opacity: 0;
+}
+
+.certificate-content {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  padding: 24px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: var(--modal-bg);
+  border: var(--border-color);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: zoomIn 0.3s ease;
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: var(--bg-card-shadow);
+  border: var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.certificate-image:hover {
+  transform: scale(1.02);
+}
+
+/* Ícones de tecnologias no card */
+.tech-icons {
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-icons svg {
+  font-size: 28px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+}
+
+.tech-icons svg:hover {
+  transform: scale(1.2) translateY(-2px);
+  filter: drop-shadow(0 4px 8px rgba(29, 78, 216, 0.35));
+}
+
+/* ======================================================
+   RESPONSIVIDADE -- TIMELINE
+====================================================== */
+
+@media (min-width: 500px) {
+  .header-bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+  .badge-group {
+    align-self: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .timeline {
+    padding-left: 0;
+    gap: 100px;
+  }
+
+  .timeline::before {
+    left: 50%;
+    width: 3px;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .timeline-item.left {
+    justify-content: flex-start;
+  }
+
+  .timeline-item.right {
+    justify-content: flex-end;
+  }
+
+  .card-timeline {
+    width: 46%;
+  }
+
+  .timeline-dot {
+    width: 24px;
+    height: 24px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Animações */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 12px rgba(88, 166, 255, 0.4),
+      0 0 24px rgba(88, 166, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(88, 166, 255, 0.8),
+      0 0 48px rgba(88, 166, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(88, 166, 255, 0.4),
+      0 0 24px rgba(88, 166, 255, 0.2);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

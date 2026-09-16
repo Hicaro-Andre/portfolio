@@ -1,0 +1,21 @@
+/* ======================================================
+   EXPERIENCE SECTION
+====================================================== */
+
+.experience-section {
+  padding: var(--padding-sections) 6% 0;
+  color: var(--txt-color);
+  position: relative;
+}
+
+.experience-container {
+  max-width: 1200px;
+  min-width: 270px;
+  margin: 0 auto;
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+  .experience-container {
+    min-width: 315px;
+  }
+}

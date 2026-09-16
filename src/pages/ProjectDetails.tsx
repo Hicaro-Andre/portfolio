@@ -1,36 +1,33 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-import Loader from "../components/Loader";
-import ParticlesBg from "../components/ParticlesBg";
+import Loader from "@/components/ui/Loader";
+import ParticlesBg from "@/components/ui/ParticlesBg";
 
-import ProjectNavbar from "../components/Layouts/ProjectLayout/ProjectNavbar";
-import HeroDetails from "../components/Layouts/ProjectLayout/HeroDetails";
-import AboutDetails from "../components/Layouts/ProjectLayout/AboutDetails";
-import OtherProjects from "../components/Layouts/ProjectLayout/OtherProjects";
+import ProjectNavbar from "@/components/common/ProjectNavbar";
+import HeroDetails from "@/components/project-details/HeroDetails";
+import AboutDetails from "@/components/project-details/AboutDetails";
+import OtherProjects from "@/components/project-details/OtherProjects";
 
-import wpp from "../assets/whatsapp.svg";
-
-type Language = "pt" | "en";
+import wpp from "@/assets/whatsapp.svg";
+import wppLight from "@/assets/whatsapp-light.svg";
+import type { Language } from "@/types";
 
 type ProjectDetailsProps = {
-  language: Language;
-  setLanguage: React.Dispatch<React.SetStateAction<Language>>;
+  language?: Language;
+  setLanguage?: React.Dispatch<React.SetStateAction<Language>>;
 };
 
-export default function ProjectDetails({
-  language,
-  setLanguage,
-}: ProjectDetailsProps) {
+export default function ProjectDetails({}: ProjectDetailsProps) {
   const { id } = useParams<{ id: string }>();
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setLoading(true);
-
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, [id]);
@@ -42,24 +39,31 @@ export default function ProjectDetails({
       {loading ? (
         <Loader />
       ) : (
-        <>
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35 }}
+        >
           <main>
-            <ProjectNavbar language={language} setLanguage={setLanguage} />
-            <HeroDetails language={language} />
-            <AboutDetails language={language} />
-            <OtherProjects language={language} />
+            <ProjectNavbar />
+            <HeroDetails />
+            <AboutDetails />
+            <OtherProjects />
           </main>
 
           <a
-            href="https://wa.me/98984245018"
+            href="https://wa.me/5598984245018"
             className="whatsapp-button"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open WhatsApp chat"
+            aria-label="Fale comigo no WhatsApp"
+            title="WhatsApp"
           >
-            <img className="icon-dark" src={wpp} alt="Talk to me on WhatsApp" />
+            <img src={wpp} alt="WhatsApp" width="42" height="42" className="whatsapp-icon-dark" />
+            <img src={wppLight} alt="WhatsApp" width="42" height="42" className="whatsapp-icon-light" />
           </a>
-        </>
+        </motion.div>
       )}
     </>
   );

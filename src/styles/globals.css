@@ -1,0 +1,200 @@
+/* ======================================================
+   GLOBAL STYLES & ENTRY POINT
+====================================================== */
+
+@import "./global/variables.css";
+@import "./global/normalize.css";
+@import "./global/typography.css";
+@import "./global/buttons.css";
+@import "./global/cards.css";
+@import "./global/animations.css";
+@import "./global/loader.css";
+
+/* Conteúdo principal acima de fundos decorativos */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Compensação de scroll para navbar fixa */
+section {
+  scroll-margin-top: 85px;
+}
+
+/* ======================================================
+   FUNDO DE PARTÍCULAS FIXO (tsParticles)  
+====================================================== */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+/* ======================================================
+   BOTÃO DO WHATSAPP
+====================================================== */
+.whatsapp-button {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 990;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  background: rgba(37, 211, 102, 0.25);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-button img {
+  width: 42px;
+  height: 42px;
+  animation: pulseWpp 2s infinite ease-in-out;
+}
+
+.whatsapp-icon-dark {
+  display: block;
+}
+
+.whatsapp-icon-light {
+  display: none;
+}
+
+
+
+[data-theme="light"] .whatsapp-button:hover {
+  background: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35);
+}
+
+[data-theme="light"] .whatsapp-icon-dark {
+  display: none;
+}
+
+[data-theme="light"] .whatsapp-icon-light {
+  display: block;
+}
+
+@keyframes pulseWpp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* ======================================================
+   BTN TOGGLE DE IDIOMA
+====================================================== */
+.lang-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 104px;
+  height: 42px;
+  padding: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  border-radius: 999px;
+  border: 1px solid var(--toggle-border);
+  background: var(--toggle-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.lang-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.2);
+}
+
+.lang-option {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+.lang-option.active {
+  opacity: 1;
+}
+
+.flag {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.lang-option.active .flag {
+  transform: scale(1.1);
+}
+
+.toggle-indicator {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.toggle-indicator.en {
+  transform: translateX(100%);
+}

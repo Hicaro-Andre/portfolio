@@ -1,18 +1,34 @@
-type Language = "pt" | "en";
+import { useLanguage } from "@/context/LanguageContext";
+import type { Language } from "@/types";
 
-type Props = {
-  language: Language;
-  onToggle: () => void;
+type LanguageToggleProps = {
+  language?: Language;
+  onToggle?: () => void;
 };
 
-export default function LanguageToggle({ language, onToggle }: Props) {
+export default function LanguageToggle({
+  language: propLanguage,
+  onToggle: propToggle,
+}: LanguageToggleProps) {
+  const context = useLanguage();
+  const language = propLanguage ?? context.language;
+  const onToggle = propToggle ?? context.toggleLanguage;
+
   return (
-    <button className="lang-toggle" onClick={onToggle}>
+    <button
+      className="lang-toggle"
+      onClick={onToggle}
+      aria-label={language === "pt" ? "Alterar para Inglês" : "Switch to Portuguese"}
+      title={language === "pt" ? "Switch to English" : "Mudar para Português"}
+      type="button"
+    >
       <span className={`lang-option ${language === "pt" ? "active" : ""}`}>
         <img
           src="https://flagcdn.com/br.svg"
           alt="Português"
           className="flag"
+          width="20"
+          height="20"
         />
       </span>
 
@@ -21,6 +37,8 @@ export default function LanguageToggle({ language, onToggle }: Props) {
           src="https://flagcdn.com/us.svg"
           alt="English"
           className="flag"
+          width="20"
+          height="20"
         />
       </span>
 

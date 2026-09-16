@@ -1,0 +1,59 @@
+/* ======================================================
+   PROJECT NAVBAR (DETAILS PAGE)
+====================================================== */
+
+.project-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--bg-color-navbar);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--navbar-border);
+  z-index: 1000;
+  transition: var(--theme-transition);
+}
+
+.project-navbar-container {
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--bg-text-color-links);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.back-projects:hover {
+  color: var(--color-primary);
+  transform: translateX(-4px);
+  background: rgba(29, 78, 216, 0.08);
+}
+
+.project-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .project-navbar-container {
+    padding: 0 2rem;
+  }
+}
